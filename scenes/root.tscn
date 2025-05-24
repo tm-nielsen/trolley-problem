@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dviwm18mhuwff"]
+[gd_scene load_steps=5 format=3 uid="uid://dviwm18mhuwff"]
 
 [ext_resource type="PackedScene" uid="uid://c4qwrg2femdoj" path="res://scenes/movement_test.tscn" id="1_j5px3"]
 [ext_resource type="FontFile" uid="uid://c418aq7tc7cf" path="res://resources/ui/fonts/PermanentMarker-Regular.ttf" id="2_twpsu"]
+[ext_resource type="PackedScene" uid="uid://cqqic1e8nq14r" path="res://scenes/prefabs/camera_view.tscn" id="3_lrqlo"]
+[ext_resource type="Script" uid="uid://cvfww8dfyi56s" path="res://scripts/cameras/camera_view_grid.gd" id="3_sqa0i"]
 
 [node name="Root" type="HBoxContainer"]
 anchors_preset = 15
@@ -63,98 +65,31 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Cameras" type="GridContainer" parent="HUD"]
+[node name="Cameras" type="GridContainer" parent="HUD" node_paths=PackedStringArray("camera_positions_parent")]
 custom_minimum_size = Vector2(0, 560)
 layout_mode = 2
 size_flags_vertical = 3
 columns = 3
+script = ExtResource("3_sqa0i")
+camera_view_prefab = ExtResource("3_lrqlo")
+camera_positions_parent = NodePath("../../Camera Positions")
 
-[node name="Camera 1 View" type="PanelContainer" parent="HUD/Cameras"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="Camera Positions" type="Node3D" parent="."]
 
-[node name="Viewport Container" type="SubViewportContainer" parent="HUD/Cameras/Camera 1 View"]
-layout_mode = 2
-stretch = true
-stretch_shrink = 2
+[node name="Camera 1" type="Node3D" parent="Camera Positions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.51339, 0, -3.76733)
 
-[node name="Viewport" type="SubViewport" parent="HUD/Cameras/Camera 1 View/Viewport Container"]
-handle_input_locally = false
-size = Vector2i(100, 100)
-render_target_update_mode = 4
+[node name="Camera 2" type="Node3D" parent="Camera Positions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06665, 0, -4.38008)
 
-[node name="Camera 2 View" type="PanelContainer" parent="HUD/Cameras"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="Camera 3" type="Node3D" parent="Camera Positions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.11147, 0, -3.27725)
 
-[node name="Viewport Container" type="SubViewportContainer" parent="HUD/Cameras/Camera 2 View"]
-layout_mode = 2
-stretch = true
-stretch_shrink = 2
+[node name="Camera 4" type="Node3D" parent="Camera Positions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0478, 0, 5.07793)
 
-[node name="Viewport" type="SubViewport" parent="HUD/Cameras/Camera 2 View/Viewport Container"]
-handle_input_locally = false
-size = Vector2i(100, 100)
-render_target_update_mode = 4
+[node name="Camera 5" type="Node3D" parent="Camera Positions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0360146, 0, 5.94226)
 
-[node name="Camera 3 View" type="PanelContainer" parent="HUD/Cameras"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Viewport Container" type="SubViewportContainer" parent="HUD/Cameras/Camera 3 View"]
-layout_mode = 2
-stretch = true
-stretch_shrink = 2
-
-[node name="Viewport" type="SubViewport" parent="HUD/Cameras/Camera 3 View/Viewport Container"]
-handle_input_locally = false
-size = Vector2i(100, 100)
-render_target_update_mode = 4
-
-[node name="Camera 4 View" type="PanelContainer" parent="HUD/Cameras"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Viewport Container" type="SubViewportContainer" parent="HUD/Cameras/Camera 4 View"]
-layout_mode = 2
-stretch = true
-stretch_shrink = 2
-
-[node name="Viewport" type="SubViewport" parent="HUD/Cameras/Camera 4 View/Viewport Container"]
-handle_input_locally = false
-size = Vector2i(100, 100)
-render_target_update_mode = 4
-
-[node name="Camera 5 View" type="PanelContainer" parent="HUD/Cameras"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Viewport Container" type="SubViewportContainer" parent="HUD/Cameras/Camera 5 View"]
-layout_mode = 2
-stretch = true
-stretch_shrink = 2
-
-[node name="Viewport" type="SubViewport" parent="HUD/Cameras/Camera 5 View/Viewport Container"]
-handle_input_locally = false
-size = Vector2i(100, 100)
-render_target_update_mode = 4
-
-[node name="Camera 6 View" type="PanelContainer" parent="HUD/Cameras"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Viewport Container" type="SubViewportContainer" parent="HUD/Cameras/Camera 6 View"]
-layout_mode = 2
-stretch = true
-stretch_shrink = 2
-
-[node name="Viewport" type="SubViewport" parent="HUD/Cameras/Camera 6 View/Viewport Container"]
-handle_input_locally = false
-size = Vector2i(100, 100)
-render_target_update_mode = 4
+[node name="Camera 6" type="Node3D" parent="Camera Positions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1282, 0, 5.07793)

@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqqic1e8nq14r"]
+
+[ext_resource type="Script" uid="uid://dglldrri0a718" path="res://scripts/cameras/camera_view.gd" id="1_rwqmo"]
+
+[node name="Camera View" type="PanelContainer" node_paths=PackedStringArray("viewport_container", "viewport")]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_rwqmo")
+viewport_container = NodePath("Viewport Container")
+viewport = NodePath("Viewport Container/Viewport")
+
+[node name="Viewport Container" type="SubViewportContainer" parent="."]
+layout_mode = 2
+stretch = true
+stretch_shrink = 2
+
+[node name="Viewport" type="SubViewport" parent="Viewport Container"]
+handle_input_locally = false
+size = Vector2i(2, 2)
+render_target_update_mode = 4

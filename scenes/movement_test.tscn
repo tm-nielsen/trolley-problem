@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://c4qwrg2femdoj"]
 
 [ext_resource type="Script" uid="uid://c8nqi0le2ibfe" path="res://scripts/player/cart_body.gd" id="1_d5coj"]
-[ext_resource type="Script" uid="uid://bdxeu5afe7edl" path="res://scripts/tracking_camera.gd" id="1_t354w"]
+[ext_resource type="Script" uid="uid://bdxeu5afe7edl" path="res://scripts/cameras/tracking_camera.gd" id="1_t354w"]
 [ext_resource type="PackedScene" uid="uid://cmqhenmmppgf7" path="res://scenes/branches/animated_cart.tscn" id="3_s4463"]
 [ext_resource type="PackedScene" uid="uid://buqvwk6vnginp" path="res://models/Shelf.glb" id="4_3v85x"]
 [ext_resource type="Script" uid="uid://b431iip6kkpqh" path="res://scripts/player/animated_paddle_controller.gd" id="4_s4463"]
