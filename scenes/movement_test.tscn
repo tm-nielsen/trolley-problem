@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://c8nqi0le2ibfe" path="res://scripts/player/cart_body.gd" id="1_d5coj"]
 [ext_resource type="ArrayMesh" uid="uid://whb3aqhbna6n" path="res://models/cart/cart.res" id="1_nyyim"]
 [ext_resource type="Script" uid="uid://bdxeu5afe7edl" path="res://scripts/tracking_camera.gd" id="1_t354w"]
-[ext_resource type="Script" uid="uid://3jl1xhdapak2" path="res://scripts/player/paddle_controller.gd" id="3_l606k"]
 [ext_resource type="PackedScene" uid="uid://buqvwk6vnginp" path="res://models/Shelf.glb" id="4_3v85x"]
+[ext_resource type="Script" uid="uid://b431iip6kkpqh" path="res://scripts/player/animated_paddle_controller.gd" id="4_s4463"]
 [ext_resource type="PackedScene" uid="uid://bltk3dtuf4ytx" path="res://models/ShelfCorner.glb" id="5_mp4pn"]
 [ext_resource type="Shader" uid="uid://bxtqnrbo5lpp5" path="res://resources/shaders/lit.gdshader" id="5_s4463"]
 [ext_resource type="PackedScene" uid="uid://bgaaq2cs5ihqb" path="res://models/ShelfDouble.glb" id="6_t354w"]
@@ -88,7 +88,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0.5)
 
 [node name="Left" type="Node3D" parent="Player/Paddles"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.25, 0)
-script = ExtResource("3_l606k")
+script = ExtResource("4_s4463")
+flip = true
 key_paddle_back = 87
 key_paddle_forward = 83
 key_paddle_up = 68
@@ -101,7 +102,7 @@ skeleton = NodePath("../..")
 
 [node name="Right" type="Node3D" parent="Player/Paddles"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.25, 0)
-script = ExtResource("3_l606k")
+script = ExtResource("4_s4463")
 key_paddle_back = 4194320
 key_paddle_forward = 4194322
 key_paddle_up = 4194319

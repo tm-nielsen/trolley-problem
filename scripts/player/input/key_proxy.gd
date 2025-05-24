@@ -2,6 +2,7 @@ class_name KeyProxy
 
 var is_pressed: bool
 var was_pressed_this_frame: bool
+var pressed_value: int
 
 var keycode: Key
 var pressed_window := InputWindow.new()
@@ -13,6 +14,7 @@ func update():
     var currently_pressed = Input.is_key_pressed(keycode)
     was_pressed_this_frame = currently_pressed && !is_pressed
     is_pressed = currently_pressed
+    pressed_value = 1 if is_pressed else 0
     if is_pressed: pressed_window.activate()
 
 func was_pressed_within(seconds: float) -> bool:
