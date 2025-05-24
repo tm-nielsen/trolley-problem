@@ -2,26 +2,152 @@
 
 [ext_resource type="PackedScene" uid="uid://c4qwrg2femdoj" path="res://scenes/movement_test.tscn" id="1_j5px3"]
 
-[node name="Root" type="Control"]
-layout_mode = 3
+[node name="Root" type="HBoxContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Game Viewport Container" type="SubViewportContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Game View" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(1080, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Viewport Container" type="SubViewportContainer" parent="Game View"]
+layout_mode = 2
+size_flags_horizontal = 3
 stretch = true
+stretch_shrink = 10
 
-[node name="SubViewport" type="SubViewport" parent="Game Viewport Container"]
+[node name="Viewport" type="SubViewport" parent="Game View/Viewport Container"]
 handle_input_locally = false
-size = Vector2i(240, 135)
+size = Vector2i(100, 100)
 render_target_update_mode = 4
 
-[node name="MovementTest" parent="Game Viewport Container/SubViewport" instance=ExtResource("1_j5px3")]
+[node name="MovementTest" parent="Game View/Viewport Container/Viewport" instance=ExtResource("1_j5px3")]
+
+[node name="HUD" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Grocery List" type="PanelContainer" parent="HUD"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Viewport Container" type="SubViewportContainer" parent="HUD/Grocery List"]
+layout_mode = 2
+stretch = true
+stretch_shrink = 4
+
+[node name="Viewport" type="SubViewport" parent="HUD/Grocery List/Viewport Container"]
+size = Vector2i(190, 110)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HUD/Grocery List/Viewport Container/Viewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Grocery List:
+- a
+- b
+- c"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Cameras" type="GridContainer" parent="HUD"]
+custom_minimum_size = Vector2(0, 560)
+layout_mode = 2
+size_flags_vertical = 3
+columns = 3
+
+[node name="Camera 1 View" type="PanelContainer" parent="HUD/Cameras"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Viewport Container" type="SubViewportContainer" parent="HUD/Cameras/Camera 1 View"]
+layout_mode = 2
+stretch = true
+stretch_shrink = 2
+
+[node name="Viewport" type="SubViewport" parent="HUD/Cameras/Camera 1 View/Viewport Container"]
+handle_input_locally = false
+size = Vector2i(100, 100)
+render_target_update_mode = 4
+
+[node name="Camera 2 View" type="PanelContainer" parent="HUD/Cameras"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Viewport Container" type="SubViewportContainer" parent="HUD/Cameras/Camera 2 View"]
+layout_mode = 2
+stretch = true
+stretch_shrink = 2
+
+[node name="Viewport" type="SubViewport" parent="HUD/Cameras/Camera 2 View/Viewport Container"]
+handle_input_locally = false
+size = Vector2i(100, 100)
+render_target_update_mode = 4
+
+[node name="Camera 3 View" type="PanelContainer" parent="HUD/Cameras"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Viewport Container" type="SubViewportContainer" parent="HUD/Cameras/Camera 3 View"]
+layout_mode = 2
+stretch = true
+stretch_shrink = 2
+
+[node name="Viewport" type="SubViewport" parent="HUD/Cameras/Camera 3 View/Viewport Container"]
+handle_input_locally = false
+size = Vector2i(100, 100)
+render_target_update_mode = 4
+
+[node name="Camera 4 View" type="PanelContainer" parent="HUD/Cameras"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Viewport Container" type="SubViewportContainer" parent="HUD/Cameras/Camera 4 View"]
+layout_mode = 2
+stretch = true
+stretch_shrink = 2
+
+[node name="Viewport" type="SubViewport" parent="HUD/Cameras/Camera 4 View/Viewport Container"]
+handle_input_locally = false
+size = Vector2i(100, 100)
+render_target_update_mode = 4
+
+[node name="Camera 5 View" type="PanelContainer" parent="HUD/Cameras"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Viewport Container" type="SubViewportContainer" parent="HUD/Cameras/Camera 5 View"]
+layout_mode = 2
+stretch = true
+stretch_shrink = 2
+
+[node name="Viewport" type="SubViewport" parent="HUD/Cameras/Camera 5 View/Viewport Container"]
+handle_input_locally = false
+size = Vector2i(100, 100)
+render_target_update_mode = 4
+
+[node name="Camera 6 View" type="PanelContainer" parent="HUD/Cameras"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Viewport Container" type="SubViewportContainer" parent="HUD/Cameras/Camera 6 View"]
+layout_mode = 2
+stretch = true
+stretch_shrink = 2
+
+[node name="Viewport" type="SubViewport" parent="HUD/Cameras/Camera 6 View/Viewport Container"]
+handle_input_locally = false
+size = Vector2i(100, 100)
+render_target_update_mode = 4

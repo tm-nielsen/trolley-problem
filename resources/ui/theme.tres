@@ -1,0 +1,16 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://djlb00u8ia5rr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77ydo"]
+content_margin_left = 40.0
+content_margin_top = 40.0
+content_margin_right = 40.0
+content_margin_bottom = 40.0
+bg_color = Color(0, 0, 0, 1)
+anti_aliasing = false
+
+[resource]
+default_font_size = 12
+BoxContainer/constants/separation = 0
+GridContainer/constants/h_separation = 0
+GridContainer/constants/v_separation = 0
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_77ydo")
