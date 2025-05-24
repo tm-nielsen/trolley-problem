@@ -1,6 +1,8 @@
 class_name CartBody
 extends CharacterBody3D
 
+static var cart_position: Vector3
+
 @export var push_force: float = 4
 @export var turn_force: float = 4
 @export var jump_force: float = 2
@@ -28,6 +30,7 @@ func _physics_process(delta: float) -> void:
     rotate_y(angular_velocity)
     velocity = velocity.rotated(Vector3.UP, angular_velocity)
     move_and_slide()
+    cart_position = global_position
 
 
 func apply_push(push_scale: float, turn_direction: float):
