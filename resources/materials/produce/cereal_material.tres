@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://b3nm302bk0o1t"]
 
 [ext_resource type="Shader" uid="uid://bxtqnrbo5lpp5" path="res://resources/shaders/lit.gdshader" id="1_an2u5"]
-[ext_resource type="Texture2D" uid="uid://be7hxgwtgbm0b" path="res://models/Produce/Produce_Cerial_DefaultMaterial_BaseColor.png" id="2_b8nyo"]
+[ext_resource type="Texture2D" uid="uid://nswr71bvvcl3" path="res://models/Produce/Produce_Cerial_DefaultMaterial_BaseColor.png" id="2_b8nyo"]
 
 [resource]
 render_priority = 0
