@@ -1,4 +1,6 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://djlb00u8ia5rr"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://djlb00u8ia5rr"]
+
+[ext_resource type="FontFile" uid="uid://bjssxd73huqo" path="res://resources/ui/fonts/Quantico-Bold.ttf" id="1_qfwp4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77ydo"]
 content_margin_left = 40.0
@@ -9,7 +11,8 @@ bg_color = Color(0, 0, 0, 1)
 anti_aliasing = false
 
 [resource]
-default_font_size = 12
+default_font = ExtResource("1_qfwp4")
+default_font_size = 16
 BoxContainer/constants/separation = 0
 GridContainer/constants/h_separation = 0
 GridContainer/constants/v_separation = 0

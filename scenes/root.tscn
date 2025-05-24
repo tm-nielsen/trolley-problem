@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dviwm18mhuwff"]
+[gd_scene load_steps=3 format=3 uid="uid://dviwm18mhuwff"]
 
 [ext_resource type="PackedScene" uid="uid://c4qwrg2femdoj" path="res://scenes/movement_test.tscn" id="1_j5px3"]
+[ext_resource type="FontFile" uid="uid://c418aq7tc7cf" path="res://resources/ui/fonts/PermanentMarker-Regular.ttf" id="2_twpsu"]
 
 [node name="Root" type="HBoxContainer"]
 anchors_preset = 15
@@ -27,6 +28,16 @@ render_target_update_mode = 4
 
 [node name="MovementTest" parent="Game View/Viewport Container/Viewport" instance=ExtResource("1_j5px3")]
 
+[node name="Camera Name" type="Label" parent="Game View/Viewport Container/Viewport"]
+offset_left = 3.0
+offset_top = -3.0
+offset_right = 59.0
+offset_bottom = 21.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = -2
+text = "Cam 1"
+
 [node name="HUD" type="VBoxContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -35,26 +46,22 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Viewport Container" type="SubViewportContainer" parent="HUD/Grocery List"]
+[node name="TextureRect" type="ColorRect" parent="HUD/Grocery List"]
 layout_mode = 2
-stretch = true
-stretch_shrink = 4
+color = Color(0.935986, 0.868644, 0.642338, 1)
 
-[node name="Viewport" type="SubViewport" parent="HUD/Grocery List/Viewport Container"]
-size = Vector2i(190, 110)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="HUD/Grocery List/Viewport Container/Viewport"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="RichTextLabel" type="RichTextLabel" parent="HUD/Grocery List"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_twpsu")
+theme_override_font_sizes/normal_font_size = 48
 text = "Grocery List:
 - a
 - b
 - c"
 scroll_active = false
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Cameras" type="GridContainer" parent="HUD"]
 custom_minimum_size = Vector2(0, 560)
