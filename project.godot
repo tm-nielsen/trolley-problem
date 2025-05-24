@@ -11,8 +11,17 @@ config_version=5
 [application]
 
 config/name="Trolley Problem"
+run/main_scene="uid://dviwm18mhuwff"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=240
+window/size/viewport_height=135
+window/size/mode=4
+window/stretch/mode="viewport"
+window/size/mode.editor=0
 
 [rendering]
 
