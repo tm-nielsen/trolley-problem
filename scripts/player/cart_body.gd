@@ -3,7 +3,7 @@ extends CharacterBody3D
 
 @export var push_force: float = 4
 @export var turn_force: float = 4
-@export var jump_force: float = 5
+@export var jump_force: float = 2
 @export_range(0, 1) var friction: float = 0.1
 @export_range(0, 1) var angular_friction: float = 0.1
 
@@ -35,7 +35,7 @@ func apply_push(push_scale: float, turn_direction: float):
 
 func apply_jump(opposite_paddle: PaddleController):
     if is_on_floor(): velocity.y += jump_force
-    elif opposite_paddle.was_jump_flicked(): velocity.y += jump_force * 3
+    elif opposite_paddle.was_jump_flicked(): velocity.y += jump_force * 4
 
 
 

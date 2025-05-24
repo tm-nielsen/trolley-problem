@@ -23,6 +23,10 @@ window/size/mode=4
 window/stretch/mode="viewport"
 window/size/mode.editor=0
 
+[physics]
+
+3d/default_gravity=16.0
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
