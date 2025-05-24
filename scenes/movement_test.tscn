@@ -65,28 +65,28 @@ mesh = ExtResource("1_nyyim")
 [node name="Paddles" type="Node3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0.2)
 
-[node name="Right" type="Node3D" parent="Player/Paddles"]
+[node name="Left" type="Node3D" parent="Player/Paddles"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.25, 0)
 script = ExtResource("3_l606k")
-key_paddle_back = 83
-key_paddle_forward = 87
+key_paddle_back = 87
+key_paddle_forward = 83
 key_paddle_up = 68
 key_paddle_down = 65
 
-[node name="Mesh" type="MeshInstance3D" parent="Player/Paddles/Right"]
+[node name="Mesh" type="MeshInstance3D" parent="Player/Paddles/Left"]
 transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, -0.35, -0.25, 0)
 mesh = SubResource("BoxMesh_08uda")
 skeleton = NodePath("../..")
 
-[node name="Left" type="Node3D" parent="Player/Paddles"]
+[node name="Right" type="Node3D" parent="Player/Paddles"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.25, 0)
 script = ExtResource("3_l606k")
-key_paddle_back = 4194322
-key_paddle_forward = 4194320
+key_paddle_back = 4194320
+key_paddle_forward = 4194322
 key_paddle_up = 4194319
 key_paddle_down = 4194321
 
-[node name="Mesh" type="MeshInstance3D" parent="Player/Paddles/Left"]
+[node name="Mesh" type="MeshInstance3D" parent="Player/Paddles/Right"]
 transform = Transform3D(0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, 0.35, -0.25, 0)
 mesh = SubResource("BoxMesh_08uda")
 skeleton = NodePath("../..")
