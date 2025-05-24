@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmqhenmmppgf7"]
+
+[ext_resource type="PackedScene" uid="uid://dbxu6bm5wp4it" path="res://models/cart/Cart.fbx" id="1_heai7"]
+
+[node name="Animated Cart" instance=ExtResource("1_heai7")]
+
+[node name="Skeleton3D" parent="." index="0"]
+bones/1/position = Vector3(-0.00388418, 0.0187048, 0.168419)
+bones/1/rotation = Quaternion(0.4092, 0.0133193, 0.0657874, 0.909972)
+bones/1/scale = Vector3(1, 1, 1)

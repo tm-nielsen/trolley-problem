@@ -1,8 +1,8 @@
 [gd_scene load_steps=20 format=3 uid="uid://c4qwrg2femdoj"]
 
 [ext_resource type="Script" uid="uid://c8nqi0le2ibfe" path="res://scripts/player/cart_body.gd" id="1_d5coj"]
-[ext_resource type="ArrayMesh" uid="uid://whb3aqhbna6n" path="res://models/cart/cart.res" id="1_nyyim"]
 [ext_resource type="Script" uid="uid://bdxeu5afe7edl" path="res://scripts/tracking_camera.gd" id="1_t354w"]
+[ext_resource type="PackedScene" uid="uid://cmqhenmmppgf7" path="res://scenes/branches/animated_cart.tscn" id="3_s4463"]
 [ext_resource type="PackedScene" uid="uid://buqvwk6vnginp" path="res://models/Shelf.glb" id="4_3v85x"]
 [ext_resource type="Script" uid="uid://b431iip6kkpqh" path="res://scripts/player/animated_paddle_controller.gd" id="4_s4463"]
 [ext_resource type="PackedScene" uid="uid://bltk3dtuf4ytx" path="res://models/ShelfCorner.glb" id="5_mp4pn"]
@@ -13,13 +13,13 @@
 [ext_resource type="PackedScene" uid="uid://dw7hbi50rrk48" path="res://models/Produce_Tomapple.glb" id="10_s4463"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nyyim"]
-size = Vector3(0.493896, 0.150146, 0.646606)
+size = Vector3(0.493896, 0.174194, 0.802765)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_755td"]
-size = Vector3(0.493896, 0.35083, 0.848175)
+size = Vector3(0.493896, 0.447388, 0.989449)
 
 [sub_resource type="BoxMesh" id="BoxMesh_08uda"]
-size = Vector3(0.05, 1, 0.05)
+size = Vector3(0.05, 1.5, 0.05)
 
 [sub_resource type="SphereMesh" id="SphereMesh_t354w"]
 radius = 0.1
@@ -72,22 +72,21 @@ right_paddle = NodePath("Paddles/Right")
 left_paddle = NodePath("Paddles/Left")
 
 [node name="Base Collider" type="CollisionShape3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.027505, 0.280654)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0154809, 0.27481)
 shape = SubResource("BoxShape3D_nyyim")
 
 [node name="Bucket Collider" type="CollisionShape3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.429229, 0.321478)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.561292, 0.3)
 shape = SubResource("BoxShape3D_755td")
 
-[node name="Cart" type="MeshInstance3D" parent="Player"]
-transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, 0.02, 0, -0.02, -8.74228e-10, 0, 0.3, 0.3)
-mesh = ExtResource("1_nyyim")
+[node name="Animated Cart" parent="Player" instance=ExtResource("3_s4463")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3)
 
 [node name="Paddles" type="Node3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.5)
 
 [node name="Left" type="Node3D" parent="Player/Paddles"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.25, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.25, 0)
 script = ExtResource("4_s4463")
 flip = true
 key_paddle_back = 87
@@ -101,7 +100,7 @@ mesh = SubResource("BoxMesh_08uda")
 skeleton = NodePath("../..")
 
 [node name="Right" type="Node3D" parent="Player/Paddles"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.25, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.25, 0)
 script = ExtResource("4_s4463")
 key_paddle_back = 4194320
 key_paddle_forward = 4194322

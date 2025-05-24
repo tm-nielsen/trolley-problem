@@ -3,20 +3,20 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c0ys428fsr0bs"
-path="res://.godot/imported/Cart.glb-f928dd4c331e6adb9493247189279c74.scn"
+uid="uid://dbxu6bm5wp4it"
+path="res://.godot/imported/Cart.fbx-6e2505f613f14865faae57ad2ee72c3f.scn"
 
 [deps]
 
-source_file="res://models/cart/Cart.glb"
-dest_files=["res://.godot/imported/Cart.glb-f928dd4c331e6adb9493247189279c74.scn"]
+source_file="res://models/cart/Cart.fbx"
+dest_files=["res://.godot/imported/Cart.fbx-6e2505f613f14865faae57ad2ee72c3f.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
-nodes/apply_root_scale=false
-nodes/root_scale=0.01
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
@@ -26,29 +26,25 @@ meshes/light_baking=1
 meshes/lightmap_texel_size=0.2
 meshes/force_disable_compression=false
 skins/use_named_skins=true
-animation/import=true
+animation/import=false
 animation/fps=30
-animation/trimming=false
+animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"Default": {
+"Material #37": {
 "use_external/enabled": true,
 "use_external/path": "uid://cyelbh4hp2cpc"
 }
 },
-"meshes": {
-"Cart_Box001_Box001": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
-"save_to_file/path": "res://models/cart/cart.res"
+"nodes": {
+"PATH:AnimationPlayer": {
+"import/skip_import": true
 }
 }
 }
-gltf/naming_version=1
-gltf/embedded_image_handling=1
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1

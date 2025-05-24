@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy8j0paul5bb"
-path.s3tc="res://.godot/imported/Cart_2.png-38a9acb80e248e83ac43162f0d470787.s3tc.ctex"
+uid="uid://bd28bx5hnsj21"
+path.s3tc="res://.godot/imported/Cart_Material_BaseColor.png-5cee8ce15b08ff427655edc267cb3f47.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "a10698601e555c0de33367a3978435a6"
-}
 
 [deps]
 
-source_file="res://models/cart/Cart_2.png"
-dest_files=["res://.godot/imported/Cart_2.png-38a9acb80e248e83ac43162f0d470787.s3tc.ctex"]
+source_file="res://models/cart/Cart_Material_BaseColor.png"
+dest_files=["res://.godot/imported/Cart_Material_BaseColor.png-5cee8ce15b08ff427655edc267cb3f47.s3tc.ctex"]
 
 [params]
 
