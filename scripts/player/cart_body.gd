@@ -3,15 +3,20 @@ extends CharacterBody3D
 
 static var cart_position: Vector3
 
+@export_subgroup("movement forces")
 @export var push_force: float = 4
 @export var turn_force: float = 4
 @export var jump_force: float = 2
 @export var friction: float = 1
-@export var angular_friction: float = 10
+@export var angular_friction: float = 4
 
 @export_subgroup("paddles")
 @export var right_paddle: PaddleController
 @export var left_paddle: PaddleController
+
+@export_subgroup("rigidbody interaction")
+@export var effective_mass: float = 2
+@export var inertia: float = 0.1
 
 var angular_velocity: float
 
@@ -29,7 +34,7 @@ func _physics_process(delta: float) -> void:
         angular_velocity *= max(1 - angular_friction * delta, 0)
     rotate_y(angular_velocity)
     velocity = velocity.rotated(Vector3.UP, angular_velocity)
-    move_and_slide()
+    process_movement()
     cart_position = global_position
 
 
@@ -40,3 +45,32 @@ func apply_push(push_scale: float, turn_direction: float):
 func apply_jump(opposite_paddle: PaddleController):
     if is_on_floor(): velocity.y += jump_force
     elif opposite_paddle.was_jump_flicked(): velocity.y += jump_force * 4
+
+
+func process_movement():
+    var pre_collision_velocity := velocity
+    move_and_slide()
+    for i in get_slide_collision_count():
+        _process_slide_collision(i, pre_collision_velocity)
+
+
+func _process_slide_collision(
+    index: int, previous_velocity: Vector3
+):
+    var collision := get_slide_collision(index)
+    var normal := collision.get_normal()
+    var colliding_body = collision.get_collider()
+    if colliding_body is RigidBody3D:
+        _process_rigidbody_collision(
+            colliding_body, normal, previous_velocity
+        )
+    
+func _process_rigidbody_collision(
+    colliding_body: RigidBody3D, normal: Vector3,
+    previous_velocity: Vector3
+):
+    var mass_ratio = effective_mass / colliding_body.mass
+    colliding_body.apply_central_impulse(
+        -normal * mass_ratio
+    )
+    velocity += previous_velocity * inertia * mass_ratio
