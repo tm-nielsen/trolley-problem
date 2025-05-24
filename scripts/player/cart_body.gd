@@ -3,8 +3,9 @@ extends CharacterBody3D
 
 @export var push_force: float = 10
 @export var up_force: float = 5
-@export var sync_multiplier: float = 2
+@export_range(0, 1) var friction: float = 0.1
 
+@export_subgroup("paddles")
 @export var right_paddle: PaddleController
 @export var left_paddle: PaddleController
 
@@ -16,6 +17,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
     velocity += get_gravity() * delta
+    velocity *= max(1 - friction * delta * 60, 0)
     move_and_slide()
 
 func apply_forward_push():
