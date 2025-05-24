@@ -1,14 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dviwm18mhuwff"]
+[gd_scene load_steps=6 format=3 uid="uid://dviwm18mhuwff"]
 
 [ext_resource type="PackedScene" uid="uid://c4qwrg2femdoj" path="res://scenes/movement_test.tscn" id="1_j5px3"]
-[ext_resource type="Script" uid="uid://bdxeu5afe7edl" path="res://scripts/cameras/tracking_camera.gd" id="1_jh1ax"]
+[ext_resource type="PackedScene" uid="uid://x3sl82ycs0y" path="res://scenes/prefabs/main_camera_view.tscn" id="1_jh1ax"]
 [ext_resource type="FontFile" uid="uid://c418aq7tc7cf" path="res://resources/ui/fonts/PermanentMarker-Regular.ttf" id="2_twpsu"]
 [ext_resource type="PackedScene" uid="uid://cqqic1e8nq14r" path="res://scenes/prefabs/camera_view.tscn" id="3_lrqlo"]
 [ext_resource type="Script" uid="uid://cvfww8dfyi56s" path="res://scripts/cameras/camera_view_grid.gd" id="3_sqa0i"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_jh1ax"]
-shadow_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(-2, -2)
 
 [node name="Root" type="HBoxContainer"]
 anchors_preset = 15
@@ -17,33 +13,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Game View" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(1080, 0)
+[node name="Main Camera View" parent="." node_paths=PackedStringArray("view_grid") instance=ExtResource("1_jh1ax")]
 layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Viewport Container" type="SubViewportContainer" parent="Game View"]
-layout_mode = 2
-size_flags_horizontal = 3
-stretch = true
-stretch_shrink = 10
-
-[node name="Viewport" type="SubViewport" parent="Game View/Viewport Container"]
-handle_input_locally = false
-size = Vector2i(100, 100)
-render_target_update_mode = 4
-
-[node name="Camera3D" type="Camera3D" parent="Game View/Viewport Container/Viewport"]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 3, 1)
-script = ExtResource("1_jh1ax")
-
-[node name="Camera Name" type="Label" parent="Game View/Viewport Container/Viewport"]
-offset_left = 3.0
-offset_top = -3.0
-offset_right = 59.0
-offset_bottom = 21.0
-text = "Cam 1"
-label_settings = SubResource("LabelSettings_jh1ax")
+view_grid = NodePath("../HUD/Cameras")
 
 [node name="HUD" type="VBoxContainer" parent="."]
 layout_mode = 2

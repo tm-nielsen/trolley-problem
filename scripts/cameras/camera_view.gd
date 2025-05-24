@@ -14,7 +14,7 @@ func _ready() -> void:
         viewport_container.size.x / viewport_size
     )).call_deferred()
 
-func initialize_camera(camera_position: Vector3, title: String):
+func initialize(camera_position: Vector3, title: String):
     camera = TrackingCamera.new()
     viewport.add_child(camera)
     camera.position = camera_position
