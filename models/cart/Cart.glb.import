@@ -36,11 +36,11 @@ _subresources={
 "materials": {
 "Default": {
 "use_external/enabled": true,
-"use_external/path": "uid://qcgf2f3ejnxt"
+"use_external/path": "uid://cyelbh4hp2cpc"
 }
 },
 "meshes": {
-"Cart_Box001": {
+"Cart_Box001_Box001": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
