@@ -16,7 +16,7 @@ func update():
     if is_pressed: last_press_time = Time.get_ticks_msec()
 
 func was_pressed_within(seconds: float):
-    var msecs_since_last_press: float = (
+    var msecs_since_last_press := (
         Time.get_ticks_msec() - last_press_time
     )
-    return seconds < msecs_since_last_press / 1000
+    return msecs_since_last_press < seconds * 1000
