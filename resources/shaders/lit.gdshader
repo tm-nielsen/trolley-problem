@@ -1,5 +1,5 @@
 shader_type spatial;
-render_mode specular_toon, cull_disabled;
+render_mode diffuse_burley, cull_disabled;
 
 uniform vec3 albedo_colour: source_color = vec3(1);
 uniform sampler2D albedo_texture: hint_default_white, filter_nearest;
