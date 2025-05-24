@@ -1,5 +1,5 @@
 class_name CartBody
-extends RigidBody3D
+extends CharacterBody3D
 
 @export var push_force: float = 10
 @export var up_force: float = 5
@@ -10,7 +10,13 @@ extends RigidBody3D
 
 
 func _ready() -> void:
-    right_paddle.pushed_forward.connect(apply_forward_push)
+    right_paddle.pushed_forward.connect(
+        apply_forward_push
+    )
+
+func _physics_process(delta: float) -> void:
+    velocity += get_gravity() * delta
+    move_and_slide()
 
 func apply_forward_push():
-    apply_impulse(basis.z * push_force)
+    velocity += basis.z * push_force
