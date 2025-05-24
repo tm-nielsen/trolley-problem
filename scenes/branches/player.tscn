@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5mw8yevevsir"]
+
+[ext_resource type="Script" uid="uid://c8nqi0le2ibfe" path="res://scripts/player/cart_body.gd" id="1_vrmcy"]
+[ext_resource type="PackedScene" uid="uid://cmqhenmmppgf7" path="res://scenes/branches/animated_cart.tscn" id="2_3ebvs"]
+[ext_resource type="Script" uid="uid://b431iip6kkpqh" path="res://scripts/player/animated_paddle_controller.gd" id="3_hcg2o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nyyim"]
+size = Vector3(0.493896, 0.174194, 0.802765)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_755td"]
+size = Vector3(0.493896, 0.447388, 0.989449)
+
+[sub_resource type="BoxMesh" id="BoxMesh_08uda"]
+size = Vector3(0.05, 1.5, 0.05)
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("right_paddle", "left_paddle")]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_vrmcy")
+push_force = 0.5
+turn_force = 2.0
+jump_force = 2.5
+right_paddle = NodePath("Paddles/Right")
+left_paddle = NodePath("Paddles/Left")
+inertia = 0.2
+
+[node name="Base Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0154809, 0.27481)
+shape = SubResource("BoxShape3D_nyyim")
+
+[node name="Bucket Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.561292, 0.3)
+shape = SubResource("BoxShape3D_755td")
+disabled = true
+debug_fill = false
+
+[node name="Animated Cart" parent="." instance=ExtResource("2_3ebvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3)
+
+[node name="Paddles" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.5)
+
+[node name="Left" type="Node3D" parent="Paddles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.25, 0)
+script = ExtResource("3_hcg2o")
+flip = true
+key_paddle_back = 87
+key_paddle_forward = 83
+key_paddle_up = 68
+key_paddle_down = 65
+
+[node name="Mesh" type="MeshInstance3D" parent="Paddles/Left"]
+transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, -0.35, -0.25, 0)
+mesh = SubResource("BoxMesh_08uda")
+skeleton = NodePath("../..")
+
+[node name="Right" type="Node3D" parent="Paddles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.25, 0)
+script = ExtResource("3_hcg2o")
+key_paddle_back = 4194320
+key_paddle_forward = 4194322
+key_paddle_up = 4194319
+key_paddle_down = 4194321
+
+[node name="Mesh" type="MeshInstance3D" parent="Paddles/Right"]
+transform = Transform3D(0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, 0.35, -0.25, 0)
+mesh = SubResource("BoxMesh_08uda")
+skeleton = NodePath("../..")
