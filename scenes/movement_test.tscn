@@ -47,7 +47,6 @@ omni_range = 20.0
 [node name="Player" type="CharacterBody3D" parent="." node_paths=PackedStringArray("right_paddle", "left_paddle")]
 script = ExtResource("1_d5coj")
 push_force = 5.0
-up_force = 3.0
 right_paddle = NodePath("Paddles/Right")
 left_paddle = NodePath("Paddles/Left")
 
@@ -69,10 +68,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0.2)
 [node name="Right" type="Node3D" parent="Player/Paddles"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.25, 0)
 script = ExtResource("3_l606k")
-key_up = 4194320
-key_down = 4194322
-key_left = 4194319
-key_right = 4194321
+key_paddle_back = 83
+key_paddle_forward = 87
+key_paddle_up = 68
+key_paddle_down = 65
 
 [node name="Mesh" type="MeshInstance3D" parent="Player/Paddles/Right"]
 transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, -0.35, -0.25, 0)
@@ -82,10 +81,10 @@ skeleton = NodePath("../..")
 [node name="Left" type="Node3D" parent="Player/Paddles"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.25, 0)
 script = ExtResource("3_l606k")
-key_up = 87
-key_down = 83
-key_left = 65
-key_right = 68
+key_paddle_back = 4194322
+key_paddle_forward = 4194320
+key_paddle_up = 4194319
+key_paddle_down = 4194321
 
 [node name="Mesh" type="MeshInstance3D" parent="Player/Paddles/Left"]
 transform = Transform3D(0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, 0.35, -0.25, 0)
