@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bvn7gh4aitdtn"]
+
+[ext_resource type="Shader" uid="uid://bxtqnrbo5lpp5" path="res://resources/shaders/lit.gdshader" id="1_0o3ux"]
+[ext_resource type="Texture2D" uid="uid://25s143abojkd" path="res://models/Produce/Produce_Dingles_Material _178_BaseColor.png" id="2_tdt3w"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_0o3ux")
+shader_parameter/albedo_colour = Color(1, 1, 1, 1)
+shader_parameter/albedo_texture = ExtResource("2_tdt3w")
+shader_parameter/metallic = 0.0
+shader_parameter/specular = 0.5
+shader_parameter/roughness = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/normal_scale = 1.0
