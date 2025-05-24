@@ -65,10 +65,9 @@ omni_range = 20.0
 
 [node name="Player" type="CharacterBody3D" parent="." node_paths=PackedStringArray("right_paddle", "left_paddle")]
 script = ExtResource("1_d5coj")
-push_force = 2.0
+push_force = 0.5
+turn_force = 2.0
 jump_force = 2.5
-friction = 0.05
-angular_friction = 0.2
 right_paddle = NodePath("Paddles/Right")
 left_paddle = NodePath("Paddles/Left")
 
