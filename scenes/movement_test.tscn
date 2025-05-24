@@ -1,7 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://c4qwrg2femdoj"]
+[gd_scene load_steps=19 format=3 uid="uid://c4qwrg2femdoj"]
 
 [ext_resource type="Script" uid="uid://c8nqi0le2ibfe" path="res://scripts/player/cart_body.gd" id="1_d5coj"]
-[ext_resource type="Script" uid="uid://bdxeu5afe7edl" path="res://scripts/cameras/tracking_camera.gd" id="1_t354w"]
 [ext_resource type="PackedScene" uid="uid://cmqhenmmppgf7" path="res://scenes/branches/animated_cart.tscn" id="3_s4463"]
 [ext_resource type="PackedScene" uid="uid://buqvwk6vnginp" path="res://models/Shelf.glb" id="4_3v85x"]
 [ext_resource type="Script" uid="uid://b431iip6kkpqh" path="res://scripts/player/animated_paddle_controller.gd" id="4_s4463"]
@@ -45,11 +44,6 @@ shader_parameter/uv_scale = Vector2(100, 100)
 shader_parameter/normal_scale = 1.0
 
 [node name="MovementTest" type="Node3D"]
-
-[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target_node")]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 3, 1)
-script = ExtResource("1_t354w")
-target_node = NodePath("../Player")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.957672, -0.0731471, -0.278412, 0.16932, -0.639032, 0.750313, -0.232797, -0.765695, -0.599597, 0, 0, 0)
