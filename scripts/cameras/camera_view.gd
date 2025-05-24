@@ -9,9 +9,9 @@ var camera: TrackingCamera
 
 
 func _ready() -> void:
-    viewport_container.stretch_shrink = int(
+    (func(): viewport_container.stretch_shrink = int(
         viewport_container.size.x / viewport_size
-    )
+    )).call_deferred()
 
 func initialize_camera(camera_position: Vector3):
     camera = TrackingCamera.new()
