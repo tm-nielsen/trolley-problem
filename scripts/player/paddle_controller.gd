@@ -18,6 +18,8 @@ signal jumped
 @onready var paddle_up := KeyProxy.new(key_paddle_up)
 @onready var paddle_down := KeyProxy.new(key_paddle_down)
 
+var jump_window := KeyProxy.InputWindow.new()
+
 
 func _process(_delta: float) -> void:
     for key_proxy in [paddle_back, paddle_forward, paddle_up, paddle_down]:
@@ -42,6 +44,9 @@ func process_stroke(
         was_flicked(windup_key) else 1.0)
         * direction
     )
+
+func was_jump_flicked() -> bool:
+    return jump_window.was_triggered_within(flick_window)
 
 func was_flicked(key_proxy: KeyProxy) -> bool:
     return key_proxy.was_pressed_within(flick_window)

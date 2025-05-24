@@ -17,6 +17,8 @@ var angular_velocity: float
 func _ready() -> void:
     right_paddle.pushed.connect(apply_push.bind(-1))
     left_paddle.pushed.connect(apply_push.bind(1))
+    right_paddle.jumped.connect(apply_jump.bind(left_paddle))
+    left_paddle.jumped.connect(apply_jump.bind(right_paddle))
 
 func _physics_process(delta: float) -> void:
     velocity += get_gravity() * delta
@@ -25,9 +27,15 @@ func _physics_process(delta: float) -> void:
     rotate_y(angular_velocity)
     move_and_slide()
 
+
 func apply_push(push_scale: float, turn_direction: float):
     velocity += basis.z * push_force * push_scale
     angular_velocity += turn_force / 100 * push_scale * turn_direction
+
+func apply_jump(opposite_paddle: PaddleController):
+    if is_on_floor(): velocity.y += jump_force
+    elif opposite_paddle.was_jump_flicked(): velocity.y += jump_force * 3
+
 
 
 func get_friction_multiplier(f: float, delta: float) -> float:
