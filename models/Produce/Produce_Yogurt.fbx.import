@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cayby1box47as"
-path="res://.godot/imported/Produce_Dingles.fbx-96244478ff165566769c075878d2891b.scn"
+uid="uid://chyf22gb3mn4f"
+path="res://.godot/imported/Produce_Yogurt.fbx-94222573d484fea9123b3a45a2169172.scn"
 
 [deps]
 
-source_file="res://models/Produce/Produce_Dingles.fbx"
-dest_files=["res://.godot/imported/Produce_Dingles.fbx-96244478ff165566769c075878d2891b.scn"]
+source_file="res://models/Produce/Produce_Yogurt.fbx"
+dest_files=["res://.godot/imported/Produce_Yogurt.fbx-94222573d484fea9123b3a45a2169172.scn"]
 
 [params]
 
@@ -33,17 +33,8 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
-"materials": {
-"Material #178": {
-"use_external/enabled": true,
-"use_external/path": "uid://bvn7gh4aitdtn"
-}
-},
 "nodes": {
-"PATH:AnimationPlayer": {
-"import/skip_import": true
-},
-"PATH:Cylinder006": {
+"PATH:Cylinder003": {
 "generate/physics": true,
 "physics/body_type": 1,
 "physics/layer": 4,
