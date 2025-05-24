@@ -37,6 +37,13 @@ _subresources={
 "PATH:AnimationPlayer": {
 "import/skip_import": true,
 "optimizer/enabled": false
+},
+"PATH:Box007": {
+"generate/physics": true,
+"physics/body_type": 1,
+"physics/layer": 4,
+"physics/mask": 7,
+"physics/shape_type": 1
 }
 }
 }

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://5mdyndmhcmw2"
-path="res://.godot/imported/WasteBasket.fbx-233e87d9940c3b8a6e6b5441cc830d66.scn"
+uid="uid://d0tn2ay3ngue3"
+path="res://.godot/imported/Produce_Bread.fbx-ee815a7dc71bd4fd373d52f9e15acb5d.scn"
 
 [deps]
 
-source_file="res://models/WasteBasket.fbx"
-dest_files=["res://.godot/imported/WasteBasket.fbx-233e87d9940c3b8a6e6b5441cc830d66.scn"]
+source_file="res://models/Produce/Produce_Bread.fbx"
+dest_files=["res://.godot/imported/Produce_Bread.fbx-ee815a7dc71bd4fd373d52f9e15acb5d.scn"]
 
 [params]
 
@@ -34,10 +34,7 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "nodes": {
-"PATH:AnimationPlayer": {
-"import/skip_import": true
-},
-"PATH:Cylinder007": {
+"PATH:Box006": {
 "generate/physics": true,
 "physics/body_type": 1,
 "physics/layer": 4,
