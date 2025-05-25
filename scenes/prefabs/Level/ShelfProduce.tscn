@@ -1,0 +1,136 @@
+[gd_scene load_steps=5 format=3 uid="uid://jved86re6krm"]
+
+[ext_resource type="PackedScene" uid="uid://7qwkia1dgl7f" path="res://scenes/prefabs/Level/Physical Shelves/ShelfProduce.tscn" id="1_m8f2v"]
+[ext_resource type="PackedScene" uid="uid://cjl5pu3k04qhu" path="res://models/Produce/Produce_Tomapple.fbx" id="2_7pr5o"]
+[ext_resource type="PackedScene" uid="uid://duclni4qpomk" path="res://models/Produce/Produce_Cabbage.fbx" id="3_3m0f1"]
+[ext_resource type="PackedScene" uid="uid://byvxxa2h25u2n" path="res://models/Produce/Produce_BananaPepper.fbx" id="4_18y4x"]
+
+[node name="Node3D74" type="Node3D"]
+
+[node name="RigidBody3D" parent="." instance=ExtResource("1_m8f2v")]
+
+[node name="Produce_Tomapple" parent="." instance=ExtResource("2_7pr5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.787572, 0.500251, 0.307396)
+
+[node name="Produce_Tomapple2" parent="." instance=ExtResource("2_7pr5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.772188, 0.500251, 0.493986)
+
+[node name="Produce_Tomapple3" parent="." instance=ExtResource("2_7pr5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.82954, 0.500251, 0.660679)
+
+[node name="Produce_Tomapple4" parent="." instance=ExtResource("2_7pr5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.641721, 0.500251, 0.378302)
+
+[node name="Produce_Tomapple5" parent="." instance=ExtResource("2_7pr5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.514379, 0.500251, 0.298126)
+
+[node name="Produce_Tomapple6" parent="." instance=ExtResource("2_7pr5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.624387, 0.500251, 0.520718)
+
+[node name="Produce_Tomapple7" parent="." instance=ExtResource("2_7pr5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.341535, 0.500251, 0.287941)
+
+[node name="Produce_Tomapple8" parent="." instance=ExtResource("2_7pr5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.353849, 0.500251, 0.432527)
+
+[node name="Produce_Tomapple9" parent="." instance=ExtResource("2_7pr5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.374918, 0.500251, 0.568568)
+
+[node name="Produce_Tomapple10" parent="." instance=ExtResource("2_7pr5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.494162, 0.500251, 0.620903)
+
+[node name="Produce_Tomapple11" parent="." instance=ExtResource("2_7pr5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.655949, 0.500251, 0.647463)
+
+[node name="Produce_Tomapple12" parent="." instance=ExtResource("2_7pr5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.373173, 0.500251, 0.709767)
+
+[node name="Produce_Tomapple13" parent="." instance=ExtResource("2_7pr5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.499455, 0.500251, 0.453104)
+
+[node name="Produce_Cabbage" parent="." instance=ExtResource("3_3m0f1")]
+transform = Transform3D(0.598668, 0, 0, 0, 0.5996, 0, 0, 0, 0.591774, -0.0175457, 0.65434, 0.371452)
+
+[node name="Produce_Cabbage2" parent="." instance=ExtResource("3_3m0f1")]
+transform = Transform3D(0.536695, 0, 0, 0, 0.544435, 0, 0, 0, 0.535491, 0.270598, 0.65434, 0.371452)
+
+[node name="Produce_Cabbage3" parent="." instance=ExtResource("3_3m0f1")]
+transform = Transform3D(0.689441, 0, 0, 0, 0.689441, 0, 0, 0, 0.689441, 0.270598, 0.65434, 0.624527)
+
+[node name="Produce_Cabbage4" parent="." instance=ExtResource("3_3m0f1")]
+transform = Transform3D(0.502024, 0, 0, 0, 0.502024, 0, 0, 0, 0.502024, -0.0446008, 0.652746, 0.626887)
+
+[node name="Produce_BananaPepper" parent="." instance=ExtResource("4_18y4x")]
+transform = Transform3D(0.566758, 0, 0, 0, 0.566758, 0, 0, 0, 0.566758, 0.648566, 0.594461, 0.460096)
+
+[node name="Produce_BananaPepper2" parent="." instance=ExtResource("4_18y4x")]
+transform = Transform3D(0.566758, 0, 0, 0, 0.566758, 0, 0, 0, 0.566758, 0.855373, 0.594461, 0.460096)
+
+[node name="Produce_BananaPepper3" parent="." instance=ExtResource("4_18y4x")]
+transform = Transform3D(0.566758, 0, 0, 0, 0.566758, 0, 0, 0, 0.566758, 0.765343, 0.718066, 0.519531)
+
+[node name="Produce_BananaPepper4" parent="." instance=ExtResource("4_18y4x")]
+transform = Transform3D(0.140545, 0.549056, 0, -0.454485, 0.116337, 0.318001, 0.308068, -0.0788578, 0.469138, 0.902066, 0.718066, 0.493595)
+
+[node name="Produce_Tomapple14" parent="." instance=ExtResource("2_7pr5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.787572, 0.500251, -0.418929)
+
+[node name="Produce_Tomapple15" parent="." instance=ExtResource("2_7pr5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.772188, 0.500251, -0.232339)
+
+[node name="Produce_Tomapple16" parent="." instance=ExtResource("2_7pr5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.82954, 0.500251, -0.0656463)
+
+[node name="Produce_Tomapple17" parent="." instance=ExtResource("2_7pr5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.641721, 0.500251, -0.348023)
+
+[node name="Produce_Tomapple18" parent="." instance=ExtResource("2_7pr5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.514379, 0.500251, -0.428199)
+
+[node name="Produce_Tomapple19" parent="." instance=ExtResource("2_7pr5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.624387, 0.500251, -0.205607)
+
+[node name="Produce_Tomapple20" parent="." instance=ExtResource("2_7pr5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.341535, 0.500251, -0.438384)
+
+[node name="Produce_Tomapple21" parent="." instance=ExtResource("2_7pr5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.353849, 0.500251, -0.293798)
+
+[node name="Produce_Tomapple22" parent="." instance=ExtResource("2_7pr5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.374918, 0.500251, -0.157757)
+
+[node name="Produce_Tomapple23" parent="." instance=ExtResource("2_7pr5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.494162, 0.500251, -0.105422)
+
+[node name="Produce_Tomapple24" parent="." instance=ExtResource("2_7pr5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.655949, 0.500251, -0.0788617)
+
+[node name="Produce_Tomapple25" parent="." instance=ExtResource("2_7pr5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.373173, 0.500251, -0.0165585)
+
+[node name="Produce_Tomapple26" parent="." instance=ExtResource("2_7pr5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.499455, 0.500251, -0.273221)
+
+[node name="Produce_Cabbage5" parent="." instance=ExtResource("3_3m0f1")]
+transform = Transform3D(0.598668, 0, 0, 0, 0.5996, 0, 0, 0, 0.591774, -0.0175457, 0.65434, -0.354873)
+
+[node name="Produce_Cabbage6" parent="." instance=ExtResource("3_3m0f1")]
+transform = Transform3D(0.536695, 0, 0, 0, 0.544435, 0, 0, 0, 0.535491, 0.270598, 0.65434, -0.354873)
+
+[node name="Produce_Cabbage7" parent="." instance=ExtResource("3_3m0f1")]
+transform = Transform3D(0.689441, 0, 0, 0, 0.689441, 0, 0, 0, 0.689441, 0.270598, 0.65434, -0.101799)
+
+[node name="Produce_Cabbage8" parent="." instance=ExtResource("3_3m0f1")]
+transform = Transform3D(0.502024, 0, 0, 0, 0.502024, 0, 0, 0, 0.502024, -0.0446008, 0.652746, -0.0994381)
+
+[node name="Produce_BananaPepper5" parent="." instance=ExtResource("4_18y4x")]
+transform = Transform3D(0.566758, 0, 0, 0, 0.566758, 0, 0, 0, 0.566758, 0.648566, 0.594461, -0.266229)
+
+[node name="Produce_BananaPepper6" parent="." instance=ExtResource("4_18y4x")]
+transform = Transform3D(0.566758, 0, 0, 0, 0.566758, 0, 0, 0, 0.566758, 0.855373, 0.594461, -0.266229)
+
+[node name="Produce_BananaPepper7" parent="." instance=ExtResource("4_18y4x")]
+transform = Transform3D(0.566758, 0, 0, 0, 0.566758, 0, 0, 0, 0.566758, 0.765343, 0.718066, -0.206794)
+
+[node name="Produce_BananaPepper8" parent="." instance=ExtResource("4_18y4x")]
+transform = Transform3D(0.140545, 0.549056, 0, -0.454485, 0.116337, 0.318001, 0.308068, -0.0788578, 0.469138, 0.902066, 0.718066, -0.23273)
