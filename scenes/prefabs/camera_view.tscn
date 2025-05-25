@@ -7,19 +7,16 @@ font_size = 12
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(-2, 2)
 
-[node name="Camera View" type="PanelContainer" node_paths=PackedStringArray("viewport_container", "viewport", "label")]
+[node name="Camera View" type="PanelContainer" node_paths=PackedStringArray("viewport", "label")]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_rwqmo")
-viewport_container = NodePath("Viewport Container")
 viewport = NodePath("Viewport Container/Viewport")
 label = NodePath("Viewport Container/Viewport/Label")
-viewport_size = 50
 
 [node name="Viewport Container" type="SubViewportContainer" parent="."]
 layout_mode = 2
 stretch = true
-stretch_shrink = 2
 
 [node name="Viewport" type="SubViewport" parent="Viewport Container"]
 handle_input_locally = false

@@ -22,8 +22,8 @@ TweenHelpers="*res://scripts/globals/tween_helpers.gd"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=384
+window/size/viewport_height=216
 window/size/mode=4
 window/stretch/mode="viewport"
 window/size/mode.editor=0

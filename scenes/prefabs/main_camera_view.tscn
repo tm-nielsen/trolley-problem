@@ -8,16 +8,9 @@ shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(-2, -2)
 
 [node name="Main Camera View" instance=ExtResource("1_fynfm")]
-custom_minimum_size = Vector2(1080, 1080)
+custom_minimum_size = Vector2(216, 216)
 script = ExtResource("2_3meck")
 default_camera_index = 0
-viewport_size = 100
-
-[node name="Viewport Container" parent="." index="0"]
-stretch_shrink = 10
-
-[node name="Viewport" parent="Viewport Container" index="0"]
-size = Vector2i(100, 100)
 
 [node name="Label" parent="Viewport Container/Viewport" index="0"]
 anchors_preset = -1
