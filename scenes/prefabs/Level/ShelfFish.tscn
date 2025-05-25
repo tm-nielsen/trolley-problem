@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://ealvt21fe1ai"]
+
+[ext_resource type="PackedScene" uid="uid://rlbevw3b7p6b" path="res://scenes/prefabs/Level/Physical Shelves/ShelfMeat.tscn" id="1_3i88n"]
+[ext_resource type="PackedScene" uid="uid://cdy0jj7ar7r8d" path="res://models/Produce/Produce_fish.fbx" id="2_d8pl5"]
+
+[node name="Node3D14" type="Node3D"]
+
+[node name="RigidBody3D" parent="." instance=ExtResource("1_3i88n")]
+
+[node name="Produce_fish" parent="." instance=ExtResource("2_d8pl5")]
+transform = Transform3D(-0.00289718, 0.999996, 0, -0.999996, -0.00289718, 0, 0, 0, 1, 0.728539, 0.0698745, -0.00164413)
+
+[node name="Produce_fish2" parent="." instance=ExtResource("2_d8pl5")]
+transform = Transform3D(-0.0195639, 0.999809, 0, -0.999809, -0.0195639, 0, 0, 0, 1, 0.755087, 0.0361634, -0.122257)
+
+[node name="Produce_fish3" parent="." instance=ExtResource("2_d8pl5")]
+transform = Transform3D(-0.00289718, 0.999996, 0, -0.999996, -0.00289718, 0, 0, 0, 1, 0.391298, 0.0698745, -0.00164413)
+
+[node name="Produce_fish4" parent="." instance=ExtResource("2_d8pl5")]
+transform = Transform3D(-0.0195639, 0.999809, 0, -0.999809, -0.0195639, 0, 0, 0, 1, 0.417847, 0.0361634, -0.122257)
+
+[node name="Produce_fish5" parent="." instance=ExtResource("2_d8pl5")]
+transform = Transform3D(-0.00289718, 0.999996, 0, -0.999996, -0.00289718, 0, 0, 0, 1, 0.00816154, 0.0698745, -0.00164413)
+
+[node name="Produce_fish6" parent="." instance=ExtResource("2_d8pl5")]
+transform = Transform3D(-0.0195639, 0.999809, 0, -0.999809, -0.0195639, 0, 0, 0, 1, 0.0347099, 0.0361634, -0.122257)
+
+[node name="Produce_fish7" parent="." instance=ExtResource("2_d8pl5")]
+transform = Transform3D(-0.00289718, 0.999996, 0, -0.999996, -0.00289718, 0, 0, 0, 1, -0.346104, 0.0698745, -0.00164413)
+
+[node name="Produce_fish8" parent="." instance=ExtResource("2_d8pl5")]
+transform = Transform3D(-0.0195639, 0.999809, 0, -0.999809, -0.0195639, 0, 0, 0, 1, -0.319555, 0.0361634, -0.122257)
+
+[node name="Produce_fish9" parent="." instance=ExtResource("2_d8pl5")]
+transform = Transform3D(-0.00289718, 0.999996, 0, -0.999996, -0.00289718, 0, 0, 0, 1, -0.677294, 0.0698745, -0.00164413)
+
+[node name="Produce_fish10" parent="." instance=ExtResource("2_d8pl5")]
+transform = Transform3D(-0.0195639, 0.999809, 0, -0.999809, -0.0195639, 0, 0, 0, 1, -0.650745, 0.0361634, -0.122257)

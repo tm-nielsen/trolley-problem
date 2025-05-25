@@ -17,35 +17,32 @@ size = Vector3(2.00043, 0.0783691, 0.64859)
 [sub_resource type="BoxShape3D" id="BoxShape3D_nqgep"]
 size = Vector3(0.0626831, 0.947998, 0.548828)
 
-[node name="Node3D5" type="Node3D"]
-
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.530012, 0)
+[node name="RigidBody3D" type="RigidBody3D"]
 mass = 3.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="ShelfMeats" parent="." instance=ExtResource("1_n4w6h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02527, -0.48513, 0.214209)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.031189, -0.236748, 0.216171)
 shape = SubResource("BoxShape3D_lmbnb")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0252686, -0.116882, 0.408464)
 shape = SubResource("BoxShape3D_odss6")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.025135, 0.0042572, 0.489746)
 shape = SubResource("BoxShape3D_1kvt3")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0272746, 0.518082, 0.355154)
 shape = SubResource("BoxShape3D_mplft")
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00363, -0.0187988, 0.0224609)
 shape = SubResource("BoxShape3D_nqgep")
 
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.941317, -0.0115967, 0.0224609)
 shape = SubResource("BoxShape3D_nqgep")
-
-[node name="ShelfMeats" parent="RigidBody3D" instance=ExtResource("1_n4w6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02527, -0.48513, 0.214209)
