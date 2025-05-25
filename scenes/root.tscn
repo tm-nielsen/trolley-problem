@@ -85,6 +85,8 @@ text = "1:30:00"
 label_settings = SubResource("LabelSettings_5sfjl")
 horizontal_alignment = 1
 script = ExtResource("3_3hfy5")
+starting_time = 60.0
+collection_bonus = 40.0
 
 [node name="CenterContainer" type="Control" parent="VBoxContainer/HUD/Grocery List"]
 layout_mode = 2
@@ -106,16 +108,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.11937, 3, -28.2633)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.4514, 3, -26.5084)
 
 [node name="Camera 3" type="Node3D" parent="Camera Positions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2188, 3, -14.451)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2188, 4.94527, -14.451)
 
 [node name="Camera 4" type="Node3D" parent="Camera Positions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.50006, 3, 1.4629)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.50006, 6.04191, 1.4629)
 
 [node name="Camera 5" type="Node3D" parent="Camera Positions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.0214, 3.76444, 0.7069)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.6986, 6.84578, -0.42903)
 
 [node name="Camera 6" type="Node3D" parent="Camera Positions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6011, 3, -35.7201)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.9539, 5.36916, -29.5616)
 
 [node name="Level" parent="." instance=ExtResource("6_7pvxh")]
 

@@ -12,31 +12,16 @@ size = Vector3(0.774414, 2.07928, 0.11145)
 [sub_resource type="BoxShape3D" id="BoxShape3D_hxd6c"]
 size = Vector3(0.342773, 2.07404, 1.25397)
 
-[node name="RigidBody3D" type="RigidBody3D"]
+[node name="RigidBody3D" type="StaticBody3D"]
 
 [node name="ShelfCorner" parent="." instance=ExtResource("1_yka06")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.147736, -0.5, -0.142278)
 
-[node name="Produce_Jug" parent="." instance=ExtResource("2_kp3dd")]
-transform = Transform3D(0.568718, 0, 0, 0, 0.568718, 0, 0, 0, 0.568718, -0.187322, -0.419161, -0.503152)
-
-[node name="Produce_Jug2" parent="." instance=ExtResource("2_kp3dd")]
-transform = Transform3D(0.568718, 0, 0, 0, 0.568718, 0, 0, 0, 0.568718, -0.187322, -0.419161, -0.22762)
-
 [node name="Produce_Jug3" parent="." instance=ExtResource("2_kp3dd")]
 transform = Transform3D(0.568718, 0, 0, 0, 0.568718, 0, 0, 0, 0.568718, -0.187322, -0.419161, 0.0235928)
 
-[node name="Produce_Jug4" parent="." instance=ExtResource("2_kp3dd")]
-transform = Transform3D(0.568718, 0, 0, 0, 0.568718, 0, 0, 0, 0.568718, -0.187322, -0.419161, 0.279868)
-
 [node name="Produce_Jug5" parent="." instance=ExtResource("2_kp3dd")]
 transform = Transform3D(0.568718, 0, 0, 0, 0.568718, 0, 0, 0, 0.568718, -0.187322, 0.0135202, -0.503152)
-
-[node name="Produce_Jug6" parent="." instance=ExtResource("2_kp3dd")]
-transform = Transform3D(0.568718, 0, 0, 0, 0.568718, 0, 0, 0, 0.568718, -0.187322, 0.0135202, -0.22762)
-
-[node name="Produce_Jug7" parent="." instance=ExtResource("2_kp3dd")]
-transform = Transform3D(0.568718, 0, 0, 0, 0.568718, 0, 0, 0, 0.568718, -0.187322, 0.0135202, 0.0235928)
 
 [node name="Produce_Jug8" parent="." instance=ExtResource("2_kp3dd")]
 transform = Transform3D(0.568718, 0, 0, 0, 0.568718, 0, 0, 0, 0.568718, -0.187322, 0.0135202, 0.279868)
@@ -44,38 +29,17 @@ transform = Transform3D(0.568718, 0, 0, 0, 0.568718, 0, 0, 0, 0.568718, -0.18732
 [node name="Produce_Jug9" parent="." instance=ExtResource("2_kp3dd")]
 transform = Transform3D(0.568718, 0, 0, 0, 0.568718, 0, 0, 0, 0.568718, -0.187322, 0.425798, -0.503152)
 
-[node name="Produce_Jug10" parent="." instance=ExtResource("2_kp3dd")]
-transform = Transform3D(0.568718, 0, 0, 0, 0.568718, 0, 0, 0, 0.568718, -0.187322, 0.425798, -0.22762)
-
 [node name="Produce_Jug11" parent="." instance=ExtResource("2_kp3dd")]
 transform = Transform3D(0.568718, 0, 0, 0, 0.568718, 0, 0, 0, 0.568718, -0.187322, 0.425798, 0.0235928)
-
-[node name="Produce_Jug12" parent="." instance=ExtResource("2_kp3dd")]
-transform = Transform3D(0.568718, 0, 0, 0, 0.568718, 0, 0, 0, 0.568718, -0.187322, 0.425798, 0.279868)
-
-[node name="Produce_Jug13" parent="." instance=ExtResource("2_kp3dd")]
-transform = Transform3D(0.568718, 0, 0, 0, 0.568718, 0, 0, 0, 0.568718, -0.187322, 0.840926, -0.503152)
 
 [node name="Produce_Jug14" parent="." instance=ExtResource("2_kp3dd")]
 transform = Transform3D(0.568718, 0, 0, 0, 0.568718, 0, 0, 0, 0.568718, -0.187322, 0.840926, -0.22762)
 
-[node name="Produce_Jug15" parent="." instance=ExtResource("2_kp3dd")]
-transform = Transform3D(0.568718, 0, 0, 0, 0.568718, 0, 0, 0, 0.568718, -0.187322, 0.840926, 0.0235928)
-
 [node name="Produce_Jug16" parent="." instance=ExtResource("2_kp3dd")]
 transform = Transform3D(0.568718, 0, 0, 0, 0.568718, 0, 0, 0, 0.568718, -0.187322, 0.840926, 0.279868)
 
-[node name="Produce_Jug17" parent="." instance=ExtResource("2_kp3dd")]
-transform = Transform3D(0.568718, 0, 0, 0, 0.568718, 0, 0, 0, 0.568718, -0.187322, 1.25483, -0.503152)
-
 [node name="Produce_Jug18" parent="." instance=ExtResource("2_kp3dd")]
 transform = Transform3D(0.568718, 0, 0, 0, 0.568718, 0, 0, 0, 0.568718, -0.187322, 1.25483, -0.22762)
-
-[node name="Produce_Jug19" parent="." instance=ExtResource("2_kp3dd")]
-transform = Transform3D(0.568718, 0, 0, 0, 0.568718, 0, 0, 0, 0.568718, -0.187322, 1.25483, 0.0235928)
-
-[node name="Produce_Jug20" parent="." instance=ExtResource("2_kp3dd")]
-transform = Transform3D(0.568718, 0, 0, 0, 0.568718, 0, 0, 0, 0.568718, -0.187322, 1.25483, 0.279868)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.147101, -0.464371, -0.14398)

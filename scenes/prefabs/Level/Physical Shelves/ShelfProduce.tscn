@@ -12,6 +12,7 @@ size = Vector3(2.02716, 1.16028, 0.0322876)
 size = Vector3(0.0332031, 1.31006, 1.36523)
 
 [node name="RigidBody3D" type="RigidBody3D"]
+mass = 3.0
 
 [node name="ShelfProduce" parent="." instance=ExtResource("1_qavhp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10145, 0, 0.12246)

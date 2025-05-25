@@ -75,6 +75,8 @@ func _process_slide_collision(
             colliding_body, collision.get_normal(),
             previous_velocity
         )
+    elif colliding_body.name != "Ground":
+        collided.emit(previous_velocity.length() * 5)
     return previous_velocity
     
 func _process_rigidbody_collision(

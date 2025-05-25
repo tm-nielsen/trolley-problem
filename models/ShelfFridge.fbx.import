@@ -38,7 +38,7 @@ _subresources={
 "import/skip_import": true
 },
 "PATH:Box008": {
-"physics/body_type": 1,
+"generate/physics": true,
 "physics/layer": 4,
 "physics/mask": 7,
 "physics/shape_type": 1

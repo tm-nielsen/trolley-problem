@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dqs0rmplo0iwy"]
+
+[ext_resource type="Shader" uid="uid://bxtqnrbo5lpp5" path="res://resources/shaders/lit.gdshader" id="1_caa0o"]
+[ext_resource type="Texture2D" uid="uid://daa8o5s18adol" path="res://models/Cerial_DefaultMaterial_BaseColor.png" id="2_caa0o"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_caa0o")
+shader_parameter/albedo_colour = Color(1, 1, 1, 1)
+shader_parameter/albedo_texture = ExtResource("2_caa0o")
+shader_parameter/metallic = 0.0
+shader_parameter/specular = 0.5
+shader_parameter/roughness = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/normal_scale = 1.0

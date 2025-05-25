@@ -7,17 +7,17 @@
 
 [node name="RigidBody3D" parent="." instance=ExtResource("1_3ayuw")]
 
-[node name="Produce_Meat" parent="RigidBody3D" instance=ExtResource("2_xselp")]
+[node name="Produce_Meat" parent="." instance=ExtResource("2_xselp")]
 transform = Transform3D(-0.0216918, -0.993327, 0.113273, 0.999762, -0.0218323, 0, 0.002473, 0.113246, 0.993564, 0.600574, 0.0635021, -0.0438213)
 
-[node name="Produce_Meat2" parent="RigidBody3D" instance=ExtResource("2_xselp")]
+[node name="Produce_Meat2" parent="." instance=ExtResource("2_xselp")]
 transform = Transform3D(-0.0216918, -0.993327, 0.113273, 0.999762, -0.0218323, 0, 0.002473, 0.113246, 0.993564, 0.0682583, 0.0635021, -0.0438213)
 
-[node name="Produce_Meat3" parent="RigidBody3D" instance=ExtResource("2_xselp")]
+[node name="Produce_Meat3" parent="." instance=ExtResource("2_xselp")]
 transform = Transform3D(-0.0216918, -0.993327, 0.113273, 0.999762, -0.0218323, 0, 0.002473, 0.113246, 0.993564, -0.46007, 0.0635021, -0.0438213)
 
-[node name="Produce_Meat4" parent="RigidBody3D" instance=ExtResource("2_xselp")]
+[node name="Produce_Meat4" parent="." instance=ExtResource("2_xselp")]
 transform = Transform3D(-0.0216918, -0.993327, 0.113273, 0.999762, -0.0218323, 0, 0.002473, 0.113246, 0.993564, -0.214458, 0.240358, -0.0256824)
 
-[node name="Produce_Meat5" parent="RigidBody3D" instance=ExtResource("2_xselp")]
+[node name="Produce_Meat5" parent="." instance=ExtResource("2_xselp")]
 transform = Transform3D(-0.0216918, -0.993327, 0.113273, 0.999762, -0.0218323, 0, 0.002473, 0.113246, 0.993564, 0.306841, 0.240358, -0.0253811)
