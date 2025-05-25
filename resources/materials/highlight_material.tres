@@ -12,5 +12,5 @@ shader_parameter/colour = Color(1, 1, 1, 1)
 render_priority = 0
 next_pass = SubResource("ShaderMaterial_puvub")
 shader = ExtResource("1_ne3hj")
-shader_parameter/scale = 1.25
+shader_parameter/scale = 1.5
 shader_parameter/colour = Color(0.407843, 0.745098, 0.243137, 1)
