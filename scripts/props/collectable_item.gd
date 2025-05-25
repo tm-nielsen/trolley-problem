@@ -5,8 +5,9 @@ signal collected
 
 static var item_name_regex := RegEx.new().compile("(\\w).")
 
-@export var default_item: PackedScene
+@export var collection_effect: PackedScene
 @export var mesh: MeshInstance3D
+@export var default_item: PackedScene
 
 var item_name: String
 
@@ -39,4 +40,9 @@ func _on_body_entered(body: Node3D):
     if body is CartBody:
         collected.emit()
         GlobalSignalBus.notify_item_collected(self)
+        var effect: CPUParticles3D = collection_effect.instantiate()
+        effect.position = position
+        effect.finished.connect(effect.queue_free)
+        effect.emitting = true
+        add_sibling(effect)
         queue_free()
