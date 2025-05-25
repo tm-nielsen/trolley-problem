@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://cqqic1e8nq14r" path="res://scenes/prefabs/camera_view.tscn" id="3_lrqlo"]
 [ext_resource type="Script" uid="uid://cvfww8dfyi56s" path="res://scripts/cameras/camera_view_grid.gd" id="3_sqa0i"]
 [ext_resource type="Script" uid="uid://b0xjahu5d7ops" path="res://scripts/props/win_area.gd" id="6_5sfjl"]
-[ext_resource type="PackedScene" uid="uid://cw8ifpatxe80h" path="res://scenes/Level.tscn" id="6_7pvxh"]
+[ext_resource type="PackedScene" uid="uid://ddrbqtusqv5ie" path="res://scenes/Level.tscn" id="6_7pvxh"]
 [ext_resource type="Script" uid="uid://5rjo2jegqlhc" path="res://scripts/ui/win_screen.gd" id="6_kycxp"]
 [ext_resource type="Shader" uid="uid://cnyo3c7dwyohc" path="res://resources/shaders/highlight.gdshader" id="7_3hfy5"]
-[ext_resource type="Script" uid="uid://8ofg87t6g10u" path="res://scripts/ui/lose_screen.gd" id="10_7pvxh"]
+[ext_resource type="Script" path="res://scripts/ui/lose_screen.gd" id="10_7pvxh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j287u"]
 line_spacing = -6.0
