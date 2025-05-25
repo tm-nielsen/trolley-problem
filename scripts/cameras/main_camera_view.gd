@@ -6,6 +6,7 @@ extends CameraView
 
 func _ready():
     view_grid.initialize_view(self, default_camera_index)
+    viewport.audio_listener_enable_3d = true
 
 func _process(_delta: float) -> void:
     for i in CameraViewGrid.VIEW_COUNT:

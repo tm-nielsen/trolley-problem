@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5mw8yevevsir"]
+[gd_scene load_steps=8 format=3 uid="uid://b5mw8yevevsir"]
 
 [ext_resource type="Script" uid="uid://c8nqi0le2ibfe" path="res://scripts/player/cart_body.gd" id="1_vrmcy"]
 [ext_resource type="PackedScene" uid="uid://cmqhenmmppgf7" path="res://scenes/branches/animated_cart.tscn" id="2_3ebvs"]
 [ext_resource type="Script" uid="uid://b431iip6kkpqh" path="res://scripts/player/animated_paddle_controller.gd" id="3_hcg2o"]
 [ext_resource type="PackedScene" uid="uid://3v5371psmp5s" path="res://models/Oar.fbx" id="4_3ebvs"]
+[ext_resource type="AudioStream" uid="uid://dm4hn24gjme7e" path="res://audio/trolley_problem_bgm.ogg" id="5_hcg2o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nyyim"]
 size = Vector3(0.493896, 0.174194, 0.802765)
@@ -65,5 +66,10 @@ key_paddle_down = 4194321
 
 [node name="Oar" parent="Paddles/Right" instance=ExtResource("4_3ebvs")]
 transform = Transform3D(-0.5, 0.866025, 0, -0.866025, -0.5, 0, 0, 0, 1, -0.1, 0.1, 0)
+
+[node name="Music Source" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_hcg2o")
+unit_size = 2.0
+autoplay = true
 
 [connection signal="collided" from="." to="Animated Cart" method="_on_cart_collided"]
