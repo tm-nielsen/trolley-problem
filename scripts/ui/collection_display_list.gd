@@ -1,6 +1,11 @@
 extends Control
 
 @export var label_settings: LabelSettings
+@export var collected_initial_colour := Color.WEB_GREEN
+@export var collected_colour := Color.WEB_GRAY
+@export var collected_initial_scale: float = 1.3
+@export var collected_scale: float = 0.8
+@export var collected_tween_duration: float = 0.25
 
 var displays: Array[CollectableItemDisplay]
 
@@ -23,7 +28,29 @@ func initialize_item_displays(items: Array[CollectableItem]):
 
 func toggle_item_listing(item: CollectableItem):
     for display in displays:
-        display.toggle_display_if_matches_item(item)
+        if display.matches_item(item):
+            display.toggle_label_text()
+            start_collected_tween(display.label)
+
+func start_collected_tween(target: Label):
+    var new_settings: LabelSettings = label_settings.duplicate()
+    new_settings.font_color = collected_initial_colour
+    new_settings.font_size = int(
+        label_settings.font_size * collected_initial_scale
+    )
+    target.label_settings = new_settings
+    var collected_tween = TweenHelpers.create_tween()
+    collected_tween.set_parallel()
+    collected_tween.tween_property(
+        new_settings, "font_size",
+        new_settings.font_size * collected_scale,
+        collected_tween_duration
+    )
+    collected_tween.tween_property(
+        target.label_settings, "font_color", collected_colour,
+        collected_tween_duration
+    )
+
 
 
 class CollectableItemDisplay:
@@ -39,6 +66,8 @@ class CollectableItemDisplay:
         label.size_flags_vertical = Control.SIZE_EXPAND_FILL
         label.text = source_item.item_name + " [  ]"
 
-    func toggle_display_if_matches_item(item: CollectableItem):
-        if item == source_item:
-            label.text = source_item.item_name + " [x]"
+    func matches_item(item: CollectableItem) -> bool:
+        return item == source_item
+
+    func toggle_label_text():
+        label.text = source_item.item_name + " [x]"
