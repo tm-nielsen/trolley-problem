@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmqhenmmppgf7"]
+[gd_scene load_steps=13 format=3 uid="uid://cmqhenmmppgf7"]
 
 [ext_resource type="PackedScene" uid="uid://dbxu6bm5wp4it" path="res://models/cart/Cart.fbx" id="1_heai7"]
 [ext_resource type="Script" uid="uid://2lhn7bk5ykyh" path="res://scripts/player/cart_animator.gd" id="2_8l3nx"]
 [ext_resource type="Shader" uid="uid://bxtqnrbo5lpp5" path="res://resources/shaders/lit.gdshader" id="3_j708q"]
 [ext_resource type="Shader" uid="uid://dnty4paqqicfy" path="res://resources/shaders/hidden.gdshader" id="4_a66td"]
+[ext_resource type="Script" uid="uid://dvukquhl6damt" path="res://scripts/utilities/elastic_vector2.gd" id="5_a66td"]
+[ext_resource type="Script" uid="uid://ns3rdr2i7qbg" path="res://scripts/utilities/elastic_value.gd" id="6_gmmsd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gmmsd"]
 render_priority = 0
@@ -31,13 +33,42 @@ shader_parameter/emission = Color(0, 0, 0, 1)
 shader_parameter/uv_scale = Vector2(1, 1)
 shader_parameter/normal_scale = 1.0
 
-[node name="Animated Cart" node_paths=PackedStringArray("mesh") instance=ExtResource("1_heai7")]
+[sub_resource type="Resource" id="Resource_cd16s"]
+script = ExtResource("5_a66td")
+elasticity = Vector2(0.05, 0.05)
+friction = Vector2(0.2, 0.2)
+metadata/_custom_type_script = "uid://dvukquhl6damt"
+
+[sub_resource type="Resource" id="Resource_my12e"]
+script = ExtResource("5_a66td")
+elasticity = Vector2(0.05, 0.05)
+friction = Vector2(0.2, 0.2)
+metadata/_custom_type_script = "uid://dvukquhl6damt"
+
+[sub_resource type="Resource" id="Resource_l5s35"]
+script = ExtResource("6_gmmsd")
+elasticity = 0.05
+friction = 0.2
+metadata/_custom_type_script = "uid://ns3rdr2i7qbg"
+
+[node name="Animated Cart" node_paths=PackedStringArray("mesh", "wiggle_target") instance=ExtResource("1_heai7")]
 script = ExtResource("2_8l3nx")
 mesh = NodePath("Skeleton3D/Cart")
 material_body = SubResource("ShaderMaterial_gmmsd")
 material_hidden = SubResource("ShaderMaterial_cd16s")
 material_collided = SubResource("ShaderMaterial_my12e")
+wiggle_target = NodePath("Skeleton3D/BoneAttachment3D")
+elastic_wiggle_rotation = SubResource("Resource_cd16s")
+elastic_wiggle_position = SubResource("Resource_my12e")
+elastic_wiggle_height = SubResource("Resource_l5s35")
 
 [node name="Skeleton3D" parent="." index="0"]
 bones/1/position = Vector3(-0.00388418, 0.0187048, 0.168419)
 bones/1/rotation = Quaternion(0.4092, 0.0133193, 0.0657874, 0.909972)
+bones/1/scale = Vector3(1, 1, 1)
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Skeleton3D" index="1"]
+transform = Transform3D(1.6971, -0.0797417, 0.111016, 0.00371331, 1.40922, 0.955461, -0.136636, -0.952135, 1.40484, 0.00332627, 0.33988, -0.0524004)
+bone_name = "mixamorig_Basket"
+bone_idx = 1
+override_pose = true
