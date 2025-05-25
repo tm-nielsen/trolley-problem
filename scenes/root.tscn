@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://dviwm18mhuwff"]
+[gd_scene load_steps=14 format=3 uid="uid://dviwm18mhuwff"]
 
 [ext_resource type="PackedScene" uid="uid://c4qwrg2femdoj" path="res://scenes/movement_test.tscn" id="1_j5px3"]
 [ext_resource type="PackedScene" uid="uid://x3sl82ycs0y" path="res://scenes/prefabs/main_camera_view.tscn" id="1_jh1ax"]
+[ext_resource type="Script" uid="uid://bojvm0g2lcy7v" path="res://scripts/ui/collection_display.gd" id="2_5sfjl"]
 [ext_resource type="PackedScene" uid="uid://cqqic1e8nq14r" path="res://scenes/prefabs/camera_view.tscn" id="3_lrqlo"]
 [ext_resource type="Script" uid="uid://cvfww8dfyi56s" path="res://scripts/cameras/camera_view_grid.gd" id="3_sqa0i"]
 [ext_resource type="Script" uid="uid://b0xjahu5d7ops" path="res://scripts/props/win_area.gd" id="6_5sfjl"]
@@ -10,7 +11,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_j287u"]
 line_spacing = -6.0
-font_size = 20
+font_size = 18
 
 [sub_resource type="LabelSettings" id="LabelSettings_5sfjl"]
 font_size = 26
@@ -66,10 +67,12 @@ alignment = 1
 
 [node name="Item Count" type="Label" parent="VBoxContainer/HUD/Grocery List/VBox"]
 layout_mode = 2
+size_flags_vertical = 6
 text = "6
 Wares Craved"
 label_settings = SubResource("LabelSettings_j287u")
 horizontal_alignment = 1
+script = ExtResource("2_5sfjl")
 
 [node name="Timer" type="Label" parent="VBoxContainer/HUD/Grocery List/VBox"]
 layout_mode = 2
@@ -158,7 +161,7 @@ stretch_shrink = 32
 [node name="SubViewport" type="SubViewport" parent="Win Screen/SubViewportContainer"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(60, 33)
+size = Vector2i(12, 6)
 render_target_update_mode = 0
 
 [node name="Label" type="Label" parent="Win Screen/SubViewportContainer/SubViewport"]
