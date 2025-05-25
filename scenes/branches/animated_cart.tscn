@@ -41,4 +41,3 @@ material_collided = SubResource("ShaderMaterial_my12e")
 [node name="Skeleton3D" parent="." index="0"]
 bones/1/position = Vector3(-0.00388418, 0.0187048, 0.168419)
 bones/1/rotation = Quaternion(0.4092, 0.0133193, 0.0657874, 0.909972)
-bones/1/scale = Vector3(1, 1, 1)

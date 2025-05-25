@@ -2,6 +2,7 @@ class_name CartAnimator
 extends Node3D
 
 @export var mesh: MeshInstance3D
+@export var collision_momentum_threshold: float = 20
 @export var collision_pose_duration: float = 0.2
 @export_subgroup("mesh animation frames", "surface_index")
 @export var surface_index_normal: int = 3
@@ -29,7 +30,8 @@ func show_mesh_pose(surface_index: int, material := material_body):
     )
     current_body_mesh_index = surface_index
 
-func _on_cart_collided():
+func _on_cart_collided(collision_momentum: float):
+    if collision_momentum < collision_momentum_threshold: return
     show_mesh_pose(surface_index_collided, material_collided)
     if collision_tween: collision_tween.kill()
     collision_tween = create_tween()
