@@ -1,16 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvvdm4gh8m80q"]
+[gd_scene load_steps=3 format=3 uid="uid://dvvdm4gh8m80q"]
 
-[ext_resource type="Shader" uid="uid://cnyo3c7dwyohc" path="res://resources/shaders/highlight.gdshader" id="1_usjsh"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_oirta"]
-render_priority = 0
-shader = ExtResource("1_usjsh")
-shader_parameter/scale = 1.0
-shader_parameter/colour = Color(1, 1, 1, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_bxoyg"]
-material = SubResource("ShaderMaterial_oirta")
-size = Vector3(0.2, 0.2, 0.2)
+[ext_resource type="ArrayMesh" uid="uid://wfx34lu7se2y" path="res://models/cart/sparks.res" id="1_usjsh"]
 
 [sub_resource type="Curve" id="Curve_jkjbx"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.9338, 0.0, 0, 0]
@@ -18,12 +8,12 @@ point_count = 2
 
 [node name="Collection Particles" type="CPUParticles3D"]
 emitting = false
-amount = 40
+amount = 16
 one_shot = true
 explosiveness = 1.0
 lifetime_randomness = 0.55
-fixed_fps = 24
-mesh = SubResource("BoxMesh_bxoyg")
+fixed_fps = 18
+mesh = ExtResource("1_usjsh")
 particle_flag_align_y = true
 direction = Vector3(0, 1, 0)
 gravity = Vector3(0, -16, 0)
@@ -33,4 +23,6 @@ angular_velocity_min = -720.0
 angular_velocity_max = 720.0
 damping_min = 2.0
 damping_max = 10.0
+scale_amount_min = 0.1
+scale_amount_max = 0.4
 scale_amount_curve = SubResource("Curve_jkjbx")
