@@ -8,7 +8,7 @@ size = Vector3(0.427032, 0.0595703, 1.23187)
 [sub_resource type="BoxShape3D" id="BoxShape3D_dv1xh"]
 size = Vector3(0.335754, 2.59729, 1.25159)
 
-[node name="RigidBody3D" type="RigidBody3D"]
+[node name="RigidBody3D" type="StaticBody3D"]
 
 [node name="ShelfDouble" parent="." instance=ExtResource("1_whp2t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0444098, 0.0143544, -0.0535412)
