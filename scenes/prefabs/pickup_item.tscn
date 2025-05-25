@@ -9,7 +9,7 @@ radius = 0.1
 height = 0.2
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_hxxso"]
-radius = 1.0
+radius = 0.8
 
 [node name="Pickup Item" type="Area3D" node_paths=PackedStringArray("mesh")]
 collision_layer = 4
@@ -19,6 +19,7 @@ default_item = ExtResource("2_t4825")
 mesh = NodePath("Mesh")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 material_override = ExtResource("3_2m1ky")
 mesh = SubResource("SphereMesh_tbu7o")
 
