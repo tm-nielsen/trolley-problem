@@ -24,11 +24,11 @@
 [ext_resource type="PackedScene" uid="uid://chyf22gb3mn4f" path="res://models/Produce/Produce_Yogurt.fbx" id="21_q7esf"]
 [ext_resource type="PackedScene" uid="uid://cqifel6uv2vgs" path="res://models/ShelfProduce.fbx" id="22_eyh1f"]
 [ext_resource type="PackedScene" uid="uid://bo5q8fxwo3rti" path="res://models/Produce/Produce_Oreo.fbx" id="24_ys1rm"]
-[ext_resource type="Script" uid="uid://d0vc0acswmb8h" path="res://scripts/props/pickup_item_pool.gd" id="25_vj3qe"]
+[ext_resource type="Script" uid="uid://mont5n28gsku" path="res://scripts/props/collection_pool.gd" id="25_vj3qe"]
 [ext_resource type="PackedScene" uid="uid://d0tn2ay3ngue3" path="res://models/Produce/Produce_Bread.fbx" id="26_q7esf"]
 [ext_resource type="PackedScene" uid="uid://cdy0jj7ar7r8d" path="res://models/Produce/Produce_fish.fbx" id="27_jp5t7"]
 [ext_resource type="PackedScene" uid="uid://7pcv5wmvi4tu" path="res://models/Produce/Produce_Meat.fbx" id="28_wt0ut"]
-[ext_resource type="PackedScene" uid="uid://b4hov5hkkmrkn" path="res://scenes/prefabs/pickup_item.tscn" id="29_hvjgr"]
+[ext_resource type="PackedScene" uid="uid://b4hov5hkkmrkn" path="res://scenes/prefabs/collectable_item.tscn" id="29_hvjgr"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qolh1"]
 
@@ -155,6 +155,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46052, -0.5, -3.48641)
 
 [node name="Pickups" type="Node3D" parent="."]
 script = ExtResource("25_vj3qe")
+item_count = 6
 item_options = Array[PackedScene]([ExtResource("12_ragsk"), ExtResource("13_a5nw2"), ExtResource("14_wor2h"), ExtResource("26_q7esf"), ExtResource("15_ys1rm"), ExtResource("16_b518v"), ExtResource("17_4yr4p"), ExtResource("13_wor2h"), ExtResource("18_eyh1f"), ExtResource("27_jp5t7"), ExtResource("19_igsfy"), ExtResource("28_wt0ut"), ExtResource("24_ys1rm"), ExtResource("20_vj3qe"), ExtResource("21_q7esf")])
 
 [node name="Pickup Item" parent="Pickups" instance=ExtResource("29_hvjgr")]

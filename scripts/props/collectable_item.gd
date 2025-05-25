@@ -1,3 +1,4 @@
+class_name CollectableItem
 extends Area3D
 
 signal collected
@@ -28,4 +29,5 @@ func _find_mesh_instance(parent: Node3D) -> MeshInstance3D:
 func _on_body_entered(body: Node3D):
     if body is CartBody:
         collected.emit()
+        GlobalSignalBus.notify_item_collected(self)
         queue_free()

@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://dviwm18mhuwff"]
+[gd_scene load_steps=14 format=3 uid="uid://dviwm18mhuwff"]
 
 [ext_resource type="PackedScene" uid="uid://c4qwrg2femdoj" path="res://scenes/movement_test.tscn" id="1_j5px3"]
 [ext_resource type="PackedScene" uid="uid://x3sl82ycs0y" path="res://scenes/prefabs/main_camera_view.tscn" id="1_jh1ax"]
 [ext_resource type="FontFile" uid="uid://c418aq7tc7cf" path="res://resources/ui/fonts/PermanentMarker-Regular.ttf" id="2_twpsu"]
 [ext_resource type="PackedScene" uid="uid://cqqic1e8nq14r" path="res://scenes/prefabs/camera_view.tscn" id="3_lrqlo"]
 [ext_resource type="Script" uid="uid://cvfww8dfyi56s" path="res://scripts/cameras/camera_view_grid.gd" id="3_sqa0i"]
+[ext_resource type="Script" uid="uid://b0xjahu5d7ops" path="res://scripts/props/win_area.gd" id="6_5sfjl"]
 [ext_resource type="Script" uid="uid://5rjo2jegqlhc" path="res://scripts/ui/win_screen.gd" id="6_kycxp"]
+[ext_resource type="Shader" uid="uid://cnyo3c7dwyohc" path="res://resources/shaders/highlight.gdshader" id="7_3hfy5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jh1ax"]
 font = ExtResource("2_twpsu")
@@ -16,6 +18,18 @@ font_color = Color(0, 0, 0, 1)
 font = ExtResource("2_twpsu")
 font_size = 48
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7pvxh"]
+render_priority = 0
+shader = ExtResource("7_3hfy5")
+shader_parameter/scale = 1.0
+shader_parameter/colour = Color(0.407843, 0.745098, 0.243137, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_y3xxt"]
+size = Vector2(4, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xsp7o"]
+size = Vector3(4, 1, 4)
 
 [node name="Root" type="Control"]
 layout_mode = 3
@@ -159,6 +173,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0360146, 3, 5.94226)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1282, 3, 5.07793)
 
 [node name="MovementTest" parent="." instance=ExtResource("1_j5px3")]
+
+[node name="Win Area" type="Area3D" parent="." node_paths=PackedStringArray("indicator")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, -8.9)
+collision_layer = 5
+collision_mask = 2
+script = ExtResource("6_5sfjl")
+indicator = NodePath("Flashing Tile")
+
+[node name="Flashing Tile" type="MeshInstance3D" parent="Win Area"]
+material_override = SubResource("ShaderMaterial_7pvxh")
+mesh = SubResource("PlaneMesh_y3xxt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Win Area"]
+shape = SubResource("BoxShape3D_xsp7o")
 
 [node name="Win Screen" type="Control" parent="."]
 process_mode = 3

@@ -1,6 +1,7 @@
 extends Control
 
 func _ready() -> void:
+    GlobalSignalBus.game_won.connect(activate)
     hide()
 
 func _process(_delta: float) -> void:
