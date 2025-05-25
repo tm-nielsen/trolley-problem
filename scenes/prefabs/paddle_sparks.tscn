@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp02dgmjloyc"]
+
+[ext_resource type="ArrayMesh" uid="uid://wfx34lu7se2y" path="res://models/cart/sparks.res" id="1_ltim6"]
+[ext_resource type="Script" uid="uid://dd0pya6rbj0mp" path="res://scripts/player/paddle_sparks.gd" id="2_iqmqi"]
+
+[sub_resource type="Curve" id="Curve_qnkue"]
+_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(0.1, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.76495, 0.0, 0, 0]
+point_count = 3
+
+[node name="Sparks" type="MeshInstance3D"]
+mesh = ExtResource("1_ltim6")
+script = ExtResource("2_iqmqi")
+lifetime = 0.8
+base_scale = 0.15
+scale_curve = SubResource("Curve_qnkue")
+push_force = 1.5

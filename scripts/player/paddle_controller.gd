@@ -22,9 +22,15 @@ var jump_window := KeyProxy.InputWindow.new()
 
 
 func _process(_delta: float) -> void:
+    update_proxies()
+    process_input_movements()
+
+
+func update_proxies():
     for key_proxy in [paddle_back, paddle_forward, paddle_up, paddle_down]:
         key_proxy.update()
 
+func process_input_movements():
     if paddle_down.is_pressed:
         process_stroke(paddle_back, paddle_forward, 1)
         process_stroke(paddle_forward, paddle_back, -1)
@@ -32,6 +38,7 @@ func _process(_delta: float) -> void:
         paddle_down.was_pressed_this_frame &&
         paddle_up.was_pressed_within(flick_window)
     ): jumped.emit()
+
 
 func process_stroke(
     action_key: KeyProxy,

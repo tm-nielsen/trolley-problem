@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5mw8yevevsir"]
+[gd_scene load_steps=9 format=3 uid="uid://b5mw8yevevsir"]
 
 [ext_resource type="Script" uid="uid://c8nqi0le2ibfe" path="res://scripts/player/cart_body.gd" id="1_vrmcy"]
 [ext_resource type="PackedScene" uid="uid://cmqhenmmppgf7" path="res://scenes/branches/animated_cart.tscn" id="2_3ebvs"]
 [ext_resource type="Script" uid="uid://b431iip6kkpqh" path="res://scripts/player/animated_paddle_controller.gd" id="3_hcg2o"]
 [ext_resource type="PackedScene" uid="uid://3v5371psmp5s" path="res://models/Oar.fbx" id="4_3ebvs"]
+[ext_resource type="PackedScene" uid="uid://dp02dgmjloyc" path="res://scenes/prefabs/paddle_sparks.tscn" id="4_ty1bp"]
 [ext_resource type="AudioStream" uid="uid://dm4hn24gjme7e" path="res://audio/trolley_problem_bgm.ogg" id="5_hcg2o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nyyim"]
@@ -40,12 +41,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3)
 [node name="Paddles" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.5)
 
-[node name="Left" type="Node3D" parent="Paddles"]
+[node name="Left" type="Node3D" parent="Paddles" node_paths=PackedStringArray("spark_spawn_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.25, 0)
 rotation_order = 4
 script = ExtResource("3_hcg2o")
 tilt_angle = Vector2(0.75, 0.5)
 flip = true
+spark_spawn_node = NodePath("Oar/Spark Origin")
+sparks_prefab = ExtResource("4_ty1bp")
 key_paddle_back = 87
 key_paddle_forward = 83
 key_paddle_up = 68
@@ -54,11 +57,16 @@ key_paddle_down = 65
 [node name="Oar" parent="Paddles/Left" instance=ExtResource("4_3ebvs")]
 transform = Transform3D(-0.5, -0.866025, 0, 0.866025, -0.5, 0, 0, 0, 1, 0.1, 0.1, 0)
 
-[node name="Right" type="Node3D" parent="Paddles"]
+[node name="Spark Origin" type="Node3D" parent="Paddles/Left/Oar"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+
+[node name="Right" type="Node3D" parent="Paddles" node_paths=PackedStringArray("spark_spawn_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.25, 0)
 rotation_order = 4
 script = ExtResource("3_hcg2o")
 tilt_angle = Vector2(0.75, 0.5)
+spark_spawn_node = NodePath("Oar/Spark Origin")
+sparks_prefab = ExtResource("4_ty1bp")
 key_paddle_back = 4194320
 key_paddle_forward = 4194322
 key_paddle_up = 4194319
@@ -66,6 +74,9 @@ key_paddle_down = 4194321
 
 [node name="Oar" parent="Paddles/Right" instance=ExtResource("4_3ebvs")]
 transform = Transform3D(-0.5, 0.866025, 0, -0.866025, -0.5, 0, 0, 0, 1, -0.1, 0.1, 0)
+
+[node name="Spark Origin" type="Node3D" parent="Paddles/Right/Oar"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
 
 [node name="Music Source" type="AudioStreamPlayer3D" parent="."]
 process_mode = 3
