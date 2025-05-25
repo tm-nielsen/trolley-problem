@@ -1,0 +1,13 @@
+extends Control
+
+func _ready() -> void:
+    hide()
+
+func _process(_delta: float) -> void:
+    if Input.is_action_just_pressed("replay"):
+        get_tree().paused = false
+        get_tree().reload_current_scene()
+
+func activate():
+    get_tree().paused = true
+    show()
