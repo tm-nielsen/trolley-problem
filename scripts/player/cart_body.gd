@@ -34,8 +34,8 @@ func _physics_process(delta: float) -> void:
     if is_on_floor():
         velocity *= max(1 - friction * delta, 0)
         angular_velocity *= max(1 - angular_friction * delta, 0)
+        velocity = velocity.rotated(Vector3.UP, angular_velocity)
     rotate_y(angular_velocity)
-    velocity = velocity.rotated(Vector3.UP, angular_velocity)
     process_movement()
     cart_position = global_position
 
@@ -45,8 +45,10 @@ func apply_push(push_scale: float, turn_direction: float):
     angular_velocity += turn_force / 100 * push_scale * turn_direction
 
 func apply_jump(opposite_paddle: PaddleController):
-    if is_on_floor(): velocity.y += jump_force
-    elif opposite_paddle.was_jump_flicked(): velocity.y += jump_force * 4
+    if opposite_paddle.was_jump_flicked():
+        velocity.y += jump_force * 4
+    elif is_on_floor():
+        velocity.y += jump_force
 
 
 func process_movement():
@@ -56,7 +58,11 @@ func process_movement():
         result_velocity = _process_slide_collision(
             i, result_velocity
         )
-    velocity = result_velocity
+    velocity = Vector3(
+        result_velocity.x,
+        velocity.y,
+        result_velocity.z
+    )
 
 
 func _process_slide_collision(
