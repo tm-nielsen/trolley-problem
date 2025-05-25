@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c4qwrg2femdoj"]
+[gd_scene load_steps=34 format=3 uid="uid://c4qwrg2femdoj"]
 
 [ext_resource type="PackedScene" uid="uid://b5mw8yevevsir" path="res://scenes/branches/player.tscn" id="1_hpsmh"]
 [ext_resource type="Shader" uid="uid://bxtqnrbo5lpp5" path="res://resources/shaders/lit.gdshader" id="5_s4463"]
@@ -24,6 +24,11 @@
 [ext_resource type="PackedScene" uid="uid://chyf22gb3mn4f" path="res://models/Produce/Produce_Yogurt.fbx" id="21_q7esf"]
 [ext_resource type="PackedScene" uid="uid://cqifel6uv2vgs" path="res://models/ShelfProduce.fbx" id="22_eyh1f"]
 [ext_resource type="PackedScene" uid="uid://bo5q8fxwo3rti" path="res://models/Produce/Produce_Oreo.fbx" id="24_ys1rm"]
+[ext_resource type="Script" uid="uid://d0vc0acswmb8h" path="res://scripts/props/pickup_item_pool.gd" id="25_vj3qe"]
+[ext_resource type="PackedScene" uid="uid://d0tn2ay3ngue3" path="res://models/Produce/Produce_Bread.fbx" id="26_q7esf"]
+[ext_resource type="PackedScene" uid="uid://cdy0jj7ar7r8d" path="res://models/Produce/Produce_fish.fbx" id="27_jp5t7"]
+[ext_resource type="PackedScene" uid="uid://7pcv5wmvi4tu" path="res://models/Produce/Produce_Meat.fbx" id="28_wt0ut"]
+[ext_resource type="PackedScene" uid="uid://b4hov5hkkmrkn" path="res://scenes/prefabs/pickup_item.tscn" id="29_hvjgr"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qolh1"]
 
@@ -147,3 +152,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.33561, 0.591757, -2.34498)
 
 [node name="Produce_Oreo" parent="." instance=ExtResource("24_ys1rm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46052, -0.5, -3.48641)
+
+[node name="Pickups" type="Node3D" parent="."]
+script = ExtResource("25_vj3qe")
+item_options = Array[PackedScene]([ExtResource("12_ragsk"), ExtResource("13_a5nw2"), ExtResource("14_wor2h"), ExtResource("26_q7esf"), ExtResource("15_ys1rm"), ExtResource("16_b518v"), ExtResource("17_4yr4p"), ExtResource("13_wor2h"), ExtResource("18_eyh1f"), ExtResource("27_jp5t7"), ExtResource("19_igsfy"), ExtResource("28_wt0ut"), ExtResource("24_ys1rm"), ExtResource("20_vj3qe"), ExtResource("21_q7esf")])
+
+[node name="Pickup Item" parent="Pickups" instance=ExtResource("29_hvjgr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05214, 0, 4.06805)
+
+[node name="Pickup Item2" parent="Pickups" instance=ExtResource("29_hvjgr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.99326, 0, 0.501486)
+
+[node name="Pickup Item3" parent="Pickups" instance=ExtResource("29_hvjgr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37691, 0, 2.06739)
+
+[node name="Pickup Item4" parent="Pickups" instance=ExtResource("29_hvjgr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.91646, 0, 4.16119)
+
+[node name="Pickup Item5" parent="Pickups" instance=ExtResource("29_hvjgr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12321, 0, 1.82578)
+
+[node name="Pickup Item6" parent="Pickups" instance=ExtResource("29_hvjgr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.33411, 0, -2.52854)
+
+[node name="Pickup Item7" parent="Pickups" instance=ExtResource("29_hvjgr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13396, 0, -5.90681)
+
+[node name="Pickup Item8" parent="Pickups" instance=ExtResource("29_hvjgr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.46264, 0, -4.42385)

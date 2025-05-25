@@ -8,8 +8,6 @@ signal collected
 
 func _ready():
     show_item(default_item)
-    body_entered.connect(_on_body_entered)
-
 
 func show_item(prefab: PackedScene):
     if !prefab: return
@@ -27,7 +25,7 @@ func _find_mesh_instance(parent: Node3D) -> MeshInstance3D:
     return null
 
 
-func _on_body_entered(body):
+func _on_body_entered(body: Node3D):
     if body is CartBody:
         collected.emit()
         queue_free()
