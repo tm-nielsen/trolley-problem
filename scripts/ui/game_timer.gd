@@ -1,7 +1,13 @@
-extends Label
+extends FontScaledLabel
 
 @export var starting_time: float = 30
 @export var collection_bonus: float = 30
+
+@export_subgroup("tween_effects")
+@export var second_scale: float = 0.8
+@export var ten_second_scale: float = 0.6
+@export var second_scale_duration: float = 0.1
+@export var ten_second_scale_duration: float = 0.4
 
 var time: float
 
@@ -14,6 +20,14 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
     time -= delta
+    if floor(time + delta) != floor(time):
+        if int(time) % 10 == 0:
+            scale_for(ten_second_scale,
+                ten_second_scale_duration
+            )
+        else: scale_for(second_scale,
+            second_scale_duration)
+
     if time < 0:
         GlobalSignalBus.notify_game_timer_ended()
         time = 0
