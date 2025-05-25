@@ -1,15 +1,15 @@
 [gd_scene load_steps=16 format=3 uid="uid://dviwm18mhuwff"]
 
-[ext_resource type="PackedScene" uid="uid://c4qwrg2femdoj" path="res://scenes/movement_test.tscn" id="1_j5px3"]
 [ext_resource type="PackedScene" uid="uid://x3sl82ycs0y" path="res://scenes/prefabs/main_camera_view.tscn" id="1_jh1ax"]
 [ext_resource type="Script" uid="uid://bojvm0g2lcy7v" path="res://scripts/ui/collection_display.gd" id="2_5sfjl"]
 [ext_resource type="Script" uid="uid://dx4tsrfy7kcii" path="res://scripts/ui/game_timer.gd" id="3_3hfy5"]
 [ext_resource type="PackedScene" uid="uid://cqqic1e8nq14r" path="res://scenes/prefabs/camera_view.tscn" id="3_lrqlo"]
 [ext_resource type="Script" uid="uid://cvfww8dfyi56s" path="res://scripts/cameras/camera_view_grid.gd" id="3_sqa0i"]
 [ext_resource type="Script" uid="uid://b0xjahu5d7ops" path="res://scripts/props/win_area.gd" id="6_5sfjl"]
+[ext_resource type="PackedScene" uid="uid://cw8ifpatxe80h" path="res://scenes/Level.tscn" id="6_7pvxh"]
 [ext_resource type="Script" uid="uid://5rjo2jegqlhc" path="res://scripts/ui/win_screen.gd" id="6_kycxp"]
 [ext_resource type="Shader" uid="uid://cnyo3c7dwyohc" path="res://resources/shaders/highlight.gdshader" id="7_3hfy5"]
-[ext_resource type="Script" path="res://scripts/ui/lose_screen.gd" id="10_7pvxh"]
+[ext_resource type="Script" uid="uid://8ofg87t6g10u" path="res://scripts/ui/lose_screen.gd" id="10_7pvxh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j287u"]
 line_spacing = -6.0
@@ -25,10 +25,10 @@ shader_parameter/scale = 1.0
 shader_parameter/colour = Color(0.407843, 0.745098, 0.243137, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_y3xxt"]
-size = Vector2(4, 4)
+size = Vector2(7, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xsp7o"]
-size = Vector3(4, 1, 4)
+size = Vector3(7, 1, 4)
 
 [node name="Root" type="Control"]
 layout_mode = 3
@@ -50,6 +50,8 @@ alignment = 1
 [node name="Main Camera View" parent="VBoxContainer" node_paths=PackedStringArray("view_grid") instance=ExtResource("1_jh1ax")]
 layout_mode = 2
 view_grid = NodePath("../HUD/Cameras")
+fov_tween_scale = 1.2
+fov_tween_duration = 0.3
 
 [node name="HUD" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -98,27 +100,27 @@ camera_positions_parent = NodePath("../../../Camera Positions")
 [node name="Camera Positions" type="Node3D" parent="."]
 
 [node name="Camera 1" type="Node3D" parent="Camera Positions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.11937, 3, -28.2633)
 
 [node name="Camera 2" type="Node3D" parent="Camera Positions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06665, 3, -4.38008)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.4514, 3, -26.5084)
 
 [node name="Camera 3" type="Node3D" parent="Camera Positions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.11147, 3, -3.27725)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2188, 3, -14.451)
 
 [node name="Camera 4" type="Node3D" parent="Camera Positions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0478, 3, 5.07793)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.50006, 3, 1.4629)
 
 [node name="Camera 5" type="Node3D" parent="Camera Positions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0360146, 3, 5.94226)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.0214, 3.76444, 0.7069)
 
 [node name="Camera 6" type="Node3D" parent="Camera Positions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1282, 3, 5.07793)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6011, 3, -35.7201)
 
-[node name="MovementTest" parent="." instance=ExtResource("1_j5px3")]
+[node name="Level" parent="." instance=ExtResource("6_7pvxh")]
 
 [node name="Win Area" type="Area3D" parent="." node_paths=PackedStringArray("indicator")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, -8.9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.6, -0.4, -36.6)
 collision_layer = 5
 collision_mask = 2
 script = ExtResource("6_5sfjl")
