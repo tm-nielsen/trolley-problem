@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://dviwm18mhuwff"]
+[gd_scene load_steps=15 format=3 uid="uid://dviwm18mhuwff"]
 
 [ext_resource type="PackedScene" uid="uid://c4qwrg2femdoj" path="res://scenes/movement_test.tscn" id="1_j5px3"]
 [ext_resource type="PackedScene" uid="uid://x3sl82ycs0y" path="res://scenes/prefabs/main_camera_view.tscn" id="1_jh1ax"]
 [ext_resource type="FontFile" uid="uid://c418aq7tc7cf" path="res://resources/ui/fonts/PermanentMarker-Regular.ttf" id="2_twpsu"]
+[ext_resource type="Script" uid="uid://ckyf7ckulowyb" path="res://scripts/ui/collection_display_list.gd" id="3_3hfy5"]
 [ext_resource type="PackedScene" uid="uid://cqqic1e8nq14r" path="res://scenes/prefabs/camera_view.tscn" id="3_lrqlo"]
 [ext_resource type="Script" uid="uid://cvfww8dfyi56s" path="res://scripts/cameras/camera_view_grid.gd" id="3_sqa0i"]
 [ext_resource type="Script" uid="uid://b0xjahu5d7ops" path="res://scripts/props/win_area.gd" id="6_5sfjl"]
@@ -12,12 +13,10 @@
 [sub_resource type="LabelSettings" id="LabelSettings_jh1ax"]
 font = ExtResource("2_twpsu")
 font_size = 64
-font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_kycxp"]
 font = ExtResource("2_twpsu")
-font_size = 48
-font_color = Color(0, 0, 0, 1)
+font_size = 40
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7pvxh"]
 render_priority = 0
@@ -62,34 +61,25 @@ size_flags_vertical = 3
 
 [node name="Background" type="ColorRect" parent="VBoxContainer/HUD/Grocery List"]
 layout_mode = 2
+color = Color(0, 0, 0, 1)
 
-[node name="CenterContainer" type="Control" parent="VBoxContainer/HUD/Grocery List"]
+[node name="VBox" type="VBoxContainer" parent="VBoxContainer/HUD/Grocery List"]
 layout_mode = 2
 
-[node name="VBox" type="VBoxContainer" parent="VBoxContainer/HUD/Grocery List/CenterContainer"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = -20.0
-offset_bottom = -20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/HUD/Grocery List/CenterContainer/VBox"]
+[node name="Label" type="Label" parent="VBoxContainer/HUD/Grocery List/VBox"]
 layout_mode = 2
 text = "Grocery List:"
 label_settings = SubResource("LabelSettings_jh1ax")
 horizontal_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/HUD/Grocery List/CenterContainer/VBox"]
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/HUD/Grocery List/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 columns = 2
+script = ExtResource("3_3hfy5")
+label_settings = SubResource("LabelSettings_kycxp")
 
-[node name="Label" type="Label" parent="VBoxContainer/HUD/Grocery List/CenterContainer/VBox/GridContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/HUD/Grocery List/VBox/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
@@ -98,7 +88,7 @@ label_settings = SubResource("LabelSettings_kycxp")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="VBoxContainer/HUD/Grocery List/CenterContainer/VBox/GridContainer"]
+[node name="Label2" type="Label" parent="VBoxContainer/HUD/Grocery List/VBox/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
@@ -107,7 +97,7 @@ label_settings = SubResource("LabelSettings_kycxp")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="VBoxContainer/HUD/Grocery List/CenterContainer/VBox/GridContainer"]
+[node name="Label3" type="Label" parent="VBoxContainer/HUD/Grocery List/VBox/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
@@ -116,7 +106,7 @@ label_settings = SubResource("LabelSettings_kycxp")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label4" type="Label" parent="VBoxContainer/HUD/Grocery List/CenterContainer/VBox/GridContainer"]
+[node name="Label4" type="Label" parent="VBoxContainer/HUD/Grocery List/VBox/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
@@ -125,7 +115,7 @@ label_settings = SubResource("LabelSettings_kycxp")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label5" type="Label" parent="VBoxContainer/HUD/Grocery List/CenterContainer/VBox/GridContainer"]
+[node name="Label5" type="Label" parent="VBoxContainer/HUD/Grocery List/VBox/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
@@ -134,7 +124,7 @@ label_settings = SubResource("LabelSettings_kycxp")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label6" type="Label" parent="VBoxContainer/HUD/Grocery List/CenterContainer/VBox/GridContainer"]
+[node name="Label6" type="Label" parent="VBoxContainer/HUD/Grocery List/VBox/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
@@ -142,6 +132,9 @@ text = "milk []"
 label_settings = SubResource("LabelSettings_kycxp")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CenterContainer" type="Control" parent="VBoxContainer/HUD/Grocery List"]
+layout_mode = 2
 
 [node name="Cameras" type="GridContainer" parent="VBoxContainer/HUD" node_paths=PackedStringArray("camera_positions_parent")]
 custom_minimum_size = Vector2(0, 560)

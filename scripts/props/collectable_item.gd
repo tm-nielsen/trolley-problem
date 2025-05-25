@@ -3,8 +3,12 @@ extends Area3D
 
 signal collected
 
+static var item_name_regex := RegEx.new().compile("(\\w).")
+
 @export var default_item: PackedScene
 @export var mesh: MeshInstance3D
+
+var item_name: String
 
 
 func _ready():
@@ -13,8 +17,8 @@ func _ready():
 func show_item(prefab: PackedScene):
     if !prefab: return
     var instance: Node3D = prefab.instantiate()
-    var prefab_mesh = _find_mesh_instance(instance)
-    mesh.mesh = prefab_mesh.mesh
+    mesh.mesh = _find_mesh_instance(instance).mesh
+    item_name = _get_prefab_name(prefab)
     instance.queue_free()
 
 
@@ -24,6 +28,11 @@ func _find_mesh_instance(parent: Node3D) -> MeshInstance3D:
         var child_search = _find_mesh_instance(child)
         if child_search != null: return child_search
     return null
+
+func _get_prefab_name(prefab: PackedScene) -> String:
+    var name_regex = RegEx.new()
+    name_regex.compile("_(\\w+)\\.")
+    return name_regex.search(prefab.resource_path).get_string(1)
 
 
 func _on_body_entered(body: Node3D):
