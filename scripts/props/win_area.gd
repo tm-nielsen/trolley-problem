@@ -11,9 +11,9 @@ func _ready() -> void:
     monitoring = false
 
 func activate():
+    monitoring = true
     for body in get_overlapping_bodies():
         _on_body_entered(body)
-    monitoring = true
     var flash_tween = create_tween().set_loops()
     flash_tween.tween_callback(indicator.show)
     flash_tween.tween_interval(flashing_period)
