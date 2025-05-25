@@ -20,8 +20,8 @@ turn_force = 2.0
 jump_force = 2.5
 right_paddle = NodePath("Paddles/Right")
 left_paddle = NodePath("Paddles/Left")
-effective_mass = 5.0
-inertia = 0.2
+effective_mass = 4.0
+inertia = 0.8
 
 [node name="Base Collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0154809, 0.27481)

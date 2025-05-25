@@ -50,46 +50,33 @@ func apply_jump(opposite_paddle: PaddleController):
 
 
 func process_movement():
-    var pre_collision_velocity := velocity
+    var result_velocity := velocity
     move_and_slide()
-    var total_colliding_mass = _get_total_colliding_mass()
     for i in get_slide_collision_count():
-        _process_slide_collision(
-            i, pre_collision_velocity,
-            total_colliding_mass
+        result_velocity = _process_slide_collision(
+            i, result_velocity
         )
+    velocity = result_velocity
 
 
 func _process_slide_collision(
-    index: int, previous_velocity: Vector3,
-    total_colliding_mass: float
-):
+    index: int, previous_velocity: Vector3
+) -> Vector3:
     var collision := get_slide_collision(index)
-    var normal := collision.get_normal()
     var colliding_body = collision.get_collider()
     if colliding_body is RigidBody3D:
-        _process_rigidbody_collision(
-            colliding_body, normal,
-            previous_velocity, total_colliding_mass
+        return _process_rigidbody_collision(
+            colliding_body, collision.get_normal(),
+            previous_velocity
         )
+    return previous_velocity
     
 func _process_rigidbody_collision(
     colliding_body: RigidBody3D, normal: Vector3,
-    previous_velocity: Vector3, total_colliding_mass: float
-):
-    var mass_ratio = effective_mass / colliding_body.mass
-    colliding_body.apply_central_impulse(-normal * mass_ratio)
-    velocity += previous_velocity * inertia * (
-        colliding_body.mass / total_colliding_mass
-    )
+    previous_velocity: Vector3
+) -> Vector3:
+    var collider_mass = colliding_body.mass
     collided.emit()
-
-
-func _get_total_colliding_mass() -> float:
-    var total_mass: float = 0
-    for i in get_slide_collision_count():
-        var collision := get_slide_collision(i)
-        var collision_body = collision.get_collider()
-        if collision_body is RigidBody3D:
-            total_mass += collision_body.mass
-    return total_mass
+    var mass_ratio = effective_mass / collider_mass
+    colliding_body.apply_central_impulse(-normal * mass_ratio)
+    return previous_velocity * inertia / collider_mass
