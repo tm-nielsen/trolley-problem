@@ -58,11 +58,11 @@ func process_movement():
         result_velocity = _process_slide_collision(
             i, result_velocity
         )
-    velocity = Vector3(
-        result_velocity.x,
-        velocity.y,
-        result_velocity.z
-    )
+    # velocity = Vector3(
+    #     result_velocity.x,
+    #     velocity.y,
+    #     result_velocity.z
+    # )
 
 
 func _process_slide_collision(
