@@ -1,0 +1,147 @@
+[gd_scene load_steps=5 format=3 uid="uid://b26of65b440mf"]
+
+[ext_resource type="PackedScene" uid="uid://dlc3v8jo53l3h" path="res://models/Shelf.fbx" id="1_1eq51"]
+[ext_resource type="PackedScene" uid="uid://c8pv8ekfvetb0" path="res://models/Produce/Produce_Cerial.fbx" id="2_qvk2b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vs87s"]
+size = Vector3(0.424194, 0.0498047, 1.203)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sv6t6"]
+size = Vector3(0.3479, 2.57697, 1.23639)
+
+[node name="RigidBody3D2" type="RigidBody3D"]
+mass = 3.0
+
+[node name="Shelf" parent="." instance=ExtResource("1_1eq51")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22396, 0.0451, -0.00756359)
+shape = SubResource("BoxShape3D_vs87s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.224671, 0.466334, -0.00143242)
+shape = SubResource("BoxShape3D_vs87s")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.220903, 0.878894, -0.000423431)
+shape = SubResource("BoxShape3D_vs87s")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213583, 1.30165, -0.0165005)
+shape = SubResource("BoxShape3D_vs87s")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21759, 1.71385, -0.0160046)
+shape = SubResource("BoxShape3D_vs87s")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.164917, 0.788483, -0.00088501)
+shape = SubResource("BoxShape3D_sv6t6")
+
+[node name="Produce_Cerial" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.21131, 0.504646, -0.43371)
+
+[node name="Produce_Cerial2" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 0.501916, -0.293962)
+
+[node name="Produce_Cerial3" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 0.501916, -0.146189)
+
+[node name="Produce_Cerial4" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 0.501916, 0.0296459)
+
+[node name="Produce_Cerial5" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 0.501916, 0.203287)
+
+[node name="Produce_Cerial6" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 0.501916, 0.371624)
+
+[node name="Produce_Cerial7" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.21131, 0.504646, -0.43371)
+
+[node name="Produce_Cerial8" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 0.501916, -0.293962)
+
+[node name="Produce_Cerial9" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 0.501916, -0.146189)
+
+[node name="Produce_Cerial10" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 0.501916, 0.0296459)
+
+[node name="Produce_Cerial11" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 0.501916, 0.203287)
+
+[node name="Produce_Cerial12" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 0.501916, 0.371624)
+
+[node name="Produce_Cerial13" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.21131, 0.914978, -0.43371)
+
+[node name="Produce_Cerial14" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 0.912248, -0.293962)
+
+[node name="Produce_Cerial15" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 0.912248, -0.146189)
+
+[node name="Produce_Cerial16" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 0.912248, 0.0296459)
+
+[node name="Produce_Cerial17" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 0.912248, 0.203287)
+
+[node name="Produce_Cerial18" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 0.912248, 0.371624)
+
+[node name="Produce_Cerial19" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.21131, 1.34369, -0.43371)
+
+[node name="Produce_Cerial20" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 1.34096, -0.293962)
+
+[node name="Produce_Cerial21" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 1.34096, -0.146189)
+
+[node name="Produce_Cerial22" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 1.34096, 0.0296459)
+
+[node name="Produce_Cerial23" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 1.34096, 0.203287)
+
+[node name="Produce_Cerial24" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 1.34096, 0.371624)
+
+[node name="Produce_Cerial25" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.21131, 1.75255, -0.43371)
+
+[node name="Produce_Cerial26" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 1.74982, -0.293962)
+
+[node name="Produce_Cerial27" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 1.74982, -0.146189)
+
+[node name="Produce_Cerial28" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 1.74982, 0.0296459)
+
+[node name="Produce_Cerial29" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 1.74982, 0.203287)
+
+[node name="Produce_Cerial30" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 1.74982, 0.371624)
+
+[node name="Produce_Cerial31" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.21131, 0.0772621, -0.43371)
+
+[node name="Produce_Cerial32" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 0.0745321, -0.293962)
+
+[node name="Produce_Cerial33" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 0.0745321, -0.146189)
+
+[node name="Produce_Cerial34" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 0.0745321, 0.0296459)
+
+[node name="Produce_Cerial35" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 0.0745321, 0.203287)
+
+[node name="Produce_Cerial36" parent="." instance=ExtResource("2_qvk2b")]
+transform = Transform3D(0.918877, 0, 0, 0, 0.933418, 0, 0, 0, 1, -0.222954, 0.0745321, 0.371624)

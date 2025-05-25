@@ -35,11 +35,10 @@ import_script/path=""
 _subresources={
 "nodes": {
 "PATH:Box001": {
-"generate/physics": true,
 "physics/body_type": 1,
 "physics/layer": 4,
 "physics/mask": 7,
-"physics/shape_type": 1
+"physics/shape_type": 2
 }
 }
 }

@@ -1,0 +1,129 @@
+[gd_scene load_steps=5 format=3 uid="uid://cun24twssf76x"]
+
+[ext_resource type="PackedScene" uid="uid://dlc3v8jo53l3h" path="res://models/Shelf.fbx" id="1_7lk7e"]
+[ext_resource type="PackedScene" uid="uid://bo5q8fxwo3rti" path="res://models/Produce/Produce_Oreo.fbx" id="2_xrbku"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rmwpn"]
+size = Vector3(0.345688, 2.59515, 1.23584)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_leb2d"]
+size = Vector3(0.42395, 0.0443726, 1.24142)
+
+[node name="RigidBody3D" type="RigidBody3D"]
+mass = 3.0
+
+[node name="Shelf" parent="." instance=ExtResource("1_7lk7e")]
+
+[node name="Produce_Oreo" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 0.081316, -0.510359)
+
+[node name="Produce_Oreo2" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 0.081316, -0.279512)
+
+[node name="Produce_Oreo3" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 0.081316, -0.0720043)
+
+[node name="Produce_Oreo4" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 0.081316, 0.133308)
+
+[node name="Produce_Oreo5" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 0.081316, 0.331826)
+
+[node name="Produce_Oreo6" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 0.081316, 0.543991)
+
+[node name="Produce_Oreo7" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 0.515089, -0.510359)
+
+[node name="Produce_Oreo8" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 0.515089, -0.279512)
+
+[node name="Produce_Oreo9" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 0.515089, -0.0720043)
+
+[node name="Produce_Oreo10" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 0.515089, 0.133308)
+
+[node name="Produce_Oreo11" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 0.515089, 0.331826)
+
+[node name="Produce_Oreo12" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 0.515089, 0.543991)
+
+[node name="Produce_Oreo13" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 0.916031, -0.510359)
+
+[node name="Produce_Oreo14" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 0.916031, -0.279512)
+
+[node name="Produce_Oreo15" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 0.916031, -0.0720043)
+
+[node name="Produce_Oreo16" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 0.916031, 0.133308)
+
+[node name="Produce_Oreo17" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 0.916031, 0.331826)
+
+[node name="Produce_Oreo18" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 0.916031, 0.543991)
+
+[node name="Produce_Oreo19" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 1.34292, -0.510359)
+
+[node name="Produce_Oreo20" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 1.34292, -0.279512)
+
+[node name="Produce_Oreo21" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 1.34292, -0.0720043)
+
+[node name="Produce_Oreo22" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 1.34292, 0.133308)
+
+[node name="Produce_Oreo23" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 1.34292, 0.331826)
+
+[node name="Produce_Oreo24" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 1.34292, 0.543991)
+
+[node name="Produce_Oreo25" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 1.74969, -0.510359)
+
+[node name="Produce_Oreo26" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 1.74969, -0.279512)
+
+[node name="Produce_Oreo27" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 1.74969, -0.0720043)
+
+[node name="Produce_Oreo28" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 1.74969, 0.133308)
+
+[node name="Produce_Oreo29" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 1.74969, 0.331826)
+
+[node name="Produce_Oreo30" parent="." instance=ExtResource("2_xrbku")]
+transform = Transform3D(0.886518, 0, 0, 0, 0.592234, 0, 0, 0, 1, -0.195499, 1.74969, 0.543991)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.163893, 0.779557, -0.00443649)
+shape = SubResource("BoxShape3D_rmwpn")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.219313, 0.045266, -0.0036068)
+shape = SubResource("BoxShape3D_leb2d")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.219313, 0.47014, -0.0036068)
+shape = SubResource("BoxShape3D_leb2d")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.219313, 0.875497, -0.0036068)
+shape = SubResource("BoxShape3D_leb2d")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.219313, 1.30511, -0.0036068)
+shape = SubResource("BoxShape3D_leb2d")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.219313, 1.71536, -0.0036068)
+shape = SubResource("BoxShape3D_leb2d")

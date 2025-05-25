@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://noalsnf1e85n"]
+
+[ext_resource type="PackedScene" uid="uid://bcukweieq4fke" path="res://models/Produce/Produce_Can.fbx" id="1_lma2e"]
+[ext_resource type="PackedScene" uid="uid://bwmfjoj0h0j3t" path="res://scenes/prefabs/Level/Physical Shelves/Shelf.tscn" id="2_l3f2v"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Produce_Can" parent="." instance=ExtResource("1_lma2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.232083, 1.33917, -0.36734)
+
+[node name="Produce_Can2" parent="." instance=ExtResource("1_lma2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.160043, 1.38158, -0.166739)
+
+[node name="Produce_Can3" parent="." instance=ExtResource("1_lma2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.160554, 1.38098, 0.0481644)
+
+[node name="Produce_Can4" parent="." instance=ExtResource("1_lma2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.153328, 1.37557, 0.327314)
+
+[node name="Produce_Can5" parent="." instance=ExtResource("1_lma2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.161689, 1.38459, 0.504042)
+
+[node name="Produce_Can6" parent="." instance=ExtResource("1_lma2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.161689, 0.971806, -0.441676)
+
+[node name="Produce_Can7" parent="." instance=ExtResource("1_lma2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.161689, 0.959538, -0.209868)
+
+[node name="Produce_Can8" parent="." instance=ExtResource("1_lma2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.161689, 0.957343, 0.070219)
+
+[node name="Produce_Can9" parent="." instance=ExtResource("1_lma2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.161689, 0.947055, 0.35293)
+
+[node name="Produce_Can10" parent="." instance=ExtResource("1_lma2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.161689, 0.579259, -0.440702)
+
+[node name="Produce_Can11" parent="." instance=ExtResource("1_lma2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.161689, 0.566499, -0.153059)
+
+[node name="Produce_Can12" parent="." instance=ExtResource("1_lma2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.161689, 0.564855, 0.154548)
+
+[node name="Produce_Can13" parent="." instance=ExtResource("1_lma2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.161689, 0.553042, 0.434326)
+
+[node name="Produce_Can14" parent="." instance=ExtResource("1_lma2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.161689, 0.146339, -0.391997)
+
+[node name="Produce_Can15" parent="." instance=ExtResource("1_lma2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.161689, 0.130581, -0.143072)
+
+[node name="Produce_Can16" parent="." instance=ExtResource("1_lma2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.161689, 0.117927, 0.117356)
+
+[node name="Produce_Can17" parent="." instance=ExtResource("1_lma2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.161689, 0.126569, 0.388895)
+
+[node name="RigidBody3D" parent="." instance=ExtResource("2_l3f2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.48513, 0)
