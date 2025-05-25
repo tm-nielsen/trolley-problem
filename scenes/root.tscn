@@ -78,6 +78,8 @@ size_flags_vertical = 3
 columns = 2
 script = ExtResource("3_3hfy5")
 label_settings = SubResource("LabelSettings_kycxp")
+collected_initial_colour = Color(0.407843, 0.745098, 0.243137, 1)
+collected_colour = Color(0.3, 0.3, 0.3, 1)
 
 [node name="Label" type="Label" parent="VBoxContainer/HUD/Grocery List/VBox/GridContainer"]
 layout_mode = 2
