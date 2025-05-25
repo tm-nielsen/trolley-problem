@@ -25,11 +25,11 @@ shader = ExtResource("4_a66td")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_my12e"]
 render_priority = 0
 shader = ExtResource("3_j708q")
-shader_parameter/albedo_colour = Color(1, 1, 1, 1)
+shader_parameter/albedo_colour = Color(0.968587, 5.67943e-06, 7.70092e-07, 1)
 shader_parameter/metallic = 0.0
 shader_parameter/specular = 0.5
 shader_parameter/roughness = 0.5
-shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission = Color(1, 0, 0, 1)
 shader_parameter/uv_scale = Vector2(1, 1)
 shader_parameter/normal_scale = 1.0
 
