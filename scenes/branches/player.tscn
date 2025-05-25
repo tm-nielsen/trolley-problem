@@ -41,7 +41,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.5)
 
 [node name="Left" type="Node3D" parent="Paddles"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.25, 0)
+rotation_order = 4
 script = ExtResource("3_hcg2o")
+tilt_angle = Vector2(0.75, 0.5)
 flip = true
 key_paddle_back = 87
 key_paddle_forward = 83
@@ -53,7 +55,9 @@ transform = Transform3D(-0.5, -0.866025, 0, 0.866025, -0.5, 0, 0, 0, 1, 0.1, 0.1
 
 [node name="Right" type="Node3D" parent="Paddles"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.25, 0)
+rotation_order = 4
 script = ExtResource("3_hcg2o")
+tilt_angle = Vector2(0.75, 0.5)
 key_paddle_back = 4194320
 key_paddle_forward = 4194322
 key_paddle_up = 4194319
