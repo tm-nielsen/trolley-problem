@@ -54,6 +54,7 @@ metadata/_custom_type_script = "uid://ns3rdr2i7qbg"
 [node name="Animated Cart" node_paths=PackedStringArray("mesh", "wiggle_target") instance=ExtResource("1_heai7")]
 script = ExtResource("2_8l3nx")
 mesh = NodePath("Skeleton3D/Cart")
+collision_momentum_threshold = 10.0
 material_body = SubResource("ShaderMaterial_gmmsd")
 material_hidden = SubResource("ShaderMaterial_cd16s")
 material_collided = SubResource("ShaderMaterial_my12e")
@@ -63,9 +64,9 @@ elastic_wiggle_position = SubResource("Resource_my12e")
 elastic_wiggle_height = SubResource("Resource_l5s35")
 
 [node name="Skeleton3D" parent="." index="0"]
-bones/1/position = Vector3(-0.00388418, 0.0187048, 0.168419)
-bones/1/rotation = Quaternion(0.4092, 0.0133193, 0.0657874, 0.909972)
-bones/1/scale = Vector3(1, 1, 1)
+bones/1/position = Vector3(-0.00388417, 0.0187048, 0.168418)
+bones/1/rotation = Quaternion(0.409201, 0.0133192, 0.0657872, 0.909972)
+bones/1/scale = Vector3(1, 1, 0.999998)
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Skeleton3D" index="1"]
 transform = Transform3D(1.6971, -0.0797417, 0.111016, 0.00371331, 1.40922, 0.955461, -0.136636, -0.952135, 1.40484, 0.00332627, 0.33988, -0.0524004)
