@@ -3,6 +3,8 @@ extends CharacterBody3D
 
 static var cart_position: Vector3
 
+signal collided
+
 @export_subgroup("movement forces")
 @export var push_force: float = 4
 @export var turn_force: float = 4
@@ -80,6 +82,7 @@ func _process_rigidbody_collision(
     velocity += previous_velocity * inertia * (
         colliding_body.mass / total_colliding_mass
     )
+    collided.emit()
 
 
 func _get_total_colliding_mass() -> float:

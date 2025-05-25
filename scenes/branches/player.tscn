@@ -65,3 +65,5 @@ key_paddle_down = 4194321
 
 [node name="Oar" parent="Paddles/Right" instance=ExtResource("4_3ebvs")]
 transform = Transform3D(-0.5, 0.866025, 0, -0.866025, -0.5, 0, 0, 0, 1, -0.1, 0.1, 0)
+
+[connection signal="collided" from="." to="Animated Cart" method="_on_cart_collided"]

@@ -1,9 +1,44 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmqhenmmppgf7"]
+[gd_scene load_steps=8 format=3 uid="uid://cmqhenmmppgf7"]
 
 [ext_resource type="PackedScene" uid="uid://dbxu6bm5wp4it" path="res://models/cart/Cart.fbx" id="1_heai7"]
+[ext_resource type="Script" uid="uid://2lhn7bk5ykyh" path="res://scripts/player/cart_animator.gd" id="2_8l3nx"]
+[ext_resource type="Shader" uid="uid://bxtqnrbo5lpp5" path="res://resources/shaders/lit.gdshader" id="3_j708q"]
+[ext_resource type="Shader" uid="uid://dnty4paqqicfy" path="res://resources/shaders/hidden.gdshader" id="4_a66td"]
 
-[node name="Animated Cart" instance=ExtResource("1_heai7")]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gmmsd"]
+render_priority = 0
+shader = ExtResource("3_j708q")
+shader_parameter/albedo_colour = Color(1, 0.85, 0.4, 1)
+shader_parameter/metallic = 0.0
+shader_parameter/specular = 0.5
+shader_parameter/roughness = 0.916
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/normal_scale = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cd16s"]
+render_priority = 0
+shader = ExtResource("4_a66td")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_my12e"]
+render_priority = 0
+shader = ExtResource("3_j708q")
+shader_parameter/albedo_colour = Color(1, 1, 1, 1)
+shader_parameter/metallic = 0.0
+shader_parameter/specular = 0.5
+shader_parameter/roughness = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/normal_scale = 1.0
+
+[node name="Animated Cart" node_paths=PackedStringArray("mesh") instance=ExtResource("1_heai7")]
+script = ExtResource("2_8l3nx")
+mesh = NodePath("Skeleton3D/Cart")
+material_body = SubResource("ShaderMaterial_gmmsd")
+material_hidden = SubResource("ShaderMaterial_cd16s")
+material_collided = SubResource("ShaderMaterial_my12e")
 
 [node name="Skeleton3D" parent="." index="0"]
 bones/1/position = Vector3(-0.00388418, 0.0187048, 0.168419)
 bones/1/rotation = Quaternion(0.4092, 0.0133193, 0.0657874, 0.909972)
+bones/1/scale = Vector3(1, 1, 1)
