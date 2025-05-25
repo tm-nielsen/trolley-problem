@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ddrbqtusqv5ie" path="res://scenes/Level.tscn" id="6_7pvxh"]
 [ext_resource type="Script" uid="uid://5rjo2jegqlhc" path="res://scripts/ui/win_screen.gd" id="6_kycxp"]
 [ext_resource type="Shader" uid="uid://cnyo3c7dwyohc" path="res://resources/shaders/highlight.gdshader" id="7_3hfy5"]
-[ext_resource type="Script" path="res://scripts/ui/lose_screen.gd" id="10_7pvxh"]
+[ext_resource type="Script" uid="uid://8ofg87t6g10u" path="res://scripts/ui/lose_screen.gd" id="10_7pvxh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j287u"]
 line_spacing = -6.0
