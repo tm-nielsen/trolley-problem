@@ -102,7 +102,7 @@ camera_positions_parent = NodePath("../../../Camera Positions")
 [node name="Camera Positions" type="Node3D" parent="."]
 
 [node name="Camera 1" type="Node3D" parent="Camera Positions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.11937, 3, -28.2633)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.1087, 3, -27.4785)
 
 [node name="Camera 2" type="Node3D" parent="Camera Positions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.4514, 3, -26.5084)
