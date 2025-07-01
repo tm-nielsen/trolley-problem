@@ -32,7 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://dlc3v8jo53l3h" path="res://models/Shelf.fbx" id="31_48r4s"]
 [ext_resource type="PackedScene" uid="uid://b5kn7i42o2i1w" path="res://scenes/prefabs/Level/ShelfBread.tscn" id="31_p3doa"]
 [ext_resource type="PackedScene" uid="uid://c3uomt1hjoynj" path="res://scenes/prefabs/Level/ShelfBread2.tscn" id="33_2sboe"]
-[ext_resource type="PackedScene" uid="uid://dn1ptl6yxj2nf" path="res://scenes/prefabs/Level/ShelfCorner.tscn" id="34_baq46"]
+[ext_resource type="PackedScene" uid="uid://cp5565otp61c7" path="res://scenes/prefabs/Level/PopulatedCornerShelf.tscn" id="34_baq46"]
 [ext_resource type="PackedScene" uid="uid://bvyv7x3gbtbcc" path="res://scenes/prefabs/Level/ShelfBreadCorner2.tscn" id="34_nbaxu"]
 [ext_resource type="PackedScene" uid="uid://cy6se5dc01y2" path="res://scenes/prefabs/Level/ShelfBreadCorner.tscn" id="35_nu2gi"]
 [ext_resource type="PackedScene" uid="uid://bws7uk4786855" path="res://models/Produce/Produce_Can2.fbx" id="36_70b58"]

@@ -1,60 +1,45 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjwbkcp0l1vl0"]
+[gd_scene load_steps=5 format=3 uid="uid://cjwbkcp0l1vl0"]
 
-[ext_resource type="PackedScene" uid="uid://bc15d4xl60adw" path="res://models/Produce/Produce_Jug.fbx" id="1_w6tmr"]
-[ext_resource type="PackedScene" uid="uid://dpt7agiw8i0gd" path="res://models/Produce/Produce_Bottle.fbx" id="2_e3kdo"]
-[ext_resource type="PackedScene" uid="uid://chyf22gb3mn4f" path="res://models/Produce/Produce_Yogurt.fbx" id="3_wyuyp"]
-[ext_resource type="PackedScene" uid="uid://bcukweieq4fke" path="res://models/Produce/Produce_Can.fbx" id="4_e6w1f"]
-[ext_resource type="PackedScene" uid="uid://cjwbkcp0l1vl0" path="res://scenes/prefabs/Level/Physical Shelves/ShelfCorner.tscn" id="5_4xmug"]
+[ext_resource type="PackedScene" uid="uid://bejg2rq8pruoq" path="res://models/ShelfCorner.fbx" id="1_yka06"]
 
-[node name="Node3D11" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_mnduj"]
+size = Vector3(0.425293, 0.0671387, 1.24939)
 
-[node name="RigidBody3D3" parent="." instance=ExtResource("5_4xmug")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00393295, 0, -0.0310364)
+[sub_resource type="BoxShape3D" id="BoxShape3D_hc8ps"]
+size = Vector3(0.774414, 2.07928, 0.11145)
 
-[node name="Produce_Jug" parent="RigidBody3D3" instance=ExtResource("1_w6tmr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0329609, 1.74823, -0.327559)
+[sub_resource type="BoxShape3D" id="BoxShape3D_hxd6c"]
+size = Vector3(0.342773, 2.07404, 1.25397)
 
-[node name="Produce_Jug2" parent="RigidBody3D3" instance=ExtResource("1_w6tmr")]
-transform = Transform3D(-0.979561, 0, 0.201146, 0, 1, 0, -0.201146, 0, -0.979561, -0.0329609, 1.74823, 0.0499096)
+[node name="RigidBody3D" type="RigidBody3D"]
 
-[node name="Produce_Jug3" parent="RigidBody3D3" instance=ExtResource("1_w6tmr")]
-transform = Transform3D(-0.15007, 0, -0.988675, 0, 1, 0, 0.988675, 0, -0.15007, -0.0329609, 1.74823, 0.425697)
+[node name="ShelfCorner" parent="." instance=ExtResource("1_yka06")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.148, 0, -0.142)
 
-[node name="Produce_Bottle" parent="RigidBody3D3" instance=ExtResource("2_e3kdo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0472317, 1.32798, -0.363993)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.147101, 0.035629, -0.14398)
+shape = SubResource("BoxShape3D_mnduj")
 
-[node name="Produce_Bottle3" parent="RigidBody3D3" instance=ExtResource("2_e3kdo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0472317, 1.32798, 0.0746727)
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.147101, 0.477107, -0.14398)
+shape = SubResource("BoxShape3D_mnduj")
 
-[node name="Produce_Bottle4" parent="RigidBody3D3" instance=ExtResource("2_e3kdo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0472317, 1.32798, 0.270561)
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.147101, 0.884198, -0.14398)
+shape = SubResource("BoxShape3D_mnduj")
 
-[node name="Produce_Yogurt" parent="RigidBody3D3" instance=ExtResource("3_wyuyp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0268631, 0.902737, -0.316294)
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.147101, 1.31516, -0.14398)
+shape = SubResource("BoxShape3D_mnduj")
 
-[node name="Produce_Yogurt2" parent="RigidBody3D3" instance=ExtResource("3_wyuyp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0268631, 0.902737, 0.0733128)
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.147101, 1.72711, -0.14398)
+shape = SubResource("BoxShape3D_mnduj")
 
-[node name="Produce_Yogurt3" parent="RigidBody3D3" instance=ExtResource("3_wyuyp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0268631, 0.902737, 0.439116)
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0249023, 1.03964, 0.53816)
+shape = SubResource("BoxShape3D_hc8ps")
 
-[node name="Produce_Yogurt4" parent="RigidBody3D3" instance=ExtResource("3_wyuyp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0268631, 0.0822074, -0.316294)
-
-[node name="Produce_Yogurt5" parent="RigidBody3D3" instance=ExtResource("3_wyuyp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0268631, 0.0822074, 0.0733128)
-
-[node name="Produce_Yogurt6" parent="RigidBody3D3" instance=ExtResource("3_wyuyp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0268631, 0.0822074, 0.439116)
-
-[node name="Produce_Can" parent="RigidBody3D3" instance=ExtResource("4_e6w1f")]
-transform = Transform3D(1.69124, 0, 0, 0, 1.69124, 0, 0, 0, 1.69124, -0.0196476, 0.494195, -0.38039)
-
-[node name="Produce_Can2" parent="RigidBody3D3" instance=ExtResource("4_e6w1f")]
-transform = Transform3D(1.69124, 0, 0, 0, 1.69124, 0, 0, 0, 1.69124, -0.0196476, 0.494195, -0.0932636)
-
-[node name="Produce_Can3" parent="RigidBody3D3" instance=ExtResource("4_e6w1f")]
-transform = Transform3D(1.69124, 0, 0, 0, 1.69124, 0, 0, 0, 1.69124, -0.0196476, 0.494195, 0.208216)
-
-[node name="Produce_Can4" parent="RigidBody3D3" instance=ExtResource("4_e6w1f")]
-transform = Transform3D(1.69124, 0, 0, 0, 1.69124, 0, 0, 0, 1.69124, -0.0196476, 0.494195, 0.514318)
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.236816, 1.03855, -0.141214)
+shape = SubResource("BoxShape3D_hxd6c")
