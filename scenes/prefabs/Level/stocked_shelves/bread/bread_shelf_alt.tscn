@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3uomt1hjoynj"]
+
+[ext_resource type="PackedScene" uid="uid://dlc3v8jo53l3h" path="res://models/shelves/Shelf.fbx" id="1_42s0u"]
+[ext_resource type="PackedScene" uid="uid://d0tn2ay3ngue3" path="res://models/merchandise/Bread.fbx" id="2_7mp10"]
+[ext_resource type="PackedScene" uid="uid://cpluir3r7wpt4" path="res://models/merchandise/Baguette.fbx" id="3_4twjy"]
+
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p3doa"]
+size = Vector3(0.773804, 0.0685425, 1.25208)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2sboe"]
+size = Vector3(0.347656, 2.00511, 1.25208)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="RigidBody3D14" type="RigidBody3D" parent="."]
+mass = 1.5
+
+[node name="Shelf" parent="RigidBody3D14" instance=ExtResource("1_42s0u")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0496216, 0.0361633, 6.10352e-05)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0496216, 0.4616, 6.10352e-05)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="RigidBody3D14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0496216, 0.869665, 6.10352e-05)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="RigidBody3D14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0496216, 1.29249, 6.10352e-05)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="RigidBody3D14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0496216, 1.70932, 6.10352e-05)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="RigidBody3D14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.163086, 1.07336, 0.000549316)
+shape = SubResource("BoxShape3D_2sboe")
+
+[node name="Produce_Bread6" parent="RigidBody3D14" instance=ExtResource("2_7mp10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213049, 1.00112, 0.0127716)
+
+[node name="Produce_Bread8" parent="RigidBody3D14" instance=ExtResource("2_7mp10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213049, 1.00112, -0.280594)
+
+[node name="Produce_Bread7" parent="RigidBody3D14" instance=ExtResource("2_7mp10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213049, 1.00112, 0.304382)
+
+[node name="Produce_Bread9" parent="RigidBody3D14" instance=ExtResource("2_7mp10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213049, 1.83341, 0.0127716)
+
+[node name="Produce_Bread10" parent="RigidBody3D14" instance=ExtResource("2_7mp10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213049, 1.83341, -0.280594)
+
+[node name="Produce_Bread11" parent="RigidBody3D14" instance=ExtResource("2_7mp10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213049, 1.83341, 0.304382)
+
+[node name="Produce_Bread12" parent="RigidBody3D14" instance=ExtResource("2_7mp10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213049, 0.162944, 0.0127716)
+
+[node name="Produce_Bread13" parent="RigidBody3D14" instance=ExtResource("2_7mp10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213049, 0.162944, -0.280594)
+
+[node name="Produce_Bread14" parent="RigidBody3D14" instance=ExtResource("2_7mp10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213049, 0.162944, 0.304382)
+
+[node name="Produce_Baguette3" parent="RigidBody3D14" instance=ExtResource("3_4twjy")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -0.274029, 0.571008, 0.0415344)
+
+[node name="Produce_Baguette4" parent="RigidBody3D14" instance=ExtResource("3_4twjy")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -0.274029, 1.40907, 0.0415344)

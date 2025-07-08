@@ -1,7 +1,8 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://2f8dk5si4onq"]
 
 [ext_resource type="Shader" uid="uid://bxtqnrbo5lpp5" path="res://resources/shaders/lit.gdshader" id="1_qvoty"]
-[ext_resource type="Texture2D" uid="uid://ykw75fbhyy4i" path="res://models/Clock_Material _205_BaseColor.png" id="2_o7kmx"]
+[ext_resource type="Texture2D" uid="uid://ykw75fbhyy4i" path="res://models/decor/Clock_BaseColor.png" id="2_o7kmx"]
+
 
 [resource]
 render_priority = 0

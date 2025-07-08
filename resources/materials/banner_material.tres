@@ -1,7 +1,8 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://c0na5gafq3788"]
 
 [ext_resource type="Shader" uid="uid://bxtqnrbo5lpp5" path="res://resources/shaders/lit.gdshader" id="1_6cqdd"]
-[ext_resource type="Texture2D" uid="uid://c72c8ik46sgtg" path="res://models/Banner_BaseColour.png" id="2_ign88"]
+[ext_resource type="Texture2D" uid="uid://c72c8ik46sgtg" path="res://models/decor/Banner_BaseColour.png" id="2_ign88"]
+
 
 [resource]
 render_priority = 0

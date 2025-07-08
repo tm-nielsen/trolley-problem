@@ -1,7 +1,8 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dkvvn5bhcbl6v"]
 
 [ext_resource type="Shader" uid="uid://bxtqnrbo5lpp5" path="res://resources/shaders/lit.gdshader" id="1_7cncr"]
-[ext_resource type="Texture2D" uid="uid://uogbx0vmfmpn" path="res://models/MagazineCover_Material.png" id="2_qg2qp"]
+[ext_resource type="Texture2D" uid="uid://uogbx0vmfmpn" path="res://models/shelves/Magazine_BaseColor.png" id="2_qg2qp"]
+
 
 [resource]
 render_priority = 0

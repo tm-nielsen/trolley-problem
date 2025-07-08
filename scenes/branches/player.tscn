@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dp02dgmjloyc" path="res://scenes/prefabs/paddle_sparks.tscn" id="4_ty1bp"]
 [ext_resource type="AudioStream" uid="uid://dm4hn24gjme7e" path="res://audio/trolley_problem_bgm.ogg" id="5_hcg2o"]
 
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_nyyim"]
 size = Vector3(0.493896, 0.174194, 0.802765)
 

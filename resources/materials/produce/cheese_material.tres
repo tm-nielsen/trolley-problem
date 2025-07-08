@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cc2b3urxujnw"]
 
 [ext_resource type="Shader" uid="uid://bxtqnrbo5lpp5" path="res://resources/shaders/lit.gdshader" id="1_72c4x"]
-[ext_resource type="Texture2D" uid="uid://b7txhgcvl3q81" path="res://models/Produce/Produce_Cheese_Material _54_BaseColor.png" id="2_72c4x"]
+[ext_resource type="Texture2D" uid="uid://b7txhgcvl3q81" path="res://models/merchandise/Cheese_BaseColor.png" id="2_72c4x"]
 
 [resource]
 render_priority = 0

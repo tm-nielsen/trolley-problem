@@ -1,15 +1,16 @@
 [gd_scene load_steps=11 format=3 uid="uid://cuvryrh0olh1d"]
 
-[ext_resource type="PackedScene" uid="uid://5mdyndmhcmw2" path="res://models/WasteBasket.fbx" id="1_2p7dg"]
+[ext_resource type="PackedScene" uid="uid://5mdyndmhcmw2" path="res://models/decor/WasteBasket.fbx" id="1_2p7dg"]
 [ext_resource type="Script" uid="uid://cvsgrribj3fbi" path="res://scripts/props/weighted_prop.gd" id="2_e8n1a"]
-[ext_resource type="PackedScene" uid="uid://dlc3v8jo53l3h" path="res://models/Shelf.fbx" id="3_fl17m"]
-[ext_resource type="PackedScene" uid="uid://rrxve2x5hrcl" path="res://models/ShelfCheckout.fbx" id="4_crn4a"]
-[ext_resource type="PackedScene" uid="uid://bejg2rq8pruoq" path="res://models/ShelfCorner.fbx" id="5_7ya75"]
-[ext_resource type="PackedScene" uid="uid://ftt3sb74l6pp" path="res://models/ShelfDouble.fbx" id="6_hpjxq"]
-[ext_resource type="PackedScene" uid="uid://bm5v0m3nwfkme" path="res://models/ShelfFridge.fbx" id="7_j5gst"]
-[ext_resource type="PackedScene" uid="uid://bjytmw6ul7h8d" path="res://models/ShelfMagazine.fbx" id="8_0j7m4"]
-[ext_resource type="PackedScene" uid="uid://ex0rl56oe70i" path="res://models/ShelfMeats.fbx" id="9_0eus8"]
-[ext_resource type="PackedScene" uid="uid://cqifel6uv2vgs" path="res://models/ShelfProduce.fbx" id="10_pen07"]
+[ext_resource type="PackedScene" uid="uid://dlc3v8jo53l3h" path="res://models/shelves/Shelf.fbx" id="3_fl17m"]
+[ext_resource type="PackedScene" uid="uid://rrxve2x5hrcl" path="res://models/shelves/CheckoutShelf.fbx" id="4_crn4a"]
+[ext_resource type="PackedScene" uid="uid://bejg2rq8pruoq" path="res://models/shelves/CornerShelf.fbx" id="5_7ya75"]
+[ext_resource type="PackedScene" uid="uid://ftt3sb74l6pp" path="res://models/shelves/DoubleShelf.fbx" id="6_hpjxq"]
+[ext_resource type="PackedScene" uid="uid://bm5v0m3nwfkme" path="res://models/shelves/Fridge.fbx" id="7_j5gst"]
+[ext_resource type="PackedScene" uid="uid://bjytmw6ul7h8d" path="res://models/shelves/MagazineStand.fbx" id="8_0j7m4"]
+[ext_resource type="PackedScene" uid="uid://ex0rl56oe70i" path="res://models/shelves/MeatShelf.fbx" id="9_0eus8"]
+[ext_resource type="PackedScene" uid="uid://cqifel6uv2vgs" path="res://models/shelves/ProduceShelf.fbx" id="10_pen07"]
+
 
 [node name="Props" type="Node3D"]
 

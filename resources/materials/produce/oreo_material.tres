@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://c2fu48aat464m"]
 
 [ext_resource type="Shader" uid="uid://bxtqnrbo5lpp5" path="res://resources/shaders/lit.gdshader" id="1_a7tak"]
-[ext_resource type="Texture2D" uid="uid://culnopxi8g28g" path="res://models/Produce/Oreo_BaseColor.png" id="2_usq8w"]
+[ext_resource type="Texture2D" uid="uid://culnopxi8g28g" path="res://models/merchandise/Oreo_BaseColor.png" id="2_usq8w"]
 
 [resource]
 render_priority = 0
