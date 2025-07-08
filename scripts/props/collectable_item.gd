@@ -32,7 +32,7 @@ func _find_mesh_instance(parent: Node3D) -> MeshInstance3D:
 
 func _get_prefab_name(prefab: PackedScene) -> String:
     var name_regex = RegEx.new()
-    name_regex.compile("_(\\w+)\\.")
+    name_regex.compile("(\\w+)\\.")
     return name_regex.search(prefab.resource_path).get_string(1)
 
 
