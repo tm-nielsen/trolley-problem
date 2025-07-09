@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7ysovydhkthn"]
+
+[ext_resource type="PackedScene" uid="uid://rrxve2x5hrcl" path="res://models/shelves/CheckoutShelf.fbx" id="1_i55gb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gw7ly"]
+size = Vector3(1.80658, 0.827637, 0.769287)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2sn7y"]
+size = Vector3(0.586426, 0.819336, 0.54953)
+
+[node name="Checkout" type="RigidBody3D"]
+mass = 10.0
+
+[node name="Model" parent="." instance=ExtResource("1_i55gb")]
+
+[node name="MainCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013092, 0.505574, 0.0384521)
+shape = SubResource("BoxShape3D_gw7ly")
+
+[node name="ComputerTableCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.050293, 0.501629, 0.6978)
+shape = SubResource("BoxShape3D_2sn7y")

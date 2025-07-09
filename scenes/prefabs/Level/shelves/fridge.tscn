@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d18b1qeokj7ic"]
+
+[ext_resource type="PackedScene" uid="uid://bm5v0m3nwfkme" path="res://models/shelves/Fridge.fbx" id="1_626fg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ajmvu"]
+size = Vector3(1.12109, 2.74847, 1.20264)
+
+[node name="Fridge" type="RigidBody3D"]
+mass = 3.0
+
+[node name="Model" parent="." instance=ExtResource("1_626fg")]
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.37223, -0.0393066)
+shape = SubResource("BoxShape3D_ajmvu")
