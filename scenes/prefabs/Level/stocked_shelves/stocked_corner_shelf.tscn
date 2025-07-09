@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://cp5565otp61c7"]
+
+[ext_resource type="PackedScene" uid="uid://dp1yigcb73ccv" path="res://scenes/prefabs/level/merchandise/jug.tscn" id="1_w6tmr"]
+[ext_resource type="PackedScene" uid="uid://d0uehvd17fhsm" path="res://scenes/prefabs/level/merchandise/bottle.tscn" id="2_e3kdo"]
+[ext_resource type="PackedScene" uid="uid://db3yqallnm4wc" path="res://scenes/prefabs/level/merchandise/yogourt.tscn" id="3_wyuyp"]
+[ext_resource type="PackedScene" uid="uid://sdxxv3xxhtfn" path="res://scenes/prefabs/level/merchandise/can.tscn" id="4_e6w1f"]
+[ext_resource type="PackedScene" uid="uid://cjwbkcp0l1vl0" path="res://scenes/prefabs/level/shelves/right_corner_shelf.tscn" id="5_4xmug"]
+
+[node name="StockedCornerShelf" type="Node3D"]
+
+[node name="Shelf" parent="." instance=ExtResource("5_4xmug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00393295, 0, -0.0310364)
+
+[node name="Jug" parent="." instance=ExtResource("1_w6tmr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.029028, 1.74823, -0.358595)
+
+[node name="Jug2" parent="." instance=ExtResource("1_w6tmr")]
+transform = Transform3D(-0.979561, 0, 0.201146, 0, 1, 0, -0.201146, 0, -0.979561, -0.029028, 1.74823, 0.0188732)
+
+[node name="Jug3" parent="." instance=ExtResource("1_w6tmr")]
+transform = Transform3D(-0.15007, 0, -0.988675, 0, 1, 0, 0.988675, 0, -0.15007, -0.029028, 1.74823, 0.394661)
+
+[node name="Bottle" parent="." instance=ExtResource("2_e3kdo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0432988, 1.32798, -0.395029)
+
+[node name="Bottle2" parent="." instance=ExtResource("2_e3kdo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0432988, 1.32798, 0.0436363)
+
+[node name="Bottle3" parent="." instance=ExtResource("2_e3kdo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0432988, 1.32798, 0.239525)
+
+[node name="Yogourt" parent="." instance=ExtResource("3_wyuyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0229301, 0.902737, -0.34733)
+
+[node name="Yogourt2" parent="." instance=ExtResource("3_wyuyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0229301, 0.902737, 0.0422764)
+
+[node name="Yogourt3" parent="." instance=ExtResource("3_wyuyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0229301, 0.902737, 0.40808)
+
+[node name="Can" parent="." instance=ExtResource("4_e6w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0157146, 0.494195, -0.411426)
+
+[node name="Can2" parent="." instance=ExtResource("4_e6w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0157146, 0.494195, -0.1243)
+
+[node name="Can3" parent="." instance=ExtResource("4_e6w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0157146, 0.494195, 0.17718)
+
+[node name="Can4" parent="." instance=ExtResource("4_e6w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0157146, 0.494195, 0.483282)
+
+[node name="Yogourt4" parent="." instance=ExtResource("3_wyuyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0229301, 0.0822074, -0.34733)
+
+[node name="Yogurt5" parent="." instance=ExtResource("3_wyuyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0229301, 0.0822074, 0.0422764)
+
+[node name="Yogourt6" parent="." instance=ExtResource("3_wyuyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0229301, 0.0822074, 0.40808)

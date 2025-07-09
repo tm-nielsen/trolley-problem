@@ -1,0 +1,94 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqjxu7wswqg37"]
+
+[ext_resource type="PackedScene" uid="uid://dna3j8ap80uj4" path="res://scenes/prefabs/level/shelves/double_shelf.tscn" id="1_v8e5x"]
+[ext_resource type="PackedScene" uid="uid://b4ld77ctpd52" path="res://scenes/prefabs/level/merchandise/oreo.tscn" id="2_jnul3"]
+[ext_resource type="PackedScene" uid="uid://cxvh2fejo7wg8" path="res://scenes/prefabs/level/merchandise/cereal.tscn" id="3_m76xo"]
+[ext_resource type="PackedScene" uid="uid://bwgrdrjqe2it6" path="res://scenes/prefabs/level/merchandise/dingles.tscn" id="4_ix8ah"]
+
+[node name="StockedDoubleShelf" type="Node3D"]
+
+[node name="DoubleShelf" parent="." instance=ExtResource("1_v8e5x")]
+
+[node name="Oreo2" parent="." instance=ExtResource("2_jnul3")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 0.425721, 1.48074, 0.480258)
+
+[node name="Oreo3" parent="." instance=ExtResource("2_jnul3")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 0.425721, 1.48074, 0.0934764)
+
+[node name="Oreo4" parent="." instance=ExtResource("2_jnul3")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 0.425721, 1.48074, -0.314492)
+
+[node name="Oreo5" parent="." instance=ExtResource("2_jnul3")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 0.425721, 0.646921, 0.480258)
+
+[node name="Oreo6" parent="." instance=ExtResource("2_jnul3")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 0.425721, 0.646921, 0.0934764)
+
+[node name="Oreo7" parent="." instance=ExtResource("2_jnul3")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 0.425721, 0.646921, -0.314492)
+
+[node name="Cerial" parent="." instance=ExtResource("3_m76xo")]
+transform = Transform3D(0.00223406, 0, 0.999997, 0, 1, 0, -0.999997, 0, 0.00223406, 0.418159, 0.907326, 0.336235)
+
+[node name="Cerial2" parent="." instance=ExtResource("3_m76xo")]
+transform = Transform3D(0.00223406, 0, 0.999997, 0, 1, 0, -0.999997, 0, 0.00223406, 0.418159, 0.907326, -0.0551338)
+
+[node name="Cerial3" parent="." instance=ExtResource("3_m76xo")]
+transform = Transform3D(0.00223406, 0, 0.999997, 0, 1, 0, -0.999997, 0, 0.00223406, 0.418159, 0.907326, -0.416494)
+
+[node name="Oreo8" parent="." instance=ExtResource("2_jnul3")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, -0.352132, 1.4742, 0.490061)
+
+[node name="Oreo9" parent="." instance=ExtResource("2_jnul3")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, -0.352132, 1.4742, 0.103279)
+
+[node name="Oreo10" parent="." instance=ExtResource("2_jnul3")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, -0.352132, 1.4742, -0.304689)
+
+[node name="Oreo11" parent="." instance=ExtResource("2_jnul3")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, -0.352132, 0.640385, 0.490061)
+
+[node name="Oreo12" parent="." instance=ExtResource("2_jnul3")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, -0.352132, 0.640385, 0.103279)
+
+[node name="Oreo13" parent="." instance=ExtResource("2_jnul3")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, -0.352132, 0.640385, -0.304689)
+
+[node name="Cerial16" parent="." instance=ExtResource("3_m76xo")]
+transform = Transform3D(0.00223406, 0, 0.999997, 0, 1, 0, -0.999997, 0, 0.00223406, -0.341613, 0.907326, 0.336235)
+
+[node name="Cerial17" parent="." instance=ExtResource("3_m76xo")]
+transform = Transform3D(0.00223406, 0, 0.999997, 0, 1, 0, -0.999997, 0, 0.00223406, -0.341613, 0.907326, -0.0551338)
+
+[node name="Cerial18" parent="." instance=ExtResource("3_m76xo")]
+transform = Transform3D(0.00223406, 0, 0.999997, 0, 1, 0, -0.999997, 0, 0.00223406, -0.341613, 0.907326, -0.416494)
+
+[node name="Dingles" parent="." instance=ExtResource("4_ix8ah")]
+transform = Transform3D(-0.00410155, 0, 0.999992, 0, 1, 0, -0.999992, 0, -0.00410155, 0.407839, 1.7485, 0.399899)
+
+[node name="Dingles2" parent="." instance=ExtResource("4_ix8ah")]
+transform = Transform3D(-0.00410155, 0, 0.999992, 0, 1, 0, -0.999992, 0, -0.00410155, 0.407839, 1.7485, 0.164255)
+
+[node name="Dingles3" parent="." instance=ExtResource("4_ix8ah")]
+transform = Transform3D(-0.00410155, 0, 0.999992, 0, 1, 0, -0.999992, 0, -0.00410155, 0.407839, 1.7485, -0.0801525)
+
+[node name="Dingles4" parent="." instance=ExtResource("4_ix8ah")]
+transform = Transform3D(-0.00410155, 0, 0.999992, 0, 1, 0, -0.999992, 0, -0.00410155, 0.407839, 1.7485, -0.302631)
+
+[node name="Dingles5" parent="." instance=ExtResource("4_ix8ah")]
+transform = Transform3D(-0.00410155, 0, 0.999992, 0, 1, 0, -0.999992, 0, -0.00410155, 0.407839, 1.7485, -0.508371)
+
+[node name="Dingles11" parent="." instance=ExtResource("4_ix8ah")]
+transform = Transform3D(0.00185002, 0, -0.999998, 0, 1, 0, 0.999998, 0, 0.00185002, -0.337076, 1.7485, -0.507479)
+
+[node name="Dingles12" parent="." instance=ExtResource("4_ix8ah")]
+transform = Transform3D(0.00185002, 0, -0.999998, 0, 1, 0, 0.999998, 0, 0.00185002, -0.337607, 1.7485, -0.271835)
+
+[node name="Dingles13" parent="." instance=ExtResource("4_ix8ah")]
+transform = Transform3D(0.00185002, 0, -0.999998, 0, 1, 0, 0.999998, 0, 0.00185002, -0.338158, 1.7485, -0.0274277)
+
+[node name="Dingles14" parent="." instance=ExtResource("4_ix8ah")]
+transform = Transform3D(0.00185002, 0, -0.999998, 0, 1, 0, 0.999998, 0, 0.00185002, -0.338658, 1.7485, 0.195049)
+
+[node name="Dingles15" parent="." instance=ExtResource("4_ix8ah")]
+transform = Transform3D(0.00185002, 0, -0.999998, 0, 1, 0, 0.999998, 0, 0.00185002, -0.339122, 1.7485, 0.400789)

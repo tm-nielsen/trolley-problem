@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx5xtnr83ga5w"]
+
+[ext_resource type="PackedScene" uid="uid://rlbevw3b7p6b" path="res://scenes/prefabs/level/shelves/meat_shelf.tscn" id="1_3ayuw"]
+[ext_resource type="PackedScene" uid="uid://dys0munk47xr2" path="res://scenes/prefabs/level/merchandise/meat.tscn" id="2_xselp"]
+
+[node name="MeatShelf" type="Node3D"]
+
+[node name="Shelf" parent="." instance=ExtResource("1_3ayuw")]
+
+[node name="Meat" parent="." instance=ExtResource("2_xselp")]
+transform = Transform3D(-0.0216918, -0.993327, 0.113273, 0.999762, -0.0218323, 0, 0.002473, 0.113246, 0.993564, 0.600574, 0.543843, -0.265405)
+
+[node name="Meat2" parent="." instance=ExtResource("2_xselp")]
+transform = Transform3D(-0.0216918, -0.993327, 0.113273, 0.999762, -0.0218323, 0, 0.002473, 0.113246, 0.993564, 0.0682583, 0.543843, -0.265405)
+
+[node name="Meat3" parent="." instance=ExtResource("2_xselp")]
+transform = Transform3D(-0.0216918, -0.993327, 0.113273, 0.999762, -0.0218323, 0, 0.002473, 0.113246, 0.993564, -0.46007, 0.543843, -0.265405)
+
+[node name="Meat4" parent="." instance=ExtResource("2_xselp")]
+transform = Transform3D(-0.0216918, -0.993327, 0.113273, 0.999762, -0.0218323, 0, 0.002473, 0.113246, 0.993564, -0.214458, 0.775941, -0.0652864)
+
+[node name="Meat5" parent="." instance=ExtResource("2_xselp")]
+transform = Transform3D(-0.0216918, -0.993327, 0.113273, 0.999762, -0.0218323, 0, 0.002473, 0.113246, 0.993564, 0.306841, 0.775941, -0.0649851)
