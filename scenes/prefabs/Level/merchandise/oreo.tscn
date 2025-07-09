@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4ld77ctpd52"]
+
+[ext_resource type="PackedScene" uid="uid://bo5q8fxwo3rti" path="res://models/merchandise/Oreo.fbx" id="1_cl7mw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lvcd4"]
+size = Vector3(0.296631, 0.335022, 0.0927734)
+
+[node name="Oreo" type="RigidBody3D"]
+
+[node name="Model" parent="." instance=ExtResource("1_cl7mw")]
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.168732, 0)
+shape = SubResource("BoxShape3D_lvcd4")

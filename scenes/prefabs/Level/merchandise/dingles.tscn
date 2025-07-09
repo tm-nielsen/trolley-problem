@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwgrdrjqe2it6"]
+
+[ext_resource type="PackedScene" uid="uid://cayby1box47as" path="res://models/merchandise/Dingles.fbx" id="1_0koi2"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vyj2g"]
+height = 0.369507
+radius = 0.0761719
+
+[node name="Dingles" type="RigidBody3D"]
+
+[node name="Model" parent="." instance=ExtResource("1_0koi2")]
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.183789, 0)
+shape = SubResource("CylinderShape3D_vyj2g")

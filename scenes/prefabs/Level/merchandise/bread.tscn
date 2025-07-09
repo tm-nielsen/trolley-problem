@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://blqawgth0vlrw"]
+
+[ext_resource type="PackedScene" uid="uid://d0tn2ay3ngue3" path="res://models/merchandise/Bread.fbx" id="1_sg3xj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dw0d4"]
+size = Vector3(0.355713, 0.168457, 0.15918)
+
+[node name="Bread" type="RigidBody3D"]
+
+[node name="Model" parent="." instance=ExtResource("1_sg3xj")]
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.005005, 0)
+shape = SubResource("BoxShape3D_dw0d4")

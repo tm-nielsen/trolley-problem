@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjjpfpy1iafqj"]
+
+[ext_resource type="PackedScene" uid="uid://bws7uk4786855" path="res://models/merchandise/ShortCan.fbx" id="1_g6812"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_amngj"]
+height = 0.141571
+radius = 0.0776367
+
+[node name="ShortCan" type="RigidBody3D"]
+
+[node name="Model" parent="." instance=ExtResource("1_g6812")]
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0709808, 0)
+shape = SubResource("CylinderShape3D_amngj")

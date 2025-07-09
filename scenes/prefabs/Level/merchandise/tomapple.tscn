@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnlf3ca336x86"]
+
+[ext_resource type="PackedScene" uid="uid://cjl5pu3k04qhu" path="res://models/merchandise/Tomapple.fbx" id="1_a7fae"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8dw1g"]
+radius = 0.0626717
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_355l3"]
+height = 0.0597534
+radius = 0.0400391
+
+[node name="Tomapple" type="RigidBody3D"]
+
+[node name="Model" parent="." instance=ExtResource("1_a7fae")]
+
+[node name="MainCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0772672, 0)
+shape = SubResource("SphereShape3D_8dw1g")
+
+[node name="BaseCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.029141, 0)
+shape = SubResource("CylinderShape3D_355l3")

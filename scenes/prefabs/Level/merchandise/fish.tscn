@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://id6l2s06vgr4"]
+
+[ext_resource type="PackedScene" uid="uid://cdy0jj7ar7r8d" path="res://models/merchandise/Fish.fbx" id="1_5w3hf"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k2v50"]
+radius = 0.046082
+height = 0.186035
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a7202"]
+size = Vector3(0.015625, 0.0704346, 0.0703125)
+
+[node name="Fish" type="RigidBody3D"]
+
+[node name="Model" parent="." instance=ExtResource("1_5w3hf")]
+
+[node name="BodyCollider" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_k2v50")
+
+[node name="TailCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11676, 0)
+shape = SubResource("BoxShape3D_a7202")

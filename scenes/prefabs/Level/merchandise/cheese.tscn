@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://i6mjvgu7d5d4"]
+
+[ext_resource type="PackedScene" uid="uid://b2ruecxbu25p5" path="res://models/merchandise/Cheese.fbx" id="1_8kww6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xpdc0"]
+size = Vector3(0.220459, 0.164551, 0.155273)
+
+[node name="Cheese" type="RigidBody3D"]
+
+[node name="Model" parent="." instance=ExtResource("1_8kww6")]
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.082898, 0)
+shape = SubResource("BoxShape3D_xpdc0")

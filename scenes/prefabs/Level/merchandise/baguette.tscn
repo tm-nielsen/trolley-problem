@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://chf4i5w5ayx04"]
+
+[ext_resource type="PackedScene" uid="uid://cpluir3r7wpt4" path="res://models/merchandise/Baguette.fbx" id="1_jg2l3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2dtha"]
+radius = 0.0750533
+height = 1.5
+
+[node name="Baguette" type="RigidBody3D"]
+
+[node name="Model" parent="." instance=ExtResource("1_jg2l3")]
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_2dtha")

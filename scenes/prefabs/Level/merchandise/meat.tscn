@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dys0munk47xr2"]
+
+[ext_resource type="PackedScene" uid="uid://7pcv5wmvi4tu" path="res://models/merchandise/Meat.fbx" id="1_3lyhd"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pnd35"]
+radius = 0.0745337
+height = 0.351689
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pddqw"]
+size = Vector3(0.0673828, 0.146759, 0.101563)
+
+[node name="Meat" type="RigidBody3D"]
+
+[node name="Model" parent="." instance=ExtResource("1_3lyhd")]
+
+[node name="FleshCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0129001, 0)
+shape = SubResource("CapsuleShape3D_pnd35")
+
+[node name="BoneCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.210823, 0)
+shape = SubResource("BoxShape3D_pddqw")

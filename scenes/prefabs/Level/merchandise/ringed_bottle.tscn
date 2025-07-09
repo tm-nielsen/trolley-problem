@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://7s53mfipw810"]
+
+[ext_resource type="PackedScene" uid="uid://dahvf5gb5p7nu" path="res://models/merchandise/RingedBottle.fbx" id="1_6hjgp"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lietu"]
+height = 0.198486
+radius = 0.0751953
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_k4pnm"]
+height = 0.0731812
+radius = 0.0507813
+
+[node name="RingedBottle" type="RigidBody3D"]
+
+[node name="Model" parent="." instance=ExtResource("1_6hjgp")]
+
+[node name="BaseCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0999756, 0)
+shape = SubResource("CylinderShape3D_lietu")
+
+[node name="TopCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.237213, 0)
+shape = SubResource("CylinderShape3D_k4pnm")

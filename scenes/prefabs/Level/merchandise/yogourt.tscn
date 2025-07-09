@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://db3yqallnm4wc"]
+
+[ext_resource type="PackedScene" uid="uid://chyf22gb3mn4f" path="res://models/merchandise/Yogurt.fbx" id="1_f24a7"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_odsbo"]
+height = 0.0159912
+radius = 0.129395
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6b20x"]
+height = 0.150879
+radius = 0.0908203
+
+[node name="Yogourt" type="RigidBody3D"]
+
+[node name="Model" parent="." instance=ExtResource("1_f24a7")]
+
+[node name="TopCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.160504, 0)
+shape = SubResource("CylinderShape3D_odsbo")
+
+[node name="BaseCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0767484, 0)
+shape = SubResource("CylinderShape3D_6b20x")

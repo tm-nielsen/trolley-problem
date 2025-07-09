@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://qej0j6841w"]
+
+[ext_resource type="PackedScene" uid="uid://duclni4qpomk" path="res://models/merchandise/Cabbage.fbx" id="1_k8bt0"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_k8bt0"]
+radius = 0.21224
+
+[node name="Cabbage" type="RigidBody3D"]
+
+[node name="Model" parent="." instance=ExtResource("1_k8bt0")]
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0513428, 0)
+shape = SubResource("SphereShape3D_k8bt0")

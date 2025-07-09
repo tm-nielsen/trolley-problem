@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dp1yigcb73ccv"]
+
+[ext_resource type="PackedScene" uid="uid://bc15d4xl60adw" path="res://models/merchandise/Jug.fbx" id="1_ir8gm"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lcax8"]
+height = 0.371704
+radius = 0.137207
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3gy4e"]
+height = 0.0939941
+radius = 0.0488281
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3t0ea"]
+height = 0.224609
+radius = 0.0488281
+
+[node name="Jug" type="RigidBody3D"]
+
+[node name="Model" parent="." instance=ExtResource("1_ir8gm")]
+
+[node name="MainCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.186707, 0)
+shape = SubResource("CylinderShape3D_lcax8")
+
+[node name="TopColider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.408997, 0)
+shape = SubResource("CylinderShape3D_3gy4e")
+
+[node name="HandleCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0596378, 0.198083, 0.118785)
+shape = SubResource("CylinderShape3D_3t0ea")
