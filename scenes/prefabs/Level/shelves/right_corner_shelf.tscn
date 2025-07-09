@@ -2,45 +2,44 @@
 
 [ext_resource type="PackedScene" uid="uid://bejg2rq8pruoq" path="res://models/shelves/CornerShelf.fbx" id="1_yka06"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ijya8"]
+size = Vector3(0.773315, 0.065979, 1.36176)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_mnduj"]
-size = Vector3(0.425293, 0.0671387, 1.24939)
+[sub_resource type="BoxShape3D" id="BoxShape3D_biioj"]
+size = Vector3(0.772339, 2.07013, 0.112305)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_hc8ps"]
-size = Vector3(0.774414, 2.07928, 0.11145)
+[sub_resource type="BoxShape3D" id="BoxShape3D_24l2w"]
+size = Vector3(0.354248, 2.07002, 1.3602)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_hxd6c"]
-size = Vector3(0.342773, 2.07404, 1.25397)
+[node name="RightCornerShelf" type="RigidBody3D"]
+mass = 3.0
 
-[node name="RigidBody3D" type="RigidBody3D"]
+[node name="Model" parent="." instance=ExtResource("1_yka06")]
 
-[node name="ShelfCorner" parent="." instance=ExtResource("1_yka06")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.148, 0, -0.142)
+[node name="BottomShelf" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172302, 0.0354919, 0.053364)
+shape = SubResource("BoxShape3D_ijya8")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.147101, 0.035629, -0.14398)
-shape = SubResource("BoxShape3D_mnduj")
+[node name="Shelf1" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172302, 0.461205, 0.053364)
+shape = SubResource("BoxShape3D_ijya8")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.147101, 0.477107, -0.14398)
-shape = SubResource("BoxShape3D_mnduj")
+[node name="Shelf2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172302, 0.869748, 0.053364)
+shape = SubResource("BoxShape3D_ijya8")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.147101, 0.884198, -0.14398)
-shape = SubResource("BoxShape3D_mnduj")
+[node name="Shelf3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172302, 1.29499, 0.053364)
+shape = SubResource("BoxShape3D_ijya8")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.147101, 1.31516, -0.14398)
-shape = SubResource("BoxShape3D_mnduj")
+[node name="TopShelf" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172302, 1.70578, 0.053364)
+shape = SubResource("BoxShape3D_ijya8")
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.147101, 1.72711, -0.14398)
-shape = SubResource("BoxShape3D_mnduj")
+[node name="SidePlank" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.169914, 1.03949, 0.67842)
+shape = SubResource("BoxShape3D_biioj")
 
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0249023, 1.03964, 0.53816)
-shape = SubResource("BoxShape3D_hc8ps")
-
-[node name="CollisionShape3D7" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.236816, 1.03855, -0.141214)
-shape = SubResource("BoxShape3D_hxd6c")
+[node name="BackPlank" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.388608, 1.04, 0.0549776)
+shape = SubResource("BoxShape3D_24l2w")
