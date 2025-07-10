@@ -95,7 +95,6 @@ debug_fill = false
 process_mode = 3
 stream = ExtResource("5_hcg2o")
 attenuation_model = 2
-volume_db = 24.0
 unit_size = 0.5
 autoplay = true
 doppler_tracking = 2
