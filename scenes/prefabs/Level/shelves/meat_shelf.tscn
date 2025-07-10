@@ -18,7 +18,8 @@ size = Vector3(2.00043, 0.0783691, 0.64859)
 size = Vector3(0.0626831, 0.947998, 0.548828)
 
 [node name="MeatShelf" type="RigidBody3D"]
-mass = 3.0
+collision_mask = 3
+mass = 2.0
 
 [node name="Model" parent="." instance=ExtResource("1_n4w6h")]
 

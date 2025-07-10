@@ -6,6 +6,8 @@
 size = Vector3(0.265869, 0.341614, 0.09375)
 
 [node name="Cereal" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 7
 
 [node name="Model" parent="." instance=ExtResource("1_u4ttd")]
 

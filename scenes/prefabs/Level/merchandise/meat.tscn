@@ -10,6 +10,8 @@ height = 0.351689
 size = Vector3(0.0673828, 0.146759, 0.101563)
 
 [node name="Meat" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 7
 
 [node name="Model" parent="." instance=ExtResource("1_3lyhd")]
 

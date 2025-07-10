@@ -9,7 +9,8 @@ size = Vector3(1.80658, 0.827637, 0.769287)
 size = Vector3(0.586426, 0.819336, 0.54953)
 
 [node name="Checkout" type="RigidBody3D"]
-mass = 10.0
+collision_mask = 3
+mass = 3.0
 
 [node name="Model" parent="." instance=ExtResource("1_i55gb")]
 

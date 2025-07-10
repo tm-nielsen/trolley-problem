@@ -9,6 +9,7 @@ size = Vector3(1.18592, 0.0595703, 1.23187)
 size = Vector3(0.335754, 2.07523, 1.25159)
 
 [node name="DoubleShelf" type="RigidBody3D"]
+collision_mask = 3
 mass = 3.0
 
 [node name="Model" parent="." instance=ExtResource("1_whp2t")]

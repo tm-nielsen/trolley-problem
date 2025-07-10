@@ -12,7 +12,8 @@ size = Vector3(0.772339, 2.07013, 0.112305)
 size = Vector3(0.354248, 2.07002, 1.3602)
 
 [node name="RightCornerShelf" type="RigidBody3D"]
-mass = 3.0
+collision_mask = 3
+mass = 2.0
 
 [node name="Model" parent="." instance=ExtResource("1_yka06")]
 

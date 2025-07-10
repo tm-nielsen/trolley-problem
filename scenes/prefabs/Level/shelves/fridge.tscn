@@ -5,8 +5,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_ajmvu"]
 size = Vector3(1.12109, 2.74847, 1.20264)
 
-[node name="Fridge" type="RigidBody3D"]
-mass = 3.0
+[node name="Fridge" type="StaticBody3D"]
 
 [node name="Model" parent="." instance=ExtResource("1_626fg")]
 

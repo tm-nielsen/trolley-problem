@@ -6,6 +6,8 @@
 size = Vector3(0.296631, 0.335022, 0.0927734)
 
 [node name="Oreo" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 7
 
 [node name="Model" parent="." instance=ExtResource("1_cl7mw")]
 

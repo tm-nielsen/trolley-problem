@@ -7,6 +7,8 @@ radius = 0.0627491
 height = 0.376384
 
 [node name="BananaPepper" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 7
 
 [node name="Model" parent="." instance=ExtResource("1_lir8a")]
 

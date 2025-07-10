@@ -7,6 +7,8 @@ height = 0.183533
 radius = 0.0585938
 
 [node name="Can" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 7
 
 [node name="Model" parent="." instance=ExtResource("1_17l6f")]
 

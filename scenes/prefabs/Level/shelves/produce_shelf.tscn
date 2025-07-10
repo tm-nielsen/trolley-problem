@@ -15,7 +15,8 @@ size = Vector3(2.00806, 0.64624, 0.0612793)
 size = Vector3(0.0537109, 0.389626, 1.30566)
 
 [node name="ProduceShelf" type="RigidBody3D"]
-mass = 3.0
+collision_mask = 3
+mass = 2.0
 
 [node name="Model" parent="." instance=ExtResource("1_qavhp")]
 

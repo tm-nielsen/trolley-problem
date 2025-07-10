@@ -7,6 +7,8 @@ radius = 0.0750533
 height = 1.5
 
 [node name="Baguette" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 7
 
 [node name="Model" parent="." instance=ExtResource("1_jg2l3")]
 
