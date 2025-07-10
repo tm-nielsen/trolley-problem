@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://ddrbqtusqv5ie"]
+[gd_scene load_steps=49 format=3 uid="uid://ddrbqtusqv5ie"]
 
 [ext_resource type="PackedScene" uid="uid://b5mw8yevevsir" path="res://scenes/branches/player.tscn" id="1_4no8g"]
 [ext_resource type="PackedScene" uid="uid://cqjxu7wswqg37" path="res://scenes/prefabs/level/stocked_shelves/stocked_double_shelf.tscn" id="2_48r4s"]
@@ -42,6 +42,13 @@
 [ext_resource type="PackedScene" uid="uid://dxh4rv6g86dnl" path="res://scenes/prefabs/level/stocked_shelves/cans/left_corner_can_shelf.tscn" id="40_gkvn1"]
 [ext_resource type="PackedScene" uid="uid://cij7lr5lkh8ph" path="res://scenes/prefabs/level/stocked_shelves/cans/right_corner_can_shelf.tscn" id="41_pl6yh"]
 
+[sub_resource type="Environment" id="Environment_gooay"]
+background_mode = 1
+background_color = Color(0.541176, 0.580392, 0.6, 1)
+adjustment_brightness = 0.84
+adjustment_contrast = 2.06
+adjustment_saturation = 2.06
+
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qolh1"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_gdjh5"]
@@ -70,46 +77,18 @@ size = Vector3(0.347656, 2.00511, 1.25208)
 [node name="MovementTest" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.957672, -0.0731471, -0.278412, 0.16932, -0.639032, 0.750313, -0.232797, -0.765695, -0.599597, 0, 0, 0)
+transform = Transform3D(0.957672, -0.0731468, -0.278412, 0.287425, 0.189843, 0.9388, -0.0158156, -0.979087, 0.202831, 0, 0, 0)
 light_color = Color(1, 0.945098, 0.886275, 1)
+light_energy = 0.6
+shadow_enabled = true
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.622586, -0.433201, 0.651707, -0.656991, 0.163095, 0.736046, -0.425147, -0.886418, -0.183068, 0, 0, 0)
+light_color = Color(0.76485, 0.747, 0.9, 1)
 light_energy = 0.2
-shadow_enabled = true
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.8792, 6.56581, -20.1289)
-light_energy = 0.5
-shadow_enabled = true
-omni_range = 169.794
-
-[node name="OmniLight3D3" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6599, 6.56581, -9.63254)
-light_energy = 0.5
-shadow_enabled = true
-omni_range = 169.794
-
-[node name="OmniLight3D4" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.7557, 6.56581, -9.63254)
-light_energy = 0.5
-shadow_enabled = true
-omni_range = 169.794
-
-[node name="OmniLight3D5" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.7557, 6.56581, -25.3047)
-light_energy = 0.5
-shadow_enabled = true
-omni_range = 169.794
-
-[node name="OmniLight3D6" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.7557, 6.56581, -38.8305)
-light_energy = 0.5
-shadow_enabled = true
-omni_range = 169.794
-
-[node name="OmniLight3D7" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7147, 6.56581, -38.8305)
-light_energy = 0.5
-shadow_enabled = true
-omni_range = 169.794
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gooay")
 
 [node name="Player" parent="." instance=ExtResource("1_4no8g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.951, -0.309469, -41.4244)
@@ -205,6 +184,7 @@ size = Vector3(1.37219, 10.2127, 33.4711)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Ground"]
 transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, -24.4614, 11.4257, -21.4363)
+cast_shadow = 0
 use_collision = true
 size = Vector3(49.0728, 2.30018, 33.4711)
 
