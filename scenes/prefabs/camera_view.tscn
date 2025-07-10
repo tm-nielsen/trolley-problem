@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cqqic1e8nq14r"]
 
-[ext_resource type="Script" uid="uid://dglldrri0a718" path="res://scripts/cameras/camera_view.gd" id="1_rwqmo"]
+[ext_resource type="Script" uid="uid://xd1rusesonfl" path="res://scripts/cameras/limited_framerate_camera_view.gd" id="1_rwqmo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rwqmo"]
 font_size = 12
@@ -20,6 +20,7 @@ stretch = true
 
 [node name="Viewport" type="SubViewport" parent="Viewport Container"]
 handle_input_locally = false
+positional_shadow_atlas_size = 0
 size = Vector2i(2, 2)
 render_target_update_mode = 4
 
