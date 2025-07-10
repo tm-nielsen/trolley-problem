@@ -94,7 +94,9 @@ debug_fill = false
 [node name="Music Source" type="AudioStreamPlayer3D" parent="."]
 process_mode = 3
 stream = ExtResource("5_hcg2o")
-unit_size = 2.0
+attenuation_model = 2
+volume_db = 24.0
+unit_size = 0.5
 autoplay = true
 
 [connection signal="collided" from="." to="Animated Cart" method="_on_cart_collided"]
