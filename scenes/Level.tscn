@@ -7,7 +7,7 @@
 [ext_resource type="Material" uid="uid://b1dhtda5npupf" path="res://resources/materials/wall_material.tres" id="4_48r4s"]
 [ext_resource type="PackedScene" uid="uid://b7ysovydhkthn" path="res://scenes/prefabs/level/shelves/checkout.tscn" id="6_baq46"]
 [ext_resource type="PackedScene" uid="uid://d18b1qeokj7ic" path="res://scenes/prefabs/level/shelves/fridge.tscn" id="9_70b58"]
-[ext_resource type="PackedScene" uid="uid://c6aigs0l3wrdf" path="res://scenes/prefabs/level/shelves/magazine_shelf.tscn" id="10_0dkw0"]
+[ext_resource type="PackedScene" uid="uid://c6aigs0l3wrdf" path="res://scenes/prefabs/level/shelves/magazine_stand.tscn" id="10_0dkw0"]
 [ext_resource type="PackedScene" uid="uid://cpluir3r7wpt4" path="res://models/merchandise/Baguette.fbx" id="13_gooay"]
 [ext_resource type="PackedScene" uid="uid://dpt7agiw8i0gd" path="res://models/merchandise/Bottle.fbx" id="15_gkvn1"]
 [ext_resource type="PackedScene" uid="uid://duclni4qpomk" path="res://models/merchandise/Cabbage.fbx" id="16_pl6yh"]
