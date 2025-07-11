@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+Settings="*res://scripts/globals/settings.gd"
 GlobalSignalBus="*res://scripts/globals/global_signal_bus.gd"
 TweenHelpers="*res://scripts/globals/tween_helpers.gd"
 
@@ -25,6 +26,7 @@ TweenHelpers="*res://scripts/globals/tween_helpers.gd"
 window/size/viewport_width=384
 window/size/viewport_height=216
 window/size/mode=4
+window/size/initial_position_type=4
 window/stretch/mode="viewport"
 window/size/mode.editor=0
 
