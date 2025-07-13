@@ -30,7 +30,6 @@
 [ext_resource type="PackedScene" uid="uid://7pcv5wmvi4tu" path="res://models/merchandise/Meat.fbx" id="28_wt0ut"]
 [ext_resource type="PackedScene" uid="uid://b4hov5hkkmrkn" path="res://scenes/prefabs/collectable_item.tscn" id="29_hvjgr"]
 
-
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qolh1"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_gdjh5"]
