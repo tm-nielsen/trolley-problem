@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://ddrbqtusqv5ie"]
+[gd_scene load_steps=66 format=3 uid="uid://ddrbqtusqv5ie"]
 
 [ext_resource type="PackedScene" uid="uid://b5mw8yevevsir" path="res://scenes/branches/player.tscn" id="1_4no8g"]
 [ext_resource type="PackedScene" uid="uid://cqjxu7wswqg37" path="res://scenes/prefabs/Level/stocked_shelves/stocked_double_shelf.tscn" id="2_48r4s"]
@@ -24,8 +24,10 @@
 [ext_resource type="PackedScene" uid="uid://7qwkia1dgl7f" path="res://scenes/prefabs/Level/shelves/produce_shelf.tscn" id="21_ycrer"]
 [ext_resource type="PackedScene" uid="uid://chyf22gb3mn4f" path="res://models/merchandise/Yogurt.fbx" id="22_ayxsy"]
 [ext_resource type="PackedScene" uid="uid://bje860gdygikm" path="res://models/decor/Banner.fbx" id="22_gkvn1"]
+[ext_resource type="Texture2D" uid="uid://b2scdo82osb7u" path="res://resources/materials/exit.jpg" id="22_rcwq3"]
 [ext_resource type="PackedScene" uid="uid://b2ruecxbu25p5" path="res://models/merchandise/Cheese.fbx" id="23_gi26r"]
 [ext_resource type="PackedScene" uid="uid://dche3wfireewd" path="res://models/decor/Clock.fbx" id="23_pl6yh"]
+[ext_resource type="Texture2D" uid="uid://cr8flmpwa2vph" path="res://resources/materials/Bread Decal.png" id="23_unn01"]
 [ext_resource type="Material" uid="uid://k3iqj5skq5sx" path="res://resources/materials/CeilingMat.tres" id="24_mbj8a"]
 [ext_resource type="PackedScene" uid="uid://bo5q8fxwo3rti" path="res://models/merchandise/Oreo.fbx" id="24_vgtnl"]
 [ext_resource type="Script" uid="uid://mont5n28gsku" path="res://scripts/props/collection_pool.gd" id="25_mbj8a"]
@@ -85,6 +87,12 @@ albedo_texture = ExtResource("20_83eg4")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mbj8a"]
 albedo_texture = ExtResource("21_gi26r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_unn01"]
+albedo_texture = ExtResource("22_rcwq3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3yv64"]
+albedo_texture = ExtResource("23_unn01")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vgtnl"]
 albedo_texture = ExtResource("21_ayxsy")
@@ -163,6 +171,18 @@ material_override = SubResource("StandardMaterial3D_mbj8a")
 mesh = SubResource("PlaneMesh_gdjh5")
 surface_material_override/0 = SubResource("ShaderMaterial_jo1an")
 
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(0.0190614, -0.00037144, -2.10184e-05, -4.69064e-05, -0.000895035, -0.00865455, 6.94488e-05, 0.101343, -7.65116e-05, -16.5884, 4.69574, 4.8537)
+material_override = SubResource("StandardMaterial3D_unn01")
+mesh = SubResource("PlaneMesh_gdjh5")
+surface_material_override/0 = SubResource("ShaderMaterial_jo1an")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(8.54201e-05, -0.224452, 7.99854e-05, -5.34684e-05, -0.0019823, -0.00906661, 0.021728, 0.000877518, -2.26256e-05, 7.01051, 3.38336, 15.9798)
+material_override = SubResource("StandardMaterial3D_3yv64")
+mesh = SubResource("PlaneMesh_gdjh5")
+surface_material_override/0 = SubResource("ShaderMaterial_jo1an")
+
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Ground"]
 transform = Transform3D(-0.0249606, -0.000117141, 2.89118e-05, -6.14228e-05, -0.000898143, -0.0116997, 2.9294e-05, -0.101696, 0.000103295, -0.403534, 3.49082, 40.4557)
 material_override = SubResource("StandardMaterial3D_vgtnl")
@@ -214,22 +234,22 @@ use_collision = true
 size = Vector3(1.37219, 10.2, 13.8289)
 
 [node name="CSGBox3D19" type="CSGBox3D" parent="Building"]
-transform = Transform3D(-0.0103322, 0, 0.999947, 0, 1, 0, -0.999947, 0, -0.0103322, -23.2642, 5.18796, 3.5705)
+transform = Transform3D(-0.0103322, 0, 0.999947, 0, 1, 0, -0.999947, 0, -0.0103322, -23.2648, 5.18796, 4.23571)
 material_override = ExtResource("4_48r4s")
 use_collision = true
-size = Vector3(1.37219, 10.2384, 6.00816)
+size = Vector3(1.25201, 10.2384, 6.00816)
 
 [node name="CSGBox3D35" type="CSGBox3D" parent="Building"]
-transform = Transform3D(-0.0103322, 0, 0.999947, 0, 1, 0, -0.999947, 0, -0.0103322, -9.8297, 5.16878, 3.4124)
+transform = Transform3D(-0.0103322, 0, 0.999947, 0, 1, 0, -0.999947, 0, -0.0103322, -9.8297, 5.16878, 4.13769)
 material_override = ExtResource("4_48r4s")
 use_collision = true
 size = Vector3(1.37219, 10.2, 6.21373)
 
 [node name="CSGBox3D36" type="CSGBox3D" parent="Building"]
-transform = Transform3D(0.999987, 0, 0.00513134, 0, 1, 0, -0.00513134, 0, 0.999987, -7.3519, 5.16878, -1.1946)
+transform = Transform3D(0.999987, 0, 0.00513134, 0, 1, 0, -0.00513134, 0, 0.999987, -7.35014, 5.16878, -0.851326)
 material_override = ExtResource("4_48r4s")
 use_collision = true
-size = Vector3(1.37219, 10.2, 7.77923)
+size = Vector3(1.37219, 10.2, 8.46579)
 
 [node name="CSGBox3D37" type="CSGBox3D" parent="Building"]
 transform = Transform3D(0.999987, 0, 0.00513134, 0, 1, 0, -0.00513134, 0, 0.999987, 7.73314, 5.16878, 0.0949919)
@@ -238,10 +258,10 @@ use_collision = true
 size = Vector3(1.37219, 10.2, 10.6437)
 
 [node name="CSGBox3D39" type="CSGBox3D" parent="Building"]
-transform = Transform3D(0.999987, 0, 0.00513134, 0, 1, 0, -0.00513134, 0, 0.999987, 7.73314, 5.16878, 10.7392)
+transform = Transform3D(0.999987, 0, 0.00513134, 0, 1, 0, -0.00513134, 0, 0.999987, 7.71317, 5.16878, 10.7393)
 material_override = ExtResource("4_48r4s")
 use_collision = true
-size = Vector3(1.37219, 10.2, 10.6437)
+size = Vector3(1.41214, 10.2, 10.6437)
 
 [node name="CSGBox3D40" type="CSGBox3D" parent="Building"]
 transform = Transform3D(0.999987, 0, 0.00513134, 0, 1, 0, -0.00513134, 0, 0.999987, 8.70639, 5.16878, 21.5681)
@@ -304,28 +324,58 @@ cast_shadow = 0
 size = Vector3(14.67, 2.30018, 20.4505)
 
 [node name="Roof2" type="CSGBox3D" parent="Building"]
-transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, -8.91849, 6.85409, 20.81)
+transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, -19.1752, 6.85409, 21.4584)
 material_override = ExtResource("25_rcwq3")
 cast_shadow = 0
-size = Vector3(8.29191, 2.30018, 31.7732)
+size = Vector3(8.30855, 2.30018, 11.2597)
 
 [node name="Roof3" type="CSGBox3D" parent="Building"]
-transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, -8.91849, 6.85409, 12.5317)
+transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, -19.1752, 6.85409, 13.155)
 material_override = ExtResource("25_rcwq3")
 cast_shadow = 0
-size = Vector3(8.29191, 2.30018, 31.7732)
+size = Vector3(8.30025, 2.30018, 11.2597)
 
 [node name="Roof6" type="CSGBox3D" parent="Building"]
-transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, -8.91849, 6.85409, 4.28024)
+transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, -19.1752, 6.85409, 4.85961)
 material_override = ExtResource("25_rcwq3")
 cast_shadow = 0
-size = Vector3(8.29191, 2.30018, 31.7732)
+size = Vector3(8.29191, 2.30018, 11.2597)
 
 [node name="Roof7" type="CSGBox3D" parent="Building"]
-transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, -8.91849, 6.85409, -4.00564)
+transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, -7.90677, 6.85409, 21.4586)
 material_override = ExtResource("25_rcwq3")
 cast_shadow = 0
-size = Vector3(8.29191, 2.30018, 31.7732)
+size = Vector3(8.30806, 2.30018, 11.2597)
+
+[node name="Roof8" type="CSGBox3D" parent="Building"]
+transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, -7.90678, 6.85409, 13.1557)
+material_override = ExtResource("25_rcwq3")
+cast_shadow = 0
+size = Vector3(8.29879, 2.30018, 11.2597)
+
+[node name="Roof9" type="CSGBox3D" parent="Building"]
+transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, -7.90678, 6.85409, 4.85961)
+material_override = ExtResource("25_rcwq3")
+cast_shadow = 0
+size = Vector3(8.29191, 2.30018, 11.2597)
+
+[node name="Roof10" type="CSGBox3D" parent="Building"]
+transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, 3.27851, 6.85409, 21.4667)
+material_override = ExtResource("25_rcwq3")
+cast_shadow = 0
+size = Vector3(8.29191, 2.30018, 11.2597)
+
+[node name="Roof11" type="CSGBox3D" parent="Building"]
+transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, 3.27851, 6.85409, 13.1592)
+material_override = ExtResource("25_rcwq3")
+cast_shadow = 0
+size = Vector3(8.29191, 2.30018, 11.2597)
+
+[node name="Roof12" type="CSGBox3D" parent="Building"]
+transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, 3.2785, 6.85409, 4.86433)
+material_override = ExtResource("25_rcwq3")
+cast_shadow = 0
+size = Vector3(8.30135, 2.30018, 11.2597)
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="Building"]
 transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, 4.65943, 5.1436, 26.3562)
@@ -352,10 +402,10 @@ use_collision = true
 size = Vector3(1.259, 7.03855, 4.23972)
 
 [node name="CSGBox3D24" type="CSGBox3D" parent="Building"]
-transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, -16.5772, 6.90417, 3.3919)
+transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, -16.5771, 6.90417, 4.05996)
 material_override = ExtResource("4_48r4s")
 use_collision = true
-size = Vector3(1.66742, 6.64741, 7.34152)
+size = Vector3(1.55295, 6.64741, 7.34152)
 
 [node name="CSGBox3D23" type="CSGBox3D" parent="Building"]
 transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, -22.219, 6.90417, 26.3002)
@@ -403,22 +453,25 @@ transform = Transform3D(-0.244207, 0, -1.39522, -1.39423, 0.0533112, 0.244034, 0
 transform = Transform3D(0.511191, -1.30608, 0.197734, -1.29713, -0.456221, 0.339959, -0.249786, -0.303772, -1.36073, 9.84657, 1.21869, 29.621)
 
 [node name="Banner" parent="Building" instance=ExtResource("22_gkvn1")]
-transform = Transform3D(0.0117633, -0.999931, 0, 0.999931, 0.0117633, 0, 0, 0, 1, 7.00635, 3.34389, 13.1781)
+transform = Transform3D(0.00371742, -0.999981, 0.0049042, 0.999993, 0.00371766, 3.94599e-05, -5.76912e-05, 0.00490402, 0.999988, 6.996, 3.34389, 10.758)
 
 [node name="Banner2" parent="Building" instance=ExtResource("22_gkvn1")]
 transform = Transform3D(-0.000399247, 0.0339378, -0.999424, 0.999931, 0.0117633, 0, 0.0117565, -0.999355, -0.0339401, -5.98619, 3.30565, 25.5199)
 
 [node name="Clock" parent="Building" instance=ExtResource("23_pl6yh")]
-transform = Transform3D(-0.000653984, 0.022358, -1.36951, 1.36965, -0.0108986, -0.000831976, -0.0109107, -1.36947, -0.0223521, -0.503791, 4.44801, 25.6491)
+transform = Transform3D(-0.000653984, 0.022358, -1.36951, 1.36965, -0.0108986, -0.000831976, -0.0109107, -1.36947, -0.0223521, -0.503791, 4.44801, 25.8147)
 
 [node name="Clock2" parent="Building" instance=ExtResource("23_pl6yh")]
-transform = Transform3D(-0.0559119, 1.96241, 0, -1.96241, -0.0559119, 0, 0, 0, 1.9632, -24.8413, 3.88113, 15.7304)
+transform = Transform3D(-0.0559119, 1.96241, 0, -1.96241, -0.0559119, 0, 0, 0, 1.9632, -25.0527, 3.88113, 15.7304)
 
 [node name="Banner3" parent="Building" instance=ExtResource("22_gkvn1")]
 transform = Transform3D(-0.000395054, 0.0153008, -0.999883, 0.999667, 0.0258106, 0, 0.0258075, -0.99955, -0.0153059, -16.8733, 2.86698, 25.6034)
 
 [node name="Banner4" parent="Building" instance=ExtResource("22_gkvn1")]
 transform = Transform3D(-0.000975325, -0.00110967, 0.999999, 0.999932, 0.0116282, 0.000988165, -0.0116293, 0.999932, 0.00109827, -16.6113, 3.36184, 26.9694)
+
+[node name="Banner5" parent="Building" instance=ExtResource("22_gkvn1")]
+transform = Transform3D(-0.000975325, -0.00110967, 0.999999, 0.999932, 0.0116282, 0.000988165, -0.0116293, 0.999932, 0.00109827, -10.0506, 2.05082, 4.8661)
 
 [node name="StockedCornerShelf" parent="Building" instance=ExtResource("34_baq46")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6263, 0, 24.9158)
