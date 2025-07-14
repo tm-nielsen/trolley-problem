@@ -108,16 +108,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1087, 3.5, 12.5215)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.4514, 3.5, 13.4916)
 
 [node name="Camera 3" type="Node3D" parent="Camera Positions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2188, 5.44527, 25.549)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2472, 4.2674, 25.549)
 
 [node name="Camera 4" type="Node3D" parent="Camera Positions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.49994, 6.54191, 41.4629)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.00353, 4.16828, 28.0696)
 
 [node name="Camera 5" type="Node3D" parent="Camera Positions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6986, 7.34578, 39.571)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.4643, 6.2824, 39.5984)
 
 [node name="Camera 6" type="Node3D" parent="Camera Positions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9539, 5.86916, 10.4384)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.07, 3.74829, 10.6675)
 
 [node name="Level" parent="." instance=ExtResource("6_7pvxh")]
 

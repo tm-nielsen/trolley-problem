@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://ddrbqtusqv5ie"]
+[gd_scene load_steps=62 format=3 uid="uid://ddrbqtusqv5ie"]
 
 [ext_resource type="PackedScene" uid="uid://b5mw8yevevsir" path="res://scenes/branches/player.tscn" id="1_4no8g"]
 [ext_resource type="PackedScene" uid="uid://cqjxu7wswqg37" path="res://scenes/prefabs/Level/stocked_shelves/stocked_double_shelf.tscn" id="2_48r4s"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bc15d4xl60adw" path="res://models/merchandise/Jug.fbx" id="20_b38xg"]
 [ext_resource type="PackedScene" uid="uid://cjl5pu3k04qhu" path="res://models/merchandise/Tomapple.fbx" id="21_83eg4"]
 [ext_resource type="Texture2D" uid="uid://ca1b0dh5k1j21" path="res://models/decor/n100-2200-dairy-neon-sign-giant-2431923233.png" id="21_ayxsy"]
+[ext_resource type="Texture2D" uid="uid://drnnbkbt18064" path="res://models/decor/Snacks.jpg" id="21_gi26r"]
 [ext_resource type="Material" uid="uid://dkvvn5bhcbl6v" path="res://resources/materials/magazine_material.tres" id="21_ob73l"]
 [ext_resource type="PackedScene" uid="uid://noalsnf1e85n" path="res://scenes/prefabs/Level/stocked_shelves/stocked_shelf.tscn" id="21_u2nc6"]
 [ext_resource type="PackedScene" uid="uid://7qwkia1dgl7f" path="res://scenes/prefabs/Level/shelves/produce_shelf.tscn" id="21_ycrer"]
@@ -25,8 +26,10 @@
 [ext_resource type="PackedScene" uid="uid://bje860gdygikm" path="res://models/decor/Banner.fbx" id="22_gkvn1"]
 [ext_resource type="PackedScene" uid="uid://b2ruecxbu25p5" path="res://models/merchandise/Cheese.fbx" id="23_gi26r"]
 [ext_resource type="PackedScene" uid="uid://dche3wfireewd" path="res://models/decor/Clock.fbx" id="23_pl6yh"]
+[ext_resource type="Material" uid="uid://k3iqj5skq5sx" path="res://resources/materials/CeilingMat.tres" id="24_mbj8a"]
 [ext_resource type="PackedScene" uid="uid://bo5q8fxwo3rti" path="res://models/merchandise/Oreo.fbx" id="24_vgtnl"]
 [ext_resource type="Script" uid="uid://mont5n28gsku" path="res://scripts/props/collection_pool.gd" id="25_mbj8a"]
+[ext_resource type="Material" uid="uid://cku80uftkv83p" path="res://resources/materials/CeilingMat2.tres" id="25_rcwq3"]
 [ext_resource type="PackedScene" uid="uid://d0tn2ay3ngue3" path="res://models/merchandise/Bread.fbx" id="26_rcwq3"]
 [ext_resource type="PackedScene" uid="uid://ealvt21fe1ai" path="res://scenes/prefabs/Level/stocked_shelves/fish_shelf.tscn" id="27_kflc5"]
 [ext_resource type="PackedScene" uid="uid://cdy0jj7ar7r8d" path="res://models/merchandise/Fish.fbx" id="27_unn01"]
@@ -48,6 +51,8 @@
 [ext_resource type="PackedScene" uid="uid://c0n7y2krpmhn8" path="res://scenes/prefabs/Level/stocked_shelves/stocked_dairy_alt_shelf.tscn" id="45_dcwjr"]
 [ext_resource type="PackedScene" uid="uid://dn1ptl6yxj2nf" path="res://scenes/prefabs/Level/stocked_shelves/jug_corner_shelf.tscn" id="47_b38xg"]
 [ext_resource type="PackedScene" uid="uid://cc0lbl2ufrrju" path="res://scenes/prefabs/Level/stocked_shelves/stocked_dairy_shelf.tscn" id="47_dcwjr"]
+[ext_resource type="PackedScene" uid="uid://cun24twssf76x" path="res://scenes/prefabs/Level/stocked_shelves/oreo_shelf.tscn" id="49_ayxsy"]
+[ext_resource type="PackedScene" uid="uid://b26of65b440mf" path="res://scenes/prefabs/Level/stocked_shelves/cereal_shelf.tscn" id="50_gi26r"]
 
 [sub_resource type="Environment" id="Environment_gooay"]
 background_mode = 1
@@ -77,6 +82,9 @@ shader_parameter/normal_scale = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gi26r"]
 albedo_texture = ExtResource("20_83eg4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mbj8a"]
+albedo_texture = ExtResource("21_gi26r")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vgtnl"]
 albedo_texture = ExtResource("21_ayxsy")
@@ -149,8 +157,14 @@ material_override = SubResource("StandardMaterial3D_gi26r")
 mesh = SubResource("PlaneMesh_gdjh5")
 surface_material_override/0 = SubResource("ShaderMaterial_jo1an")
 
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(-0.000288346, -0.101332, 7.67479e-05, -4.69064e-05, -0.000895035, -0.00865455, 0.0190593, -0.00153525, -2.01384e-05, -9.22113, 3.17144, 33.9643)
+material_override = SubResource("StandardMaterial3D_mbj8a")
+mesh = SubResource("PlaneMesh_gdjh5")
+surface_material_override/0 = SubResource("ShaderMaterial_jo1an")
+
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(-0.0249606, -0.000117141, 2.89118e-05, -6.14228e-05, -0.000898143, -0.0116997, 2.9294e-05, -0.101696, 0.000103295, -0.403534, 3.7584, 41.4471)
+transform = Transform3D(-0.0249606, -0.000117141, 2.89118e-05, -6.14228e-05, -0.000898143, -0.0116997, 2.9294e-05, -0.101696, 0.000103295, -0.403534, 3.49082, 40.4557)
 material_override = SubResource("StandardMaterial3D_vgtnl")
 mesh = SubResource("PlaneMesh_gdjh5")
 surface_material_override/0 = SubResource("ShaderMaterial_jo1an")
@@ -247,6 +261,18 @@ material_override = ExtResource("4_48r4s")
 use_collision = true
 size = Vector3(1.37219, 10.2127, 10.4235)
 
+[node name="CSGBox3D7" type="CSGBox3D" parent="Building"]
+transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, 2.42674, 3.55364, 41.1749)
+material_override = ExtResource("4_48r4s")
+use_collision = true
+size = Vector3(1.37219, 1.6252, 9.23569)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Building"]
+transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, -5.02816, 3.55364, 41.178)
+material_override = ExtResource("4_48r4s")
+use_collision = true
+size = Vector3(1.37219, 1.6252, 5.63107)
+
 [node name="CSGBox3D6" type="CSGBox3D" parent="Building"]
 transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, -7.39714, 5.17512, 42.262)
 material_override = ExtResource("4_48r4s")
@@ -265,10 +291,41 @@ material_override = ExtResource("4_48r4s")
 use_collision = true
 size = Vector3(1.37219, 10.2127, 10.4235)
 
-[node name="Roof" type="CSGBox3D" parent="Building"]
-transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, -5.23446, 5.75849, 18.5693)
+[node name="Roof4" type="CSGBox3D" parent="Building"]
+transform = Transform3D(-0.999592, 0, -0.00108399, 0, 1, 0, 0.00141303, 0, -0.766822, -0.329546, 5.51166, 33.7929)
+material_override = ExtResource("24_mbj8a")
 cast_shadow = 0
-size = Vector3(49.0728, 2.30018, 39.925)
+size = Vector3(14.715, 2.30018, 17.7075)
+
+[node name="Roof5" type="CSGBox3D" parent="Building"]
+transform = Transform3D(-0.00174468, 0, -0.766822, 0, 1, 0, 0.999591, 0, -0.00133841, -16.9852, 5.51166, 34.2539)
+material_override = ExtResource("24_mbj8a")
+cast_shadow = 0
+size = Vector3(14.67, 2.30018, 20.4505)
+
+[node name="Roof2" type="CSGBox3D" parent="Building"]
+transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, -8.91849, 6.85409, 20.81)
+material_override = ExtResource("25_rcwq3")
+cast_shadow = 0
+size = Vector3(8.29191, 2.30018, 31.7732)
+
+[node name="Roof3" type="CSGBox3D" parent="Building"]
+transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, -8.91849, 6.85409, 12.5317)
+material_override = ExtResource("25_rcwq3")
+cast_shadow = 0
+size = Vector3(8.29191, 2.30018, 31.7732)
+
+[node name="Roof6" type="CSGBox3D" parent="Building"]
+transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, -8.91849, 6.85409, 4.28024)
+material_override = ExtResource("25_rcwq3")
+cast_shadow = 0
+size = Vector3(8.29191, 2.30018, 31.7732)
+
+[node name="Roof7" type="CSGBox3D" parent="Building"]
+transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, -8.91849, 6.85409, -4.00564)
+material_override = ExtResource("25_rcwq3")
+cast_shadow = 0
+size = Vector3(8.29191, 2.30018, 31.7732)
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="Building"]
 transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, 4.65943, 5.1436, 26.3562)
@@ -301,22 +358,22 @@ use_collision = true
 size = Vector3(1.66742, 6.64741, 7.34152)
 
 [node name="CSGBox3D23" type="CSGBox3D" parent="Building"]
-transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, -22.523, 6.90417, 26.2997)
+transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, -22.219, 6.90417, 26.3002)
 material_override = ExtResource("4_48r4s")
 use_collision = true
-size = Vector3(1.25937, 6.64741, 4.69597)
+size = Vector3(1.25937, 6.64741, 5.30404)
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="Building"]
-transform = Transform3D(0.999191, 0, -0.0402016, 0, 1, 0, 0.0402016, 0, 0.999191, -8.33453, 6.90417, 29.2364)
+transform = Transform3D(0.999191, 0, -0.0402016, 0, 1, 0, 0.0402016, 0, 0.999191, -8.33453, 6.72129, 29.2364)
 material_override = ExtResource("4_48r4s")
 use_collision = true
-size = Vector3(1.5007, 6.64741, 4.54271)
+size = Vector3(1.5007, 7.01316, 4.54271)
 
 [node name="CSGBox3D16" type="CSGBox3D" parent="Building"]
-transform = Transform3D(0.999191, 0, -0.0402016, 0, 1, 0, 0.0402016, 0, 0.999191, -8.63559, 6.90417, 39.0217)
+transform = Transform3D(0.999191, 0, -0.0402016, 0, 1, 0, 0.0402016, 0, 0.999191, -8.54472, 6.50009, 38.9688)
 material_override = ExtResource("4_48r4s")
 use_collision = true
-size = Vector3(1.57591, 6.64741, 5.30638)
+size = Vector3(1.47677, 7.45555, 5.19336)
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="Building"]
 transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, -6.06105, 5.41895, 26.3261)
@@ -325,16 +382,16 @@ use_collision = true
 size = Vector3(1.34303, 10.7003, 5.89326)
 
 [node name="CSGBox3D22" type="CSGBox3D" parent="Building"]
-transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, -16.7321, 5.41895, 26.2957)
+transform = Transform3D(-0.00174539, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00174539, -16.4265, 5.41895, 26.2963)
 material_override = ExtResource("4_48r4s")
 use_collision = true
-size = Vector3(1.28053, 10.7003, 6.89927)
+size = Vector3(1.28053, 10.7003, 6.28801)
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="Building"]
-transform = Transform3D(-0.999671, 0, 0.0256536, 0, 1, 0, -0.0256536, 0, -0.999671, -8.46776, 5.41895, 33.927)
+transform = Transform3D(-0.999998, 0, -0.00204193, 0, 1, 0, 0.00204193, 0, -0.999998, -8.42667, 5.41895, 33.9272)
 material_override = ExtResource("4_48r4s")
 use_collision = true
-size = Vector3(1.55873, 10.7003, 4.97019)
+size = Vector3(1.47655, 10.7003, 4.97019)
 
 [node name="ProduceShelf" parent="Building" instance=ExtResource("21_ycrer")]
 transform = Transform3D(0.00719067, 0, 0.999974, 0, 1, 0, -0.999974, 0, 0.00719067, 10.3663, 0.279727, 29.9865)
@@ -352,22 +409,22 @@ transform = Transform3D(0.0117633, -0.999931, 0, 0.999931, 0.0117633, 0, 0, 0, 1
 transform = Transform3D(-0.000399247, 0.0339378, -0.999424, 0.999931, 0.0117633, 0, 0.0117565, -0.999355, -0.0339401, -5.98619, 3.30565, 25.5199)
 
 [node name="Clock" parent="Building" instance=ExtResource("23_pl6yh")]
-transform = Transform3D(-0.000477468, 0.0163234, -0.999867, 0.999968, -0.00795696, -0.000607418, -0.00796582, -0.999835, -0.016319, -0.13234, 3.88279, 25.668)
+transform = Transform3D(-0.000653984, 0.022358, -1.36951, 1.36965, -0.0108986, -0.000831976, -0.0109107, -1.36947, -0.0223521, -0.503791, 4.44801, 25.6491)
 
 [node name="Clock2" parent="Building" instance=ExtResource("23_pl6yh")]
-transform = Transform3D(-0.0559119, 1.96241, 0, -1.96241, -0.0559119, 0, 0, 0, 1.9632, -24.8413, 6.24033, 13.8459)
+transform = Transform3D(-0.0559119, 1.96241, 0, -1.96241, -0.0559119, 0, 0, 0, 1.9632, -24.8413, 3.88113, 15.7304)
 
 [node name="Banner3" parent="Building" instance=ExtResource("22_gkvn1")]
 transform = Transform3D(-0.000395054, 0.0153008, -0.999883, 0.999667, 0.0258106, 0, 0.0258075, -0.99955, -0.0153059, -16.8733, 2.86698, 25.6034)
 
 [node name="Banner4" parent="Building" instance=ExtResource("22_gkvn1")]
-transform = Transform3D(0.01165, -0.999594, -0.0260186, 0.999932, 0.0116282, 0.000988165, -0.000685213, -0.0260283, 0.999661, -9.26523, 3.67005, 34.1367)
+transform = Transform3D(-0.000975325, -0.00110967, 0.999999, 0.999932, 0.0116282, 0.000988165, -0.0116293, 0.999932, 0.00109827, -16.6113, 3.36184, 26.9694)
 
 [node name="StockedCornerShelf" parent="Building" instance=ExtResource("34_baq46")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6263, 0, 24.934)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6263, 0, 24.9158)
 
 [node name="StockedCornerShelf2" parent="Building" instance=ExtResource("34_baq46")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9395, 0, 24.934)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.1403, 0, 26.2645)
 
 [node name="EntryShelves" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
@@ -591,9 +648,6 @@ transform = Transform3D(-0.999999, 0, 0.00116936, 0, 1, 0, -0.00116936, 0, -0.99
 [node name="EastEdge" type="Node3D" parent="FarClump"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
 
-[node name="CanShelf" parent="FarClump/EastEdge" instance=ExtResource("38_gooay")]
-transform = Transform3D(0.999773, 0, -0.0212914, 0, 1, 0, 0.0212914, 0, 0.999773, -1.62482, 0, 0.33865)
-
 [node name="WestEdge" type="Node3D" parent="FarClump"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
 
@@ -616,16 +670,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 24)
 
 [node name="Node3D88" parent="WestClump" instance=ExtResource("21_u2nc6")]
-transform = Transform3D(-1, 0, 0.000436341, 0, 1, 0, -0.000436341, 0, -1, 3.28089, 0, -1.56188)
+transform = Transform3D(-1, 0, 0.000436341, 0, 1, 0, -0.000436341, 0, -1, 3.28089, 0, -1.5801)
 
 [node name="Node3D90" parent="WestClump" instance=ExtResource("21_u2nc6")]
-transform = Transform3D(0.999969, 0, 0.00792376, 0, 1, 0, -0.00792376, 0, 0.999969, 2.5946, 0, -1.53342)
+transform = Transform3D(0.999969, 0, 0.00792376, 0, 1, 0, -0.00792376, 0, 0.999969, 2.5946, 0, -1.55163)
 
 [node name="Node3D89" parent="WestClump" instance=ExtResource("21_u2nc6")]
-transform = Transform3D(-1, 0, 0.000436341, 0, 1, 0, -0.000436341, 0, -1, -2.03229, 0, -1.56188)
+transform = Transform3D(-1, 0, 0.000436341, 0, 1, 0, -0.000436341, 0, -1, -2.23304, 0, -1.5858)
 
 [node name="Node3D91" parent="WestClump" instance=ExtResource("21_u2nc6")]
-transform = Transform3D(0.999969, 0, 0.00792376, 0, 1, 0, -0.00792376, 0, 0.999969, -2.71858, 0, -1.53342)
+transform = Transform3D(0.999969, 0, 0.00792376, 0, 1, 0, -0.00792376, 0, 0.999969, -2.91933, 0, -0.301928)
+
+[node name="Node3D92" parent="WestClump" instance=ExtResource("21_u2nc6")]
+transform = Transform3D(0.999969, 0, 0.00792376, 0, 1, 0, -0.00792376, 0, 0.999969, -2.91933, 0, 0.96619)
 
 [node name="JunkFood" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 16)
@@ -891,26 +948,8 @@ transform = Transform3D(-0.00317649, 0, 0.999995, 0, 1, 0, -0.999995, 0, -0.0031
 [node name="Checkout2" parent="." instance=ExtResource("6_baq46")]
 transform = Transform3D(0.997506, 0, -0.0705748, 0, 1, 0, 0.0705748, 0, 0.997506, 10.2186, -0.0629514, 27.6543)
 
-[node name="LeftCornerCanShelf" parent="." instance=ExtResource("40_gkvn1")]
-transform = Transform3D(0.999773, 0, -0.0212914, 0, 1, 0, 0.0212914, 0, 0.999773, -9.82617, 0, 33.0168)
-
-[node name="RightCornerCanShelf" parent="." instance=ExtResource("41_pl6yh")]
-transform = Transform3D(0.999839, 0, -0.017941, 0, 1, 0, 0.017941, 0, 0.999839, -9.86983, 0, 35.5881)
-
-[node name="CanShelf" parent="." instance=ExtResource("38_gooay")]
-transform = Transform3D(0.000401453, 0, -1, 0, 1, 0, 1, 0, 0.000401453, -10.7, 0, 36.2177)
-
 [node name="CanShelf2" parent="." instance=ExtResource("38_gooay")]
-transform = Transform3D(0.000401453, 0, -1, 0, 1, 0, 1, 0, 0.000401453, -11.9455, 0, 36.2177)
-
-[node name="CanShelf3" parent="." instance=ExtResource("38_gooay")]
-transform = Transform3D(0.000401453, 0, -1, 0, 1, 0, 1, 0, 0.000401453, -13.2023, 0, 36.2177)
-
-[node name="CanShelf4" parent="." instance=ExtResource("38_gooay")]
-transform = Transform3D(0.000401453, 0, -1, 0, 1, 0, 1, 0, 0.000401453, -14.4478, 0, 36.2177)
-
-[node name="CanShelf5" parent="." instance=ExtResource("38_gooay")]
-transform = Transform3D(0.000401453, 0, -1, 0, 1, 0, 1, 0, 0.000401453, -15.7032, 0, 36.2177)
+transform = Transform3D(0.000401453, 0, -1, 0, 1, 0, 1, 0, 0.000401453, -11.9401, 0, 36.2177)
 
 [node name="CanShelf7" parent="." instance=ExtResource("38_gooay")]
 transform = Transform3D(0.000401453, 0, -1, 0, 1, 0, 1, 0, 0.000401453, -16.9593, 0, 36.2177)
@@ -920,12 +959,6 @@ transform = Transform3D(-0.00129156, 0, -0.999999, 0, 1, 0, 0.999999, 0, -0.0012
 
 [node name="CanShelf6" parent="." instance=ExtResource("38_gooay")]
 transform = Transform3D(-0.999997, 0, -0.00249591, 0, 1, 0, 0.00249591, 0, -0.999997, -18.7826, 0, 35.1574)
-
-[node name="CanShelf8" parent="." instance=ExtResource("38_gooay")]
-transform = Transform3D(-0.999997, 0, -0.00249591, 0, 1, 0, 0.00249591, 0, -0.999997, -18.7826, 0, 33.8991)
-
-[node name="CanShelf9" parent="." instance=ExtResource("38_gooay")]
-transform = Transform3D(-0.999997, 0, -0.00249591, 0, 1, 0, 0.00249591, 0, -0.999997, -18.7826, 0, 32.6438)
 
 [node name="RightCornerCanShelf2" parent="." instance=ExtResource("41_pl6yh")]
 transform = Transform3D(-0.999999, 0, -0.00164071, 0, 1, 0, 0.00164071, 0, -0.999999, -18.5601, 0, 31.3852)
@@ -963,6 +996,15 @@ transform = Transform3D(-0.0154457, 0, -0.999881, 0, 1, 0, 0.999881, 0, -0.01544
 [node name="stocked_dairyAlt_shelf2" parent="." instance=ExtResource("45_dcwjr")]
 transform = Transform3D(-0.0186913, 0, -0.999825, 0, 1, 0, 0.999825, 0, -0.0186913, -7.04312, 0.245079, 34.4239)
 
+[node name="stocked_dairy_shelf9" parent="." instance=ExtResource("47_dcwjr")]
+transform = Transform3D(-0.999991, 0, 0.00431112, 0, 1, 0, -0.00431112, 0, -0.999991, -6.01397, 0.275063, 27.5702)
+
+[node name="stocked_dairyAlt_shelf4" parent="." instance=ExtResource("45_dcwjr")]
+transform = Transform3D(-0.999832, 0, 0.0183075, 0, 1, 0, -0.0183075, 0, -0.999832, -8.00837, 0.245079, 27.5865)
+
+[node name="stocked_dairyAlt_shelf5" parent="." instance=ExtResource("45_dcwjr")]
+transform = Transform3D(-0.999832, 0, 0.0183075, 0, 1, 0, -0.0183075, 0, -0.999832, -3.9742, 0.245079, 27.5865)
+
 [node name="stocked_dairyAlt_shelf3" parent="." instance=ExtResource("45_dcwjr")]
 transform = Transform3D(-0.0173128, 0, 0.99985, 0, 1, 0, -0.99985, 0, -0.0173128, 6.43128, 0.245079, 36.2028)
 
@@ -970,43 +1012,85 @@ transform = Transform3D(-0.0173128, 0, 0.99985, 0, 1, 0, -0.99985, 0, -0.0173128
 transform = Transform3D(-0.804324, 0, 0.594191, 0, 1, 0, -0.594191, 0, -0.804324, -19.3087, 0.246232, 37.0316)
 
 [node name="LeftCornerCanShelf2" parent="." instance=ExtResource("40_gkvn1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.657, 0, 19.8766)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.657, 0, 19.8584)
 
 [node name="CanShelf10" parent="." instance=ExtResource("38_gooay")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4257, 0, 21.2154)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4257, 0, 21.1972)
 
 [node name="CanShelf12" parent="." instance=ExtResource("38_gooay")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3997, 0, 23.7172)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3997, 0, 23.699)
 
 [node name="JugCornerShelf" parent="." instance=ExtResource("47_b38xg")]
-transform = Transform3D(-1, 0, -0.00015703, 0, 1, 0, 0.00015703, 0, -1, -13.528, -2.38419e-07, 19.9453)
+transform = Transform3D(-1, 0, -0.00015703, 0, 1, 0, 0.00015703, 0, -1, -13.528, -2.38419e-07, 19.9271)
 
 [node name="CanShelf11" parent="." instance=ExtResource("38_gooay")]
-transform = Transform3D(-1, 0, 0.000820311, 0, 1, 0, -0.000820311, 0, -1, -13.7197, 0, 23.6923)
+transform = Transform3D(-1, 0, 0.000820311, 0, 1, 0, -0.000820311, 0, -1, -13.7197, 0, 23.6741)
 
 [node name="CanShelf13" parent="." instance=ExtResource("38_gooay")]
-transform = Transform3D(-1, 0, 0.000820311, 0, 1, 0, -0.000820311, 0, -1, -13.7197, 0, 21.1803)
+transform = Transform3D(-1, 0, 0.000820311, 0, 1, 0, -0.000820311, 0, -1, -13.7197, 0, 21.1621)
 
 [node name="LeftCornerCanShelf3" parent="." instance=ExtResource("40_gkvn1")]
-transform = Transform3D(-1, 0, -0.000645788, 0, 1, 0, 0.000645788, 0, -1, -13.4936, 0, 25.0013)
+transform = Transform3D(-1, 0, -0.000645788, 0, 1, 0, 0.000645788, 0, -1, -13.4936, 0, 24.9831)
 
 [node name="LeftCornerCanShelf4" parent="." instance=ExtResource("40_gkvn1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9702, 0, 19.8766)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.171, 0, 19.8527)
 
 [node name="CanShelf14" parent="." instance=ExtResource("38_gooay")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7388, 0, 21.2154)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9396, 0, 21.1915)
 
 [node name="CanShelf15" parent="." instance=ExtResource("38_gooay")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7129, 0, 23.7172)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9136, 0, 22.4469)
 
 [node name="JugCornerShelf2" parent="." instance=ExtResource("47_b38xg")]
-transform = Transform3D(-1, 0, -0.00015703, 0, 1, 0, 0.00015703, 0, -1, -18.8412, -2.38419e-07, 19.9453)
+transform = Transform3D(-1, 0, -0.00015703, 0, 1, 0, 0.00015703, 0, -1, -19.042, -2.38419e-07, 19.9214)
 
 [node name="CanShelf16" parent="." instance=ExtResource("38_gooay")]
-transform = Transform3D(-1, 0, 0.000820311, 0, 1, 0, -0.000820311, 0, -1, -19.0329, 0, 23.6923)
+transform = Transform3D(-1, 0, 0.000820311, 0, 1, 0, -0.000820311, 0, -1, -19.2337, 0, 23.6684)
 
 [node name="CanShelf17" parent="." instance=ExtResource("38_gooay")]
-transform = Transform3D(-1, 0, 0.000820311, 0, 1, 0, -0.000820311, 0, -1, -19.0329, 0, 21.1803)
+transform = Transform3D(-1, 0, 0.000820311, 0, 1, 0, -0.000820311, 0, -1, -19.2337, 0, 21.1564)
 
 [node name="LeftCornerCanShelf5" parent="." instance=ExtResource("40_gkvn1")]
-transform = Transform3D(-1, 0, -0.000645788, 0, 1, 0, 0.000645788, 0, -1, -18.8067, 0, 25.0013)
+transform = Transform3D(-1, 0, -0.000645788, 0, 1, 0, 0.000645788, 0, -1, -19.0075, 0, 24.9774)
+
+[node name="OreoShelf" parent="." instance=ExtResource("49_ayxsy")]
+transform = Transform3D(-0.00165801, 0, 0.999999, 0, 1, 0, -0.999999, 0, -0.00165801, -13.9194, 0, 27.2909)
+
+[node name="CerealShelf" parent="." instance=ExtResource("50_gi26r")]
+transform = Transform3D(-0.000488683, 0, 1, 0, 1, 0, -1, 0, -0.000488683, -15.1701, 2.38419e-07, 27.2916)
+
+[node name="OreoShelf2" parent="." instance=ExtResource("49_ayxsy")]
+transform = Transform3D(-0.00165801, 0, 0.999999, 0, 1, 0, -0.999999, 0, -0.00165801, -16.4213, 0, 27.2909)
+
+[node name="CerealShelf3" parent="." instance=ExtResource("50_gi26r")]
+transform = Transform3D(-1, 0, -0.000471203, 0, 1, 0, 0.000471203, 0, -1, -18.7834, 2.38419e-07, 32.6497)
+
+[node name="OreoShelf4" parent="." instance=ExtResource("49_ayxsy")]
+transform = Transform3D(-0.999999, 0, -0.00164053, 0, 1, 0, 0.00164053, 0, -0.999999, -18.7841, 0, 33.901)
+
+[node name="CerealShelf4" parent="." instance=ExtResource("50_gi26r")]
+transform = Transform3D(0.00198961, 0, -0.999998, 0, 1, 0, 0.999998, 0, 0.00198961, -15.6981, 2.38419e-07, 36.2165)
+
+[node name="CerealShelf5" parent="." instance=ExtResource("50_gi26r")]
+transform = Transform3D(0.00198961, 0, -0.999998, 0, 1, 0, 0.999998, 0, 0.00198961, -10.6892, 2.38419e-07, 36.2165)
+
+[node name="OreoShelf5" parent="." instance=ExtResource("49_ayxsy")]
+transform = Transform3D(0.00315893, 0, -0.999995, 0, 1, 0, 0.999995, 0, 0.00315893, -14.4469, 0, 36.2154)
+
+[node name="OreoShelf6" parent="." instance=ExtResource("49_ayxsy")]
+transform = Transform3D(0.00315893, 0, -0.999995, 0, 1, 0, 0.999995, 0, 0.00315893, -13.1914, 0, 36.2154)
+
+[node name="CerealShelf2" parent="." instance=ExtResource("50_gi26r")]
+transform = Transform3D(-0.000488683, 0, 1, 0, 1, 0, -1, 0, -0.000488683, -17.6719, 2.38419e-07, 27.2916)
+
+[node name="OreoShelf3" parent="." instance=ExtResource("49_ayxsy")]
+transform = Transform3D(-0.00165801, 0, 0.999999, 0, 1, 0, -0.999999, 0, -0.00165801, -18.9222, 0, 27.2909)
+
+[node name="OreoShelf7" parent="." instance=ExtResource("49_ayxsy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.60184, -2.38419e-07, 34.3289)
+
+[node name="RightCornerCanShelf" parent="." instance=ExtResource("41_pl6yh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.82095, 0, 35.5857)
+
+[node name="LeftCornerCanShelf" parent="." instance=ExtResource("40_gkvn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.83106, 0, 32.9961)

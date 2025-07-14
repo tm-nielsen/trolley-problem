@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://cku80uftkv83p"]
+
+[ext_resource type="Texture2D" uid="uid://bil4xv2fjf2oq" path="res://resources/materials/OfficeCeiling002_1K-PNG_Color.png" id="1_67knb"]
+[ext_resource type="Texture2D" uid="uid://ci4n1wqsk3sai" path="res://resources/materials/OfficeCeiling002_1K-PNG_AmbientOcclusion.png" id="2_jjpbw"]
+[ext_resource type="Texture2D" uid="uid://deeu70hm1bpon" path="res://resources/materials/OfficeCeiling002_1K-PNG_Emission.png" id="3_mxad7"]
+[ext_resource type="Texture2D" uid="uid://ckr8j6dcxu8d2" path="res://resources/materials/OfficeCeiling002_1K-PNG_Metalness.png" id="4_dru2f"]
+[ext_resource type="Texture2D" uid="uid://dt70ky6tejfob" path="res://resources/materials/OfficeCeiling002_1K-PNG_NormalDX.png" id="5_4dnr6"]
+[ext_resource type="Texture2D" uid="uid://dnpshb13vw6qc" path="res://resources/materials/OfficeCeiling002_1K-PNG_Roughness.png" id="6_x4aou"]
+
+[resource]
+albedo_texture = ExtResource("1_67knb")
+metallic = 1.0
+metallic_texture = ExtResource("4_dru2f")
+roughness_texture = ExtResource("6_x4aou")
+emission_enabled = true
+emission_texture = ExtResource("3_mxad7")
+normal_enabled = true
+normal_texture = ExtResource("5_4dnr6")
+ao_texture = ExtResource("2_jjpbw")
