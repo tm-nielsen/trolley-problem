@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://cc0lbl2ufrrju"]
+
+[ext_resource type="PackedScene" uid="uid://ex0rl56oe70i" path="res://models/shelves/MeatShelf.fbx" id="1_sc6t3"]
+[ext_resource type="PackedScene" uid="uid://i6mjvgu7d5d4" path="res://scenes/prefabs/Level/merchandise/cheese.tscn" id="2_t8kjx"]
+[ext_resource type="PackedScene" uid="uid://db3yqallnm4wc" path="res://scenes/prefabs/Level/merchandise/yogourt.tscn" id="3_wcyhp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pl6yh"]
+size = Vector3(2.00786, 0.46212, 0.753387)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k5548"]
+size = Vector3(1.93652, 0.306213, 0.519806)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ob73l"]
+size = Vector3(1.99902, 0.0829773, 0.639404)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dcwjr"]
+size = Vector3(2.01859, 1.03168, 0.382538)
+
+[node name="stocked_dairy_shelf" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00281525, -0.245079, 0.0951691)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00281525, 0.232769, -0.0951691)
+shape = SubResource("BoxShape3D_pl6yh")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0381966, 0.538991, 0.148903)
+shape = SubResource("BoxShape3D_k5548")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000720978, 0.993611, 0.143246)
+shape = SubResource("BoxShape3D_ob73l")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00600815, 0.520848, 0.278759)
+shape = SubResource("BoxShape3D_dcwjr")
+
+[node name="MeatShelf3" parent="RigidBody3D" instance=ExtResource("1_sc6t3")]
+
+[node name="Cheese" parent="RigidBody3D" instance=ExtResource("2_t8kjx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.61253, 0.465753, -0.245923)
+
+[node name="Cheese2" parent="RigidBody3D" instance=ExtResource("2_t8kjx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.295065, 0.465753, -0.245923)
+
+[node name="Cheese3" parent="RigidBody3D" instance=ExtResource("2_t8kjx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0245517, 0.465753, -0.245923)
+
+[node name="Cheese4" parent="RigidBody3D" instance=ExtResource("2_t8kjx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.346398, 0.465753, -0.245923)
+
+[node name="Cheese5" parent="RigidBody3D" instance=ExtResource("2_t8kjx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.670307, 0.465753, -0.245923)
+
+[node name="Yogourt" parent="RigidBody3D" instance=ExtResource("3_wcyhp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.69341, 0.687196, -0.0258522)
+
+[node name="Yogourt2" parent="RigidBody3D" instance=ExtResource("3_wcyhp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.367335, 0.687196, -0.0258522)
+
+[node name="Yogourt3" parent="RigidBody3D" instance=ExtResource("3_wcyhp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0782095, 0.687196, -0.0258522)
+
+[node name="Yogourt4" parent="RigidBody3D" instance=ExtResource("3_wcyhp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.282264, 0.687196, -0.0258522)
+
+[node name="Yogourt5" parent="RigidBody3D" instance=ExtResource("3_wcyhp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.632065, 0.687196, -0.0258522)

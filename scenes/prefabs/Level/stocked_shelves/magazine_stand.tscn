@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://uyjoaody4cna"]
+
+[ext_resource type="PackedScene" uid="uid://bjytmw6ul7h8d" path="res://models/shelves/MagazineStand.fbx" id="1_0e247"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1kq2t"]
+height = 1.83325
+radius = 0.319336
+
+[node name="MagazineStand" type="RigidBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00758553, 0.918823, 0.0537615)
+shape = SubResource("CylinderShape3D_1kq2t")
+
+[node name="MagazineStand" parent="." instance=ExtResource("1_0e247")]
+transform = Transform3D(1.16165, 0, 0, 0, 1.16165, 0, 0, 0, 1.16165, -0.00588417, 0, 0.0546427)
