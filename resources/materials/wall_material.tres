@@ -3,7 +3,6 @@
 [ext_resource type="Shader" uid="uid://bxtqnrbo5lpp5" path="res://resources/shaders/lit.gdshader" id="1_scboc"]
 [ext_resource type="Texture2D" uid="uid://ih3ehsgispsk" path="res://models/Concrete_BaseColor.jpg" id="2_scboc"]
 
-
 [resource]
 render_priority = 0
 shader = ExtResource("1_scboc")
