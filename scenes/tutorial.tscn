@@ -1,0 +1,127 @@
+[gd_scene load_steps=18 format=3 uid="uid://c485i7okue4m1"]
+
+[ext_resource type="Script" uid="uid://bdxeu5afe7edl" path="res://scripts/cameras/tracking_camera.gd" id="1_g2equ"]
+[ext_resource type="PackedScene" uid="uid://b5mw8yevevsir" path="res://scenes/branches/player.tscn" id="2_tbcdj"]
+[ext_resource type="Material" uid="uid://dqs0rmplo0iwy" path="res://resources/materials/floor_material.tres" id="3_ej4tf"]
+[ext_resource type="Shader" uid="uid://bxtqnrbo5lpp5" path="res://resources/shaders/lit.gdshader" id="4_0hilk"]
+[ext_resource type="Material" uid="uid://b1dhtda5npupf" path="res://resources/materials/wall_material.tres" id="5_wr8iv"]
+[ext_resource type="Texture2D" uid="uid://bil4xv2fjf2oq" path="res://resources/materials/OfficeCeiling002_1K-PNG_Color.png" id="6_e13mp"]
+[ext_resource type="Texture2D" uid="uid://ci4n1wqsk3sai" path="res://resources/materials/OfficeCeiling002_1K-PNG_AmbientOcclusion.png" id="7_vrdqu"]
+[ext_resource type="Texture2D" uid="uid://deeu70hm1bpon" path="res://resources/materials/OfficeCeiling002_1K-PNG_Emission.png" id="8_cmspm"]
+[ext_resource type="Texture2D" uid="uid://ckr8j6dcxu8d2" path="res://resources/materials/OfficeCeiling002_1K-PNG_Metalness.png" id="9_ikfo1"]
+[ext_resource type="Texture2D" uid="uid://dt70ky6tejfob" path="res://resources/materials/OfficeCeiling002_1K-PNG_NormalDX.png" id="10_dwom6"]
+[ext_resource type="Texture2D" uid="uid://dnpshb13vw6qc" path="res://resources/materials/OfficeCeiling002_1K-PNG_Roughness.png" id="11_bl2xa"]
+
+[sub_resource type="Environment" id="Environment_15kfc"]
+background_mode = 1
+background_color = Color(0.541176, 0.580392, 0.6, 1)
+adjustment_brightness = 0.84
+adjustment_contrast = 2.06
+adjustment_saturation = 2.06
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7a100"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_feaue"]
+size = Vector2(200, 200)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hpsmh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_210s6"]
+render_priority = 0
+shader = ExtResource("4_0hilk")
+shader_parameter/albedo_colour = Color(0.641934, 0.641934, 0.641934, 1)
+shader_parameter/albedo_texture = SubResource("NoiseTexture2D_hpsmh")
+shader_parameter/metallic = 0.0
+shader_parameter/specular = 0.5
+shader_parameter/roughness = 0.8
+shader_parameter/emission = Color(0.10748, 0.10748, 0.10748, 1)
+shader_parameter/uv_scale = Vector2(100, 100)
+shader_parameter/normal_scale = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5qvs7"]
+albedo_texture = ExtResource("6_e13mp")
+metallic = 1.0
+metallic_texture = ExtResource("9_ikfo1")
+roughness_texture = ExtResource("11_bl2xa")
+emission_enabled = true
+emission_texture = ExtResource("8_cmspm")
+normal_enabled = true
+normal_texture = ExtResource("10_dwom6")
+ao_texture = ExtResource("7_vrdqu")
+uv1_offset = Vector3(0.17, 0.15, 0)
+texture_filter = 2
+
+[node name="Tutorial" type="Node3D"]
+
+[node name="PrimaryLight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.957672, -0.0731468, -0.278412, 0.287425, 0.189843, 0.9388, -0.0158156, -0.979087, 0.202831, 0, 0, 0)
+light_color = Color(1, 0.945098, 0.886275, 1)
+light_energy = 0.6
+shadow_enabled = true
+
+[node name="AccentLight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.622586, -0.433201, 0.651707, -0.656991, 0.163095, 0.736046, -0.425147, -0.886418, -0.183068, 0, 0, 0)
+light_color = Color(0.76485, 0.747, 0.9, 1)
+light_energy = 0.2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_15kfc")
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3.25, 3)
+current = true
+script = ExtResource("1_g2equ")
+metadata/_custom_type_script = "uid://bdxeu5afe7edl"
+
+[node name="Player" parent="." instance=ExtResource("2_tbcdj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("WorldBoundaryShape3D_7a100")
+
+[node name="Floor" type="MeshInstance3D" parent="Ground"]
+material_override = ExtResource("3_ej4tf")
+mesh = SubResource("PlaneMesh_feaue")
+surface_material_override/0 = SubResource("ShaderMaterial_210s6")
+
+[node name="Structure" type="Node3D" parent="."]
+
+[node name="Walls" type="Node3D" parent="Structure"]
+
+[node name="Top" type="CSGBox3D" parent="Structure/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.5, -1.75)
+use_collision = true
+size = Vector3(14, 4, 0.5)
+material = ExtResource("5_wr8iv")
+
+[node name="Left" type="CSGBox3D" parent="Structure/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.75, 1.5, 1)
+use_collision = true
+size = Vector3(0.5, 4, 6)
+material = ExtResource("5_wr8iv")
+
+[node name="Right" type="CSGBox3D" parent="Structure/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 1.5, 1)
+use_collision = true
+size = Vector3(0.5, 4, 6)
+material = ExtResource("5_wr8iv")
+
+[node name="Bottom" type="CSGBox3D" parent="Structure/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 1.5, 3.75)
+use_collision = true
+size = Vector3(8.5, 4, 0.5)
+material = ExtResource("5_wr8iv")
+
+[node name="DoorOverhang" type="CSGBox3D" parent="Structure/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2, 3, 3.75)
+use_collision = true
+size = Vector3(5.4, 1, 0.5)
+material = ExtResource("5_wr8iv")
+
+[node name="Ceiling" type="CSGBox3D" parent="Structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 1)
+material_override = SubResource("StandardMaterial3D_5qvs7")
+cast_shadow = 0
+size = Vector3(14, 1, 6)
