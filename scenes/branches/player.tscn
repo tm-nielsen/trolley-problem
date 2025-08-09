@@ -48,10 +48,6 @@ tilt_angle = Vector2(0.75, 0.5)
 flip = true
 spark_spawn_node = NodePath("Oar/Spark Origin")
 sparks_prefab = ExtResource("4_ty1bp")
-key_paddle_back = 87
-key_paddle_forward = 83
-key_paddle_up = 68
-key_paddle_down = 65
 
 [node name="Oar" parent="Paddles/Left" instance=ExtResource("4_3ebvs")]
 transform = Transform3D(-0.5, -0.866025, 0, 0.866025, -0.5, 0, 0, 0, 1, 0.1, 0.1, 0)
@@ -66,10 +62,7 @@ script = ExtResource("3_hcg2o")
 tilt_angle = Vector2(0.75, 0.5)
 spark_spawn_node = NodePath("Oar/Spark Origin")
 sparks_prefab = ExtResource("4_ty1bp")
-key_paddle_back = 4194320
-key_paddle_forward = 4194322
-key_paddle_up = 4194319
-key_paddle_down = 4194321
+action_prefix = 1
 
 [node name="Oar" parent="Paddles/Right" instance=ExtResource("4_3ebvs")]
 transform = Transform3D(-0.5, 0.866025, 0, -0.866025, -0.5, 0, 0, 0, 1, -0.1, 0.1, 0)

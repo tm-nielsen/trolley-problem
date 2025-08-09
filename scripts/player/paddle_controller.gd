@@ -4,21 +4,22 @@ extends Node3D
 signal pushed(push_scale: float)
 signal jumped
 
+enum ActionPrefix {LEFT, RIGHT}
+const PREFIX_STRINGS = {
+    ActionPrefix.LEFT: "left",
+    ActionPrefix.RIGHT: "right"
+}
+
 @export var flick_window: float = 0.1
 @export var full_stroke_push_scale: float = 3
+@export var action_prefix: ActionPrefix
 
-@export_subgroup("input keys", "key")
-@export var key_paddle_back: Key
-@export var key_paddle_forward: Key
-@export var key_paddle_up: Key
-@export var key_paddle_down: Key
+@onready var paddle_back := make_action_proxy("back")
+@onready var paddle_forward := make_action_proxy("forward")
+@onready var paddle_up := make_action_proxy("up")
+@onready var paddle_down := make_action_proxy("down")
 
-@onready var paddle_back := KeyProxy.new(key_paddle_back)
-@onready var paddle_forward := KeyProxy.new(key_paddle_forward)
-@onready var paddle_up := KeyProxy.new(key_paddle_up)
-@onready var paddle_down := KeyProxy.new(key_paddle_down)
-
-var jump_window := KeyProxy.InputWindow.new()
+var jump_window := ActionProxy.InputWindow.new()
 
 
 func _process(_delta: float) -> void:
@@ -41,8 +42,8 @@ func process_input_movements():
 
 
 func process_stroke(
-    action_key: KeyProxy,
-    windup_key: KeyProxy,
+    action_key: ActionProxy,
+    windup_key: ActionProxy,
     direction: int = 1
 ):
     if !action_key.was_pressed_this_frame: return
@@ -55,5 +56,12 @@ func process_stroke(
 func was_jump_flicked() -> bool:
     return jump_window.was_triggered_within(flick_window)
 
-func was_flicked(key_proxy: KeyProxy) -> bool:
+func was_flicked(key_proxy: ActionProxy) -> bool:
     return key_proxy.was_pressed_within(flick_window)
+
+
+func make_action_proxy(direction_string: String) -> ActionProxy:
+    var prefix_string = PREFIX_STRINGS[action_prefix]
+    return ActionProxy.new(
+        "%s paddle %s" % [prefix_string, direction_string]
+    )

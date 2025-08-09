@@ -31,8 +31,8 @@ func get_target_rotation() -> Vector3:
     ) * (-1 if flip else 1)
 
 func get_axis(
-    negative_key: KeyProxy,
-    positive_key: KeyProxy,
+    negative_key: ActionProxy,
+    positive_key: ActionProxy,
     angle: float
 ) -> float:
     return (
