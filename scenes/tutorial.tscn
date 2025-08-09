@@ -1,9 +1,14 @@
-[gd_scene load_steps=18 format=3 uid="uid://c485i7okue4m1"]
+[gd_scene load_steps=26 format=3 uid="uid://c485i7okue4m1"]
 
 [ext_resource type="Script" uid="uid://bdxeu5afe7edl" path="res://scripts/cameras/tracking_camera.gd" id="1_g2equ"]
+[ext_resource type="ArrayMesh" uid="uid://bnukys2nrpsyp" path="res://models/cart/human.res" id="1_wr8iv"]
+[ext_resource type="Material" uid="uid://c03x04f3txrxo" path="res://resources/materials/cart/human_body.tres" id="2_e13mp"]
 [ext_resource type="PackedScene" uid="uid://b5mw8yevevsir" path="res://scenes/branches/player.tscn" id="2_tbcdj"]
+[ext_resource type="ArrayMesh" uid="uid://f5d3f3rb8gri" path="res://models/cart/human_flail.res" id="2_vrdqu"]
 [ext_resource type="Material" uid="uid://dqs0rmplo0iwy" path="res://resources/materials/floor_material.tres" id="3_ej4tf"]
+[ext_resource type="PackedScene" uid="uid://3v5371psmp5s" path="res://models/Oar.fbx" id="3_vrdqu"]
 [ext_resource type="Shader" uid="uid://bxtqnrbo5lpp5" path="res://resources/shaders/lit.gdshader" id="4_0hilk"]
+[ext_resource type="PackedScene" uid="uid://dcdprsb8nwmfw" path="res://models/cart/Unoccupied Cart.glb" id="4_cmspm"]
 [ext_resource type="Material" uid="uid://b1dhtda5npupf" path="res://resources/materials/wall_material.tres" id="5_wr8iv"]
 [ext_resource type="Texture2D" uid="uid://bil4xv2fjf2oq" path="res://resources/materials/OfficeCeiling002_1K-PNG_Color.png" id="6_e13mp"]
 [ext_resource type="Texture2D" uid="uid://ci4n1wqsk3sai" path="res://resources/materials/OfficeCeiling002_1K-PNG_AmbientOcclusion.png" id="7_vrdqu"]
@@ -18,6 +23,309 @@ background_color = Color(0.541176, 0.580392, 0.6, 1)
 adjustment_brightness = 0.84
 adjustment_contrast = 2.06
 adjustment_saturation = 2.06
+
+[sub_resource type="Animation" id="Animation_ikfo1"]
+resource_name = "intro"
+length = 2.66668
+loop_mode = 1
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutsceneAnimationPlayer/CutsceneCamera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.66667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector3(5, 3, 3), Vector3(0.4, 0.1, 2.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CutsceneAnimationPlayer/CutsceneCamera:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.583333, 0.75, 0.833333, 1, 1.16667, 1.25, 1.66667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector3(-0.610865, -0.261799, 0), Vector3(-0.610865, -0.122173, 0), Vector3(-0.610865, -0.0349066, 0), Vector3(-0.610865, 0.122173, 0), Vector3(-0.610865, 0.261799, 0), Vector3(-0.610865, 0.436332, 0), Vector3(-0.610865, 0.523599, 0), Vector3(0.436332, -0.872665, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CutsceneAnimationPlayer/CutsceneCamera:fov")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.75, 1, 1.25, 1.66667, 1.91667, 2.25, 2.41667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [50.0, 50.0, 45.0, 40.0, 35.0, 55.0, 60.0, 75.0, 60.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CutsceneAnimationPlayer/Guy:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.416667, 0.583333, 0.666667, 0.833333, 0.916667, 1.08333, 1.25, 1.33333, 1.91667, 2, 2.16667, 2.25, 2.33333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector3(6, 0, 0), Vector3(6, 0.2, 0), Vector3(5.8, 0, 0.1), Vector3(5.4, 0.2, 0.1), Vector3(5.2, 0, 0.1), Vector3(4.8, 0.2, 1.49012e-08), Vector3(4.5, 0, 0.2), Vector3(4.3, 0.2, 0.3), Vector3(4.1, 0, 0.3), Vector3(3.8, 0.2, 0.4), Vector3(3.5, 0, 0.5), Vector3(3.1, 1.1, 0.5), Vector3(3.1, 1.7, 0.5), Vector3(2.4, 2.7, 0.7), Vector3(0.3, 0.8, 1), Vector3(0.3, 0.9, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CutsceneAnimationPlayer/Guy:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.416667, 0.583333, 0.666667, 0.833333, 0.916667, 1.08333, 1.25, 1.33333, 1.83333, 1.91667, 2, 2.16667, 2.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector3(0, 0, 0), Vector3(-0.129773, -0.508719, -0.228015), Vector3(0, -0.872665, 0), Vector3(-0.167143, -1.15148, 0.202449), Vector3(0, -1.0472, 0), Vector3(0.129773, -1.06208, -0.228015), Vector3(0, -1.0472, 0), Vector3(-0.129773, -1.06208, 0.228015), Vector3(0, -1.0472, 0), Vector3(0.129773, -0.800278, -0.228015), Vector3(0, -1.309, 0), Vector3(0.25268, -1.3002, 0.0692395), Vector3(0.25268, -1.3002, 0.0692395), Vector3(0.990894, -1.07884, 0.421429), Vector3(0.751879, 1.20858, 2.88833), Vector3(-1.5708, -1.5708, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CutsceneAnimationPlayer/Guy:mesh")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.58333, 1.91667, 2.16667, 2.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_wr8iv"), ExtResource("1_wr8iv"), ExtResource("2_vrdqu"), ExtResource("2_vrdqu"), ExtResource("1_wr8iv")]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CutsceneAnimationPlayer/Guy/RightOar:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.91667, 2.25, 2.33333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector3(-0.376582, 0.987956, 0.400332), Vector3(-0.554345, 1.63821, 0.733928), Vector3(-0.385088, 0.797403, -0.0354002), Vector3(-0.312294, 0.797403, 0.0339279)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CutsceneAnimationPlayer/Guy/RightOar:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1.91667, 2.25, 2.33333, 2.41667, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector3(-0.253194, 1.4222, -2.12946), Vector3(-0.0776253, 2.16786, -2.03561), Vector3(1.309, 1.5708, 2.87979), Vector3(1.309, -1.65876, 0.523599), Vector3(1.5708, -2.00713, 0), Vector3(1.5708, -2.0944, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CutsceneAnimationPlayer/Guy/LeftOar:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1.91667, 2.25, 2.33333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector3(0.440897, 0.987956, 0.400332), Vector3(0.190788, 1.36822, 0.947384), Vector3(0.387008, 0.802579, -0.0427427), Vector3(0.300348, 0.802579, 0.0473842)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CutsceneAnimationPlayer/Guy/LeftOar:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1.91667, 2.25, 2.33333, 2.41667, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector3(0.518924, 1.38776, -2.15507), Vector3(0.280422, 0.414084, -2.04351), Vector3(1.309, -1.5708, -2.87979), Vector3(1.309, 1.70318, -0.523599), Vector3(1.5708, 2.00713, 0), Vector3(1.5708, 2.0944, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("CutsceneAnimationPlayer/Unoccupied Cart:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 2.16667, 2.25, 2.33333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(1.2, 0.8, 1.2), Vector3(1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("CutsceneAnimationPlayer/Guy:scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 1.5, 1.58333, 1.83333, 1.91667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector3(1, 0.999999, 1), Vector3(1.25, 0.4, 1.25), Vector3(1.2, 0.6, 1.2), Vector3(0.6, 1.4, 0.6), Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dwom6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutsceneAnimationPlayer/CutsceneCamera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(5, 3, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CutsceneAnimationPlayer/CutsceneCamera:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.523599, 0.261799, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CutsceneAnimationPlayer/CutsceneCamera:fov")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [50.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CutsceneAnimationPlayer/Guy:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(6, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CutsceneAnimationPlayer/Guy:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CutsceneAnimationPlayer/Guy:mesh")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_wr8iv")]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CutsceneAnimationPlayer/Guy/RightOar:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.376582, 0.987956, 0.400332)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CutsceneAnimationPlayer/Guy/RightOar:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.253194, 1.4222, -2.12946)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CutsceneAnimationPlayer/Guy/LeftOar:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.440897, 0.987956, 0.400332)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CutsceneAnimationPlayer/Guy/LeftOar:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.518924, 1.38776, -2.15507)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("CutsceneAnimationPlayer/Unoccupied Cart:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("CutsceneAnimationPlayer/Guy:scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 0.999999, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bl2xa"]
+_data = {
+&"RESET": SubResource("Animation_dwom6"),
+&"intro": SubResource("Animation_ikfo1")
+}
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7a100"]
 
@@ -67,14 +375,41 @@ light_energy = 0.2
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_15kfc")
 
-[node name="Camera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3.25, 3)
+[node name="CutsceneAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_bl2xa")
+}
+autoplay = "intro"
+
+[node name="CutsceneCamera" type="Camera3D" parent="CutsceneAnimationPlayer"]
+transform = Transform3D(0.965926, -0.12941, 0.224144, 0, 0.866025, 0.5, -0.258819, -0.482963, 0.836516, 5, 3, 3)
 current = true
+fov = 50.0
+
+[node name="Guy" type="MeshInstance3D" parent="CutsceneAnimationPlayer"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 6, 0, 0)
+mesh = ExtResource("1_wr8iv")
+surface_material_override/0 = ExtResource("2_e13mp")
+
+[node name="RightOar" parent="CutsceneAnimationPlayer/Guy" instance=ExtResource("3_vrdqu")]
+transform = Transform3D(0.131601, 0.256852, 0.957449, -0.820931, -0.513152, 0.250498, 0.555658, -0.818965, 0.143326, -0.376582, 0.987956, 0.400332)
+
+[node name="LeftOar" parent="CutsceneAnimationPlayer/Guy" instance=ExtResource("3_vrdqu")]
+transform = Transform3D(-0.507162, -0.117173, 0.853849, -0.724305, -0.478978, -0.495946, 0.467086, -0.869972, 0.158051, 0.440897, 0.987956, 0.400332)
+
+[node name="Unoccupied Cart" parent="CutsceneAnimationPlayer" instance=ExtResource("4_cmspm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.3, 0.1, 1)
+
+[node name="Gameplay Elements" type="Node3D" parent="."]
+
+[node name="Camera" type="Camera3D" parent="Gameplay Elements"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3.4, 3.45)
 script = ExtResource("1_g2equ")
 metadata/_custom_type_script = "uid://bdxeu5afe7edl"
 
-[node name="Player" parent="." instance=ExtResource("2_tbcdj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+[node name="Player" parent="Gameplay Elements" instance=ExtResource("2_tbcdj")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.6, 0.1, 1)
+visible = false
 
 [node name="Ground" type="StaticBody3D" parent="."]
 
