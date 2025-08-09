@@ -24,9 +24,9 @@ extends Node3D
 var collision_tween: Tween
 var current_body_mesh_index: int
 
-var default_wiggle_transform: Transform3D
-var previous_position: Vector3
-var previous_velocity: Vector3
+@onready var default_wiggle_transform := wiggle_target.transform
+@onready var previous_position := global_position
+var previous_velocity := Vector3.ZERO
 
 
 func _ready() -> void:
