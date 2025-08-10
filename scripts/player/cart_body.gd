@@ -11,6 +11,7 @@ signal collided(collider_mass: float)
 @export var jump_force: float = 2
 @export var friction: float = 1
 @export var angular_friction: float = 4
+@export var initial_velocity := Vector3.ZERO
 
 @export_subgroup("paddles")
 @export var right_paddle: PaddleController
@@ -24,6 +25,7 @@ var angular_velocity: float
 
 
 func _ready() -> void:
+    velocity = initial_velocity
     right_paddle.pushed.connect(apply_push.bind(-1))
     left_paddle.pushed.connect(apply_push.bind(1))
     right_paddle.jumped.connect(apply_jump.bind(left_paddle))
@@ -58,11 +60,6 @@ func process_movement():
         result_velocity = _process_slide_collision(
             i, result_velocity
         )
-    # velocity = Vector3(
-    #     result_velocity.x,
-    #     velocity.y,
-    #     result_velocity.z
-    # )
 
 
 func _process_slide_collision(

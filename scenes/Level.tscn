@@ -115,6 +115,7 @@ environment = SubResource("Environment_gooay")
 
 [node name="Player" parent="." instance=ExtResource("1_4no8g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+initial_velocity = Vector3(0, 0, 5)
 
 [node name="Pickups" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 20)
