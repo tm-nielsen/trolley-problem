@@ -48,11 +48,11 @@
 [ext_resource type="PackedScene" uid="uid://cvw4qwus7lie6" path="res://scenes/prefabs/level/stocked_shelves/cans/can_shelf.tscn" id="38_gooay"]
 [ext_resource type="PackedScene" uid="uid://dxh4rv6g86dnl" path="res://scenes/prefabs/level/stocked_shelves/cans/left_corner_can_shelf.tscn" id="40_gkvn1"]
 [ext_resource type="PackedScene" uid="uid://cij7lr5lkh8ph" path="res://scenes/prefabs/level/stocked_shelves/cans/right_corner_can_shelf.tscn" id="41_pl6yh"]
-[ext_resource type="PackedScene" uid="uid://uyjoaody4cna" path="res://scenes/prefabs/Level/stocked_shelves/magazine_stand.tscn" id="42_b38xg"]
+[ext_resource type="PackedScene" uid="uid://uyjoaody4cna" path="res://scenes/prefabs/level/stocked_shelves/magazine_stand.tscn" id="42_b38xg"]
 [ext_resource type="PackedScene" uid="uid://7jqm0cb0u400" path="res://models/decor/Square Plane.fbx" id="42_k5548"]
-[ext_resource type="PackedScene" uid="uid://c0n7y2krpmhn8" path="res://scenes/prefabs/Level/stocked_shelves/stocked_dairy_alt_shelf.tscn" id="45_dcwjr"]
+[ext_resource type="PackedScene" uid="uid://c0n7y2krpmhn8" path="res://scenes/prefabs/level/stocked_shelves/stocked_dairy_alt_shelf.tscn" id="45_dcwjr"]
 [ext_resource type="PackedScene" uid="uid://dn1ptl6yxj2nf" path="res://scenes/prefabs/level/stocked_shelves/jug_corner_shelf.tscn" id="47_b38xg"]
-[ext_resource type="PackedScene" uid="uid://cc0lbl2ufrrju" path="res://scenes/prefabs/Level/stocked_shelves/stocked_dairy_shelf.tscn" id="47_dcwjr"]
+[ext_resource type="PackedScene" uid="uid://cc0lbl2ufrrju" path="res://scenes/prefabs/level/stocked_shelves/stocked_dairy_shelf.tscn" id="47_dcwjr"]
 [ext_resource type="PackedScene" uid="uid://cun24twssf76x" path="res://scenes/prefabs/level/stocked_shelves/oreo_shelf.tscn" id="49_ayxsy"]
 [ext_resource type="PackedScene" uid="uid://b26of65b440mf" path="res://scenes/prefabs/level/stocked_shelves/cereal_shelf.tscn" id="50_gi26r"]
 
@@ -68,13 +68,13 @@ adjustment_saturation = 2.06
 [sub_resource type="PlaneMesh" id="PlaneMesh_gdjh5"]
 size = Vector2(200, 200)
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hpsmh"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_unn01"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jo1an"]
 render_priority = 0
 shader = ExtResource("2_kja0s")
 shader_parameter/albedo_colour = Color(0.641934, 0.641934, 0.641934, 1)
-shader_parameter/albedo_texture = SubResource("NoiseTexture2D_hpsmh")
+shader_parameter/albedo_texture = SubResource("NoiseTexture2D_unn01")
 shader_parameter/metallic = 0.0
 shader_parameter/specular = 0.5
 shader_parameter/roughness = 0.8
