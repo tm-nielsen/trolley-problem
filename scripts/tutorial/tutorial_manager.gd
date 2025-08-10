@@ -1,5 +1,7 @@
 extends Node3D
 
+signal completed
+
 enum State {INTRO, RIGHT_PADDLE, LEFT_PADDLE, COMPLETE}
 const INTRO = State.INTRO
 const RIGHT_PADDLE = State.RIGHT_PADDLE
@@ -10,6 +12,7 @@ const COMPLETE = State.COMPLETE
 @export var cutscene_parent: Node3D
 @export var gameplay_parent: Node3D
 @export var gameplay_camera: Camera3D
+@export var exit_area: Area3D
 
 @export_subgroup("paddle prompts")
 @export var directional_prompt_display: DirectionalPromptDisplay
@@ -32,6 +35,7 @@ func _ready() -> void:
     directional_prompt_display.all_directions_pressed.connect(
         _on_direction_prompts_completed
     )
+    exit_area.body_entered.connect(_on_exit_area_entered)
 
 
 func _on_cutscene_animation_completed(animation_name: String):
@@ -56,3 +60,6 @@ func _on_direction_prompts_completed():
             gameplay_parent.show()
             gameplay_camera.make_current()
             state = COMPLETE
+
+func _on_exit_area_entered(body: Node3D):
+    if body is CartBody: completed.emit()

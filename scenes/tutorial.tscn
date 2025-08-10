@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c485i7okue4m1"]
+[gd_scene load_steps=33 format=3 uid="uid://c485i7okue4m1"]
 
 [ext_resource type="Script" uid="uid://dcxjlvqnlhclp" path="res://scripts/tutorial/tutorial_manager.gd" id="1_dwom6"]
 [ext_resource type="Script" uid="uid://bdxeu5afe7edl" path="res://scripts/cameras/tracking_camera.gd" id="1_g2equ"]
@@ -453,12 +453,16 @@ ao_texture = ExtResource("7_vrdqu")
 uv1_offset = Vector3(0.17, 0.15, 0)
 texture_filter = 2
 
-[node name="Tutorial" type="Node3D" node_paths=PackedStringArray("cutscene_animator", "cutscene_parent", "gameplay_parent", "gameplay_camera", "directional_prompt_display", "right_paddle", "left_paddle")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_bl2xa"]
+size = Vector3(5, 3, 3)
+
+[node name="Tutorial" type="Node3D" node_paths=PackedStringArray("cutscene_animator", "cutscene_parent", "gameplay_parent", "gameplay_camera", "exit_area", "directional_prompt_display", "right_paddle", "left_paddle")]
 script = ExtResource("1_dwom6")
 cutscene_animator = NodePath("CutsceneElements/CutsceneAnimationPlayer")
 cutscene_parent = NodePath("CutsceneElements")
 gameplay_parent = NodePath("Gameplay Elements")
 gameplay_camera = NodePath("Gameplay Elements/Camera")
+exit_area = NodePath("ExitArea")
 directional_prompt_display = NodePath("DirectionalInputPrompts")
 right_paddle = NodePath("CutsceneElements/Guy/MoveablePaddles/Right")
 left_paddle = NodePath("CutsceneElements/Guy/MoveablePaddles/Left")
@@ -542,7 +546,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.3, 0
 [node name="Gameplay Elements" type="Node3D" parent="."]
 
 [node name="Camera" type="Camera3D" parent="Gameplay Elements"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3.4, 3.45)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3.4, 3.4)
 script = ExtResource("1_g2equ")
 metadata/_custom_type_script = "uid://bdxeu5afe7edl"
 
@@ -598,8 +602,37 @@ use_collision = true
 size = Vector3(5.4, 1, 0.5)
 material = ExtResource("5_wr8iv")
 
+[node name="Exit" type="Node3D" parent="Structure/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 5)
+
+[node name="Left" type="CSGBox3D" parent="Structure/Walls/Exit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 1.5, 1)
+use_collision = true
+size = Vector3(0.5, 4, 4)
+material = ExtResource("5_wr8iv")
+
+[node name="Right" type="CSGBox3D" parent="Structure/Walls/Exit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 1.5, 1)
+use_collision = true
+size = Vector3(0.5, 4, 4)
+material = ExtResource("5_wr8iv")
+
+[node name="Bottom" type="CSGBox3D" parent="Structure/Walls/Exit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 2.75)
+use_collision = true
+size = Vector3(5, 4, 0.5)
+material = ExtResource("5_wr8iv")
+
 [node name="Ceiling" type="CSGBox3D" parent="Structure"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 1)
 material_override = SubResource("StandardMaterial3D_5qvs7")
 cast_shadow = 0
 size = Vector3(14, 1, 6)
+
+[node name="ExitArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6)
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ExitArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_bl2xa")
