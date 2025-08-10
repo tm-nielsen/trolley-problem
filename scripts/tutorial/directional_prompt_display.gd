@@ -3,6 +3,8 @@ extends Control
 
 signal all_directions_pressed
 
+@export var completion_delay := 0.5
+
 @export var up_light: ColorRect
 @export var down_light: ColorRect
 @export var left_light: ColorRect
@@ -15,6 +17,7 @@ signal all_directions_pressed
 
 var input_target: PaddleController
 var mapped_lights
+var completed := false
 
 
 func _ready() -> void:
@@ -28,11 +31,14 @@ func _process(_delta) -> void:
 
 func display_prompts(paddle_controller: PaddleController):
     input_target = paddle_controller
-    map_lights()
-    for light in lights: light.hide()
+    map_lights_to_inputs()
+    for light in lights:
+        light.color = Color.WHITE
+        light.hide()
+    completed = false
     show()
 
-func map_lights():
+func map_lights_to_inputs():
     var invert_vertical = (
         input_target.action_prefix ==
         PaddleController.ActionPrefix.RIGHT
@@ -56,12 +62,19 @@ func map_lights():
 func check_direction(action_proxy: ActionProxy, light: ColorRect):
     if action_proxy.was_pressed_this_frame:
         light.show()
-        check_completion()
+        if !completed: check_completion()
 
 func check_completion():
     if all_lights_are_on():
-        all_directions_pressed.emit()
-        hide()
+        completed = true
+        TweenHelpers.call_delayed(
+            func():
+                all_directions_pressed.emit()
+                hide(),
+            completion_delay
+        )
+        for light in lights:
+            light.color = Color.GREEN_YELLOW
 
 func all_lights_are_on() -> bool:
     return lights.all(
