@@ -1,0 +1,94 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5slwylrpgvwm"]
+
+[ext_resource type="Script" uid="uid://b6ywhpf2dwikh" path="res://scripts/tutorial/directional_prompt_display.gd" id="1_c5txh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e13mp"]
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+anti_aliasing = false
+
+[node name="DirectionalInputPrompts" type="Control" node_paths=PackedStringArray("up_light", "down_light", "left_light", "right_light")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c5txh")
+up_light = NodePath("Up/ColorRect")
+down_light = NodePath("Down/ColorRect")
+left_light = NodePath("Left/ColorRect")
+right_light = NodePath("Right/ColorRect")
+
+[node name="Up" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.25
+offset_left = -24.0
+offset_top = 24.0
+offset_right = 24.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e13mp")
+
+[node name="ColorRect" type="ColorRect" parent="Up"]
+show_behind_parent = true
+layout_mode = 2
+
+[node name="Down" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.75
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_right = 24.0
+offset_bottom = -24.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e13mp")
+
+[node name="ColorRect" type="ColorRect" parent="Down"]
+show_behind_parent = true
+layout_mode = 2
+
+[node name="Left" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.4
+anchor_right = 0.175
+anchor_bottom = 0.6
+offset_top = -4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e13mp")
+
+[node name="ColorRect" type="ColorRect" parent="Left"]
+show_behind_parent = true
+layout_mode = 2
+
+[node name="Right" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.825
+anchor_top = 0.4
+anchor_right = 0.9
+anchor_bottom = 0.6
+offset_top = -4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e13mp")
+
+[node name="ColorRect" type="ColorRect" parent="Right"]
+show_behind_parent = true
+layout_mode = 2
