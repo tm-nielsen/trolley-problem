@@ -4,11 +4,17 @@ extends Control
 signal all_directions_pressed
 
 @export var completion_delay := 0.5
+@export var completion_colour := Color.GREEN
 
+@export_subgroup("references")
 @export var up_light: ColorRect
 @export var down_light: ColorRect
 @export var left_light: ColorRect
 @export var right_light: ColorRect
+
+@export_subgroup("size tween", "size_tween")
+@export var size_tween_scale: float = 1.5
+@export var size_tween_duration: float = 0.4
 
 @onready var lights = [
     up_light, down_light,
@@ -61,8 +67,17 @@ func map_lights_to_inputs():
 
 func check_direction(action_proxy: ActionProxy, light: ColorRect):
     if action_proxy.was_pressed_this_frame:
-        light.show()
+        if !light.visible: activate_light(light)
         if !completed: check_completion()
+
+func activate_light(light: ColorRect):
+    var light_parent: Control = light.get_parent()
+    light_parent.scale = Vector2.ONE * size_tween_scale
+    TweenHelpers.build_tween(self).tween_property(
+        light_parent, "scale",
+        Vector2.ONE, size_tween_duration
+    )
+    light.show()
 
 func check_completion():
     if all_lights_are_on():
@@ -74,7 +89,11 @@ func check_completion():
             completion_delay
         )
         for light in lights:
-            light.color = Color.GREEN_YELLOW
+            light.color = completion_colour
+        scale = Vector2.ONE * size_tween_scale
+        TweenHelpers.build_tween(self).tween_property(
+            self, "scale", Vector2.ONE, size_tween_duration
+        )
 
 func all_lights_are_on() -> bool:
     return lights.all(
