@@ -9,8 +9,8 @@ var last_frame_time: float
 var time_since_last_update: float
 
 
-func initialize(camera_position: Vector3, title: String):
-    super(camera_position, title)
+func initialize(camera_position: Vector3):
+    super(camera_position)
     update_view()
     GlobalSignalBus.item_collected.connect(
         func(_item): update_view()

@@ -18,12 +18,8 @@ func _ready() -> void:
 
 func initialize_view(view: CameraView, index: int) -> void:
     view.initialize(
-        get_camera_position(index),
-        get_camera_title(index)
+        get_camera_position(index)
     )
 
 func get_camera_position(index: int) -> Vector3:
     return camera_positions_parent.get_child(index).global_position
-
-static func get_camera_title(index: int) -> String:
-    return "Cam %d" % (index + 1)

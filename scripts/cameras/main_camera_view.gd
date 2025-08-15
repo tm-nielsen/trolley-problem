@@ -19,7 +19,6 @@ func _process(_delta: float) -> void:
     for i in CameraViewGrid.VIEW_COUNT:
         if Input.is_action_just_pressed("camera %d" % (i + 1)):
             set_camera(view_grid.cameras[i])
-            label.text = "Cam %d" % (i + 1)
             start_fov_tween()
 
 func start_fov_tween():

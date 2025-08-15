@@ -1,21 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://x3sl82ycs0y"]
+[gd_scene load_steps=3 format=3 uid="uid://x3sl82ycs0y"]
 
 [ext_resource type="PackedScene" uid="uid://cqqic1e8nq14r" path="res://scenes/prefabs/camera_view.tscn" id="1_fynfm"]
 [ext_resource type="Script" uid="uid://13ar5qmcu0fp" path="res://scripts/cameras/main_camera_view.gd" id="2_3meck"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_3meck"]
-shadow_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(-2, -2)
 
 [node name="Main Camera View" instance=ExtResource("1_fynfm")]
 custom_minimum_size = Vector2(216, 216)
 script = ExtResource("2_3meck")
 default_camera_index = 0
+fov_tween_scale = 1.2
+fov_tween_duration = 0.3
 
-[node name="Label" parent="Viewport Container/Viewport" index="0"]
-anchors_preset = -1
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_top = -3.0
-grow_vertical = 1
-label_settings = SubResource("LabelSettings_3meck")
+[node name="Viewport" parent="Viewport Container" index="0"]
+size = Vector2i(204, 204)
