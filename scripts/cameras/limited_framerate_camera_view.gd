@@ -2,9 +2,11 @@ class_name LimitedFrameRateCameraView
 extends CameraView
 
 @export var target_fps: float = 12
-@export var update_threshold: int = 40
+@export var update_threshold: int = 60
+@export var minimum_fps: int = 1
 
 var last_frame_time: float
+var time_since_last_update: float
 
 
 func initialize(camera_position: Vector3, title: String):
@@ -22,12 +24,17 @@ func initialize(camera_position: Vector3, title: String):
     )
 
 func update_view_smooth():
-    if 1 / last_frame_time < update_threshold: return
+    if (
+        1 / last_frame_time < update_threshold &&
+        time_since_last_update < 1.0 / minimum_fps
+     ): return
     update_view()
 
 func update_view():
     viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
+    time_since_last_update = 0
 
 
 func _process(delta):
     last_frame_time = delta
+    time_since_last_update += delta
