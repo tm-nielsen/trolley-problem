@@ -300,5 +300,6 @@ render_target_update_mode = 4
 
 [node name="Tutorial" parent="Tutorial/TutorialViewport/SubViewport" instance=ExtResource("11_y3xxt")]
 
+[connection signal="completed" from="Tutorial/TutorialViewport/SubViewport/Tutorial" to="VBoxContainer/Main Camera View" method="enable"]
 [connection signal="completed" from="Tutorial/TutorialViewport/SubViewport/Tutorial" to="Tutorial" method="queue_free"]
 [connection signal="completed" from="Tutorial/TutorialViewport/SubViewport/Tutorial" to="Level" method="set_process_mode" binds= [0]]
