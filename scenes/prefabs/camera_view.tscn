@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqqic1e8nq14r"]
+[gd_scene load_steps=4 format=3 uid="uid://cqqic1e8nq14r"]
 
 [ext_resource type="Script" uid="uid://xd1rusesonfl" path="res://scripts/cameras/limited_framerate_camera_view.gd" id="1_rwqmo"]
+[ext_resource type="Material" uid="uid://bqdil65ao7ycf" path="res://resources/materials/ui/camera_screen.tres" id="2_umwii"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rwqmo"]
 font_size = 12
@@ -15,6 +16,7 @@ viewport = NodePath("Viewport Container/Viewport")
 label = NodePath("Viewport Container/Viewport/Label")
 
 [node name="Viewport Container" type="SubViewportContainer" parent="."]
+material = ExtResource("2_umwii")
 layout_mode = 2
 stretch = true
 
