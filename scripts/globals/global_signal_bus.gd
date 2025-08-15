@@ -1,10 +1,14 @@
 extends Node
 
+signal tutorial_completed()
 signal collection_pool_populated(items: Array[CollectableItem])
 signal item_collected(item: CollectableItem)
 signal all_items_collected()
 signal game_won()
 signal game_timer_ended()
+
+func notify_tutorial_completed():
+    tutorial_completed.emit()
 
 func notify_collection_pool_populated(items: Array[CollectableItem]):
     collection_pool_populated.emit(items)

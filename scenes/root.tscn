@@ -51,8 +51,6 @@ alignment = 1
 [node name="Main Camera View" parent="VBoxContainer" node_paths=PackedStringArray("view_grid") instance=ExtResource("1_jh1ax")]
 layout_mode = 2
 view_grid = NodePath("../HUD/Cameras")
-fov_tween_scale = 1.2
-fov_tween_duration = 0.3
 
 [node name="HUD" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -300,6 +298,5 @@ render_target_update_mode = 4
 
 [node name="Tutorial" parent="Tutorial/TutorialViewport/SubViewport" instance=ExtResource("11_y3xxt")]
 
-[connection signal="completed" from="Tutorial/TutorialViewport/SubViewport/Tutorial" to="VBoxContainer/Main Camera View" method="enable"]
 [connection signal="completed" from="Tutorial/TutorialViewport/SubViewport/Tutorial" to="Tutorial" method="queue_free"]
 [connection signal="completed" from="Tutorial/TutorialViewport/SubViewport/Tutorial" to="Level" method="set_process_mode" binds= [0]]

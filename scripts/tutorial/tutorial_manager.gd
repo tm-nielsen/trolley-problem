@@ -24,6 +24,7 @@ var state := State.INTRO
 
 
 func _ready() -> void:
+    completed.connect(GlobalSignalBus.notify_tutorial_completed)
     gameplay_parent.process_mode = Node.PROCESS_MODE_DISABLED
     gameplay_parent.hide()
     cutscene_parent.show()

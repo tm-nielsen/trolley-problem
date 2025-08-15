@@ -13,6 +13,7 @@ var enabled: bool = false
 func _ready():
     view_grid.initialize_view(self, default_camera_index)
     viewport.audio_listener_enable_3d = true
+    GlobalSignalBus.tutorial_completed.connect(func(): enabled = true)
 
 func _process(_delta: float) -> void:
     if !enabled: return
@@ -28,6 +29,3 @@ func start_fov_tween():
     fov_tween.tween_property(
         camera, "fov", fov, fov_tween_duration
     )
-
-func enable():
-    enabled = true
