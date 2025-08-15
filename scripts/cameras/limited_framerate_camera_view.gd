@@ -2,8 +2,8 @@ class_name LimitedFrameRateCameraView
 extends CameraView
 
 @export var target_fps: float = 12
-@export var update_threshold: int = 60
-@export var minimum_fps: int = 1
+@export var update_threshold: int = 50
+@export var minimum_fps: float = 0.25
 
 var last_frame_time: float
 var time_since_last_update: float
@@ -15,6 +15,8 @@ func initialize(camera_position: Vector3, title: String):
     GlobalSignalBus.item_collected.connect(
         func(_item): update_view()
     )
+
+    time_since_last_update = randf() / minimum_fps
 
     var delay_tween = create_tween()
     delay_tween.tween_interval(target_fps * randf() / target_fps)
