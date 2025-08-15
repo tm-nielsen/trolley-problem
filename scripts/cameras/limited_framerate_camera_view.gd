@@ -12,6 +12,9 @@ var time_since_last_update: float
 func initialize(camera_position: Vector3, title: String):
     super(camera_position, title)
     update_view()
+    GlobalSignalBus.item_collected.connect(
+        func(_item): update_view()
+    )
 
     var delay_tween = create_tween()
     delay_tween.tween_interval(target_fps * randf() / target_fps)
