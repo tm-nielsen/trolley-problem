@@ -1,23 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://dviwm18mhuwff"]
+[gd_scene load_steps=11 format=3 uid="uid://dviwm18mhuwff"]
 
-[ext_resource type="PackedScene" uid="uid://x3sl82ycs0y" path="res://scenes/prefabs/main_camera_view.tscn" id="1_jh1ax"]
-[ext_resource type="Script" uid="uid://bojvm0g2lcy7v" path="res://scripts/ui/collection_display.gd" id="2_5sfjl"]
-[ext_resource type="Script" uid="uid://dx4tsrfy7kcii" path="res://scripts/ui/game_timer.gd" id="3_3hfy5"]
-[ext_resource type="PackedScene" uid="uid://cqqic1e8nq14r" path="res://scenes/prefabs/camera_view.tscn" id="3_lrqlo"]
-[ext_resource type="Script" uid="uid://cvfww8dfyi56s" path="res://scripts/cameras/camera_view_grid.gd" id="3_sqa0i"]
+[ext_resource type="PackedScene" uid="uid://c2ps507fr4vlh" path="res://scenes/branches/display.tscn" id="1_j287u"]
 [ext_resource type="Script" uid="uid://b0xjahu5d7ops" path="res://scripts/props/win_area.gd" id="6_5sfjl"]
 [ext_resource type="PackedScene" uid="uid://ddrbqtusqv5ie" path="res://scenes/Level.tscn" id="6_7pvxh"]
 [ext_resource type="Script" uid="uid://5rjo2jegqlhc" path="res://scripts/ui/win_screen.gd" id="6_kycxp"]
 [ext_resource type="Shader" uid="uid://cnyo3c7dwyohc" path="res://resources/shaders/highlight.gdshader" id="7_3hfy5"]
 [ext_resource type="Script" uid="uid://8ofg87t6g10u" path="res://scripts/ui/lose_screen.gd" id="10_7pvxh"]
 [ext_resource type="PackedScene" uid="uid://c485i7okue4m1" path="res://scenes/tutorial.tscn" id="11_y3xxt"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_j287u"]
-line_spacing = -6.0
-font_size = 18
-
-[sub_resource type="LabelSettings" id="LabelSettings_5sfjl"]
-font_size = 26
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7pvxh"]
 render_priority = 0
@@ -39,63 +28,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
+[node name="Display" parent="." instance=ExtResource("1_j287u")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
 
-[node name="Main Camera View" parent="VBoxContainer" node_paths=PackedStringArray("view_grid") instance=ExtResource("1_jh1ax")]
-layout_mode = 2
-view_grid = NodePath("../HUD/Cameras")
-
-[node name="HUD" type="VBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Grocery List" type="PanelContainer" parent="VBoxContainer/HUD"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Background" type="ColorRect" parent="VBoxContainer/HUD/Grocery List"]
-layout_mode = 2
-color = Color(0, 0, 0, 1)
-
-[node name="VBox" type="VBoxContainer" parent="VBoxContainer/HUD/Grocery List"]
-layout_mode = 2
-alignment = 1
-
-[node name="Item Count" type="Label" parent="VBoxContainer/HUD/Grocery List/VBox"]
-layout_mode = 2
-size_flags_vertical = 6
-text = "6
-Wares Craved"
-label_settings = SubResource("LabelSettings_j287u")
-horizontal_alignment = 1
-script = ExtResource("2_5sfjl")
-
-[node name="Timer" type="Label" parent="VBoxContainer/HUD/Grocery List/VBox"]
-layout_mode = 2
-size_flags_vertical = 6
-text = "1:30:00"
-label_settings = SubResource("LabelSettings_5sfjl")
-horizontal_alignment = 1
-script = ExtResource("3_3hfy5")
-starting_time = 60.0
-collection_bonus = 40.0
-
-[node name="CenterContainer" type="Control" parent="VBoxContainer/HUD/Grocery List"]
-layout_mode = 2
-
-[node name="Cameras" type="GridContainer" parent="VBoxContainer/HUD" node_paths=PackedStringArray("camera_positions_parent")]
-layout_mode = 2
-size_flags_vertical = 3
-columns = 3
-script = ExtResource("3_sqa0i")
-camera_view_prefab = ExtResource("3_lrqlo")
+[node name="Cameras" parent="Display/HUD" index="1" node_paths=PackedStringArray("camera_positions_parent")]
 camera_positions_parent = NodePath("../../../Camera Positions")
 
 [node name="Camera Positions" type="Node3D" parent="."]
@@ -300,3 +241,5 @@ render_target_update_mode = 4
 
 [connection signal="completed" from="Tutorial/TutorialViewport/SubViewport/Tutorial" to="Tutorial" method="queue_free"]
 [connection signal="completed" from="Tutorial/TutorialViewport/SubViewport/Tutorial" to="Level" method="set_process_mode" binds= [0]]
+
+[editable path="Display"]
