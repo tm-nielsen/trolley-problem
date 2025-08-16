@@ -9,6 +9,3 @@ script = ExtResource("2_3meck")
 default_camera_index = 0
 fov_tween_scale = 1.2
 fov_tween_duration = 0.3
-
-[node name="Viewport" parent="Viewport Container" index="0"]
-size = Vector2i(204, 204)
