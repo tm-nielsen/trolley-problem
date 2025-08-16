@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5slwylrpgvwm"]
+[gd_scene load_steps=3 format=3 uid="uid://b5slwylrpgvwm"]
 
 [ext_resource type="Script" uid="uid://b6ywhpf2dwikh" path="res://scripts/tutorial/directional_prompt_display.gd" id="1_c5txh"]
+[ext_resource type="Script" uid="uid://bfxo60v0ap7vq" path="res://scripts/ui/scalable_colour_panel.gd" id="2_g8hoe"]
 
 [node name="DirectionalInputPrompts" type="Control" node_paths=PackedStringArray("up_light", "down_light", "left_light", "right_light")]
 layout_mode = 3
@@ -11,12 +12,12 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(192, 108)
 script = ExtResource("1_c5txh")
-up_light = NodePath("Up/ColorRect")
-down_light = NodePath("Down/ColorRect")
-left_light = NodePath("Left/ColorRect")
-right_light = NodePath("Right/ColorRect")
+up_light = NodePath("Up")
+down_light = NodePath("Down")
+left_light = NodePath("Left")
+right_light = NodePath("Right")
 
-[node name="Up" type="PanelContainer" parent="."]
+[node name="Up" type="PanelContainer" parent="." node_paths=PackedStringArray("colour_rect")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -30,12 +31,15 @@ offset_bottom = 12.0
 grow_horizontal = 2
 pivot_offset = Vector2(24, 12)
 theme_type_variation = &"RoundPanel"
+script = ExtResource("2_g8hoe")
+colour_rect = NodePath("ColorRect")
+tween_on_scale = 2.0
 
 [node name="ColorRect" type="ColorRect" parent="Up"]
 show_behind_parent = true
 layout_mode = 2
 
-[node name="Down" type="PanelContainer" parent="."]
+[node name="Down" type="PanelContainer" parent="." node_paths=PackedStringArray("colour_rect")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -49,12 +53,15 @@ offset_bottom = 12.0
 grow_horizontal = 2
 pivot_offset = Vector2(24, 12)
 theme_type_variation = &"RoundPanel"
+script = ExtResource("2_g8hoe")
+colour_rect = NodePath("ColorRect")
+tween_on_scale = 2.0
 
 [node name="ColorRect" type="ColorRect" parent="Down"]
 show_behind_parent = true
 layout_mode = 2
 
-[node name="Left" type="PanelContainer" parent="."]
+[node name="Left" type="PanelContainer" parent="." node_paths=PackedStringArray("colour_rect")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.1
@@ -68,12 +75,15 @@ offset_bottom = 24.0
 grow_horizontal = 2
 pivot_offset = Vector2(12, 24)
 theme_type_variation = &"RoundPanel"
+script = ExtResource("2_g8hoe")
+colour_rect = NodePath("ColorRect")
+tween_on_scale = 2.0
 
 [node name="ColorRect" type="ColorRect" parent="Left"]
 show_behind_parent = true
 layout_mode = 2
 
-[node name="Right" type="PanelContainer" parent="."]
+[node name="Right" type="PanelContainer" parent="." node_paths=PackedStringArray("colour_rect")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.9
@@ -87,6 +97,9 @@ offset_bottom = 24.0
 grow_horizontal = 2
 pivot_offset = Vector2(12, 24)
 theme_type_variation = &"RoundPanel"
+script = ExtResource("2_g8hoe")
+colour_rect = NodePath("ColorRect")
+tween_on_scale = 2.0
 
 [node name="ColorRect" type="ColorRect" parent="Right"]
 show_behind_parent = true

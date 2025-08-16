@@ -7,10 +7,10 @@ signal all_directions_pressed
 @export var completion_colour := Color.GREEN
 
 @export_subgroup("references")
-@export var up_light: ColorRect
-@export var down_light: ColorRect
-@export var left_light: ColorRect
-@export var right_light: ColorRect
+@export var up_light: ScalableColourPanel
+@export var down_light: ScalableColourPanel
+@export var left_light: ScalableColourPanel
+@export var right_light: ScalableColourPanel
 
 @export_subgroup("size tween", "size_tween")
 @export var size_tween_scale: float = 1.5
@@ -38,9 +38,7 @@ func _process(_delta) -> void:
 func display_prompts(paddle_controller: PaddleController):
     input_target = paddle_controller
     map_lights_to_inputs()
-    for light in lights:
-        light.color = Color.WHITE
-        light.hide()
+    for light in lights: light.turn_off()
     completed = false
     show()
 
@@ -65,19 +63,11 @@ func map_lights_to_inputs():
     ]
 
 
-func check_direction(action_proxy: ActionProxy, light: ColorRect):
+func check_direction(action_proxy: ActionProxy, light: ScalableColourPanel):
+    if completed: return
     if action_proxy.was_pressed_this_frame:
-        if !light.visible: activate_light(light)
-        if !completed: check_completion()
-
-func activate_light(light: ColorRect):
-    var light_parent: Control = light.get_parent()
-    light_parent.scale = Vector2.ONE * size_tween_scale
-    TweenHelpers.build_tween(self).tween_property(
-        light_parent, "scale",
-        Vector2.ONE, size_tween_duration
-    )
-    light.show()
+        light.turn_on()
+        check_completion()
 
 func check_completion():
     if all_lights_are_on():
@@ -89,7 +79,7 @@ func check_completion():
             completion_delay
         )
         for light in lights:
-            light.color = completion_colour
+            light.colour = completion_colour
         scale = Vector2.ONE * size_tween_scale
         TweenHelpers.build_tween(self).tween_property(
             self, "scale", Vector2.ONE, size_tween_duration
@@ -97,5 +87,5 @@ func check_completion():
 
 func all_lights_are_on() -> bool:
     return lights.all(
-        func(light): return light.visible
+        func(light): return light.is_on
     )
