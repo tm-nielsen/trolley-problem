@@ -64,10 +64,9 @@ func map_lights_to_inputs():
 
 
 func check_direction(action_proxy: ActionProxy, light: ScalableColourPanel):
-    if completed: return
     if action_proxy.was_pressed_this_frame:
-        light.turn_on()
-        check_completion()
+        light.turn_on(!completed)
+        if !completed: check_completion()
 
 func check_completion():
     if all_lights_are_on():

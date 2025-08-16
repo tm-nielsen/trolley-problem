@@ -25,13 +25,13 @@ func _ready():
     colour_rect.color = off_colour
 
 
-func turn_on():
-    colour_rect.color = on_colour
+func turn_on(set_colour: bool = true):
+    if set_colour: colour_rect.color = on_colour
     scale_for(tween_on_scale, tween_on_duration)
     is_on = true
 
-func turn_off():
-    colour_rect.color = off_colour
+func turn_off(set_colour: bool = true):
+    if set_colour: colour_rect.color = off_colour
     scale_for(tween_off_scale, tween_off_duration)
     is_on = false
 
