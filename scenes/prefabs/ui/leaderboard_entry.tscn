@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://deara6x1v213u"]
+
+[ext_resource type="Script" uid="uid://c2ngei3r8cn12" path="res://scripts/ui/leaderboard/leaderboard_entry.gd" id="1_584v3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e4v1e"]
+font_size = 32
+shadow_size = 0
+shadow_offset = Vector2(4, -2)
+
+[node name="LeaderboardEntry" type="HBoxContainer"]
+theme_override_constants/separation = 32
+script = ExtResource("1_584v3")
+
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "TWIG"
+label_settings = SubResource("LabelSettings_e4v1e")
+horizontal_alignment = 2
+
+[node name="TimeLabel" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+text = "1:20:00"
+label_settings = SubResource("LabelSettings_e4v1e")

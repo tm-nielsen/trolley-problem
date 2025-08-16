@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://bapu275ycogwp"]
+
+[ext_resource type="Script" uid="uid://dsav4uuu4sqbt" path="res://scripts/ui/leaderboard/end_screen.gd" id="1_jc7ji"]
+[ext_resource type="PackedScene" uid="uid://deara6x1v213u" path="res://scenes/prefabs/ui/leaderboard_entry.tscn" id="1_kq7ac"]
+[ext_resource type="Script" uid="uid://qm7nkiq3qsc7" path="res://scripts/ui/leaderboard/leaderboard.gd" id="2_87vmq"]
+[ext_resource type="PackedScene" uid="uid://ci5ts1nwohra5" path="res://scenes/prefabs/ui/name_entry_area.tscn" id="2_g44xs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g44xs"]
+font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_6e1uj"]
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jc7ji")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="InitialDisplay" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 12.0
+offset_right = -24.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Time" type="Label" parent="InitialDisplay"]
+layout_mode = 2
+text = "1:20:00"
+label_settings = SubResource("LabelSettings_g44xs")
+horizontal_alignment = 1
+
+[node name="NameEntryArea" parent="InitialDisplay" instance=ExtResource("2_g44xs")]
+layout_mode = 2
+
+[node name="FinalDisplay" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 12.0
+offset_right = -24.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Leaderboard" type="VBoxContainer" parent="FinalDisplay"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+script = ExtResource("2_87vmq")
+
+[node name="LeaderboardEntry" parent="FinalDisplay/Leaderboard" instance=ExtResource("1_kq7ac")]
+layout_mode = 2
+
+[node name="LeaderboardEntry2" parent="FinalDisplay/Leaderboard" instance=ExtResource("1_kq7ac")]
+layout_mode = 2
+
+[node name="LeaderboardEntry3" parent="FinalDisplay/Leaderboard" instance=ExtResource("1_kq7ac")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FinalDisplay"]
+layout_mode = 2
+text = "Press Any Button to Play Again"
+label_settings = SubResource("LabelSettings_6e1uj")
+horizontal_alignment = 1
+vertical_alignment = 2
