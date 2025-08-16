@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://dqjdk120v4imo"]
 
 [ext_resource type="PackedScene" uid="uid://x3sl82ycs0y" path="res://scenes/prefabs/main_camera_view.tscn" id="1_epw3b"]
+[ext_resource type="Script" uid="uid://bt0fcge4i5uri" path="res://scripts/ui/collection_label.gd" id="2_ectxu"]
 [ext_resource type="Script" uid="uid://bojvm0g2lcy7v" path="res://scripts/ui/collection_display.gd" id="2_eivu1"]
 [ext_resource type="Script" uid="uid://dx4tsrfy7kcii" path="res://scripts/ui/game_timer.gd" id="3_70db5"]
-[ext_resource type="Script" uid="uid://ckxac2b1ulv6c" path="res://scripts/ui/font_scaled_label.gd" id="3_nj5vc"]
 [ext_resource type="PackedScene" uid="uid://delmpbhuxg832" path="res://scenes/prefabs/item_checkbox.tscn" id="4_ectxu"]
 [ext_resource type="Script" uid="uid://cvfww8dfyi56s" path="res://scripts/cameras/camera_view_grid.gd" id="4_l80km"]
 [ext_resource type="PackedScene" uid="uid://cqqic1e8nq14r" path="res://scenes/prefabs/camera_view.tscn" id="5_uaccf"]
@@ -60,7 +60,7 @@ grow_vertical = 2
 text = "Wares Craved"
 label_settings = SubResource("LabelSettings_j287u")
 vertical_alignment = 2
-script = ExtResource("3_nj5vc")
+script = ExtResource("2_ectxu")
 
 [node name="Item Checkboxes" type="HBoxContainer" parent="HUD/Grocery List/VBox"]
 layout_mode = 2
