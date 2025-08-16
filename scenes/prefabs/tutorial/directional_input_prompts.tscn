@@ -1,19 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5slwylrpgvwm"]
+[gd_scene load_steps=2 format=3 uid="uid://b5slwylrpgvwm"]
 
 [ext_resource type="Script" uid="uid://b6ywhpf2dwikh" path="res://scripts/tutorial/directional_prompt_display.gd" id="1_c5txh"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e13mp"]
-draw_center = false
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-anti_aliasing = false
 
 [node name="DirectionalInputPrompts" type="Control" node_paths=PackedStringArray("up_light", "down_light", "left_light", "right_light")]
 layout_mode = 3
@@ -42,7 +29,7 @@ offset_right = 24.0
 offset_bottom = 12.0
 grow_horizontal = 2
 pivot_offset = Vector2(24, 12)
-theme_override_styles/panel = SubResource("StyleBoxFlat_e13mp")
+theme_type_variation = &"RoundPanel"
 
 [node name="ColorRect" type="ColorRect" parent="Up"]
 show_behind_parent = true
@@ -61,7 +48,7 @@ offset_right = 24.0
 offset_bottom = 12.0
 grow_horizontal = 2
 pivot_offset = Vector2(24, 12)
-theme_override_styles/panel = SubResource("StyleBoxFlat_e13mp")
+theme_type_variation = &"RoundPanel"
 
 [node name="ColorRect" type="ColorRect" parent="Down"]
 show_behind_parent = true
@@ -80,7 +67,7 @@ offset_right = 12.0
 offset_bottom = 24.0
 grow_horizontal = 2
 pivot_offset = Vector2(12, 24)
-theme_override_styles/panel = SubResource("StyleBoxFlat_e13mp")
+theme_type_variation = &"RoundPanel"
 
 [node name="ColorRect" type="ColorRect" parent="Left"]
 show_behind_parent = true
@@ -99,7 +86,7 @@ offset_right = 12.0
 offset_bottom = 24.0
 grow_horizontal = 2
 pivot_offset = Vector2(12, 24)
-theme_override_styles/panel = SubResource("StyleBoxFlat_e13mp")
+theme_type_variation = &"RoundPanel"
 
 [node name="ColorRect" type="ColorRect" parent="Right"]
 show_behind_parent = true

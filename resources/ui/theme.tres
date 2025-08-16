@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://djlb00u8ia5rr"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://djlb00u8ia5rr"]
 
 [ext_resource type="FontFile" uid="uid://bjssxd73huqo" path="res://resources/ui/fonts/Quantico-Bold.ttf" id="1_qfwp4"]
 
@@ -10,6 +10,19 @@ content_margin_bottom = 6.0
 bg_color = Color(0, 0, 0, 1)
 anti_aliasing = false
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e13mp"]
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+anti_aliasing = false
+
 [resource]
 default_font = ExtResource("1_qfwp4")
 default_font_size = 20
@@ -17,3 +30,5 @@ BoxContainer/constants/separation = 0
 GridContainer/constants/h_separation = 0
 GridContainer/constants/v_separation = 0
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_77ydo")
+RoundPanel/base_type = &"PanelContainer"
+RoundPanel/styles/panel = SubResource("StyleBoxFlat_e13mp")
