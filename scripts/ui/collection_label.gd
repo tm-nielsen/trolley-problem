@@ -1,6 +1,7 @@
 extends FontScaledLabel
 
 @export var completion_text := "Check Out!"
+@export var competion_font_size: float = 26
 
 @export_subgroup("signal tween")
 @export var collection_tween_scale: float = 0.5
@@ -9,7 +10,7 @@ extends FontScaledLabel
 @export var completion_tween_duration: float = 0.6
 
 @export_subgroup("completion bump", "completion_bump")
-@export var completion_bump_scale: float = 1.5
+@export var completion_bump_scale: float = 1.2
 @export var completion_bump_tween_duration: float = 0.5
 @export var completion_bump_minimum_period: float = 0.1
 @export var completion_bump_maximum_period: float = 1.0
@@ -25,6 +26,8 @@ func _ready():
     )
     GlobalSignalBus.all_items_collected.connect(
         func():
+        text = completion_text
+        base_font_size = competion_font_size
         scale_for(
             completion_tween_scale,
             completion_tween_duration
@@ -33,7 +36,6 @@ func _ready():
             run_completion_bump,
             completion_tween_duration
         )
-        text = completion_text
     )
 
 func run_completion_bump():

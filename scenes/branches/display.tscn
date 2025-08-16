@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dqjdk120v4imo"]
+[gd_scene load_steps=11 format=3 uid="uid://dqjdk120v4imo"]
 
 [ext_resource type="PackedScene" uid="uid://x3sl82ycs0y" path="res://scenes/prefabs/main_camera_view.tscn" id="1_epw3b"]
 [ext_resource type="Script" uid="uid://bt0fcge4i5uri" path="res://scripts/ui/collection_label.gd" id="2_ectxu"]
 [ext_resource type="Script" uid="uid://bojvm0g2lcy7v" path="res://scripts/ui/collection_display.gd" id="2_eivu1"]
+[ext_resource type="Script" uid="uid://drl0shk6ojnid" path="res://scripts/ui/all_items_collected_stretch_ratio_tweener.gd" id="2_ipwdj"]
 [ext_resource type="Script" uid="uid://dx4tsrfy7kcii" path="res://scripts/ui/game_timer.gd" id="3_70db5"]
 [ext_resource type="PackedScene" uid="uid://delmpbhuxg832" path="res://scenes/prefabs/item_checkbox.tscn" id="4_ectxu"]
 [ext_resource type="Script" uid="uid://cvfww8dfyi56s" path="res://scripts/cameras/camera_view_grid.gd" id="4_l80km"]
@@ -47,6 +48,8 @@ alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.5
+script = ExtResource("2_ipwdj")
+completion_ratio = 3.0
 
 [node name="Label" type="Label" parent="HUD/Grocery List/VBox/Label Placement Parent"]
 layout_mode = 1
@@ -72,6 +75,8 @@ checkbox_prefab = ExtResource("4_ectxu")
 [node name="Timer Parent" type="Control" parent="HUD/Grocery List/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
+script = ExtResource("2_ipwdj")
+completion_ratio = 2.0
 
 [node name="Timer" type="Label" parent="HUD/Grocery List/VBox/Timer Parent"]
 layout_mode = 1
