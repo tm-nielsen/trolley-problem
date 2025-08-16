@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4hov5hkkmrkn"]
+[gd_scene load_steps=7 format=3 uid="uid://b4hov5hkkmrkn"]
 
 [ext_resource type="Script" uid="uid://cykd655dii10e" path="res://scripts/props/collectable_item.gd" id="1_cy5ha"]
 [ext_resource type="PackedScene" uid="uid://dvvdm4gh8m80q" path="res://scenes/prefabs/collection_particles.tscn" id="2_wikfi"]
 [ext_resource type="Material" uid="uid://du54h7h6d7tgg" path="res://resources/materials/highlight_material.tres" id="3_x1afu"]
+[ext_resource type="PackedScene" uid="uid://b4alrxskbotva" path="res://scenes/prefabs/tutorial/animated_arrow.tscn" id="4_8ridj"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_tbu7o"]
 radius = 0.1
@@ -25,5 +26,9 @@ mesh = SubResource("SphereMesh_tbu7o")
 
 [node name="Collider" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_hxxso")
+
+[node name="AnimatedArrow" parent="." instance=ExtResource("4_8ridj")]
+transform = Transform3D(0.75, 0, 0, 0, -2.71499e-06, -0.75, 0, 0.75, -2.71499e-06, 0, 1, 0)
+rotation_enabled = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
