@@ -5,6 +5,8 @@ static var cart_position: Vector3
 
 signal collided(collider_mass: float)
 
+@export var is_tutorial_cart: bool = false
+
 @export_subgroup("movement forces")
 @export var push_force: float = 4
 @export var turn_force: float = 4
@@ -30,6 +32,7 @@ func _ready() -> void:
     left_paddle.pushed.connect(apply_push.bind(1))
     right_paddle.jumped.connect(apply_jump.bind(left_paddle))
     left_paddle.jumped.connect(apply_jump.bind(right_paddle))
+    connect_tutorial_cart_signal()
 
 func _physics_process(delta: float) -> void:
     velocity += get_gravity() * delta
@@ -85,3 +88,17 @@ func _process_rigidbody_collision(
     var mass_ratio = effective_mass / collider_mass
     colliding_body.apply_central_impulse(-normal * mass_ratio)
     return previous_velocity * inertia / collider_mass
+
+
+func connect_tutorial_cart_signal():
+    if is_tutorial_cart:
+        tree_exiting.connect(func():
+            GlobalSignalBus.notify_tutorial_cart_freed(self)
+        )
+    else:
+        GlobalSignalBus.tutorial_cart_freed.connect(
+            func(tutorial_cart: CartBody):
+                rotation = tutorial_cart.rotation
+                velocity = tutorial_cart.velocity
+                angular_velocity = tutorial_cart.angular_velocity
+        )

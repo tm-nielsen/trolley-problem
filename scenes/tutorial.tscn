@@ -552,6 +552,7 @@ metadata/_custom_type_script = "uid://bdxeu5afe7edl"
 
 [node name="Player" parent="Gameplay Elements" instance=ExtResource("2_tbcdj")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.6, 0.1, 1)
+is_tutorial_cart = true
 
 [node name="AnimatedArrow" parent="Gameplay Elements" instance=ExtResource("21_bl2xa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, 2)
