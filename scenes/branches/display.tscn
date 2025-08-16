@@ -1,14 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://dqjdk120v4imo"]
+[gd_scene load_steps=10 format=3 uid="uid://dqjdk120v4imo"]
 
 [ext_resource type="PackedScene" uid="uid://x3sl82ycs0y" path="res://scenes/prefabs/main_camera_view.tscn" id="1_epw3b"]
 [ext_resource type="Script" uid="uid://bojvm0g2lcy7v" path="res://scripts/ui/collection_display.gd" id="2_eivu1"]
 [ext_resource type="Script" uid="uid://dx4tsrfy7kcii" path="res://scripts/ui/game_timer.gd" id="3_70db5"]
+[ext_resource type="Script" uid="uid://ckxac2b1ulv6c" path="res://scripts/ui/font_scaled_label.gd" id="3_nj5vc"]
+[ext_resource type="PackedScene" uid="uid://delmpbhuxg832" path="res://scenes/prefabs/item_checkbox.tscn" id="4_ectxu"]
 [ext_resource type="Script" uid="uid://cvfww8dfyi56s" path="res://scripts/cameras/camera_view_grid.gd" id="4_l80km"]
 [ext_resource type="PackedScene" uid="uid://cqqic1e8nq14r" path="res://scenes/prefabs/camera_view.tscn" id="5_uaccf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j287u"]
 line_spacing = -6.0
-font_size = 18
+font_size = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_5sfjl"]
 font_size = 26
@@ -41,14 +43,31 @@ color = Color(0, 0, 0, 1)
 layout_mode = 2
 alignment = 1
 
-[node name="Item Count" type="Label" parent="HUD/Grocery List/VBox"]
+[node name="Label Placement Parent" type="Control" parent="HUD/Grocery List/VBox"]
 layout_mode = 2
-size_flags_vertical = 6
-text = "6
-Wares Craved"
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.5
+
+[node name="Label" type="Label" parent="HUD/Grocery List/VBox/Label Placement Parent"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Wares Craved"
 label_settings = SubResource("LabelSettings_j287u")
-horizontal_alignment = 1
+vertical_alignment = 2
+script = ExtResource("3_nj5vc")
+
+[node name="Item Checkboxes" type="HBoxContainer" parent="HUD/Grocery List/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
 script = ExtResource("2_eivu1")
+checkbox_prefab = ExtResource("4_ectxu")
 
 [node name="Timer Parent" type="Control" parent="HUD/Grocery List/VBox"]
 layout_mode = 2
@@ -56,18 +75,13 @@ size_flags_vertical = 3
 
 [node name="Timer" type="Label" parent="HUD/Grocery List/VBox/Timer Parent"]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -25.0
-offset_right = 100.0
-offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(100, 25)
 size_flags_vertical = 6
 text = "1:30:00"
 label_settings = SubResource("LabelSettings_5sfjl")

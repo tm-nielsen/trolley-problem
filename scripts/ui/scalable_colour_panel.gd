@@ -9,7 +9,7 @@ extends Control
 @export var on_colour := Color.WHITE
 
 @export_subgroup("tween settings", "tween")
-@export var tween_on_scale: float = 1.5
+@export var tween_on_scale: float = 2.0
 @export var tween_on_duration: float = 0.4
 @export var tween_off_scale: float = 0.8
 @export var tween_off_duration: float = 0.6

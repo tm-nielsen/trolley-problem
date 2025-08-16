@@ -1,25 +1,29 @@
-extends FontScaledLabel
+extends Control
 
-@export var suffix: String = "Wares Craved"
-@export var collected_scale: float = 0.5
-@export var collected_tween_duration: float = 0.1
+@export var checkbox_prefab: PackedScene
 
+var checkbox_bindings: Dictionary[CollectableItem, ScalableColourPanel]
 var item_count: int
 
 
 func _ready() -> void:
     GlobalSignalBus.collection_pool_populated.connect(
-        func(items: Array):
-        set_and_display_item_count(items.size())
+        build_item_checkboxes
     )
     GlobalSignalBus.item_collected.connect(
-        func(_item):
-        set_and_display_item_count(item_count - 1)
-        scale_for(collected_scale, collected_tween_duration)
+        func(item):
+        checkbox_bindings[item].turn_on()
     )
 
 
-func set_and_display_item_count(count: int):
-    item_count = count
-    text = "%d\n%s" % [item_count, suffix]
-    if item_count == 0: hide()
+func build_item_checkboxes(items: Array[CollectableItem]):
+    for item in items:
+        var new_checkbox = checkbox_prefab.instantiate()
+        add_child(new_checkbox)
+        checkbox_bindings[item] = new_checkbox
+        center_checkbox_children.call_deferred()
+
+func center_checkbox_children():
+    for checkbox in get_children():
+        if !checkbox is ScalableColourPanel: return
+        checkbox.scale_node.pivot_offset = checkbox.scale_node.size / 2

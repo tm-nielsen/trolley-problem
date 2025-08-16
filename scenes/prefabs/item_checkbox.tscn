@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://delmpbhuxg832"]
+
+[ext_resource type="Script" uid="uid://bfxo60v0ap7vq" path="res://scripts/ui/scalable_colour_panel.gd" id="1_xc1l8"]
+
+[node name="Item Checkbox" type="Control" node_paths=PackedStringArray("scale_node", "colour_rect")]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+script = ExtResource("1_xc1l8")
+scale_node = NodePath("PanelContainer")
+colour_rect = NodePath("PanelContainer/ColorRect")
+off_colour = Color(0.2, 0.2, 0.2, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(13, 13)
+size_flags_horizontal = 3
+theme_type_variation = &"RoundPanel"
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer"]
+show_behind_parent = true
+layout_mode = 2

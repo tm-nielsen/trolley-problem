@@ -33,7 +33,6 @@ pivot_offset = Vector2(24, 12)
 theme_type_variation = &"RoundPanel"
 script = ExtResource("2_g8hoe")
 colour_rect = NodePath("ColorRect")
-tween_on_scale = 2.0
 
 [node name="ColorRect" type="ColorRect" parent="Up"]
 show_behind_parent = true
@@ -55,7 +54,6 @@ pivot_offset = Vector2(24, 12)
 theme_type_variation = &"RoundPanel"
 script = ExtResource("2_g8hoe")
 colour_rect = NodePath("ColorRect")
-tween_on_scale = 2.0
 
 [node name="ColorRect" type="ColorRect" parent="Down"]
 show_behind_parent = true
@@ -77,7 +75,6 @@ pivot_offset = Vector2(12, 24)
 theme_type_variation = &"RoundPanel"
 script = ExtResource("2_g8hoe")
 colour_rect = NodePath("ColorRect")
-tween_on_scale = 2.0
 
 [node name="ColorRect" type="ColorRect" parent="Left"]
 show_behind_parent = true
@@ -99,7 +96,6 @@ pivot_offset = Vector2(12, 24)
 theme_type_variation = &"RoundPanel"
 script = ExtResource("2_g8hoe")
 colour_rect = NodePath("ColorRect")
-tween_on_scale = 2.0
 
 [node name="ColorRect" type="ColorRect" parent="Right"]
 show_behind_parent = true
