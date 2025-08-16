@@ -5,6 +5,8 @@ extends Control
 var checkbox_bindings: Dictionary[CollectableItem, ScalableColourPanel]
 var item_count: int
 
+var items_collected: int
+
 
 func _ready() -> void:
     GlobalSignalBus.collection_pool_populated.connect(
@@ -12,7 +14,9 @@ func _ready() -> void:
     )
     GlobalSignalBus.item_collected.connect(
         func(item):
+        items_collected += 1
         checkbox_bindings[item].turn_on()
+        checkbox_bindings[item].z_index = items_collected
     )
 
 
