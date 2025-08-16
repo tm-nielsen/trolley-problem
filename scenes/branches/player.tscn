@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5mw8yevevsir"]
+[gd_scene load_steps=11 format=3 uid="uid://b5mw8yevevsir"]
 
 [ext_resource type="Script" uid="uid://c8nqi0le2ibfe" path="res://scripts/player/cart_body.gd" id="1_vrmcy"]
 [ext_resource type="PackedScene" uid="uid://cmqhenmmppgf7" path="res://scenes/branches/animated_cart.tscn" id="2_3ebvs"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://3v5371psmp5s" path="res://models/Oar.fbx" id="4_3ebvs"]
 [ext_resource type="PackedScene" uid="uid://dp02dgmjloyc" path="res://scenes/prefabs/paddle_sparks.tscn" id="4_ty1bp"]
 [ext_resource type="AudioStream" uid="uid://dm4hn24gjme7e" path="res://audio/trolley_problem_bgm.ogg" id="5_hcg2o"]
+[ext_resource type="Script" uid="uid://5yxcoh2mdfg3" path="res://scripts/props/checkout_indicator.gd" id="7_22aox"]
+[ext_resource type="PackedScene" uid="uid://b4alrxskbotva" path="res://scenes/prefabs/tutorial/animated_arrow.tscn" id="8_sk2ni"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nyyim"]
 size = Vector3(0.493896, 0.174194, 0.802765)
@@ -91,5 +93,12 @@ attenuation_model = 2
 unit_size = 0.5
 autoplay = true
 doppler_tracking = 2
+
+[node name="CheckoutIndicator" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+script = ExtResource("7_22aox")
+
+[node name="AnimatedArrow" parent="CheckoutIndicator" instance=ExtResource("8_sk2ni")]
+transform = Transform3D(-3.27835e-08, -0.75, 0, 0.75, -3.27835e-08, 0, 0, 0, 0.75, 0, 1, 2)
 
 [connection signal="collided" from="." to="Animated Cart" method="_on_cart_collided"]

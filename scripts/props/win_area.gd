@@ -1,4 +1,7 @@
+class_name WinArea
 extends Area3D
+
+static var indicator_position: Vector3
 
 @export var indicator: Node3D
 @export var flashing_period: float = 0.2
@@ -7,6 +10,7 @@ extends Area3D
 func _ready() -> void:
     body_entered.connect(_on_body_entered)
     GlobalSignalBus.all_items_collected.connect(activate)
+    indicator_position = global_position
     monitoring = false
     hide()
 
