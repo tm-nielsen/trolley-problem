@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c485i7okue4m1"]
+[gd_scene load_steps=34 format=3 uid="uid://c485i7okue4m1"]
 
 [ext_resource type="Script" uid="uid://dcxjlvqnlhclp" path="res://scripts/tutorial/tutorial_manager.gd" id="1_dwom6"]
 [ext_resource type="Script" uid="uid://bdxeu5afe7edl" path="res://scripts/cameras/tracking_camera.gd" id="1_g2equ"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://b5slwylrpgvwm" path="res://scenes/prefabs/tutorial/directional_input_prompts.tscn" id="11_15kfc"]
 [ext_resource type="Texture2D" uid="uid://dnpshb13vw6qc" path="res://resources/materials/OfficeCeiling002_1K-PNG_Roughness.png" id="11_bl2xa"]
 [ext_resource type="PackedScene" uid="uid://b4alrxskbotva" path="res://scenes/prefabs/tutorial/animated_arrow.tscn" id="21_bl2xa"]
+[ext_resource type="Script" uid="uid://ceonxmxbqcvr3" path="res://scripts/tutorial/cart_state_provider.gd" id="22_15kfc"]
 
 [sub_resource type="Environment" id="Environment_15kfc"]
 background_mode = 1
@@ -502,7 +503,7 @@ skeleton = NodePath("../CutsceneAnimationPlayer")
 surface_material_override/0 = ExtResource("2_e13mp")
 
 [node name="RightOar" parent="CutsceneElements/Guy" instance=ExtResource("3_vrdqu")]
-transform = Transform3D(0.131598, 0.256855, 0.957449, -0.82093, -0.513155, 0.250497, 0.555661, -0.818962, 0.14333, -0.376582, 0.987956, 0.400332)
+transform = Transform3D(0.131598, 0.256855, 0.957449, -0.82093, -0.513154, 0.250497, 0.555661, -0.818962, 0.14333, -0.376582, 0.987956, 0.400332)
 
 [node name="LeftOar" parent="CutsceneElements/Guy" instance=ExtResource("3_vrdqu")]
 transform = Transform3D(-0.507164, -0.117169, 0.853848, -0.724305, -0.478978, -0.495946, 0.467084, -0.869972, 0.158054, 0.440897, 0.987956, 0.400332)
@@ -552,7 +553,6 @@ metadata/_custom_type_script = "uid://bdxeu5afe7edl"
 
 [node name="Player" parent="Gameplay Elements" instance=ExtResource("2_tbcdj")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.6, 0.1, 1)
-is_tutorial_cart = true
 
 [node name="AnimatedArrow" parent="Gameplay Elements" instance=ExtResource("21_bl2xa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, 2)
@@ -637,3 +637,8 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ExitArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_bl2xa")
+
+[node name="ExitPosition" type="Node3D" parent="ExitArea" node_paths=PackedStringArray("tutorial_cart")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+script = ExtResource("22_15kfc")
+tutorial_cart = NodePath("../../Gameplay Elements/Player")

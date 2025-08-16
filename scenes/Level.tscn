@@ -1,5 +1,6 @@
-[gd_scene load_steps=66 format=3 uid="uid://ddrbqtusqv5ie"]
+[gd_scene load_steps=67 format=3 uid="uid://ddrbqtusqv5ie"]
 
+[ext_resource type="Script" uid="uid://y71sgpa5qw8l" path="res://scripts/tutorial/cart_state_applicator.gd" id="1_3yv64"]
 [ext_resource type="PackedScene" uid="uid://b5mw8yevevsir" path="res://scenes/branches/player.tscn" id="1_4no8g"]
 [ext_resource type="PackedScene" uid="uid://cqjxu7wswqg37" path="res://scenes/prefabs/level/stocked_shelves/stocked_double_shelf.tscn" id="2_48r4s"]
 [ext_resource type="Shader" uid="uid://bxtqnrbo5lpp5" path="res://resources/shaders/lit.gdshader" id="2_kja0s"]
@@ -113,9 +114,12 @@ light_energy = 0.2
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_gooay")
 
+[node name="StartPosition" type="Node3D" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("1_3yv64")
+target = NodePath("../Player")
+
 [node name="Player" parent="." instance=ExtResource("1_4no8g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
-initial_velocity = Vector3(0, 0, 5)
 
 [node name="Pickups" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 20)
