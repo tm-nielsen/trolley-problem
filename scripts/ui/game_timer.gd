@@ -6,10 +6,10 @@ extends FontScaledLabel
 @export_subgroup("tween_effects")
 @export var second_scale: float = 0.8
 @export var ten_second_scale: float = 0.6
-@export var second_scale_duration: float = 0.1
-@export var ten_second_scale_duration: float = 0.2
-@export var collect_scale: float = 1.5
-@export var collect_scale_duration: float = 0.2
+@export var second_scale_duration: float = 0.25
+@export var ten_second_scale_duration: float = 0.5
+@export var collect_scale: float = 1.8
+@export var collect_scale_duration: float = 0.6
 
 var time: float
 var tick_tweens_enabled: bool = true
