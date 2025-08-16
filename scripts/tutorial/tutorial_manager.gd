@@ -57,7 +57,7 @@ func _on_direction_prompts_completed():
             state = LEFT_PADDLE
         LEFT_PADDLE:
             gameplay_parent.process_mode = Node.PROCESS_MODE_PAUSABLE
-            cutscene_parent.hide()
+            cutscene_parent.queue_free()
             gameplay_parent.show()
             gameplay_camera.make_current()
             state = COMPLETE
