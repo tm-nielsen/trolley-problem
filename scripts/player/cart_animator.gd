@@ -26,7 +26,7 @@ var current_body_mesh_index: int
 
 @onready var default_wiggle_transform := wiggle_target.transform
 @onready var previous_position := global_position
-var previous_velocity := Vector3.ZERO
+@onready var previous_velocity: Vector3 = get_parent().velocity
 
 
 func _ready() -> void:
