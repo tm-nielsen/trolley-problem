@@ -5,8 +5,12 @@
 [sub_resource type="LabelSettings" id="LabelSettings_vj8vg"]
 font_size = 24
 
-[node name="NameEntryArea" type="VBoxContainer"]
+[node name="NameEntryArea" type="VBoxContainer" node_paths=PackedStringArray("name_label", "letter_button_parent", "confirm_name_button", "clear_name_button")]
 script = ExtResource("1_3gaaa")
+name_label = NodePath("Labels/Name")
+letter_button_parent = NodePath("CenterContainer/LetterButtons")
+confirm_name_button = NodePath("HBoxContainer/ConfirmButton")
+clear_name_button = NodePath("HBoxContainer/ClearButton")
 
 [node name="Labels" type="HBoxContainer" parent="."]
 layout_mode = 2
