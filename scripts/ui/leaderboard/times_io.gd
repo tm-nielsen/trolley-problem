@@ -1,7 +1,7 @@
 class_name TimesIO
 
 const FILEPATH = "user://trollery_problem_times.json"
-const MAXIMUM_ENTRIES: int = 3
+const MAXIMUM_ENTRIES: int = 4
 
 static func get_times() -> Array[Dictionary]:
     var file_contents = _read_file()

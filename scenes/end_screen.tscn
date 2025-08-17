@@ -65,6 +65,7 @@ grow_vertical = 2
 [node name="Leaderboard" type="VBoxContainer" parent="FinalDisplay"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = -12
 alignment = 1
 script = ExtResource("2_87vmq")
 
@@ -75,6 +76,9 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="LeaderboardEntry3" parent="FinalDisplay/Leaderboard" instance=ExtResource("1_kq7ac")]
+layout_mode = 2
+
+[node name="LeaderboardEntry4" parent="FinalDisplay/Leaderboard" instance=ExtResource("1_kq7ac")]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="FinalDisplay"]
