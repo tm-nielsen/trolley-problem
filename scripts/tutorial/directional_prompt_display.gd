@@ -13,8 +13,8 @@ signal all_directions_pressed
 @export var right_light: ScalableColourPanel
 
 @export_subgroup("size tween", "size_tween")
-@export var size_tween_scale: float = 1.5
-@export var size_tween_duration: float = 0.4
+@export var completion_tween_scale: float = 3
+@export var completion_tween_duration: float = 0.6
 
 @onready var lights = [
     up_light, down_light,
@@ -78,11 +78,11 @@ func check_completion():
             completion_delay
         )
         for light in lights:
+            light.scale_for(
+                completion_tween_scale,
+                completion_tween_duration
+            )
             light.colour = completion_colour
-        scale = Vector2.ONE * size_tween_scale
-        TweenHelpers.build_tween(self).tween_property(
-            self, "scale", Vector2.ONE, size_tween_duration
-        )
 
 func all_lights_are_on() -> bool:
     return lights.all(
