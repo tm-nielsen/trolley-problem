@@ -30,7 +30,7 @@ static func is_time_eligible(completion_time: float) -> bool:
     return false
 
 
-static func _read_file() -> Dictionary:
+static func _read_file() -> Array:
     if FileAccess.file_exists(FILEPATH):
         var file = FileAccess.open(FILEPATH, FileAccess.READ)
         var text_content = file.get_as_text()
@@ -43,11 +43,10 @@ static func _read_file() -> Dictionary:
             return json.data
         else:
             push_error('JSON Parse Error: ', json.get_error_message(), ' on line ', json.get_error_line())
-            return {}
+            return []
     else:
-        var file_template = {'1_player': [], '2_player': []}
-        _write_file(file_template)
-        return file_template
+        _write_file([])
+        return []
 
 
 static func _write_file(time_entries: Array[Dictionary]):
