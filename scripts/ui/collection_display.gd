@@ -18,6 +18,8 @@ func _ready() -> void:
         checkbox_bindings[item].turn_on()
         checkbox_bindings[item].z_index = items_collected
     )
+    GlobalSignalBus.game_won.connect(reset_child_z_indices)
+    GlobalSignalBus.game_timer_ended.connect(reset_child_z_indices)
 
 
 func build_item_checkboxes(items: Array[CollectableItem]):
@@ -31,3 +33,7 @@ func center_checkbox_children():
     for checkbox in get_children():
         if !checkbox is ScalableColourPanel: return
         checkbox.scale_node.pivot_offset = checkbox.scale_node.size / 2
+
+func reset_child_z_indices():
+    for child in get_children():
+        child.z_index = 0
