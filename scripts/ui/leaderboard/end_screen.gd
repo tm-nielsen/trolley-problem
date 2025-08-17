@@ -43,7 +43,10 @@ func start_display():
     completion_time = GameTimer.completion_time
     completion_time_label.seconds = completion_time
 
-    if LeaderboardShortcut.activated:
+    if (
+        LeaderboardShortcut.activated ||
+        !TimesIO.is_time_eligible(completion_time)
+    ):
         display_leaderboard()
     else:
         display_name_entry()

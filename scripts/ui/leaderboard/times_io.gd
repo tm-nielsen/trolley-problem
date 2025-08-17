@@ -20,6 +20,11 @@ static func append_time(name: String, game_time: float):
     var times = get_times()
     var time_entry = TimeEntry.new(name, game_time)
     times.append(time_entry)
+
+    times.sort_custom(func(a, b): return a.game_time < b.game_time)
+    while times.size() > MAXIMUM_ENTRIES:
+        times.pop_back()
+
     _write_file(times)
 
 
@@ -28,7 +33,7 @@ static func is_time_eligible(completion_time: float) -> bool:
     if time_info_list.size() < MAXIMUM_ENTRIES:
         return true
     for saved_time_info in time_info_list:
-        if completion_time > saved_time_info.game_time:
+        if completion_time < saved_time_info.game_time:
             return true
     return false
 
