@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://dviwm18mhuwff"]
+[gd_scene load_steps=12 format=3 uid="uid://dviwm18mhuwff"]
 
 [ext_resource type="PackedScene" uid="uid://dqjdk120v4imo" path="res://scenes/branches/display.tscn" id="1_j287u"]
 [ext_resource type="Material" uid="uid://du54h7h6d7tgg" path="res://resources/materials/highlight_material.tres" id="4_5sfjl"]
 [ext_resource type="PackedScene" uid="uid://b4alrxskbotva" path="res://scenes/prefabs/tutorial/animated_arrow.tscn" id="5_3hfy5"]
 [ext_resource type="Script" uid="uid://b0xjahu5d7ops" path="res://scripts/props/win_area.gd" id="6_5sfjl"]
 [ext_resource type="PackedScene" uid="uid://ddrbqtusqv5ie" path="res://scenes/Level.tscn" id="6_7pvxh"]
-[ext_resource type="Script" uid="uid://5rjo2jegqlhc" path="res://scripts/ui/win_screen.gd" id="6_kycxp"]
-[ext_resource type="Script" uid="uid://8ofg87t6g10u" path="res://scripts/ui/lose_screen.gd" id="10_7pvxh"]
+[ext_resource type="PackedScene" uid="uid://c8k8rp3b2h0qy" path="res://scenes/branches/end_screen_transitions.tscn" id="6_j287u"]
+[ext_resource type="Script" uid="uid://c2f7m6xqrtwbf" path="res://scripts/ui/leaderboard/leaderboard_shortcut.gd" id="8_3hfy5"]
+[ext_resource type="PackedScene" uid="uid://bapu275ycogwp" path="res://scenes/end_screen.tscn" id="9_7pvxh"]
 [ext_resource type="PackedScene" uid="uid://c485i7okue4m1" path="res://scenes/tutorial.tscn" id="11_y3xxt"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_y3xxt"]
@@ -79,133 +80,8 @@ apply_random_offset = false
 transform = Transform3D(-1, 0, -1.73205, 0, 2, 0, 1.73205, 0, -1, 4, 1.5, 2)
 apply_random_offset = false
 
-[node name="Win Screen" type="Control" parent="."]
-process_mode = 3
-visible = false
+[node name="End Screen Transitions" parent="." instance=ExtResource("6_j287u")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("6_kycxp")
-
-[node name="Background" type="ColorRect" parent="Win Screen"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.901961)
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Win Screen"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch = true
-stretch_shrink = 7
-
-[node name="SubViewport" type="SubViewport" parent="Win Screen/SubViewportContainer"]
-transparent_bg = true
-handle_input_locally = false
-size = Vector2i(54, 30)
-render_target_update_mode = 0
-
-[node name="Label" type="Label" parent="Win Screen/SubViewportContainer/SubViewport"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Nice"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label" type="Label" parent="Win Screen"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = 4.0
-offset_right = -4.0
-offset_bottom = -4.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 12
-text = "press anything to play again"
-horizontal_alignment = 2
-vertical_alignment = 2
-
-[node name="Lose Screen" type="Control" parent="."]
-process_mode = 3
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("10_7pvxh")
-
-[node name="Background" type="ColorRect" parent="Lose Screen"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.901961)
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Lose Screen"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch = true
-stretch_shrink = 7
-
-[node name="SubViewport" type="SubViewport" parent="Lose Screen/SubViewportContainer"]
-transparent_bg = true
-handle_input_locally = false
-size = Vector2i(54, 30)
-render_target_update_mode = 0
-
-[node name="Label" type="Label" parent="Lose Screen/SubViewportContainer/SubViewport"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 2.0
-offset_right = 2.0
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 1.5708
-pivot_offset = Vector2(27, 15)
-text = ":("
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label" type="Label" parent="Lose Screen"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = 4.0
-offset_right = -4.0
-offset_bottom = -4.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 12
-text = "press anything to play again"
-horizontal_alignment = 2
-vertical_alignment = 2
 
 [node name="Tutorial" type="Control" parent="."]
 layout_mode = 1
@@ -241,6 +117,11 @@ size = Vector2i(288, 216)
 render_target_update_mode = 4
 
 [node name="Tutorial" parent="Tutorial/TutorialViewport/SubViewport" instance=ExtResource("11_y3xxt")]
+
+[node name="LeaderboardShortcut" type="Node" parent="."]
+script = ExtResource("8_3hfy5")
+leaderboard_scene = ExtResource("9_7pvxh")
+metadata/_custom_type_script = "uid://c2f7m6xqrtwbf"
 
 [connection signal="completed" from="Tutorial/TutorialViewport/SubViewport/Tutorial" to="Tutorial" method="queue_free"]
 [connection signal="completed" from="Tutorial/TutorialViewport/SubViewport/Tutorial" to="Level" method="set_process_mode" binds= [0]]
