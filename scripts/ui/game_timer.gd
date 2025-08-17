@@ -1,4 +1,7 @@
+class_name GameTimer
 extends FontScaledLabel
+
+static var completion_time: float
 
 @export var starting_time: float = 30
 @export var collection_bonus: float = 30
@@ -17,6 +20,7 @@ var tick_tweens_enabled: bool = true
 
 func _ready() -> void:
     time = starting_time
+    completion_time = 0
     GlobalSignalBus.item_collected.connect(
         func(_item):
             time += collection_bonus
@@ -30,6 +34,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
     time -= delta
+    completion_time += delta
     var is_second: bool = floor(time + delta) != floor(time)
     if tick_tweens_enabled && is_second:
         if int(time) % 10 == 0:

@@ -11,7 +11,7 @@ font_size = 28
 
 [sub_resource type="LabelSettings" id="LabelSettings_6e1uj"]
 
-[node name="EndScreen" type="Control"]
+[node name="EndScreen" type="Control" node_paths=PackedStringArray("initial_display", "final_display", "completion_time_label", "name_entry_area", "reset_prompt")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,6 +19,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jc7ji")
+initial_display = NodePath("InitialDisplay")
+final_display = NodePath("FinalDisplay")
+completion_time_label = NodePath("InitialDisplay/Time")
+name_entry_area = NodePath("InitialDisplay/NameEntryArea")
+reset_prompt = NodePath("FinalDisplay/Label")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
