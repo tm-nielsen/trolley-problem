@@ -42,11 +42,4 @@ func _process(delta: float) -> void:
     if time < 0:
         GlobalSignalBus.notify_game_timer_ended()
         time = 0
-    text = get_clock_string(time)
-
-
-static func get_clock_string(seconds: float) -> String:
-    var minutes = floor(seconds / 60)
-    var partial_seconds = seconds - int(seconds)
-    seconds = floori(seconds - minutes * 60)
-    return "%01d:%02d:%02d" % [minutes, seconds, floori(partial_seconds * 100)]
+    text = TimeLabel.get_clock_string(time)
