@@ -24,6 +24,7 @@ final_display = NodePath("FinalDisplay")
 completion_time_label = NodePath("InitialDisplay/Time")
 name_entry_area = NodePath("InitialDisplay/NameEntryArea")
 reset_prompt = NodePath("FinalDisplay/Label")
+game_scene_path = "uid://dviwm18mhuwff"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
