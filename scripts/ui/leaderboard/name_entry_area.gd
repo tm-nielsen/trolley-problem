@@ -88,16 +88,6 @@ func _on_confirm_name_button_pressed():
     name_confirmed.emit(entered_name)
 
 
-func on_pause_toggled(is_paused: bool):
-    if is_visible_in_tree():
-        if is_paused:
-            set_buttons_disabled(true)
-        else:
-            _set_letter_buttons_disabled(entered_name.length() >= maximum_length)
-            _set_button_disabled_and_focus_mode(confirm_name_button, entered_name.is_empty())
-            _set_button_disabled_and_focus_mode(clear_name_button, entered_name.is_empty())
-
-
 func _create_letter_buttons():
     _free_letter_buttons()
     for i in 26:
