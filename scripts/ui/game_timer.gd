@@ -15,6 +15,7 @@ static var completion_time: float
 @export var collect_scale_duration: float = 0.6
 
 var time: float
+var enabled: bool = false
 var tick_tweens_enabled: bool = true
 
 
@@ -31,8 +32,12 @@ func _ready() -> void:
                 func(): tick_tweens_enabled = true
             )
     )
+    GlobalSignalBus.tutorial_completed.connect(
+        func(): enabled = true
+    )
 
 func _process(delta: float) -> void:
+    if !enabled: return
     time -= delta
     completion_time += delta
     var is_second: bool = floor(time + delta) != floor(time)
