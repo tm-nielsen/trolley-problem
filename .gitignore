@@ -25,4 +25,5 @@ mono_crash.*.json
 [Bb]uilds/
 
 
+completion_times.json
 settings.ini

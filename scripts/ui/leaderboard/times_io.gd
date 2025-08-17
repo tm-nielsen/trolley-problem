@@ -1,23 +1,26 @@
 class_name TimesIO
 
-const FILEPATH = "user://trollery_problem_times.json"
+const FILE_NAME = "completion_times.json"
 const MAXIMUM_ENTRIES: int = 4
 
-static func get_times() -> Array[Dictionary]:
+static var file_path: get = _get_file_path
+
+
+static func get_times() -> Array[TimeEntry]:
     var file_contents = _read_file()
-    if file_contents: return file_contents
-    return []
+    if file_contents:
+        var times: Array[TimeEntry] = []
+        for json_entry in file_contents:
+            times.append(TimeEntry.parse_json(json_entry))
+        return times
+    return [] as Array[TimeEntry]
 
 
 static func append_time(name: String, game_time: float):
-    var time_info_list = get_times()
-    var time_info_oject = {"name": name, "game_time": game_time}
-    time_info_list.append(time_info_oject)
-
-    time_info_list.sort_custom(func(a, b): return a.game_time > b.game_time)
-    if time_info_list.size() > MAXIMUM_ENTRIES:
-            time_info_list.pop_back()
-    _write_file(time_info_list)
+    var times = get_times()
+    var time_entry = TimeEntry.new(name, game_time)
+    times.append(time_entry)
+    _write_file(times)
 
 
 static func is_time_eligible(completion_time: float) -> bool:
@@ -31,8 +34,8 @@ static func is_time_eligible(completion_time: float) -> bool:
 
 
 static func _read_file() -> Array:
-    if FileAccess.file_exists(FILEPATH):
-        var file = FileAccess.open(FILEPATH, FileAccess.READ)
+    if FileAccess.file_exists(file_path):
+        var file = FileAccess.open(file_path, FileAccess.READ)
         var text_content = file.get_as_text()
 
         var json = JSON.new()
@@ -49,8 +52,40 @@ static func _read_file() -> Array:
         return []
 
 
-static func _write_file(time_entries: Array[Dictionary]):
-    var file_string = JSON.stringify(time_entries, '\t')
-    var file = FileAccess.open(FILEPATH, FileAccess.WRITE)
+static func _write_file(time_entries: Array[TimeEntry]):
+    var dictionary_entries = []
+    for entry in time_entries:
+        dictionary_entries.append(entry.get_dictionary())
+
+    var file_string = JSON.stringify(dictionary_entries, '\t')
+    var file = FileAccess.open(file_path, FileAccess.WRITE)
     file.store_string(file_string)
     file.close()
+
+
+static func _get_file_path() -> String:
+    if OS.has_feature("editor"):
+        return "res://".path_join(FILE_NAME)
+    return OS.get_executable_path().get_base_dir().path_join(FILE_NAME)
+
+
+class TimeEntry:
+    var name: String
+    var game_time: float
+
+    func _init(p_name: String = "", p_game_time: float = 0):
+        name = p_name
+        game_time = p_game_time
+
+    func get_dictionary() -> Dictionary:
+        return {
+            'name': name,
+            'game_time': game_time
+        }
+    
+    static func parse_json(json_source: Dictionary) -> TimeEntry:
+        var new_entry = TimeEntry.new(
+            json_source.name,
+            json_source.game_time
+        )
+        return new_entry
