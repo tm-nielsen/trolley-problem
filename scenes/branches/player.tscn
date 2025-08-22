@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b5mw8yevevsir"]
+[gd_scene load_steps=16 format=3 uid="uid://b5mw8yevevsir"]
 
 [ext_resource type="Script" uid="uid://c8nqi0le2ibfe" path="res://scripts/player/cart_body.gd" id="1_vrmcy"]
 [ext_resource type="PackedScene" uid="uid://cmqhenmmppgf7" path="res://scenes/branches/animated_cart.tscn" id="2_3ebvs"]
@@ -6,8 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://3v5371psmp5s" path="res://models/Oar.fbx" id="4_3ebvs"]
 [ext_resource type="PackedScene" uid="uid://dp02dgmjloyc" path="res://scenes/prefabs/paddle_sparks.tscn" id="4_ty1bp"]
 [ext_resource type="AudioStream" uid="uid://dm4hn24gjme7e" path="res://audio/trolley_problem_bgm.ogg" id="5_hcg2o"]
-[ext_resource type="Script" uid="uid://5yxcoh2mdfg3" path="res://scripts/props/checkout_indicator.gd" id="7_22aox"]
+[ext_resource type="Script" uid="uid://dmjk0ncg5yg22" path="res://scripts/audio/paddle_sfx_player.gd" id="6_cofql"]
+[ext_resource type="Script" path="res://scripts/props/checkout_indicator.gd" id="7_22aox"]
+[ext_resource type="AudioStream" uid="uid://dfgc1it0kp6cq" path="res://audio/sfx/small_push.wav" id="7_jrr5n"]
+[ext_resource type="AudioStream" uid="uid://dl7crrh15v5re" path="res://audio/sfx/big_push.wav" id="8_cdr4d"]
 [ext_resource type="PackedScene" uid="uid://b4alrxskbotva" path="res://scenes/prefabs/tutorial/animated_arrow.tscn" id="8_sk2ni"]
+[ext_resource type="AudioStream" uid="uid://cu080pxfoxeim" path="res://audio/sfx/jump.wav" id="9_iur84"]
+[ext_resource type="AudioStream" uid="uid://b0lliabxoew1k" path="res://audio/sfx/paddle_ground.wav" id="11_iur84"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nyyim"]
 size = Vector3(0.493896, 0.174194, 0.802765)
@@ -54,8 +59,18 @@ sparks_prefab = ExtResource("4_ty1bp")
 [node name="Oar" parent="Paddles/Left" instance=ExtResource("4_3ebvs")]
 transform = Transform3D(-0.5, -0.866025, 0, 0.866025, -0.5, 0, 0, 0, 1, 0.1, 0.1, 0)
 
-[node name="Spark Origin" type="Node3D" parent="Paddles/Left/Oar"]
+[node name="Spark Origin" type="AudioStreamPlayer3D" parent="Paddles/Left/Oar" node_paths=PackedStringArray("paddle")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+attenuation_model = 1
+unit_size = 1.0
+max_polyphony = 40
+bus = &"Sfx"
+script = ExtResource("6_cofql")
+paddle = NodePath("../..")
+small_push_noise = ExtResource("7_jrr5n")
+big_push_noise = ExtResource("8_cdr4d")
+jumped_noise = ExtResource("9_iur84")
+ground_noise = ExtResource("11_iur84")
 
 [node name="Right" type="Node3D" parent="Paddles" node_paths=PackedStringArray("spark_spawn_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.25, 0)
@@ -69,8 +84,18 @@ action_prefix = 1
 [node name="Oar" parent="Paddles/Right" instance=ExtResource("4_3ebvs")]
 transform = Transform3D(-0.5, 0.866025, 0, -0.866025, -0.5, 0, 0, 0, 1, -0.1, 0.1, 0)
 
-[node name="Spark Origin" type="Node3D" parent="Paddles/Right/Oar"]
+[node name="Spark Origin" type="AudioStreamPlayer3D" parent="Paddles/Right/Oar" node_paths=PackedStringArray("paddle")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+attenuation_model = 1
+unit_size = 1.0
+max_polyphony = 40
+bus = &"Sfx"
+script = ExtResource("6_cofql")
+paddle = NodePath("../..")
+small_push_noise = ExtResource("7_jrr5n")
+big_push_noise = ExtResource("8_cdr4d")
+jumped_noise = ExtResource("9_iur84")
+ground_noise = ExtResource("11_iur84")
 
 [node name="MerchandisePusher" type="AnimatableBody3D" parent="."]
 collision_layer = 2
@@ -90,8 +115,9 @@ debug_fill = false
 process_mode = 3
 stream = ExtResource("5_hcg2o")
 attenuation_model = 2
-unit_size = 0.5
+unit_size = 1.0
 autoplay = true
+bus = &"Music"
 doppler_tracking = 2
 
 [node name="CheckoutIndicator" type="Node3D" parent="."]

@@ -3,6 +3,7 @@ extends Node3D
 
 signal pushed(push_scale: float)
 signal jumped
+signal hit_ground
 
 enum ActionPrefix {LEFT, RIGHT}
 const PREFIX_STRINGS = {
@@ -35,10 +36,11 @@ func process_input_movements():
     if paddle_down.is_pressed:
         process_stroke(paddle_back, paddle_forward, 1)
         process_stroke(paddle_forward, paddle_back, -1)
-    if (
-        paddle_down.was_pressed_this_frame &&
-        paddle_up.was_pressed_within(flick_window)
-    ): jumped.emit()
+
+    if paddle_down.was_pressed_this_frame:
+        hit_ground.emit()
+        if paddle_up.was_pressed_within(flick_window):
+            jumped.emit()
 
 
 func process_stroke(

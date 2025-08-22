@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://c485i7okue4m1"]
+[gd_scene load_steps=39 format=3 uid="uid://c485i7okue4m1"]
 
 [ext_resource type="Script" uid="uid://dcxjlvqnlhclp" path="res://scripts/tutorial/tutorial_manager.gd" id="1_dwom6"]
 [ext_resource type="Script" uid="uid://bdxeu5afe7edl" path="res://scripts/cameras/tracking_camera.gd" id="1_g2equ"]
@@ -16,12 +16,17 @@
 [ext_resource type="PackedScene" uid="uid://dp02dgmjloyc" path="res://scenes/prefabs/paddle_sparks.tscn" id="6_ikfo1"]
 [ext_resource type="Texture2D" uid="uid://ci4n1wqsk3sai" path="res://resources/materials/OfficeCeiling002_1K-PNG_AmbientOcclusion.png" id="7_vrdqu"]
 [ext_resource type="Texture2D" uid="uid://deeu70hm1bpon" path="res://resources/materials/OfficeCeiling002_1K-PNG_Emission.png" id="8_cmspm"]
+[ext_resource type="Script" uid="uid://dmjk0ncg5yg22" path="res://scripts/audio/paddle_sfx_player.gd" id="8_qbchm"]
+[ext_resource type="AudioStream" uid="uid://dl7crrh15v5re" path="res://audio/sfx/big_push.wav" id="9_gxgfo"]
 [ext_resource type="Texture2D" uid="uid://ckr8j6dcxu8d2" path="res://resources/materials/OfficeCeiling002_1K-PNG_Metalness.png" id="9_ikfo1"]
+[ext_resource type="AudioStream" uid="uid://dfgc1it0kp6cq" path="res://audio/sfx/small_push.wav" id="9_sbw1o"]
 [ext_resource type="Texture2D" uid="uid://dt70ky6tejfob" path="res://resources/materials/OfficeCeiling002_1K-PNG_NormalDX.png" id="10_dwom6"]
+[ext_resource type="AudioStream" uid="uid://cu080pxfoxeim" path="res://audio/sfx/jump.wav" id="10_sbw1o"]
 [ext_resource type="PackedScene" uid="uid://b5slwylrpgvwm" path="res://scenes/prefabs/tutorial/directional_input_prompts.tscn" id="11_15kfc"]
 [ext_resource type="Texture2D" uid="uid://dnpshb13vw6qc" path="res://resources/materials/OfficeCeiling002_1K-PNG_Roughness.png" id="11_bl2xa"]
+[ext_resource type="AudioStream" uid="uid://b0lliabxoew1k" path="res://audio/sfx/paddle_ground.wav" id="12_4gq6d"]
 [ext_resource type="PackedScene" uid="uid://b4alrxskbotva" path="res://scenes/prefabs/tutorial/animated_arrow.tscn" id="21_bl2xa"]
-[ext_resource type="Script" uid="uid://ceonxmxbqcvr3" path="res://scripts/tutorial/cart_state_provider.gd" id="22_15kfc"]
+[ext_resource type="Script" path="res://scripts/tutorial/cart_state_provider.gd" id="22_15kfc"]
 
 [sub_resource type="Environment" id="Environment_15kfc"]
 background_mode = 1
@@ -523,8 +528,18 @@ sparks_prefab = ExtResource("6_ikfo1")
 [node name="Oar" parent="CutsceneElements/Guy/MoveablePaddles/Left" instance=ExtResource("3_vrdqu")]
 transform = Transform3D(-0.5, -0.866025, 0, 0.866025, -0.5, 0, 0, 0, 1, 0.1, 0.1, 0)
 
-[node name="Spark Origin" type="Node3D" parent="CutsceneElements/Guy/MoveablePaddles/Left/Oar"]
+[node name="Spark Origin" type="AudioStreamPlayer3D" parent="CutsceneElements/Guy/MoveablePaddles/Left/Oar" node_paths=PackedStringArray("paddle")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+attenuation_model = 2
+unit_size = 1.0
+max_polyphony = 8
+bus = &"Sfx"
+script = ExtResource("8_qbchm")
+paddle = NodePath("../..")
+small_push_noise = ExtResource("9_sbw1o")
+big_push_noise = ExtResource("9_gxgfo")
+jumped_noise = ExtResource("10_sbw1o")
+ground_noise = ExtResource("12_4gq6d")
 
 [node name="Right" type="Node3D" parent="CutsceneElements/Guy/MoveablePaddles" node_paths=PackedStringArray("spark_spawn_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.25, 0)
@@ -538,8 +553,18 @@ action_prefix = 1
 [node name="Oar" parent="CutsceneElements/Guy/MoveablePaddles/Right" instance=ExtResource("3_vrdqu")]
 transform = Transform3D(-0.5, 0.866025, 0, -0.866025, -0.5, 0, 0, 0, 1, -0.1, 0.1, 0)
 
-[node name="Spark Origin" type="Node3D" parent="CutsceneElements/Guy/MoveablePaddles/Right/Oar"]
+[node name="Spark Origin" type="AudioStreamPlayer3D" parent="CutsceneElements/Guy/MoveablePaddles/Right/Oar" node_paths=PackedStringArray("paddle")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+attenuation_model = 2
+unit_size = 1.0
+max_polyphony = 8
+bus = &"Sfx"
+script = ExtResource("8_qbchm")
+paddle = NodePath("../..")
+small_push_noise = ExtResource("9_sbw1o")
+big_push_noise = ExtResource("9_gxgfo")
+jumped_noise = ExtResource("10_sbw1o")
+ground_noise = ExtResource("12_4gq6d")
 
 [node name="Unoccupied Cart" parent="CutsceneElements" instance=ExtResource("4_cmspm")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.3, 0.1, 1)
