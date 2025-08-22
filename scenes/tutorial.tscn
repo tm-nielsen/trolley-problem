@@ -588,7 +588,8 @@ transform = Transform3D(-0.5, -0.866025, 0, 0.866025, -0.5, 0, 0, 0, 1, 0.1, 0.1
 
 [node name="Spark Origin" type="AudioStreamPlayer3D" parent="CutsceneElements/Guy/MoveablePaddles/Left/Oar" node_paths=PackedStringArray("paddle")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
-attenuation_model = 2
+attenuation_model = 1
+volume_db = -8.0
 unit_size = 1.0
 max_polyphony = 8
 bus = &"Sfx"
@@ -613,7 +614,8 @@ transform = Transform3D(-0.5, 0.866025, 0, -0.866025, -0.5, 0, 0, 0, 1, -0.1, 0.
 
 [node name="Spark Origin" type="AudioStreamPlayer3D" parent="CutsceneElements/Guy/MoveablePaddles/Right/Oar" node_paths=PackedStringArray("paddle")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
-attenuation_model = 2
+attenuation_model = 1
+volume_db = -8.0
 unit_size = 1.0
 max_polyphony = 8
 bus = &"Sfx"
