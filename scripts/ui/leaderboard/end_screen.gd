@@ -45,6 +45,7 @@ func start_display():
 
     if (
         LeaderboardShortcut.activated ||
+        GlobalSignalBus.game_lost ||
         !TimesIO.is_time_eligible(completion_time)
     ):
         display_leaderboard()

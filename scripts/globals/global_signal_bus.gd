@@ -9,9 +9,12 @@ signal all_items_collected()
 signal game_won()
 signal game_timer_ended()
 
+var game_lost: bool
+
 
 func notify_tutorial_completed():
     tutorial_completed.emit()
+    game_lost = false
 
 func provide_cart_state(state: CartState):
     cart_state_provided.emit(state)
@@ -30,4 +33,5 @@ func notify_win_area_entered():
     game_won.emit()
 
 func notify_game_timer_ended():
+    game_lost = true
     game_timer_ended.emit()
