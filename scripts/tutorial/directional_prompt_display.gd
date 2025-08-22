@@ -2,6 +2,7 @@ class_name DirectionalPromptDisplay
 extends Control
 
 signal all_directions_pressed
+signal direction_pressed
 
 @export var completion_delay := 0.5
 @export var completion_colour := Color.GREEN
@@ -65,6 +66,7 @@ func map_lights_to_inputs():
 
 func check_direction(action_proxy: ActionProxy, light: ScalableColourPanel):
     if action_proxy.was_pressed_this_frame:
+        if !light.is_on: direction_pressed.emit()
         light.turn_on(!completed)
         if !completed: check_completion()
 

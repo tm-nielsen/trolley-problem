@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5slwylrpgvwm"]
+[gd_scene load_steps=5 format=3 uid="uid://b5slwylrpgvwm"]
 
 [ext_resource type="Script" uid="uid://b6ywhpf2dwikh" path="res://scripts/tutorial/directional_prompt_display.gd" id="1_c5txh"]
-[ext_resource type="Script" uid="uid://bfxo60v0ap7vq" path="res://scripts/ui/scalable_colour_panel.gd" id="2_g8hoe"]
+[ext_resource type="Script" path="res://scripts/ui/scalable_colour_panel.gd" id="2_g8hoe"]
+[ext_resource type="AudioStream" uid="uid://cagy058qsfh1t" path="res://audio/sfx/intro_success.wav" id="3_rhh1r"]
+[ext_resource type="AudioStream" uid="uid://bvbh3dnkgc86j" path="res://audio/sfx/intro_blip.wav" id="4_1u0du"]
 
 [node name="DirectionalInputPrompts" type="Control" node_paths=PackedStringArray("up_light", "down_light", "left_light", "right_light")]
 layout_mode = 3
@@ -100,3 +102,17 @@ colour_rect = NodePath("ColorRect")
 [node name="ColorRect" type="ColorRect" parent="Right"]
 show_behind_parent = true
 layout_mode = 2
+
+[node name="CompletionNoise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_rhh1r")
+volume_db = -4.0
+bus = &"Sfx"
+
+[node name="DirectionNoise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1u0du")
+volume_db = -4.0
+max_polyphony = 4
+bus = &"Sfx"
+
+[connection signal="all_directions_pressed" from="." to="CompletionNoise" method="play"]
+[connection signal="direction_pressed" from="." to="DirectionNoise" method="play"]
