@@ -105,14 +105,10 @@ layout_mode = 2
 
 [node name="CompletionNoise" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_rhh1r")
-volume_db = -4.0
-bus = &"Sfx"
 
 [node name="DirectionNoise" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_1u0du")
-volume_db = -4.0
 max_polyphony = 4
-bus = &"Sfx"
 
 [connection signal="all_directions_pressed" from="." to="CompletionNoise" method="play"]
 [connection signal="direction_pressed" from="." to="DirectionNoise" method="play"]
