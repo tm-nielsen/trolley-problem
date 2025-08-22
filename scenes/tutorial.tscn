@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://c485i7okue4m1"]
+[gd_scene load_steps=45 format=3 uid="uid://c485i7okue4m1"]
 
 [ext_resource type="Script" uid="uid://dcxjlvqnlhclp" path="res://scripts/tutorial/tutorial_manager.gd" id="1_dwom6"]
 [ext_resource type="Script" uid="uid://bdxeu5afe7edl" path="res://scripts/cameras/tracking_camera.gd" id="1_g2equ"]
@@ -6,16 +6,21 @@
 [ext_resource type="Material" uid="uid://c03x04f3txrxo" path="res://resources/materials/cart/human_body.tres" id="2_e13mp"]
 [ext_resource type="PackedScene" uid="uid://b5mw8yevevsir" path="res://scenes/branches/player.tscn" id="2_tbcdj"]
 [ext_resource type="ArrayMesh" uid="uid://f5d3f3rb8gri" path="res://models/cart/human_flail.res" id="2_vrdqu"]
+[ext_resource type="AudioStream" uid="uid://bu0us5co73278" path="res://audio/sfx/footstep_1.wav" id="3_7kfc1"]
 [ext_resource type="Material" uid="uid://dqs0rmplo0iwy" path="res://resources/materials/floor_material.tres" id="3_ej4tf"]
 [ext_resource type="PackedScene" uid="uid://3v5371psmp5s" path="res://models/Oar.fbx" id="3_vrdqu"]
 [ext_resource type="Shader" uid="uid://bxtqnrbo5lpp5" path="res://resources/shaders/lit.gdshader" id="4_0hilk"]
 [ext_resource type="PackedScene" uid="uid://dcdprsb8nwmfw" path="res://models/cart/Unoccupied Cart.glb" id="4_cmspm"]
+[ext_resource type="AudioStream" uid="uid://dolqmtgegy1fu" path="res://audio/sfx/footstep_2.wav" id="4_jne3d"]
 [ext_resource type="Script" uid="uid://b431iip6kkpqh" path="res://scripts/player/animated_paddle_controller.gd" id="5_cmspm"]
+[ext_resource type="AudioStream" uid="uid://bikr6awq2xadm" path="res://audio/sfx/squat.wav" id="5_nr1vm"]
 [ext_resource type="Material" uid="uid://b1dhtda5npupf" path="res://resources/materials/wall_material.tres" id="5_wr8iv"]
+[ext_resource type="AudioStream" uid="uid://cir1nfaavkfk3" path="res://audio/sfx/camera_switch_1.wav" id="6_6a2is"]
 [ext_resource type="Texture2D" uid="uid://bil4xv2fjf2oq" path="res://resources/materials/OfficeCeiling002_1K-PNG_Color.png" id="6_e13mp"]
 [ext_resource type="PackedScene" uid="uid://dp02dgmjloyc" path="res://scenes/prefabs/paddle_sparks.tscn" id="6_ikfo1"]
 [ext_resource type="Texture2D" uid="uid://ci4n1wqsk3sai" path="res://resources/materials/OfficeCeiling002_1K-PNG_AmbientOcclusion.png" id="7_vrdqu"]
 [ext_resource type="Texture2D" uid="uid://deeu70hm1bpon" path="res://resources/materials/OfficeCeiling002_1K-PNG_Emission.png" id="8_cmspm"]
+[ext_resource type="AudioStream" uid="uid://ckw24u3yns22c" path="res://audio/sfx/trick.wav" id="8_i8gw2"]
 [ext_resource type="Script" uid="uid://dmjk0ncg5yg22" path="res://scripts/audio/paddle_sfx_player.gd" id="8_qbchm"]
 [ext_resource type="AudioStream" uid="uid://dl7crrh15v5re" path="res://audio/sfx/big_push.wav" id="9_gxgfo"]
 [ext_resource type="Texture2D" uid="uid://ckr8j6dcxu8d2" path="res://resources/materials/OfficeCeiling002_1K-PNG_Metalness.png" id="9_ikfo1"]
@@ -25,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://b5slwylrpgvwm" path="res://scenes/prefabs/tutorial/directional_input_prompts.tscn" id="11_15kfc"]
 [ext_resource type="Texture2D" uid="uid://dnpshb13vw6qc" path="res://resources/materials/OfficeCeiling002_1K-PNG_Roughness.png" id="11_bl2xa"]
 [ext_resource type="AudioStream" uid="uid://b0lliabxoew1k" path="res://audio/sfx/paddle_ground.wav" id="12_4gq6d"]
+[ext_resource type="Script" uid="uid://kpf5et70a8wr" path="res://scripts/audio/sfx_player.gd" id="18_4exn6"]
 [ext_resource type="PackedScene" uid="uid://b4alrxskbotva" path="res://scenes/prefabs/tutorial/animated_arrow.tscn" id="21_bl2xa"]
 [ext_resource type="Script" path="res://scripts/tutorial/cart_state_provider.gd" id="22_15kfc"]
 
@@ -378,6 +384,44 @@ tracks/13/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/14/type = "method"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("CutsceneElements/Guy/Custcene Noise Player")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0.333333, 0.583333, 0.833333, 1.08333, 1.33333, 1.5, 1.66667, 1.83333, 2.16667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [ExtResource("3_7kfc1")],
+"method": &"play_stream"
+}, {
+"args": [ExtResource("4_jne3d")],
+"method": &"play_stream"
+}, {
+"args": [ExtResource("3_7kfc1")],
+"method": &"play_stream"
+}, {
+"args": [ExtResource("4_jne3d")],
+"method": &"play_stream"
+}, {
+"args": [ExtResource("3_7kfc1")],
+"method": &"play_stream"
+}, {
+"args": [ExtResource("5_nr1vm")],
+"method": &"play_stream"
+}, {
+"args": [ExtResource("6_6a2is")],
+"method": &"play_stream"
+}, {
+"args": [ExtResource("10_sbw1o")],
+"method": &"play_stream"
+}, {
+"args": [ExtResource("8_i8gw2")],
+"method": &"play_stream"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_7a100"]
 resource_name = "show_left"
@@ -565,6 +609,14 @@ small_push_noise = ExtResource("9_sbw1o")
 big_push_noise = ExtResource("9_gxgfo")
 jumped_noise = ExtResource("10_sbw1o")
 ground_noise = ExtResource("12_4gq6d")
+
+[node name="Custcene Noise Player" type="AudioStreamPlayer3D" parent="CutsceneElements/Guy"]
+attenuation_model = 1
+unit_size = 1.0
+max_polyphony = 4
+bus = &"Sfx"
+script = ExtResource("18_4exn6")
+metadata/_custom_type_script = "uid://kpf5et70a8wr"
 
 [node name="Unoccupied Cart" parent="CutsceneElements" instance=ExtResource("4_cmspm")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.3, 0.1, 1)
