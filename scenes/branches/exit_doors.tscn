@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtb75h47lny50"]
+[gd_scene load_steps=8 format=3 uid="uid://b7rckk0ct8qxy"]
 
-[ext_resource type="PackedScene" uid="uid://cjkji0typpkld" path="res://models/Doors.fbx" id="1_gmt2v"]
+[ext_resource type="PackedScene" uid="uid://cjkji0typpkld" path="res://models/Doors.fbx" id="1_wpbxo"]
+[ext_resource type="Script" uid="uid://cc2q6m175ifv4" path="res://scripts/props/exit_doors.gd" id="2_hcqlr"]
 
 [sub_resource type="Animation" id="Animation_640pd"]
 length = 0.001
@@ -131,7 +132,9 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_hcqlr"]
 size = Vector3(8, 8, 0.6)
 
-[node name="EntranceDoors" instance=ExtResource("1_gmt2v")]
+[node name="ExitDoors" node_paths=PackedStringArray("door_animator") instance=ExtResource("1_wpbxo")]
+script = ExtResource("2_hcqlr")
+door_animator = NodePath("AnimationPlayer")
 
 [node name="Left Door" parent="." index="0"]
 transform = Transform3D(350, 0, 0, 0, -1.19209e-06, 400, 0, -10, -4.76837e-05, -2, 4, 0.2)

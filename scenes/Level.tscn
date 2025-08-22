@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://ddrbqtusqv5ie"]
+[gd_scene load_steps=69 format=3 uid="uid://ddrbqtusqv5ie"]
 
 [ext_resource type="Script" path="res://scripts/tutorial/cart_state_applicator.gd" id="1_3yv64"]
 [ext_resource type="PackedScene" uid="uid://b5mw8yevevsir" path="res://scenes/branches/player.tscn" id="1_4no8g"]
@@ -57,6 +57,7 @@
 [ext_resource type="PackedScene" uid="uid://cc0lbl2ufrrju" path="res://scenes/prefabs/Level/stocked_shelves/stocked_dairy_shelf.tscn" id="47_dcwjr"]
 [ext_resource type="PackedScene" uid="uid://cun24twssf76x" path="res://scenes/prefabs/Level/stocked_shelves/oreo_shelf.tscn" id="49_ayxsy"]
 [ext_resource type="PackedScene" uid="uid://b26of65b440mf" path="res://scenes/prefabs/Level/stocked_shelves/cereal_shelf.tscn" id="50_gi26r"]
+[ext_resource type="PackedScene" uid="uid://b7rckk0ct8qxy" path="res://scenes/branches/exit_doors.tscn" id="58_rvbj1"]
 
 [sub_resource type="Environment" id="Environment_gooay"]
 background_mode = 1
@@ -1179,3 +1180,6 @@ transform = Transform3D(-0.999441, 0, 0.0334343, 0, 1, 0, -0.0334343, 0, -0.9994
 
 [node name="ShelfFridge70" parent="FridgeWall/West" instance=ExtResource("9_70b58")]
 transform = Transform3D(-0.999441, 0, 0.0334343, 0, 1, 0, -0.0334343, 0, -0.999441, -0.544281, 0.0264711, 12.217)
+
+[node name="ExitDoors" parent="." instance=ExtResource("58_rvbj1")]
+transform = Transform3D(0.9, 0, 0, 0, 0.6, 0, 0, 0, 1, -16.6, 0, 4)
