@@ -1,18 +1,19 @@
-[gd_scene load_steps=67 format=3 uid="uid://ddrbqtusqv5ie"]
+[gd_scene load_steps=68 format=3 uid="uid://ddrbqtusqv5ie"]
 
-[ext_resource type="Script" uid="uid://y71sgpa5qw8l" path="res://scripts/tutorial/cart_state_applicator.gd" id="1_3yv64"]
+[ext_resource type="Script" path="res://scripts/tutorial/cart_state_applicator.gd" id="1_3yv64"]
 [ext_resource type="PackedScene" uid="uid://b5mw8yevevsir" path="res://scenes/branches/player.tscn" id="1_4no8g"]
-[ext_resource type="PackedScene" uid="uid://cqjxu7wswqg37" path="res://scenes/prefabs/level/stocked_shelves/stocked_double_shelf.tscn" id="2_48r4s"]
+[ext_resource type="PackedScene" uid="uid://cqjxu7wswqg37" path="res://scenes/prefabs/Level/stocked_shelves/stocked_double_shelf.tscn" id="2_48r4s"]
 [ext_resource type="Shader" uid="uid://bxtqnrbo5lpp5" path="res://resources/shaders/lit.gdshader" id="2_kja0s"]
 [ext_resource type="Material" uid="uid://dqs0rmplo0iwy" path="res://resources/materials/floor_material.tres" id="2_p3doa"]
+[ext_resource type="PackedScene" uid="uid://dtb75h47lny50" path="res://scenes/branches/entrance_doors.tscn" id="2_xoajd"]
 [ext_resource type="Material" uid="uid://b1dhtda5npupf" path="res://resources/materials/wall_material.tres" id="4_48r4s"]
-[ext_resource type="PackedScene" uid="uid://b7ysovydhkthn" path="res://scenes/prefabs/level/shelves/checkout.tscn" id="6_baq46"]
-[ext_resource type="PackedScene" uid="uid://d18b1qeokj7ic" path="res://scenes/prefabs/level/shelves/fridge.tscn" id="9_70b58"]
+[ext_resource type="PackedScene" uid="uid://b7ysovydhkthn" path="res://scenes/prefabs/Level/shelves/checkout.tscn" id="6_baq46"]
+[ext_resource type="PackedScene" uid="uid://d18b1qeokj7ic" path="res://scenes/prefabs/Level/shelves/fridge.tscn" id="9_70b58"]
 [ext_resource type="PackedScene" uid="uid://cpluir3r7wpt4" path="res://models/merchandise/Baguette.fbx" id="13_gooay"]
 [ext_resource type="PackedScene" uid="uid://dpt7agiw8i0gd" path="res://models/merchandise/Bottle.fbx" id="15_gkvn1"]
 [ext_resource type="PackedScene" uid="uid://duclni4qpomk" path="res://models/merchandise/Cabbage.fbx" id="16_pl6yh"]
 [ext_resource type="PackedScene" uid="uid://bcukweieq4fke" path="res://models/merchandise/Can.fbx" id="17_k5548"]
-[ext_resource type="PackedScene" uid="uid://jved86re6krm" path="res://scenes/prefabs/level/stocked_shelves/stocked_produce_shelf.tscn" id="18_48r4s"]
+[ext_resource type="PackedScene" uid="uid://jved86re6krm" path="res://scenes/prefabs/Level/stocked_shelves/stocked_produce_shelf.tscn" id="18_48r4s"]
 [ext_resource type="PackedScene" uid="uid://c8pv8ekfvetb0" path="res://models/merchandise/Cereal.fbx" id="18_ob73l"]
 [ext_resource type="PackedScene" uid="uid://cayby1box47as" path="res://models/merchandise/Dingles.fbx" id="19_dcwjr"]
 [ext_resource type="Texture2D" uid="uid://cgjrchfl0pb8j" path="res://models/decor/Meat Decal.png" id="20_83eg4"]
@@ -21,8 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://ca1b0dh5k1j21" path="res://models/decor/n100-2200-dairy-neon-sign-giant-2431923233.png" id="21_ayxsy"]
 [ext_resource type="Texture2D" uid="uid://drnnbkbt18064" path="res://models/decor/Snacks.jpg" id="21_gi26r"]
 [ext_resource type="Material" uid="uid://dkvvn5bhcbl6v" path="res://resources/materials/magazine_material.tres" id="21_ob73l"]
-[ext_resource type="PackedScene" uid="uid://noalsnf1e85n" path="res://scenes/prefabs/level/stocked_shelves/stocked_shelf.tscn" id="21_u2nc6"]
-[ext_resource type="PackedScene" uid="uid://7qwkia1dgl7f" path="res://scenes/prefabs/level/shelves/produce_shelf.tscn" id="21_ycrer"]
+[ext_resource type="PackedScene" uid="uid://noalsnf1e85n" path="res://scenes/prefabs/Level/stocked_shelves/stocked_shelf.tscn" id="21_u2nc6"]
+[ext_resource type="PackedScene" uid="uid://7qwkia1dgl7f" path="res://scenes/prefabs/Level/shelves/produce_shelf.tscn" id="21_ycrer"]
 [ext_resource type="PackedScene" uid="uid://chyf22gb3mn4f" path="res://models/merchandise/Yogurt.fbx" id="22_ayxsy"]
 [ext_resource type="PackedScene" uid="uid://bje860gdygikm" path="res://models/decor/Banner.fbx" id="22_gkvn1"]
 [ext_resource type="Texture2D" uid="uid://b2scdo82osb7u" path="res://resources/materials/exit.jpg" id="22_rcwq3"]
@@ -34,28 +35,28 @@
 [ext_resource type="Script" uid="uid://mont5n28gsku" path="res://scripts/props/collection_pool.gd" id="25_mbj8a"]
 [ext_resource type="Material" uid="uid://cku80uftkv83p" path="res://resources/materials/CeilingMat2.tres" id="25_rcwq3"]
 [ext_resource type="PackedScene" uid="uid://d0tn2ay3ngue3" path="res://models/merchandise/Bread.fbx" id="26_rcwq3"]
-[ext_resource type="PackedScene" uid="uid://ealvt21fe1ai" path="res://scenes/prefabs/level/stocked_shelves/fish_shelf.tscn" id="27_kflc5"]
+[ext_resource type="PackedScene" uid="uid://ealvt21fe1ai" path="res://scenes/prefabs/Level/stocked_shelves/fish_shelf.tscn" id="27_kflc5"]
 [ext_resource type="PackedScene" uid="uid://cdy0jj7ar7r8d" path="res://models/merchandise/Fish.fbx" id="27_unn01"]
 [ext_resource type="PackedScene" uid="uid://7pcv5wmvi4tu" path="res://models/merchandise/Meat.fbx" id="28_3yv64"]
-[ext_resource type="PackedScene" uid="uid://dx5xtnr83ga5w" path="res://scenes/prefabs/level/stocked_shelves/stocked_meat_shelf.tscn" id="28_itu0t"]
-[ext_resource type="PackedScene" uid="uid://bwmfjoj0h0j3t" path="res://scenes/prefabs/level/shelves/shelf.tscn" id="29_4no8g"]
+[ext_resource type="PackedScene" uid="uid://dx5xtnr83ga5w" path="res://scenes/prefabs/Level/stocked_shelves/stocked_meat_shelf.tscn" id="28_itu0t"]
+[ext_resource type="PackedScene" uid="uid://bwmfjoj0h0j3t" path="res://scenes/prefabs/Level/shelves/shelf.tscn" id="29_4no8g"]
 [ext_resource type="PackedScene" uid="uid://b4hov5hkkmrkn" path="res://scenes/prefabs/collectable_item.tscn" id="29_xoajd"]
-[ext_resource type="PackedScene" uid="uid://b5kn7i42o2i1w" path="res://scenes/prefabs/level/stocked_shelves/bread/bread_shelf.tscn" id="31_p3doa"]
-[ext_resource type="PackedScene" uid="uid://c3uomt1hjoynj" path="res://scenes/prefabs/level/stocked_shelves/bread/bread_shelf_alt.tscn" id="33_2sboe"]
-[ext_resource type="PackedScene" uid="uid://cp5565otp61c7" path="res://scenes/prefabs/level/stocked_shelves/stocked_corner_shelf.tscn" id="34_baq46"]
-[ext_resource type="PackedScene" uid="uid://bvyv7x3gbtbcc" path="res://scenes/prefabs/level/stocked_shelves/bread/left_corner_bread_shelf.tscn" id="34_nbaxu"]
-[ext_resource type="PackedScene" uid="uid://buqct83doqcde" path="res://scenes/prefabs/level/stocked_shelves/bottle_shelf.tscn" id="35_0dkw0"]
-[ext_resource type="PackedScene" uid="uid://cy6se5dc01y2" path="res://scenes/prefabs/level/stocked_shelves/bread/right_corner_bread_shelf.tscn" id="35_nu2gi"]
-[ext_resource type="PackedScene" uid="uid://cvw4qwus7lie6" path="res://scenes/prefabs/level/stocked_shelves/cans/can_shelf.tscn" id="38_gooay"]
-[ext_resource type="PackedScene" uid="uid://dxh4rv6g86dnl" path="res://scenes/prefabs/level/stocked_shelves/cans/left_corner_can_shelf.tscn" id="40_gkvn1"]
-[ext_resource type="PackedScene" uid="uid://cij7lr5lkh8ph" path="res://scenes/prefabs/level/stocked_shelves/cans/right_corner_can_shelf.tscn" id="41_pl6yh"]
-[ext_resource type="PackedScene" uid="uid://uyjoaody4cna" path="res://scenes/prefabs/level/stocked_shelves/magazine_stand.tscn" id="42_b38xg"]
+[ext_resource type="PackedScene" uid="uid://b5kn7i42o2i1w" path="res://scenes/prefabs/Level/stocked_shelves/bread/bread_shelf.tscn" id="31_p3doa"]
+[ext_resource type="PackedScene" uid="uid://c3uomt1hjoynj" path="res://scenes/prefabs/Level/stocked_shelves/bread/bread_shelf_alt.tscn" id="33_2sboe"]
+[ext_resource type="PackedScene" uid="uid://cp5565otp61c7" path="res://scenes/prefabs/Level/stocked_shelves/stocked_corner_shelf.tscn" id="34_baq46"]
+[ext_resource type="PackedScene" uid="uid://bvyv7x3gbtbcc" path="res://scenes/prefabs/Level/stocked_shelves/bread/left_corner_bread_shelf.tscn" id="34_nbaxu"]
+[ext_resource type="PackedScene" uid="uid://buqct83doqcde" path="res://scenes/prefabs/Level/stocked_shelves/bottle_shelf.tscn" id="35_0dkw0"]
+[ext_resource type="PackedScene" uid="uid://cy6se5dc01y2" path="res://scenes/prefabs/Level/stocked_shelves/bread/right_corner_bread_shelf.tscn" id="35_nu2gi"]
+[ext_resource type="PackedScene" uid="uid://cvw4qwus7lie6" path="res://scenes/prefabs/Level/stocked_shelves/cans/can_shelf.tscn" id="38_gooay"]
+[ext_resource type="PackedScene" uid="uid://dxh4rv6g86dnl" path="res://scenes/prefabs/Level/stocked_shelves/cans/left_corner_can_shelf.tscn" id="40_gkvn1"]
+[ext_resource type="PackedScene" uid="uid://cij7lr5lkh8ph" path="res://scenes/prefabs/Level/stocked_shelves/cans/right_corner_can_shelf.tscn" id="41_pl6yh"]
+[ext_resource type="PackedScene" uid="uid://uyjoaody4cna" path="res://scenes/prefabs/Level/stocked_shelves/magazine_stand.tscn" id="42_b38xg"]
 [ext_resource type="PackedScene" uid="uid://7jqm0cb0u400" path="res://models/decor/Square Plane.fbx" id="42_k5548"]
-[ext_resource type="PackedScene" uid="uid://c0n7y2krpmhn8" path="res://scenes/prefabs/level/stocked_shelves/stocked_dairy_alt_shelf.tscn" id="45_dcwjr"]
-[ext_resource type="PackedScene" uid="uid://dn1ptl6yxj2nf" path="res://scenes/prefabs/level/stocked_shelves/jug_corner_shelf.tscn" id="47_b38xg"]
-[ext_resource type="PackedScene" uid="uid://cc0lbl2ufrrju" path="res://scenes/prefabs/level/stocked_shelves/stocked_dairy_shelf.tscn" id="47_dcwjr"]
-[ext_resource type="PackedScene" uid="uid://cun24twssf76x" path="res://scenes/prefabs/level/stocked_shelves/oreo_shelf.tscn" id="49_ayxsy"]
-[ext_resource type="PackedScene" uid="uid://b26of65b440mf" path="res://scenes/prefabs/level/stocked_shelves/cereal_shelf.tscn" id="50_gi26r"]
+[ext_resource type="PackedScene" uid="uid://c0n7y2krpmhn8" path="res://scenes/prefabs/Level/stocked_shelves/stocked_dairy_alt_shelf.tscn" id="45_dcwjr"]
+[ext_resource type="PackedScene" uid="uid://dn1ptl6yxj2nf" path="res://scenes/prefabs/Level/stocked_shelves/jug_corner_shelf.tscn" id="47_b38xg"]
+[ext_resource type="PackedScene" uid="uid://cc0lbl2ufrrju" path="res://scenes/prefabs/Level/stocked_shelves/stocked_dairy_shelf.tscn" id="47_dcwjr"]
+[ext_resource type="PackedScene" uid="uid://cun24twssf76x" path="res://scenes/prefabs/Level/stocked_shelves/oreo_shelf.tscn" id="49_ayxsy"]
+[ext_resource type="PackedScene" uid="uid://b26of65b440mf" path="res://scenes/prefabs/Level/stocked_shelves/cereal_shelf.tscn" id="50_gi26r"]
 
 [sub_resource type="Environment" id="Environment_gooay"]
 background_mode = 1
@@ -117,6 +118,9 @@ environment = SubResource("Environment_gooay")
 [node name="StartPosition" type="Node3D" parent="." node_paths=PackedStringArray("target")]
 script = ExtResource("1_3yv64")
 target = NodePath("../Player")
+
+[node name="EntranceDoors" parent="StartPosition" instance=ExtResource("2_xoajd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 
 [node name="Player" parent="." instance=ExtResource("1_4no8g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
@@ -199,16 +203,16 @@ use_collision = true
 size = Vector3(1.37219, 10.2274, 10.8825)
 
 [node name="CSGBox3D18" type="CSGBox3D" parent="Building/Walls"]
-transform = Transform3D(-0.0103322, 0, 0.999947, 0, 1, 0, -0.999947, 0, -0.0103322, -2.2015, 5.17297, -4.43719)
+transform = Transform3D(-0.0103322, 0, 0.999947, 0, 1, 0, -0.999947, 0, -0.0103322, 0.256244, 5.17297, -11.4626)
 material_override = ExtResource("4_48r4s")
 use_collision = true
-size = Vector3(1.37219, 10.2084, 9.08425)
+size = Vector3(1.37219, 10.2084, 14)
 
-[node name="CSGBox3D28" type="CSGBox3D" parent="Building/Walls"]
-transform = Transform3D(-0.0103322, 0, 0.999947, 0, 1, 0, -0.999947, 0, -0.0103322, 6.8474, 5.17297, -4.43719)
+[node name="CSGBox3D22" type="CSGBox3D" parent="Building/Walls"]
+transform = Transform3D(-0.0103322, 0, 0.999947, 0, 1, 0, -0.999947, 0, -0.0103322, -2.7436, 5.17297, -11.4316)
 material_override = ExtResource("4_48r4s")
 use_collision = true
-size = Vector3(1.37219, 10.2084, 9.08425)
+size = Vector3(1.37219, 10.2084, 20)
 
 [node name="CSGBox3D21" type="CSGBox3D" parent="Building/Walls"]
 transform = Transform3D(-0.0103322, 0, 0.999947, 0, 1, 0, -0.999947, 0, -0.0103322, -14.9265, 5.16879, -4.4617)
@@ -229,22 +233,22 @@ use_collision = true
 size = Vector3(1.37219, 10.2, 6.21373)
 
 [node name="CSGBox3D36" type="CSGBox3D" parent="Building/Walls"]
-transform = Transform3D(0.999987, 0, 0.00513134, 0, 1, 0, -0.00513134, 0, 0.999987, -7.35014, 5.16878, -0.851326)
+transform = Transform3D(0.999987, 0, 0.00513134, 0, 1, 0, -0.00513134, 0, 0.999987, -5.99769, 5.169, -0.141006)
 material_override = ExtResource("4_48r4s")
 use_collision = true
-size = Vector3(1.37219, 10.2, 8.46579)
+size = Vector3(4, 10.2, 9.9)
 
 [node name="CSGBox3D37" type="CSGBox3D" parent="Building/Walls"]
-transform = Transform3D(0.999987, 0, 0.00513134, 0, 1, 0, -0.00513134, 0, 0.999987, 7.73314, 5.16878, 0.0949919)
+transform = Transform3D(0.999987, 0, 0.00513134, 0, 1, 0, -0.00513134, 0, 0.999987, 5.98241, 5.169, -3.32611)
 material_override = ExtResource("4_48r4s")
 use_collision = true
-size = Vector3(1.37219, 10.2, 10.6437)
+size = Vector3(4, 10.2, 16.5)
 
 [node name="CSGBox3D39" type="CSGBox3D" parent="Building/Walls"]
-transform = Transform3D(0.999987, 0, 0.00513134, 0, 1, 0, -0.00513134, 0, 0.999987, 7.71317, 5.16878, 10.7393)
+transform = Transform3D(0.999987, 0, 0.00513134, 0, 1, 0, -0.00513134, 0, 0.999987, 7.70456, 5.16878, 9.06117)
 material_override = ExtResource("4_48r4s")
 use_collision = true
-size = Vector3(1.41214, 10.2, 10.6437)
+size = Vector3(1.41214, 10.2, 14)
 
 [node name="CSGBox3D40" type="CSGBox3D" parent="Building/Walls"]
 transform = Transform3D(0.999987, 0, 0.00513134, 0, 1, 0, -0.00513134, 0, 0.999987, 8.70639, 5.16878, 21.5681)

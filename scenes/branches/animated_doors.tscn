@@ -1,0 +1,107 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6leeix6a4h2k"]
+
+[ext_resource type="PackedScene" uid="uid://cjkji0typpkld" path="res://models/Doors.fbx" id="1_at23l"]
+
+[sub_resource type="Animation" id="Animation_640pd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Left Door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-2, 4, 0.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Right Door:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2, 4, 0.2)]
+}
+
+[sub_resource type="Animation" id="Animation_o5key"]
+resource_name = "close"
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Left Door:position")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-4.8, 4, 0.2), Vector3(-4.6, 4, 0.2), Vector3(-4.1, 4, 0.2), Vector3(-2, 4, 0.2), Vector3(-2.4, 4, 0.2), Vector3(-2.3, 4, 0.2), Vector3(-2, 4, 0.2), Vector3(-2.1, 4, 0.2), Vector3(-2, 4, 0.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Right Door:position")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(4.8, 4, 0.2), Vector3(4.6, 4, 0.2), Vector3(4.1, 4, 0.2), Vector3(2, 4, 0.2), Vector3(2.4, 4, 0.2), Vector3(2.3, 4, 0.2), Vector3(2, 4, 0.2), Vector3(2.1, 4, 0.2), Vector3(2, 4, 0.2)]
+}
+
+[sub_resource type="Animation" id="Animation_at23l"]
+resource_name = "open"
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Left Door:position")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.416667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-2, 4, 0.2), Vector3(-2.2, 4, 0.2), Vector3(-2.7, 4, 0.2), Vector3(-5.1, 4, 0.2), Vector3(-4.7, 4, 0.2), Vector3(-4.8, 4, 0.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Right Door:position")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.416667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(2, 4, 0.2), Vector3(2.2, 4, 0.2), Vector3(2.7, 4, 0.2), Vector3(5.1, 4, 0.2), Vector3(4.7, 4, 0.2), Vector3(4.8, 4, 0.2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cqisr"]
+_data = {
+&"RESET": SubResource("Animation_640pd"),
+&"close": SubResource("Animation_o5key"),
+&"open": SubResource("Animation_at23l")
+}
+
+[node name="Doors" instance=ExtResource("1_at23l")]
+
+[node name="Left Door" parent="." index="0"]
+transform = Transform3D(350, 0, 0, 0, -1.19209e-06, 400, 0, -10, -4.76837e-05, -2, 4, 0.2)
+
+[node name="Right Door" parent="." index="1"]
+transform = Transform3D(350, 0, 0, 0, -1.19209e-06, 400, 0, -10, -4.76837e-05, 2, 4, 0.2)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+libraries = {
+&"": SubResource("AnimationLibrary_cqisr")
+}
+autoplay = "close"
