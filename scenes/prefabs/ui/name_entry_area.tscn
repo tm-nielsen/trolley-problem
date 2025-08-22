@@ -1,16 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://ci5ts1nwohra5"]
+[gd_scene load_steps=6 format=3 uid="uid://ci5ts1nwohra5"]
 
 [ext_resource type="Script" uid="uid://o8idiya2yr0j" path="res://scripts/ui/leaderboard/name_entry_area.gd" id="1_3gaaa"]
+[ext_resource type="AudioStream" uid="uid://bbtgfvrifl5c3" path="res://audio/sfx/ui_move.wav" id="2_qqixg"]
+[ext_resource type="AudioStream" uid="uid://ckw24u3yns22c" path="res://audio/sfx/trick.wav" id="3_fy74f"]
+[ext_resource type="AudioStream" uid="uid://bvbh3dnkgc86j" path="res://audio/sfx/intro_blip.wav" id="3_uue6o"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vj8vg"]
 font_size = 24
 
-[node name="NameEntryArea" type="VBoxContainer" node_paths=PackedStringArray("name_label", "letter_button_parent", "confirm_name_button", "clear_name_button")]
+[node name="NameEntryArea" type="VBoxContainer" node_paths=PackedStringArray("name_label", "letter_button_parent", "confirm_name_button", "clear_name_button", "navigation_sound_player", "press_sound_player")]
 script = ExtResource("1_3gaaa")
 name_label = NodePath("Labels/Name")
 letter_button_parent = NodePath("CenterContainer/LetterButtons")
 confirm_name_button = NodePath("HBoxContainer/ConfirmButton")
 clear_name_button = NodePath("HBoxContainer/ClearButton")
+navigation_sound_player = NodePath("NavigationSound")
+press_sound_player = NodePath("PressSound")
+
+[node name="NavigationSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_qqixg")
+
+[node name="PressSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_uue6o")
 
 [node name="Labels" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -159,3 +170,8 @@ text = "Clear"
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
 text = "Confirm"
+
+[node name="ConfirmSound" type="AudioStreamPlayer" parent="HBoxContainer/ConfirmButton"]
+stream = ExtResource("3_fy74f")
+
+[connection signal="pressed" from="HBoxContainer/ConfirmButton" to="HBoxContainer/ConfirmButton/ConfirmSound" method="play"]

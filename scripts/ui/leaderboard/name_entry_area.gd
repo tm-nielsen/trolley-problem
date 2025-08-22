@@ -10,6 +10,10 @@ signal name_changed(current_name: String)
 @export var confirm_name_button: Control
 @export var clear_name_button: Control
 
+@export_subgroup("audio_sources")
+@export var navigation_sound_player: AudioStreamPlayer
+@export var press_sound_player: AudioStreamPlayer
+
 var default_focus_item: Button
 var letter_buttons: Array[Button]
 
@@ -21,6 +25,7 @@ func _ready():
     _set_button_mouse_filter(MOUSE_FILTER_IGNORE)
     confirm_name_button.pressed.connect(_on_confirm_name_button_pressed)
     clear_name_button.pressed.connect(_on_clear_name_button_pressed)
+    _connect_button_sounds()
     set_buttons_disabled(true)
 
 func _process(_delta):
@@ -108,6 +113,19 @@ func _free_letter_buttons():
     for child in letter_button_parent.get_children():
         child.queue_free()
     letter_buttons = []
+
+
+func _connect_button_sounds():
+    _connect_button_sound(clear_name_button)
+    confirm_name_button.focus_entered.connect(
+        navigation_sound_player.play
+    )
+    for letter_button in letter_buttons:
+        _connect_button_sound(letter_button)
+
+func _connect_button_sound(button: Button):
+    button.focus_entered.connect(navigation_sound_player.play)
+    button.pressed.connect(press_sound_player.play)
 
 
 func _set_button_mouse_filter(filter: Control.MouseFilter):
