@@ -8,7 +8,7 @@ extends SFX_Player
 @export_subgroup("volume_scaling")
 @export var max_volume: float = 16
 @export var min_volume: float = -12
-@export var volume_scale_factor: float = 10
+@export var volume_scale_factor: float = 40
 
 func _ready():
     cart.collided.connect(
