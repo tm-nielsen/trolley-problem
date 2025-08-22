@@ -1,6 +1,8 @@
 class_name MainCameraView
 extends CameraView
 
+signal camera_changed
+
 @export var view_grid: CameraViewGrid
 @export var default_camera_index: int = 0
 @export var fov_tween_scale: float = 1.2
@@ -20,6 +22,7 @@ func _process(_delta: float) -> void:
     for i in CameraViewGrid.VIEW_COUNT:
         if Input.is_action_just_pressed("camera %d" % (i + 1)):
             set_camera(view_grid.cameras[i])
+            camera_changed.emit()
             start_fov_tween()
 
 func start_fov_tween():
