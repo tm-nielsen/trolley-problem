@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Settings="*res://scripts/globals/settings.gd"
 GlobalSignalBus="*res://scripts/globals/global_signal_bus.gd"
 TweenHelpers="*res://scripts/globals/tween_helpers.gd"
+EndScreenNoises="*res://scenes/branches/end_screen_noises.tscn"
 
 [display]
 
