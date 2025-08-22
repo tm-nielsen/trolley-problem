@@ -1,10 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://b5mw8yevevsir"]
+[gd_scene load_steps=19 format=3 uid="uid://b5mw8yevevsir"]
 
 [ext_resource type="Script" uid="uid://c8nqi0le2ibfe" path="res://scripts/player/cart_body.gd" id="1_vrmcy"]
 [ext_resource type="PackedScene" uid="uid://cmqhenmmppgf7" path="res://scenes/branches/animated_cart.tscn" id="2_3ebvs"]
+[ext_resource type="Script" uid="uid://bj4ms3icotkkv" path="res://scripts/audio/cart_sfx_player.gd" id="3_03x8e"]
 [ext_resource type="Script" uid="uid://b431iip6kkpqh" path="res://scripts/player/animated_paddle_controller.gd" id="3_hcg2o"]
 [ext_resource type="PackedScene" uid="uid://3v5371psmp5s" path="res://models/Oar.fbx" id="4_3ebvs"]
 [ext_resource type="PackedScene" uid="uid://dp02dgmjloyc" path="res://scenes/prefabs/paddle_sparks.tscn" id="4_ty1bp"]
+[ext_resource type="AudioStream" uid="uid://eqbn0raffech" path="res://audio/sfx/cart_hit_small.wav" id="4_y76ad"]
+[ext_resource type="AudioStream" uid="uid://bjf1pw0a7sn4b" path="res://audio/sfx/cart_hit_big.wav" id="5_4urbn"]
 [ext_resource type="AudioStream" uid="uid://dm4hn24gjme7e" path="res://audio/trolley_problem_bgm.ogg" id="5_hcg2o"]
 [ext_resource type="Script" uid="uid://dmjk0ncg5yg22" path="res://scripts/audio/paddle_sfx_player.gd" id="6_cofql"]
 [ext_resource type="Script" path="res://scripts/props/checkout_indicator.gd" id="7_22aox"]
@@ -43,6 +46,18 @@ debug_fill = false
 
 [node name="Animated Cart" parent="." instance=ExtResource("2_3ebvs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3)
+
+[node name="Collision Sounds" type="AudioStreamPlayer3D" parent="." node_paths=PackedStringArray("cart")]
+process_mode = 3
+attenuation_model = 1
+volume_db = 12.0
+unit_size = 1.0
+bus = &"Sfx"
+doppler_tracking = 2
+script = ExtResource("3_03x8e")
+cart = NodePath("..")
+small_hit_noise = ExtResource("4_y76ad")
+big_hit_noise = ExtResource("5_4urbn")
 
 [node name="Paddles" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.5)
