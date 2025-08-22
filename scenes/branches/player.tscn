@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b5mw8yevevsir"]
+[gd_scene load_steps=20 format=3 uid="uid://b5mw8yevevsir"]
 
 [ext_resource type="Script" uid="uid://c8nqi0le2ibfe" path="res://scripts/player/cart_body.gd" id="1_vrmcy"]
 [ext_resource type="PackedScene" uid="uid://cmqhenmmppgf7" path="res://scenes/branches/animated_cart.tscn" id="2_3ebvs"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://b4alrxskbotva" path="res://scenes/prefabs/tutorial/animated_arrow.tscn" id="8_sk2ni"]
 [ext_resource type="AudioStream" uid="uid://cu080pxfoxeim" path="res://audio/sfx/jump.wav" id="9_iur84"]
 [ext_resource type="AudioStream" uid="uid://b0lliabxoew1k" path="res://audio/sfx/paddle_ground.wav" id="11_iur84"]
+[ext_resource type="Script" uid="uid://c5q1y2o7w4d4j" path="res://scripts/audio/cart_music_delayer.gd" id="15_y76ad"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nyyim"]
 size = Vector3(0.493896, 0.174194, 0.802765)
@@ -131,9 +132,9 @@ process_mode = 3
 stream = ExtResource("5_hcg2o")
 attenuation_model = 2
 unit_size = 1.0
-autoplay = true
 bus = &"Music"
 doppler_tracking = 2
+script = ExtResource("15_y76ad")
 
 [node name="CheckoutIndicator" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
