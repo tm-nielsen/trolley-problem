@@ -8,6 +8,7 @@ signal item_collected(item: CollectableItem)
 signal all_items_collected()
 signal game_won()
 signal game_timer_ended()
+signal game_reloaded()
 
 var game_lost: bool
 
@@ -35,3 +36,7 @@ func notify_win_area_entered():
 func notify_game_timer_ended():
     game_lost = true
     game_timer_ended.emit()
+
+func notify_game_reloaded():
+    game_lost = false
+    game_reloaded.emit()

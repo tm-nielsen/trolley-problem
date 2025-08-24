@@ -36,6 +36,7 @@ func _process(_delta: float):
         Input.is_action_just_pressed("replay")
     ):
         get_tree().reload_current_scene()
+        GlobalSignalBus.notify_game_reloaded()
 
 
 func start_display():
