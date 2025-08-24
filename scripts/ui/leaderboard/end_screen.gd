@@ -13,7 +13,6 @@ const RESET_ENABLED = DisplayState.RESET_ENABLED
 
 @export var reset_prompt: Control
 @export var reset_delay: float = 2
-@export_file var game_scene_path: String
 
 var display_state: DisplayState
 
@@ -36,7 +35,7 @@ func _process(_delta: float):
         display_state == RESET_ENABLED &&
         Input.is_action_just_pressed("replay")
     ):
-        get_tree().change_scene_to_file(game_scene_path)
+        get_tree().reload_current_scene()
 
 
 func start_display():

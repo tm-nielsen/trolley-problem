@@ -3,16 +3,17 @@ extends Node
 
 static var activated: bool = false
 
-@export var leaderboard_scene: PackedScene
+@export var end_screen_transition_manager: EndScreenTransitionManager
 
 
 func _ready():
     activated = false
+    end_screen_transition_manager.started_transition.connect(queue_free)
 
 func _process(_delta):
     if _display_bypass_inputs_pressed():
         activated = true
-        get_tree().change_scene_to_packed(leaderboard_scene)
+        end_screen_transition_manager.load_end_screen()
 
 
 func _display_bypass_inputs_pressed() -> bool:

@@ -12,6 +12,7 @@ font_size = 28
 [sub_resource type="LabelSettings" id="LabelSettings_6e1uj"]
 
 [node name="EndScreen" type="Control" node_paths=PackedStringArray("initial_display", "final_display", "completion_time_label", "name_entry_area", "reset_prompt")]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,7 +25,6 @@ final_display = NodePath("FinalDisplay")
 completion_time_label = NodePath("InitialDisplay/Time")
 name_entry_area = NodePath("InitialDisplay/NameEntryArea")
 reset_prompt = NodePath("FinalDisplay/Label")
-game_scene_path = "uid://dviwm18mhuwff"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1

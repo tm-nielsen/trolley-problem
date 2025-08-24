@@ -1,4 +1,7 @@
+class_name EndScreenTransitionManager
 extends Control
+
+signal started_transition
 
 @export var duration: float = 0.5
 @export var win_screen: Node
@@ -19,7 +22,11 @@ func _ready():
 func show_transition(target: Node):
     show()
     target.show()
+    started_transition.emit()
     TweenHelpers.call_delayed(load_end_screen, duration)
 
 func load_end_screen():
-    get_tree().change_scene_to_packed(end_screen_scene)
+    for doomed_node in get_parent().get_children():
+        if is_instance_valid(doomed_node):
+            doomed_node.queue_free()
+    get_parent().add_child(end_screen_scene.instantiate())

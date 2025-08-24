@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dviwm18mhuwff"]
+[gd_scene load_steps=11 format=3 uid="uid://dviwm18mhuwff"]
 
 [ext_resource type="PackedScene" uid="uid://c2ps507fr4vlh" path="res://scenes/branches/display.tscn" id="1_j287u"]
 [ext_resource type="Material" uid="uid://du54h7h6d7tgg" path="res://resources/materials/highlight_material.tres" id="4_5sfjl"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://ddrbqtusqv5ie" path="res://scenes/Level.tscn" id="6_7pvxh"]
 [ext_resource type="PackedScene" uid="uid://c8k8rp3b2h0qy" path="res://scenes/branches/end_screen_transitions.tscn" id="6_j287u"]
 [ext_resource type="Script" uid="uid://c2f7m6xqrtwbf" path="res://scripts/ui/leaderboard/leaderboard_shortcut.gd" id="8_3hfy5"]
-[ext_resource type="PackedScene" path="res://scenes/end_screen.tscn" id="9_7pvxh"]
 [ext_resource type="PackedScene" uid="uid://c485i7okue4m1" path="res://scenes/tutorial.tscn" id="11_y3xxt"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_y3xxt"]
@@ -119,9 +118,9 @@ render_target_update_mode = 4
 
 [node name="Tutorial" parent="Tutorial/TutorialViewport/SubViewport" instance=ExtResource("11_y3xxt")]
 
-[node name="LeaderboardShortcut" type="Node" parent="."]
+[node name="LeaderboardShortcut" type="Node" parent="." node_paths=PackedStringArray("end_screen_transition_manager")]
 script = ExtResource("8_3hfy5")
-leaderboard_scene = ExtResource("9_7pvxh")
+end_screen_transition_manager = NodePath("../End Screen Transitions")
 metadata/_custom_type_script = "uid://c2f7m6xqrtwbf"
 
 [connection signal="completed" from="Tutorial/TutorialViewport/SubViewport/Tutorial" to="Tutorial" method="queue_free"]
