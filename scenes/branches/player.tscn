@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://bjf1pw0a7sn4b" path="res://audio/sfx/cart_hit_big.wav" id="5_4urbn"]
 [ext_resource type="AudioStream" uid="uid://dm4hn24gjme7e" path="res://audio/trolley_problem_bgm.ogg" id="5_hcg2o"]
 [ext_resource type="Script" uid="uid://dmjk0ncg5yg22" path="res://scripts/audio/paddle_sfx_player.gd" id="6_cofql"]
-[ext_resource type="Script" path="res://scripts/props/checkout_indicator.gd" id="7_22aox"]
+[ext_resource type="Script" uid="uid://5yxcoh2mdfg3" path="res://scripts/props/checkout_indicator.gd" id="7_22aox"]
 [ext_resource type="AudioStream" uid="uid://dfgc1it0kp6cq" path="res://audio/sfx/small_push.wav" id="7_jrr5n"]
 [ext_resource type="AudioStream" uid="uid://dl7crrh15v5re" path="res://audio/sfx/big_push.wav" id="8_cdr4d"]
 [ext_resource type="PackedScene" uid="uid://b4alrxskbotva" path="res://scenes/prefabs/tutorial/animated_arrow.tscn" id="8_sk2ni"]
@@ -59,6 +59,7 @@ script = ExtResource("3_03x8e")
 cart = NodePath("..")
 small_hit_noise = ExtResource("4_y76ad")
 big_hit_noise = ExtResource("5_4urbn")
+max_volume = 12.0
 
 [node name="Paddles" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.5)

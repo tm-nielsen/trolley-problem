@@ -1,4 +1,8 @@
-[gd_resource type="AudioBusLayout" load_steps=6 format=3 uid="uid://vg526m84vjfd"]
+[gd_resource type="AudioBusLayout" load_steps=7 format=3 uid="uid://vg526m84vjfd"]
+
+[sub_resource type="AudioEffectLimiter" id="AudioEffectLimiter_g28q7"]
+resource_name = "Limiter"
+ceiling_db = -12.0
 
 [sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_j3pel"]
 resource_name = "LowPassFilter"
@@ -24,6 +28,8 @@ resource_name = "Limiter"
 ceiling_db = -10.0
 
 [resource]
+bus/0/effect/0/effect = SubResource("AudioEffectLimiter_g28q7")
+bus/0/effect/0/enabled = true
 bus/1/name = &"Smush"
 bus/1/solo = false
 bus/1/mute = false
@@ -44,7 +50,7 @@ bus/2/name = &"Sfx"
 bus/2/solo = false
 bus/2/mute = false
 bus/2/bypass_fx = false
-bus/2/volume_db = 0.265018
+bus/2/volume_db = -6.14301
 bus/2/send = &"Smush"
 bus/3/name = &"Music"
 bus/3/solo = false

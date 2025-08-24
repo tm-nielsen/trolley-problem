@@ -32,7 +32,7 @@
 [ext_resource type="AudioStream" uid="uid://b0lliabxoew1k" path="res://audio/sfx/paddle_ground.wav" id="12_4gq6d"]
 [ext_resource type="Script" uid="uid://kpf5et70a8wr" path="res://scripts/audio/sfx_player.gd" id="18_4exn6"]
 [ext_resource type="PackedScene" uid="uid://b4alrxskbotva" path="res://scenes/prefabs/tutorial/animated_arrow.tscn" id="21_bl2xa"]
-[ext_resource type="Script" path="res://scripts/tutorial/cart_state_provider.gd" id="22_15kfc"]
+[ext_resource type="Script" uid="uid://ceonxmxbqcvr3" path="res://scripts/tutorial/cart_state_provider.gd" id="22_15kfc"]
 
 [sub_resource type="Environment" id="Environment_15kfc"]
 background_mode = 1
@@ -589,7 +589,7 @@ transform = Transform3D(-0.5, -0.866025, 0, 0.866025, -0.5, 0, 0, 0, 1, 0.1, 0.1
 [node name="Spark Origin" type="AudioStreamPlayer3D" parent="CutsceneElements/Guy/MoveablePaddles/Left/Oar" node_paths=PackedStringArray("paddle")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
 attenuation_model = 1
-volume_db = -8.0
+volume_db = -16.0
 unit_size = 1.0
 max_polyphony = 8
 bus = &"Sfx"
@@ -615,7 +615,7 @@ transform = Transform3D(-0.5, 0.866025, 0, -0.866025, -0.5, 0, 0, 0, 1, -0.1, 0.
 [node name="Spark Origin" type="AudioStreamPlayer3D" parent="CutsceneElements/Guy/MoveablePaddles/Right/Oar" node_paths=PackedStringArray("paddle")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
 attenuation_model = 1
-volume_db = -8.0
+volume_db = -16.0
 unit_size = 1.0
 max_polyphony = 8
 bus = &"Sfx"

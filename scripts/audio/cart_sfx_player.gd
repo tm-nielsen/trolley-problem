@@ -1,6 +1,7 @@
 extends SFX_Player
 
 @export var cart: CartBody
+@export var threshold: float = 1
 @export var big_hit_threshold: float = 10
 @export var small_hit_noise: AudioStream
 @export var big_hit_noise: AudioStream
@@ -13,11 +14,12 @@ extends SFX_Player
 func _ready():
     cart.collided.connect(
         func(momentum):
+        if abs(momentum) < threshold: return
         volume_db = remap(
             momentum / volume_scale_factor,
             0, 1, min_volume, max_volume
         )
-        if (momentum > big_hit_threshold):
+        if momentum > big_hit_threshold:
             play_stream(big_hit_noise)
         else:
             play_stream(small_hit_noise)
